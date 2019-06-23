@@ -1,0 +1,224 @@
+.main-container {
+
+    h2 {
+        color: $blue;
+        text-align: center;
+    }
+
+    .line {
+        width: 75%;
+        height: 2px;
+        margin: auto;
+        background-color: $blue;
+        border: none;
+    }
+
+    .banniere {
+        display: flex;
+        justify-content: center;
+        padding: 25px 0 10px 0;
+
+        img {
+            max-height: 1150px;
+            max-width: 100%;
+        }
+    }
+
+    .last-posts, .about, .tools-dev, .tools-open-source {
+        margin: 25px 0;
+    }
+
+    .container-posts {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 20px 0 20px;
+
+        .post {
+            position: relative;
+
+            &:hover figcaption {
+                opacity: 1;
+            }
+
+            img {
+                max-height: 30vh;
+                max-width: 26vw;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+
+            figcaption {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 5px;
+                left: 0;
+                height: 93.5%;
+                opacity: 0;
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: $white;
+
+                .figcaption-header {
+                    text-align: center;
+
+                    h3 {
+                        margin-top: 15px;
+                        padding: 5px 0;
+                        font-size: 22px;
+                    }
+
+                    .date {
+                        margin-bottom: 20px;
+                        font: {
+                            style: italic;
+                            size: 18px;
+                        }
+                    }
+                }
+
+                p {
+                    width: 80%;
+                    margin: auto;
+                }
+
+                a {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    margin: 15px;
+                    text-decoration: none;
+                    color: $white;
+
+                    &:hover {
+                        color: $blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .link-portfolio {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+            margin-right: 20px;
+            padding: 20px;
+            text-decoration: none;
+            border: 2px solid $blue;
+            border-radius: 25px;
+            color: $white;
+            background-color: $blue;
+
+            &:hover {
+                color: $blue;
+                background-color: $white;
+            }
+        }
+    }
+
+
+    .about {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 50px;
+            height: 50px;
+            padding-left: 10px;
+
+            &:last-child {
+                align-self: flex-end;
+                padding: 0 10px 25px 0;
+            }
+        }
+
+        p {
+            width: 80%;
+            margin: auto;
+            padding-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .openclassrooms {
+            color: $blue;
+
+            &:hover {
+                text-decoration: underline solid $blue;
+            }
+        }
+
+        .download {
+            align-self: center;
+            width: fit-content;
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px solid $blue;
+            border-radius: 25px;
+            color: $white;
+            background-color: $blue;
+
+            &:hover {
+                color: $blue;
+                background-color: $white;
+            }
+        }
+    }
+
+    .container-tools-dev {
+        display: flex;
+        justify-content: center;
+        padding: 25px 0;
+
+        img {
+            max-width:  100px;
+            max-height: 100px;
+            min-width:  50px;
+            min-height: 50px;
+            padding: 10px;
+        }
+    }
+
+    .container-tools-open-source {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+
+        img {
+            width: 50px;
+            height: 50px;
+            padding: 10px 0;
+        }
+
+        p {
+            width: 90%;
+            margin: auto;
+            padding-bottom: 20px;
+            text-align: left;
+            color: $white;
+        }
+
+        .tools {
+            width: 33%;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .wordpress {
+            background-color: $blue-WP;
+        }
+
+        .symfony {
+            background-color: $black;
+        }
+
+        .git {
+            background-color: $orange;
+        }
+    }
+}

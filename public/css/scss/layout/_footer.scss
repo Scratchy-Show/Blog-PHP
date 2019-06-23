@@ -1,0 +1,72 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $blue;
+
+    h2 {
+        color: $white;
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $white
+    }
+
+    .contact-footer {
+        margin: 10px 0 20px 0;
+
+        p {
+            display: flex;
+            align-items: center;
+            padding-bottom: 5px;
+
+            img {
+                margin-right: 5px;
+            }
+
+            a {
+                margin-left: 5px;
+
+                &:hover {
+                    text-decoration: underline solid $white;
+                }
+            }
+        }
+    }
+
+    .copyright-footer {
+        display: flex;
+        width: 100%;
+        padding-bottom: 10px;
+
+        &:before {
+            content: "";
+            width: 150px;
+            margin-right: auto;
+            margin-left: 15px;
+        }
+
+        .copyright {
+            display: flex;
+
+            p {
+                margin-left: 5px;
+                align-self: center;
+            }
+        }
+
+        .admin-footer {
+            width: 150px;
+            margin-right: 15px;
+            margin-left: auto;
+            align-self: center;
+            text-align: right;
+        }
+    }
+}

@@ -1,14 +1,110 @@
 {% extends "base.html.twig" %}
 
-{% block title %}
-    Accueil
-{% endblock %}
+{% block title %}Accueil{% endblock %}
 
-{% block meta_description %}
-    <meta name="description" content="Créateur d'application web sur-mesure, Couret Alexandre propose le développement de site web de qualité et adaptatif."
-{% endblock %}
 
 {% block body %}
+    <div class="main-container">
+        <div class="banniere">
+            <img src="../public/img/banniere/home.jpg" alt="" />
+        </div>
 
+        <div class=" container last-posts">
+            <h2>Dernières réalisations</h2>
+            <div class="container-posts">
+                <figure class="post">
+                    <img src="../public/img/placeholder.jpg" alt="#" />
+                    <figcaption>
+                        <div class="figcaption-header">
+                            <h3>Titre</h3>
+                            <p class="date">23 Mars 2019</p>
+                        </div>
+                        <p>Texte court qui résume le blog qui va être développé.</p>
+                        <a href="#">Post</a>
+                    </figcaption>
+                </figure>
+
+                <figure class="post">
+                    <img src="../public/img/placeholder.jpg" alt="#" />
+                    <figcaption>
+                        <div class="figcaption-header">
+                            <h3>Titre</h3>
+                            <p class="date">5 Mars 2019</p>
+                        </div>
+                        <p>Texte court qui résume le blog qui va être développé.</p>
+                        <a href="#">Post</a>
+                    </figcaption>
+                </figure>
+
+                <figure class="post">
+                    <img src="../public/img/placeholder.jpg" alt="#" />
+                    <figcaption>
+                        <div class="figcaption-header">
+                            <h3>Titre</h3>
+                            <p class="date">18 Février 2019</p>
+                        </div>
+                        <p>Texte court qui résume le blog qui va être développé.</p>
+                        <a href="#">Post</a>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="link-portfolio">
+                <a href="#">Portfolio</a>
+            </div>
+        </div>
+
+        <div class="container about">
+            <h2>A propos</h2>
+            <img src="../public/img/icons/left_quote.png" alt="">
+            <p>Diplomé en tant que Développeur Web Junior, je poursuis ma formation au près de l'école en ligne <a class="openclassrooms" href="https://openclassrooms.com/fr/paths/59-developpeur-dapplication-php-symfony">OpenClassrooms</a> avec le parcours Développeur d'Application PHP.</p>
+            <p>J'ai pu acquérir, par la réalisation de projets web, une expérience solide sur différents langages et technologies utilisées dans le milieu du développement. </p>
+            <p>J'applique une grande attention particulière sur le Responsive Design, l'accessibilité et le référencement naturel (SEO).</p>
+            <p>Par une veille technologique quotidienne, je me tiens informé des nouveaux outils, des bonnes pratiques du web, afin d'étoffé mes connaissances et ainsi rester dans les tendances du moment. Dans ce monde qui est en perpétuel évolution.</p>
+            <a class="download" href="../public/download/CV.pdf">Télécharger mon CV</a>
+            <img src="../public/img/icons/right_quote.png" alt="" />
+        </div>
+
+        <hr class="line">
+
+        <div class="container tools-dev">
+            <h2>Mes outils de développement</h2>
+            <div class="container-tools-dev">
+                <img src="../public/img/icons/html5.png" alt="HTML5" />
+                <img src="../public/img/icons/css3.png" alt="CSS3" />
+                <img src="../public/img/icons/sass.png" alt="SASS" />
+                <img src="../public/img/icons/jquery.png" alt="jQuery" />
+                <img src="../public/img/icons/php.png" alt="PHP" />
+                <img src="../public/img/icons/mysql.png" alt="MySQL" />
+            </div>
+        </div>
+
+        <hr class="line">
+
+        <div class="container tools-open-source">
+            <h2>Mes outils open source</h2>
+            <div class="container-tools-open-source">
+                <div class="tools wordpress">
+                    <img src="../public/img/icons/wordpress.png" alt="WordPress" />
+                    <p>Wordpress est un CMS, c'est à dire un gestionnaire de contenu.</p>
+                    <p>Il facilite la création et l'administration de site web, en permettant à l'utilisateur d'être autonome sur la gestion de son contenu, via son interface, très simple d'utilisation.</p>
+                </div>
+
+                <div class="tools symfony">
+                    <img src="../public/img/icons/symfony.png" alt="Symfony" />
+                    <p>Symfony est un framework PHP.</p>
+                    <p>C'est une sorte de boîte à outils, qui propose des fonctionnalités pour faciliter, accélérer et même automatiser certaines partie du travail. Cela évite de réinventer la roue à chaque projet.</p>
+                    <p>Ce type de solution est particulièrement adaptée pour les applications nécessitant d'importants développements.</p>
+                </div>
+
+                <div class="tools git">
+                    <img src="../public/img/icons/git.png" alt="Git" />
+                    <p>Git est un système de contrôle de version décentralisé. </p>
+                    <p>Il permet de hierarchisé le développement d'une application et rend possible la vérification du code au fur et à mesure de sa conception.</p>
+                    <p>Il permet également de travailler à plusieurs sur un même projet.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 {% endblock %}

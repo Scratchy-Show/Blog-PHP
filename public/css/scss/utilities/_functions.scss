@@ -1,0 +1,13 @@
+// Headings
+@function headings($from:1, $to:6) {
+    @if $from == $to {
+        @return 'h#{$from}';
+    } @else {
+        @return 'h#{$from},' + headings($from+1, $to);
+    }
+}
+
+// For mixin fluid-type
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}

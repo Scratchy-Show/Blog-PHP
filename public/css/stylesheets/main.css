@@ -1,0 +1,572 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap");
+/* line 1, ../scss/base/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* line 21, ../scss/base/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 26, ../scss/base/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 30, ../scss/base/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 34, ../scss/base/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 38, ../scss/base/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 6, ../scss/base/_fonts.scss */
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: normal;
+}
+/* line 10, ../scss/base/_fonts.scss */
+body h1 {
+  font-weight: 800;
+}
+/* line 14, ../scss/base/_fonts.scss */
+body h2, body h3, body h4, body h5, body h6 {
+  font-weight: 600;
+}
+
+/* breakpoint */
+/* Font size */
+/* line 48, ../scss/utilities/_mixins.scss */
+html {
+  font-size: 16px;
+}
+@media screen and (min-width: 240px) {
+  /* line 48, ../scss/utilities/_mixins.scss */
+  html {
+    font-size: calc(16px + 6 * ((100vw - 240px) / 980));
+  }
+}
+@media screen and (min-width: 1220px) {
+  /* line 48, ../scss/utilities/_mixins.scss */
+  html {
+    font-size: 22px;
+  }
+}
+/* line 4, ../scss/layout/_base.scss */
+html body {
+  margin: auto;
+}
+@media (min-width: 740px) {
+  /* line 4, ../scss/layout/_base.scss */
+  html body {
+    width: 95%;
+  }
+}
+@media (min-width: 980px) {
+  /* line 4, ../scss/layout/_base.scss */
+  html body {
+    width: 90%;
+  }
+}
+@media (min-width: 1220px) {
+  /* line 4, ../scss/layout/_base.scss */
+  html body {
+    width: 85%;
+  }
+}
+/* line 20, ../scss/layout/_base.scss */
+html body h1, html body h2, html body h3, html body h4, html body h5, html body h6 {
+  padding: 20px 0 20px 0;
+}
+/* line 26, ../scss/layout/_base.scss */
+html body h1 {
+  font-size: 43px;
+}
+/* line 26, ../scss/layout/_base.scss */
+html body h2 {
+  font-size: 38px;
+}
+/* line 26, ../scss/layout/_base.scss */
+html body h3 {
+  font-size: 33px;
+}
+/* line 26, ../scss/layout/_base.scss */
+html body h4 {
+  font-size: 28px;
+}
+/* line 26, ../scss/layout/_base.scss */
+html body h5 {
+  font-size: 23px;
+}
+/* line 26, ../scss/layout/_base.scss */
+html body h6 {
+  font-size: 18px;
+}
+/* line 33, ../scss/layout/_base.scss */
+html body #body-container .back-to-top {
+  position: fixed;
+  right: 1%;
+  bottom: -7.5%;
+  height: 15px;
+  width: 40px;
+  font-size: 10px;
+  font-weight: bold;
+  color: transparent;
+  opacity: 0.5;
+  z-index: 3;
+  visibility: hidden;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+  background-color: #7fd7f7;
+}
+/* line 51, ../scss/layout/_base.scss */
+html body #body-container .back-to-top:hover, html body #body-container .back-to-top:focus {
+  opacity: 1;
+  text-decoration: none;
+}
+/* line 57, ../scss/layout/_base.scss */
+html body #body-container .back-to-top:focus {
+  outline: thin dotted;
+}
+/* line 62, ../scss/layout/_base.scss */
+html body #body-container .back-to-top::before,
+html body #body-container .back-to-top::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top: 0;
+}
+/* line 73, ../scss/layout/_base.scss */
+html body #body-container .back-to-top::before {
+  top: -20px;
+  z-index: 4;
+  border-bottom: 20px solid #7fd7f7;
+}
+/* line 79, ../scss/layout/_base.scss */
+html body #body-container .back-to-top::after {
+  bottom: 0;
+  z-index: 5;
+  border-bottom: 20px solid #00afef;
+}
+/* line 85, ../scss/layout/_base.scss */
+html body #body-container .back-to-top:hover,
+html body #body-container .back-to-top:focus {
+  height: 40px;
+  color: white;
+}
+/* line 91, ../scss/layout/_base.scss */
+html body #body-container .show-back-to-top {
+  display: block;
+  bottom: 1.25%;
+  visibility: visible;
+}
+
+/* line 3, ../scss/layout/_header.scss */
+#header .header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  padding: 35px;
+}
+/* line 10, ../scss/layout/_header.scss */
+#header .header-container #logo {
+  align-self: center;
+}
+/* line 13, ../scss/layout/_header.scss */
+#header .header-container #logo img {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+}
+/* line 21, ../scss/layout/_header.scss */
+#header #title {
+  text-align: center;
+}
+/* line 24, ../scss/layout/_header.scss */
+#header #title h1 {
+  color: #00afef;
+}
+/* line 28, ../scss/layout/_header.scss */
+#header #title .separation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 33, ../scss/layout/_header.scss */
+#header #title .separation .line {
+  width: 25%;
+  height: 2px;
+  margin: 0;
+  background-color: #00afef;
+  border: none;
+}
+/* line 41, ../scss/layout/_header.scss */
+#header #title .separation img {
+  width: 50px;
+  height: 50px;
+  padding: 0 15px 0 15px;
+}
+/* line 48, ../scss/layout/_header.scss */
+#header #title h2 {
+  color: black;
+}
+
+/* line 1, ../scss/layout/_navigation.scss */
+.navigation-header {
+  display: flex;
+  align-items: center;
+}
+/* line 5, ../scss/layout/_navigation.scss */
+.navigation-header nav {
+  width: 100%;
+}
+/* line 8, ../scss/layout/_navigation.scss */
+.navigation-header nav ul {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+}
+/* line 13, ../scss/layout/_navigation.scss */
+.navigation-header nav ul li {
+  list-style: none;
+}
+/* line 16, ../scss/layout/_navigation.scss */
+.navigation-header nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #00afef;
+  color: white;
+}
+/* line 23, ../scss/layout/_navigation.scss */
+.navigation-header nav ul li a:hover {
+  border: 2px solid #00afef;
+  background-color: white;
+  color: #00afef;
+}
+
+/* line 3, ../scss/pages/_index.scss */
+.main-container h2 {
+  color: #00afef;
+  text-align: center;
+}
+/* line 8, ../scss/pages/_index.scss */
+.main-container .line {
+  width: 75%;
+  height: 2px;
+  margin: auto;
+  background-color: #00afef;
+  border: none;
+}
+/* line 16, ../scss/pages/_index.scss */
+.main-container .banniere {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0 10px 0;
+}
+/* line 21, ../scss/pages/_index.scss */
+.main-container .banniere img {
+  max-height: 1150px;
+  max-width: 100%;
+}
+/* line 27, ../scss/pages/_index.scss */
+.main-container .last-posts, .main-container .about, .main-container .tools-dev, .main-container .tools-open-source {
+  margin: 25px 0;
+}
+/* line 31, ../scss/pages/_index.scss */
+.main-container .container-posts {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 20px 0 20px;
+}
+/* line 36, ../scss/pages/_index.scss */
+.main-container .container-posts .post {
+  position: relative;
+}
+/* line 39, ../scss/pages/_index.scss */
+.main-container .container-posts .post:hover figcaption {
+  opacity: 1;
+}
+/* line 43, ../scss/pages/_index.scss */
+.main-container .container-posts .post img {
+  max-height: 30vh;
+  max-width: 26vw;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+/* line 50, ../scss/pages/_index.scss */
+.main-container .container-posts .post figcaption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 5px;
+  left: 0;
+  height: 93.5%;
+  opacity: 0;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+/* line 62, ../scss/pages/_index.scss */
+.main-container .container-posts .post figcaption .figcaption-header {
+  text-align: center;
+}
+/* line 65, ../scss/pages/_index.scss */
+.main-container .container-posts .post figcaption .figcaption-header h3 {
+  margin-top: 15px;
+  padding: 5px 0;
+  font-size: 22px;
+}
+/* line 71, ../scss/pages/_index.scss */
+.main-container .container-posts .post figcaption .figcaption-header .date {
+  margin-bottom: 20px;
+  font-style: italic;
+  font-size: 18px;
+}
+/* line 80, ../scss/pages/_index.scss */
+.main-container .container-posts .post figcaption p {
+  width: 80%;
+  margin: auto;
+}
+/* line 85, ../scss/pages/_index.scss */
+.main-container .container-posts .post figcaption a {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 15px;
+  text-decoration: none;
+  color: white;
+}
+/* line 93, ../scss/pages/_index.scss */
+.main-container .container-posts .post figcaption a:hover {
+  color: #00afef;
+}
+/* line 101, ../scss/pages/_index.scss */
+.main-container .link-portfolio {
+  display: flex;
+  justify-content: flex-end;
+}
+/* line 105, ../scss/pages/_index.scss */
+.main-container .link-portfolio a {
+  margin-right: 20px;
+  padding: 20px;
+  text-decoration: none;
+  border: 2px solid #00afef;
+  border-radius: 25px;
+  color: white;
+  background-color: #00afef;
+}
+/* line 114, ../scss/pages/_index.scss */
+.main-container .link-portfolio a:hover {
+  color: #00afef;
+  background-color: white;
+}
+/* line 122, ../scss/pages/_index.scss */
+.main-container .about {
+  display: flex;
+  flex-direction: column;
+}
+/* line 126, ../scss/pages/_index.scss */
+.main-container .about img {
+  width: 50px;
+  height: 50px;
+  padding-left: 10px;
+}
+/* line 131, ../scss/pages/_index.scss */
+.main-container .about img:last-child {
+  align-self: flex-end;
+  padding: 0 10px 25px 0;
+}
+/* line 137, ../scss/pages/_index.scss */
+.main-container .about p {
+  width: 80%;
+  margin: auto;
+  padding-bottom: 10px;
+}
+/* line 143, ../scss/pages/_index.scss */
+.main-container .about a {
+  text-decoration: none;
+}
+/* line 147, ../scss/pages/_index.scss */
+.main-container .about .openclassrooms {
+  color: #00afef;
+}
+/* line 150, ../scss/pages/_index.scss */
+.main-container .about .openclassrooms:hover {
+  text-decoration: underline solid #00afef;
+}
+/* line 155, ../scss/pages/_index.scss */
+.main-container .about .download {
+  align-self: center;
+  width: fit-content;
+  padding: 20px;
+  margin: 15px 0;
+  border: 2px solid #00afef;
+  border-radius: 25px;
+  color: white;
+  background-color: #00afef;
+}
+/* line 165, ../scss/pages/_index.scss */
+.main-container .about .download:hover {
+  color: #00afef;
+  background-color: white;
+}
+/* line 172, ../scss/pages/_index.scss */
+.main-container .container-tools-dev {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+}
+/* line 177, ../scss/pages/_index.scss */
+.main-container .container-tools-dev img {
+  max-width: 100px;
+  max-height: 100px;
+  min-width: 50px;
+  min-height: 50px;
+  padding: 10px;
+}
+/* line 186, ../scss/pages/_index.scss */
+.main-container .container-tools-open-source {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+/* line 191, ../scss/pages/_index.scss */
+.main-container .container-tools-open-source img {
+  width: 50px;
+  height: 50px;
+  padding: 10px 0;
+}
+/* line 197, ../scss/pages/_index.scss */
+.main-container .container-tools-open-source p {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 20px;
+  text-align: left;
+  color: white;
+}
+/* line 205, ../scss/pages/_index.scss */
+.main-container .container-tools-open-source .tools {
+  width: 33%;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+/* line 212, ../scss/pages/_index.scss */
+.main-container .container-tools-open-source .wordpress {
+  background-color: #0073aa;
+}
+/* line 216, ../scss/pages/_index.scss */
+.main-container .container-tools-open-source .symfony {
+  background-color: black;
+}
+/* line 220, ../scss/pages/_index.scss */
+.main-container .container-tools-open-source .git {
+  background-color: #f44d27;
+}
+
+/* line 1, ../scss/layout/_footer.scss */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00afef;
+}
+/* line 7, ../scss/layout/_footer.scss */
+footer h2 {
+  color: white;
+}
+/* line 11, ../scss/layout/_footer.scss */
+footer img {
+  width: 25px;
+  height: 25px;
+}
+/* line 16, ../scss/layout/_footer.scss */
+footer a {
+  text-decoration: none;
+  color: white;
+}
+/* line 21, ../scss/layout/_footer.scss */
+footer .contact-footer {
+  margin: 10px 0 20px 0;
+}
+/* line 24, ../scss/layout/_footer.scss */
+footer .contact-footer p {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+}
+/* line 29, ../scss/layout/_footer.scss */
+footer .contact-footer p img {
+  margin-right: 5px;
+}
+/* line 33, ../scss/layout/_footer.scss */
+footer .contact-footer p a {
+  margin-left: 5px;
+}
+/* line 36, ../scss/layout/_footer.scss */
+footer .contact-footer p a:hover {
+  text-decoration: underline solid white;
+}
+/* line 43, ../scss/layout/_footer.scss */
+footer .copyright-footer {
+  display: flex;
+  width: 100%;
+  padding-bottom: 10px;
+}
+/* line 48, ../scss/layout/_footer.scss */
+footer .copyright-footer:before {
+  content: "";
+  width: 150px;
+  margin-right: auto;
+  margin-left: 15px;
+}
+/* line 55, ../scss/layout/_footer.scss */
+footer .copyright-footer .copyright {
+  display: flex;
+}
+/* line 58, ../scss/layout/_footer.scss */
+footer .copyright-footer .copyright p {
+  margin-left: 5px;
+  align-self: center;
+}
+/* line 64, ../scss/layout/_footer.scss */
+footer .copyright-footer .admin-footer {
+  width: 150px;
+  margin-right: 15px;
+  margin-left: auto;
+  align-self: center;
+  text-align: right;
+}
