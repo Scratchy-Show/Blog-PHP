@@ -5,55 +5,66 @@
 
 {% block body %}
     <div class="main-container">
-        <div class="banniere">
-            <img src="../public/img/banniere/home.jpg" alt="" />
+        <div class="banner">
+            <img src="../public/img/banner/home.jpg" alt="" />
         </div>
 
         <div class=" container last-posts">
             <h2>Dernières réalisations</h2>
             <div class="container-posts">
-                <figure class="post">
-                    <img src="../public/img/placeholder.jpg" alt="#" />
-                    <figcaption>
-                        <div class="figcaption-header">
-                            <h3>Titre</h3>
-                            <p class="date">23 Mars 2019</p>
-                        </div>
-                        <p>Texte court qui résume le blog qui va être développé.</p>
-                        <a href="#">Post</a>
-                    </figcaption>
-                </figure>
 
-                <figure class="post">
-                    <img src="../public/img/placeholder.jpg" alt="#" />
-                    <figcaption>
-                        <div class="figcaption-header">
-                            <h3>Titre</h3>
-                            <p class="date">5 Mars 2019</p>
-                        </div>
-                        <p>Texte court qui résume le blog qui va être développé.</p>
-                        <a href="#">Post</a>
-                    </figcaption>
-                </figure>
+                <div class="grid">
+                    <figure>
+                        <img class="img-figure" src="../public/img/placeholder.jpg" alt="#" />
+                        <figcaption>
+                            <div class="blur"></div>
+                            <div class="text">
+                                <h3>Titre</h3>
+                                <p class="date">23 Mars 2019</p>
+                                <p class="description">Texte court qui résume le blog qui va être développé.</p>
+                            </div>
+                            <a href="#"><img class="icon-view" src="../public/img/icons/view.png" alt="" /></a>
+                        </figcaption>
+                    </figure>
+                </div>
 
-                <figure class="post">
-                    <img src="../public/img/placeholder.jpg" alt="#" />
-                    <figcaption>
-                        <div class="figcaption-header">
-                            <h3>Titre</h3>
-                            <p class="date">18 Février 2019</p>
-                        </div>
-                        <p>Texte court qui résume le blog qui va être développé.</p>
-                        <a href="#">Post</a>
-                    </figcaption>
-                </figure>
+                <div class="grid">
+                    <figure>
+                        <img class="img-figure" src="../public/img/placeholder.jpg" alt="#" />
+                        <figcaption>
+                            <div class="blur"></div>
+                            <div class="text">
+                                <h3>Titre</h3>
+                                <p class="date">5 Mars 2019</p>
+                                <p class="description">Texte court qui résume le blog qui va être développé.</p>
+                            </div>
+                            <a href="#"><img class="icon-view" src="../public/img/icons/view.png" alt="" /></a>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="grid">
+                    <figure>
+                        <img class="img-figure" src="../public/img/placeholder.jpg" alt="#" />
+                        <figcaption>
+                            <div class="blur"></div>
+                            <div class="text">
+                                <h3>Titre</h3>
+                                <p class="date">18 Février 2019</p>
+                                <p class="description">Texte court qui résume le blog qui va être développé.</p>
+                            </div>
+                            <a href="#"><img class="icon-view" src="../public/img/icons/view.png" alt="" /></a>
+                        </figcaption>
+                    </figure>
+                </div>
+
             </div>
-            <div class="link-portfolio">
+            <div class="portfolio-link">
                 <a href="#">Portfolio</a>
             </div>
         </div>
 
-        <div class="container about">
+        <div class="about">
             <h2>A propos</h2>
             <img src="../public/img/icons/left_quote.png" alt="">
             <p>Diplomé en tant que Développeur Web Junior, je poursuis ma formation au près de l'école en ligne <a class="openclassrooms" href="https://openclassrooms.com/fr/paths/59-developpeur-dapplication-php-symfony">OpenClassrooms</a> avec le parcours Développeur d'Application PHP.</p>

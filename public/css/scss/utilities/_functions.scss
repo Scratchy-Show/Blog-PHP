@@ -1,4 +1,4 @@
-// Headings
+// To apply styles to all of the 6 standardised HTML headings
 @function headings($from:1, $to:6) {
     @if $from == $to {
         @return 'h#{$from}';
@@ -7,7 +7,7 @@
     }
 }
 
-// For mixin fluid-type
+// For mixin fluid-type of font size
 @function strip-unit($value) {
     @return $value / ($value * 0 + 1);
 }

@@ -1,19 +1,20 @@
 html {
+    // Mixin pour une typographie fluide
     @include fluid-type($mobile, $desktops, $min_font, $max_font);
 
     body {
         margin: auto;
 
         @include tablets {
-            width: 95%;
+           // width: 95%;
         }
 
         @include laptops {
-            width: 90%;
+           // width: 90%;
         }
 
         @include desktops {
-            width: 85%;
+           // width: 85%;
         }
 
         // Function headings
@@ -21,7 +22,7 @@ html {
             padding: 20px 0 20px 0;
         }
 
-        // Font size headings
+        // Loop for headings font size
         @for $i from 1 through 6 {
             h#{$i} {
                 font-size: $base-font-size + $heading-scale * (6 - $i);
