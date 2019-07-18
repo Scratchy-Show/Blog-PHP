@@ -4,31 +4,21 @@ html {
 
     body {
         margin: auto;
-
-        @include tablets {
-           // width: 95%;
-        }
-
-        @include laptops {
-           // width: 90%;
-        }
-
-        @include desktops {
-           // width: 85%;
-        }
+        min-width: 230px;
 
         // Function headings
         #{headings(1,6)} {
-            padding: 20px 0 20px 0;
+            padding: 20px 5px;
         }
 
-        // Loop for headings font size
+        // Boucle pour la taille de la police des titres
         @for $i from 1 through 6 {
             h#{$i} {
                 font-size: $base-font-size + $heading-scale * (6 - $i);
             }
         }
 
+        // Bouton retour vers le haut
         #body-container {
 
             .back-to-top {
@@ -37,6 +27,7 @@ html {
                 bottom: -7.5%;
                 height: 15px;
                 width: 40px;
+                margin-bottom: 35px;
                 font-size: 10px;
                 font-weight: bold;
                 color: transparent;

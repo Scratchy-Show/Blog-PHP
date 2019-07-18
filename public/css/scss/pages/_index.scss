@@ -16,26 +16,43 @@
     .banner {
         display: flex;
         justify-content: center;
+        max-height: 1500px;
         padding: 25px 0 10px 0;
 
         img {
-            max-height: 1150px;
+            max-height: 100%;
             max-width: 100%;
         }
     }
 
     .last-posts, .about, .tools-dev, .tools-open-source {
-        margin: 25px 0;
+       margin: 25px 0;
+    }
+
+    .container-posts, .about, .container-tools-dev, .container-tools-open-source {
+        width: 80%;
+        margin: auto;
     }
 
     .container-posts {
         display: flex;
         justify-content: space-around;
-        margin: 20px 20px 0 20px;
+        margin-top: 20px;
+
+        @include laptops{
+            flex-direction: column;
+            width: 100%;
+        }
 
         .grid {
-            padding: 1em 0 4em;
+            padding: 15px 0 65px;
             max-width: 1000px;
+
+            @include laptops{
+                max-width: 50%;
+                margin: auto;
+                padding-bottom: 25px;
+            }
 
             figure {
                 position: relative;
@@ -51,6 +68,11 @@
                     max-width: 26vw;
                     border-radius: 5px;
                     float: left;
+
+                    @include laptops{
+                        max-height: 40vh;
+                        max-width: 46vw;
+                    }
                 }
 
                 figcaption {
@@ -112,7 +134,7 @@
 
     .portfolio-link {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
 
         a {
             @include slide-link;
@@ -123,24 +145,40 @@
         display: flex;
         flex-direction: column;
 
+        @include tablets {
+            width: 90%;
+        }
+
+        @include phablets {
+            width: 100%;
+        }
+
         img {
             width: 50px;
             height: 50px;
-            padding-left: 10px;
+            padding: 15px;
+        }
 
-            &:last-child {
-                align-self: flex-end;
-                padding: 0 10px 25px 0;
-            }
+        .left-quote {
+            align-self: flex-start;
         }
 
         p {
-            width: 80%;
+            width: 90%;
             margin: auto;
             padding-bottom: 10px;
+
+            @include tablets {
+                width: 80%;
+            }
+        }
+
+        .right-quote {
+            align-self: flex-end;
         }
 
         a {
+            margin: 25px 0;
             text-decoration: none;
         }
 
@@ -164,11 +202,31 @@
         justify-content: center;
         padding: 25px 0;
 
+        @include desktops {
+            flex-direction: column;
+        }
+
+        .first-tools {
+            @include desktops {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+        }
+
+        .second-tools {
+            @include desktops {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+        }
+
         img {
-            max-width:  100px;
-            max-height: 100px;
-            min-width:  50px;
-            min-height: 50px;
+            max-width:  150px;
+            max-height: 150px;
+            min-width:  70px;
+            min-height: 70px;
             padding: 10px;
         }
     }
@@ -177,6 +235,10 @@
         display: flex;
         justify-content: space-around;
         margin-top: 15px;
+
+        @include tablets {
+            flex-direction: column;
+        }
 
         img {
             width: 50px;
@@ -197,6 +259,14 @@
             margin: 10px;
             padding: 10px;
             text-align: center;
+        }
+
+        .wordpress, .symfony, .git {
+            @include tablets {
+                width: 95%;
+                margin: auto;
+                margin-bottom: 20px;
+            }
         }
 
         .wordpress {

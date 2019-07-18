@@ -3,42 +3,49 @@
 
 // Mobile devices
 @mixin mobile {
-    @media (min-width: #{$mobile}) {
+    @media (max-width: #{$mobile}) {
         @content;
     }
 }
 
 // Phablets devices
 @mixin phablets {
-    @media (min-width: #{$phablets}) {
+    @media (max-width: #{$phablets}) {
         @content;
     }
 }
 
 // Tablets devices
 @mixin tablets {
-    @media (min-width: #{$tablets}) {
+    @media (max-width: #{$tablets}) {
         @content;
     }
 }
 
 // Laptops devices
 @mixin laptops {
-    @media (min-width: #{$laptops}) {
+    @media (max-width: #{$laptops}) {
         @content;
     }
 }
 
 // Desktops devices
 @mixin desktops {
-    @media (min-width: #{$desktops}) {
+    @media (max-width: #{$desktops}) {
+        @content;
+    }
+}
+
+// Custom devices
+@mixin custom($screen) {
+    @media (min-width: $screen+'px') {
         @content;
     }
 }
 
 
 
-/* Font size */
+/* Taille de la police */
 
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
     $u1: unit($min-vw);
@@ -61,9 +68,9 @@
 
 
 
-/* Home Page */
+/* Page d'Accueil */
 
-// Portfolio link and download link
+// Lien du Portfolio et lien pour télécharger le CV
 
 @mixin slide-link {
     padding: 20px;

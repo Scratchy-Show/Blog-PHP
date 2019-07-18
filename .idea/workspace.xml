@@ -3,17 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="a929be76-66f9-4666-9cf1-edabae3683df" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/scss/base/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/base/_fonts.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/scss/layout/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/layout/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/scss/layout/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/layout/_footer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/scss/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/layout/_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/scss/layout/_navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/layout/_navigation.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/scss/pages/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/pages/_index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/scss/utilities/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/utilities/_functions.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/scss/utilities/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/utilities/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/scss/utilities/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/utilities/_variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/stylesheets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/stylesheets/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/banniere/home.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/back_to_top.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/back_to_top.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,44 +29,7 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_base.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_header.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_navigation.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/utilities/_variables.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -84,11 +47,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/css/config.rb" />
-        <option value="$PROJECT_DIR$/views/twig.php" />
         <option value="$PROJECT_DIR$/views/config.php" />
-        <option value="$PROJECT_DIR$/autoload_twig.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/views/main.css" />
         <option value="$PROJECT_DIR$/public/css/scss/base/main.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/base/fonts.scss" />
@@ -116,20 +75,28 @@
         <option value="$PROJECT_DIR$/public/css/scss/layout/_body.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/main.scss" />
         <option value="$PROJECT_DIR$/views/footer.html.twig" />
-        <option value="$PROJECT_DIR$/public/css/scss/layout/_footer.scss" />
         <option value="$PROJECT_DIR$/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/public/css/scss/layout/_header.scss" />
-        <option value="$PROJECT_DIR$/public/css/scss/base/_fonts.scss" />
         <option value="$PROJECT_DIR$/public/js/navigation.js" />
         <option value="$PROJECT_DIR$/public/js/back_to_top.js" />
-        <option value="$PROJECT_DIR$/public/css/scss/utilities/_mixins.scss" />
-        <option value="$PROJECT_DIR$/public/css/scss/utilities/_variables.scss" />
-        <option value="$PROJECT_DIR$/views/index.html.twig" />
-        <option value="$PROJECT_DIR$/public/css/scss/pages/_index.scss" />
-        <option value="$PROJECT_DIR$/public/css/scss/utilities/_functions.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/base/_reset.scss" />
         <option value="$PROJECT_DIR$/views/header.html.twig" />
+        <option value="$PROJECT_DIR$/system/autoload.php" />
+        <option value="$PROJECT_DIR$/system/autoload_twig.php" />
+        <option value="$PROJECT_DIR$/public/css/scss/base/_fonts.scss" />
+        <option value="$PROJECT_DIR$/public/css/scss/utilities/_functions.scss" />
+        <option value="$PROJECT_DIR$/public/css/scss/utilities/_variables.scss" />
+        <option value="$PROJECT_DIR$/public/css/scss/utilities/_mixins.scss" />
+        <option value="$PROJECT_DIR$/public/css/scss/layout/_header.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/layout/_navigation.scss" />
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/controllers/pageController.php" />
+        <option value="$PROJECT_DIR$/controllers/PageController.php" />
+        <option value="$PROJECT_DIR$/system/router.php" />
+        <option value="$PROJECT_DIR$/autoload_twig.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/views/index.html.twig" />
+        <option value="$PROJECT_DIR$/public/css/scss/pages/_index.scss" />
+        <option value="$PROJECT_DIR$/public/css/scss/layout/_footer.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/layout/_base.scss" />
       </list>
     </option>
@@ -143,7 +110,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2553" />
+    <option name="x" value="1273" />
     <option name="width" value="1294" />
     <option name="height" value="1407" />
   </component>
@@ -152,17 +119,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="My-first-blog-in-PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="My-first-blog-in-PHP" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -170,36 +126,16 @@
               <item name="My-first-blog-in-PHP" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\wamp64\www\My-first-blog-in-PHP" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
             <path>
-              <item name="My-first-blog-in-PHP" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\wamp64\www\My-first-blog-in-PHP" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="My-first-blog-in-PHP" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\wamp64\www\My-first-blog-in-PHP" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="My-first-blog-in-PHP" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\wamp64\www\My-first-blog-in-PHP" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="scss" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="My-first-blog-in-PHP" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\wamp64\www\My-first-blog-in-PHP" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="scss" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="layout" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="My-first-blog-in-PHP" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\wamp64\www\My-first-blog-in-PHP" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="My-first-blog-in-PHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="My-first-blog-in-PHP" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -266,16 +202,18 @@
       <workItem from="1562600538723" duration="8191000" />
       <workItem from="1563103510154" duration="13000" />
       <workItem from="1563103542062" duration="9000" />
+      <workItem from="1563446684074" duration="639000" />
+      <workItem from="1563447341253" duration="25420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145576000" />
+    <option name="totallyTimeSpent" value="171635000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2553" y="0" width="1294" height="1407" extended-state="0" />
+    <frame x="1273" y="0" width="1294" height="1407" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33387357" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3452188" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -324,47 +262,11 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.rb" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/config.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/main.css" />
-    <entry file="file://$PROJECT_DIR$/public/css/scss/style.css" />
-    <entry file="file://$PROJECT_DIR$/public/css/scss/layout/navigation.scss" />
-    <entry file="file://$PROJECT_DIR$/public/css/scss/base/reset.scss" />
-    <entry file="file://$PROJECT_DIR$/public/css/stylesheets/base/fonts.css" />
-    <entry file="file://$PROJECT_DIR$/public/css/scss/layout/header.scss" />
-    <entry file="file://$PROJECT_DIR$/public/css/style.css" />
-    <entry file="file://$PROJECT_DIR$/public/css/stylesheets/style.css" />
-    <entry file="file://$PROJECT_DIR$/public/css/stylesheets/layout/navigation.css" />
     <entry file="file://$PROJECT_DIR$/public/css/stylesheets/layout/_navigation.css" />
-    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/scss/helpers/_flexbox.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/scss/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/scss/helpers/_flexbox.scss" />
+    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/scss/style.scss" />
+    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/stylesheets/style.css" />
     <entry file="file://$PROJECT_DIR$/public/style.css" />
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/style.css" />
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor" />
@@ -376,21 +278,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/scss/layout/_viewBillet.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2412" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/scss/layout/_header.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 4 - Stud'Dance/Symfony 3.4/src/Studance/CoreBundle/Resources/public/css/scss/layout/_header.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/scss/layout/_viewBillet.scss" />
+    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/scss/layout/_header.scss" />
+    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 4 - Stud'Dance/Symfony 3.4/src/Studance/CoreBundle/Resources/public/css/scss/layout/_header.scss" />
     <entry file="file://$USER_HOME$/Downloads/reset-scss-2.0.4/reset-scss-2.0.4/reset.scss" />
     <entry file="file://$USER_HOME$/Downloads/reset-scss-2.0.4/reset-scss-2.0.4/_reset-src.scss" />
     <entry file="file://$PROJECT_DIR$/public/css/scss/layout/footer.sass" />
@@ -400,24 +290,10 @@
     <entry file="file://G:/Formation/My-first-blog-in-PHP/views/footer.html.twig" />
     <entry file="file://G:/Formation/My-first-blog-in-PHP/public/css/scss/layout/_footer.scss" />
     <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_body.scss" />
-    <entry file="file://$PROJECT_DIR$/views/footer.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.editorconfig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoload_twig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -449,48 +325,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/pages/_index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="17" lean-forward="true" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/utilities/_mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/utilities/_functions.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_footer.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/base/_fonts.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/scss/base/_reset.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -505,24 +339,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_base.scss">
+    <entry file="file://$PROJECT_DIR$/system/autoload_twig.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        <state relative-caret-position="136">
+          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_header.scss">
+    <entry file="file://$PROJECT_DIR$/autoload.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+        <state relative-caret-position="68">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/base/_fonts.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/utilities/_functions.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/stylesheets/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="604" column="34" lean-forward="true" selection-start-line="604" selection-start-column="34" selection-end-line="604" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Developpeur/002 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/paController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Developpeur/002 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/site/controleur/routeur.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/PageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoload_twig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="92" column="22" lean-forward="true" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/utilities/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/footer.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="1" lean-forward="true" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/pages/_index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_navigation.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/layout/_header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
         </state>
       </provider>
     </entry>
