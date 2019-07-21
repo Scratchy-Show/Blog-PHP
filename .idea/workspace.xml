@@ -3,18 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a929be76-66f9-4666-9cf1-edabae3683df" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoload_twig.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/scss/base/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/base/_fonts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/scss/layout/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/layout/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/scss/layout/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/layout/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/scss/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/layout/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/scss/layout/_navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/layout/_navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/scss/pages/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/pages/_index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/scss/utilities/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/utilities/_functions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/scss/utilities/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/utilities/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/scss/utilities/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/scss/utilities/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/stylesheets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/stylesheets/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/router.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +22,56 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/router.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/autoload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/PageController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <folding>
+                <element signature="e#40#61#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,7 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/config.php" />
         <option value="$PROJECT_DIR$/views/main.css" />
         <option value="$PROJECT_DIR$/public/css/scss/base/main.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/base/fonts.scss" />
@@ -80,7 +121,6 @@
         <option value="$PROJECT_DIR$/public/js/back_to_top.js" />
         <option value="$PROJECT_DIR$/public/css/scss/base/_reset.scss" />
         <option value="$PROJECT_DIR$/views/header.html.twig" />
-        <option value="$PROJECT_DIR$/system/autoload.php" />
         <option value="$PROJECT_DIR$/system/autoload_twig.php" />
         <option value="$PROJECT_DIR$/public/css/scss/base/_fonts.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/utilities/_functions.scss" />
@@ -88,16 +128,18 @@
         <option value="$PROJECT_DIR$/public/css/scss/utilities/_mixins.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/layout/_header.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/layout/_navigation.scss" />
-        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/controllers/pageController.php" />
-        <option value="$PROJECT_DIR$/controllers/PageController.php" />
-        <option value="$PROJECT_DIR$/system/router.php" />
-        <option value="$PROJECT_DIR$/autoload_twig.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/views/index.html.twig" />
         <option value="$PROJECT_DIR$/public/css/scss/pages/_index.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/layout/_footer.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/layout/_base.scss" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/autoload_twig.php" />
+        <option value="$PROJECT_DIR$/controllers/Twig.php" />
+        <option value="$PROJECT_DIR$/controllers/PageController.php" />
+        <option value="$PROJECT_DIR$/system/router.php" />
+        <option value="$PROJECT_DIR$/system/autoload.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
       </list>
     </option>
   </component>
@@ -110,7 +152,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1273" />
+    <option name="x" value="2553" />
     <option name="width" value="1294" />
     <option name="height" value="1407" />
   </component>
@@ -119,6 +161,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="My-first-blog-in-PHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="My-first-blog-in-PHP" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -126,16 +179,15 @@
               <item name="My-first-blog-in-PHP" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\wamp64\www\My-first-blog-in-PHP" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="My-first-blog-in-PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="My-first-blog-in-PHP" type="462c0819:PsiDirectoryNode" />
+              <item name="My-first-blog-in-PHP" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\wamp64\www\My-first-blog-in-PHP" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="My-first-blog-in-PHP" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\wamp64\www\My-first-blog-in-PHP" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="system" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -204,16 +256,18 @@
       <workItem from="1563103542062" duration="9000" />
       <workItem from="1563446684074" duration="639000" />
       <workItem from="1563447341253" duration="25420000" />
+      <workItem from="1563716676248" duration="8786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171635000" />
+    <option name="totallyTimeSpent" value="180421000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1273" y="0" width="1294" height="1407" extended-state="0" />
+    <frame x="2553" y="0" width="1294" height="1407" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3452188" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3508914" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -262,8 +316,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.rb" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/css/stylesheets/layout/_navigation.css" />
-    <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/scss/helpers/_flexbox.scss" />
     <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/scss/style.scss" />
     <entry file="file://$USER_HOME$/Documents/Developpeur/003 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/Projet4/contenu/css/stylesheets/style.css" />
     <entry file="file://$PROJECT_DIR$/public/style.css" />
@@ -339,23 +391,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/autoload_twig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoload.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/system/autoload_twig.php" />
+    <entry file="file://$PROJECT_DIR$/autoload.php" />
+    <entry file="file://$PROJECT_DIR$/controllers/index.php" />
     <entry file="file://$PROJECT_DIR$/public/css/scss/base/_fonts.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -384,57 +422,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/paController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/paController.php" />
     <entry file="file://$USER_HOME$/Documents/Developpeur/002 - Projets OC en ligne/Projet 3 - Créez un blog pour un écrivain/site/controleur/routeur.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/PageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoload_twig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -496,6 +486,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/Twig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoload_twig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/PageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
     </entry>

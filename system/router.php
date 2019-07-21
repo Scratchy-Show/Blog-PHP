@@ -1,15 +1,14 @@
 <?php
 
-require_once __DIR__ . '../autoload_twig.php';
-require_once __DIR__ . '../vendor/autoload.php';
 require_once __DIR__ . '/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use \Controllers\PageController;
 
-if ($_GET['action'] ==  "/") {
-    $home = new PageController();
-    $home->index();
+if (isset($_GET['action'])) {
+    echo 'OK';
 }
 else {
-    echo 'Erreur';
+    $home = new PageController();
+    $home->index();
 }
