@@ -1,2 +1,24 @@
-#Options +FollowSymlinks     # Indique au serveur qu'il diot suivre les liens symboliques de réécriture
-RewriteEngine On            # Active le module de réécriture
+# Suivi des liens symboliques
+# Options +FollowSymlinks
+
+# Active le module de redirection
+RewriteEngine On
+
+# Accès aux fichiers CSS, JPG, PNG, JS et PDF en étant insensible à la casse [NC]
+RewriteRule  ^.*\.css$  -  [NC,L]
+RewriteRule  ^.*\.jpg$  -  [NC,L]
+RewriteRule  ^.*\.png$  -  [NC,L]
+RewriteRule  ^.*\.js$   -  [NC,L]
+RewriteRule  ^.*\.pdf$  -  [NC,L]
+
+# Redirige chaque requête vers router.php
+RewriteRule ^.*$ system/router.php
+
+# Empêche le listage des répertoires
+IndexIgnore *
+
+# Masque les informations du serveur
+ServerSignature Off
+
+# Encodage par défaut des fichiers textes et HTML
+AddDefaultCharset UTF-8

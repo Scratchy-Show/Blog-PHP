@@ -1,7 +1,7 @@
 /vendor/
 
-/.editorconfig/
+/.editorconfig
 
 /.idea/
 
-/browserconfig.xml/
+/browserconfig.xml
