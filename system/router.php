@@ -14,6 +14,11 @@ try {
         $home = new PageController();
         $home->index();
     }
+    elseif ($path_only == '/login')
+    {
+        $login = new PageController();
+        $login->login();
+    }
     else {
         // Erreur gérée, elle sera remontée jusqu'au bloc try
         throw new Exception('Page non trouvée.');
