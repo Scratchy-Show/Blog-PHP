@@ -1,10 +1,14 @@
 html {
     // Mixin pour une typographie fluide
     @include fluid-type($mobile, $desktops, $min_font, $max_font);
+    // Pour fixer le footer
+    height: 100%;
 
     body {
+        position: relative; // Pour fixer le footer
         margin: auto;
         min-width: 230px;
+        min-height: 100%; // Pour fixer le footer
 
         // Function headings
         #{headings(1,6)} {

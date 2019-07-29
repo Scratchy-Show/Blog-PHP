@@ -3,5 +3,25 @@
 {% block title %}Identification{% endblock %}
 
 {% block body %}
+    <div class="login-main-container">
+        <h2>Identification</h2>
 
+        <div class="form-container">
+            <form method="post" action="#">
+                <div class="login-input">
+                    <input id="login" type="text" name="login" required="required" />
+                    <span class="border"></span>
+                    <label for="login">Login</label>
+                </div>
+                <div class="login-input">
+                    <input id="password" type="password" name="password" required="required" />
+                    <span class="border"></span>
+                    <label for="password">Mot de passe</label>
+                </div>
+                <input class="submit" type="submit" value="Se connecter" />
+            </form>
+        </div>
+    </div>
 {% endblock %}
+
+

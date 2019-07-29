@@ -1,7 +1,6 @@
 @import "base/reset.scss";
 @import "base/fonts.scss";
 
-
 @import "utilities/variables.scss";
 @import "utilities/mixins.scss";
 @import "utilities/functions.scss";
@@ -9,6 +8,7 @@
 @import "layout/base.scss";
 @import "layout/header.scss";
 @import "layout/navigation.scss";
-@import "pages/index.scss";
 @import "layout/footer.scss";
 
+@import "pages/index.scss";
+@import "pages/login.scss";
