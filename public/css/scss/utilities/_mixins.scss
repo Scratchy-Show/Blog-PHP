@@ -1,0 +1,116 @@
+/* Breakpoint */
+
+
+// Mobile devices
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+// Phablets devices
+@mixin phablets {
+    @media (max-width: #{$phablets}) {
+        @content;
+    }
+}
+
+// Tablets devices
+@mixin tablets {
+    @media (max-width: #{$tablets}) {
+        @content;
+    }
+}
+
+// Laptops devices
+@mixin laptops {
+    @media (max-width: #{$laptops}) {
+        @content;
+    }
+}
+
+// Desktops devices
+@mixin desktops {
+    @media (max-width: #{$desktops}) {
+        @content;
+    }
+}
+
+// Custom devices
+@mixin custom($screen) {
+    @media (min-width: $screen+'px') {
+        @content;
+    }
+}
+
+
+
+/* Taille de la police */
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}
+
+
+
+/* Page d'Accueil */
+
+// Lien du Portfolio et lien pour télécharger le CV
+
+@mixin slide-link {
+    padding: 20px;
+    border: 1px solid $blue;
+    border-radius: 15px;
+    text-decoration: none;
+    color: $blue;
+    transition: color 0.5s  ease-in-out;
+
+    &:after {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        background: $blue;
+        transition: width 0.5s ease-in-out;
+    }
+
+    &:hover {
+        color: $white;
+        transition: color 0.5s  ease-in-out;
+
+        &:after {
+            width: 100%;
+            transition: width 0.5s ease-in-out;
+        }
+    }
+
+    &:not(.ctrl) {
+        position: relative;
+        z-index: 10;
+        transition-delay: 0.2s;
+        overflow: hidden;
+
+        &:after, &:before {
+            position: absolute;
+            display: block;
+            content: "";
+            z-index: -10;
+        }
+    }
+}

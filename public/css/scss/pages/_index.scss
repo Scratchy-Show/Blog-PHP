@@ -1,0 +1,284 @@
+.main-container {
+
+    h2 {
+        color: $blue;
+        text-align: center;
+    }
+
+    .line {
+        width: 75%;
+        height: 2px;
+        margin: auto;
+        background-color: $blue;
+        border: none;
+    }
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        max-height: 1500px;
+        padding: 25px 0 10px 0;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .last-posts, .about, .tools-dev, .tools-open-source {
+       margin: 25px 0;
+    }
+
+    .container-posts, .about, .container-tools-dev, .container-tools-open-source {
+        width: 80%;
+        margin: auto;
+    }
+
+    .container-posts {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+
+        @include laptops{
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .grid {
+            padding: 15px 0 65px;
+            max-width: 1000px;
+
+            @include laptops{
+                max-width: 50%;
+                margin: auto;
+                padding-bottom: 25px;
+            }
+
+            figure {
+                position: relative;
+                overflow: hidden;
+                padding: 0;
+
+                &:hover figcaption {
+                    opacity: 1;
+                }
+
+                .img-figure {
+                    max-height: 30vh;
+                    max-width: 26vw;
+                    border-radius: 5px;
+                    float: left;
+
+                    @include laptops{
+                        max-height: 40vh;
+                        max-width: 46vw;
+                    }
+                }
+
+                figcaption {
+                    opacity: 0;
+                    -webkit-transition:all 0.45s ease-in-out;
+                    -moz-transition:all 0.45s ease-in-out;
+                    -o-transition:all 0.45s ease-in-out;
+                    transition:all 0.45s ease-in-out;
+
+                    .blur {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0,0,0,0.65);
+                    }
+
+                    .text {
+                        position: absolute;
+                        text-align: center;
+                        color: $white;
+
+                        h3 {
+                            margin-top: 15px;
+                            padding: 5px 0;
+                            font-size: 22px;
+                        }
+
+                        .date {
+                            margin-bottom: 20px;
+                            font: {
+                                style: italic;
+                                size: 18px;
+                            }
+                        }
+
+                        .description {
+                            width: 80%;
+                            margin: auto;
+                            margin-top: 25%;
+                        }
+                    }
+
+                    a {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        margin-right: 15px;
+                        text-decoration: none;
+
+                        .icon-view {
+                            height: 30px;
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .portfolio-link {
+        display: flex;
+        justify-content: center;
+
+        a {
+            @include slide-link;
+        }
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+
+        @include tablets {
+            width: 90%;
+        }
+
+        @include phablets {
+            width: 100%;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            padding: 15px;
+        }
+
+        .left-quote {
+            align-self: flex-start;
+        }
+
+        p {
+            width: 90%;
+            margin: auto;
+            padding-bottom: 10px;
+
+            @include tablets {
+                width: 80%;
+            }
+        }
+
+        .right-quote {
+            align-self: flex-end;
+        }
+
+        a {
+            margin: 25px 0;
+            text-decoration: none;
+        }
+
+        .openclassrooms {
+            color: $blue;
+
+            &:hover {
+                text-decoration: underline solid $blue;
+            }
+        }
+
+        .download {
+            align-self: center;
+            width: fit-content;
+            @include slide-link;
+        }
+    }
+
+    .container-tools-dev {
+        display: flex;
+        justify-content: center;
+        padding: 25px 0;
+
+        @include desktops {
+            flex-direction: column;
+        }
+
+        .first-tools {
+            @include desktops {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+        }
+
+        .second-tools {
+            @include desktops {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+        }
+
+        img {
+            max-width:  150px;
+            max-height: 150px;
+            min-width:  70px;
+            min-height: 70px;
+            padding: 10px;
+        }
+    }
+
+    .container-tools-open-source {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+
+        @include tablets {
+            flex-direction: column;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            padding: 10px 0;
+        }
+
+        p {
+            width: 90%;
+            margin: auto;
+            padding-bottom: 20px;
+            text-align: left;
+            color: $white;
+        }
+
+        .tools {
+            width: 33%;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .wordpress, .symfony, .git {
+            @include tablets {
+                width: 95%;
+                margin: auto;
+                margin-bottom: 20px;
+            }
+        }
+
+        .wordpress {
+            background-color: $blue-WP;
+        }
+
+        .symfony {
+            background-color: $black;
+        }
+
+        .git {
+            background-color: $orange;
+        }
+    }
+}

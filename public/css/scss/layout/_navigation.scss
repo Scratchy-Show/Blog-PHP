@@ -1,0 +1,174 @@
+.nav-container {
+    height: 150px;
+    background: $blue;
+
+    @include laptops {
+        height: 100px;
+    }
+
+    @include tablets {
+        background: none;
+    }
+
+    nav {
+        float: left;
+        width: 100%;
+        margin-bottom: 25px;
+
+        @include tablets {
+            display: flex;
+            justify-content: center;
+            padding: 70px 0 15px;
+        }
+
+        .nav-mobile {
+            display: none;
+
+            @include tablets {
+                display: block;
+                position: absolute;
+                top: 162px;
+                height: 70px;
+                width: 70px;
+                background: $blue;
+            }
+
+            #nav-toggle {
+                position: absolute;
+                left: 18px;
+                top: 22px;
+                padding: 10px 35px 16px 0;
+                cursor: pointer;
+
+                span,
+                span:before,
+                span:after {
+                    cursor: pointer;
+                    border-radius: 1px;
+                    height: 5px;
+                    width: 35px;
+                    background: $white;
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    transition: all 300ms ease-in-out;
+                }
+
+                span:before {
+                    top: -10px;
+                }
+
+                span:after {
+                    bottom: -10px;
+                }
+
+                &.active span {
+                    background-color: transparent;
+
+                    &:before,
+                    &:after {
+                        top: 0;
+                    }
+
+                    &:before {
+                        transform: rotate(45deg);
+                    }
+
+                    &:after {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            height: 150px;
+            width: 50%;
+            margin: auto;
+
+            @include laptops {
+                width: 100%;
+                height: 100px;
+            }
+
+            @include tablets {
+                display: none;
+                width: 100%;
+                height: auto;
+                margin-top: 5px;
+            }
+
+            // Affiche correctement le menu
+            @include custom(741) {
+                display: flex !important;
+            }
+
+
+            li {
+                align-self: center;
+
+                @include tablets {
+                    display: flex;
+                    justify-content: center;
+                    border-bottom: 1px solid $white;
+                    background-color: $blue;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $white;
+
+                    @include tablets {
+                        width: 100%;
+                        padding: 20px 0;
+                        font-size: 21px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                    }
+
+                    @include custom(741) {
+                        position: relative;
+                        display: block;
+                        padding: 10px;
+                        font-size: 35px;
+                        z-index: 10;
+                        transition: all .5s;
+
+                        &:hover {
+                            color: $blue;
+
+                            &:after {
+                                height: 100%;
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+
+                        &:after {
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            margin: auto;
+                            width: 100%;
+                            height: 1px;
+                            z-index: -10;
+                            border-radius: 10px;
+                            content: '.';
+                            color: transparent;
+                            background: $white;
+                            opacity: 0;
+                            transition: all .5s;
+                        }
+
+                        &:before {
+                            transition: all .5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

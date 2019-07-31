@@ -1,0 +1,13 @@
+// Applique des styles à l'ensemble des 6 niveaux de titres
+@function headings($from:1, $to:6) {
+    @if $from == $to {
+        @return 'h#{$from}';
+    } @else {
+        @return 'h#{$from},' + headings($from+1, $to);
+    }
+}
+
+// Fonction de la Mixin "fluid-type" concernant la taille de la police
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}

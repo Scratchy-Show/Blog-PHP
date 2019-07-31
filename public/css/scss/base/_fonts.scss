@@ -1,0 +1,9 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap');
+
+$font-Nunito: 'Nunito', sans-serif;
+
+body {
+    font-family: $font-Nunito;
+    font-weight: normal;
+}

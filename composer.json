@@ -1,0 +1,14 @@
+{
+    "name": "utilisateur/my-first-blog-in-php",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Couret Alexandre",
+            "email": "couretalexandredev@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "2.0",
+        "components/jquery": "3.*"
+    }
+}
