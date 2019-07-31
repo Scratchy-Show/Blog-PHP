@@ -18,11 +18,13 @@ class PageController
         // Instancie Twig
         $this->twig = new Twig_Environment($this->loader);
     }
+
     // Affiche la page d'Accueil
     public function index()
     {
         echo $this->twig->render('index.html.twig' );
     }
+
     // Affiche le page d'identification
     public function login()
     {
