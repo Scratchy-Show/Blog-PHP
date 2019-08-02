@@ -652,7 +652,7 @@ footer .copyright-footer .admin-footer {
 .index-main-container .last-posts .grid figure figcaption .text .description {
   width: 80%;
   margin: auto;
-  margin-top: 25%;
+  padding-top: 25%;
 }
 /* line 170, ../scss/pages/_index.scss */
 .index-main-container .last-posts .grid figure figcaption a {
@@ -890,19 +890,17 @@ footer .copyright-footer .admin-footer {
   /* line 317, ../scss/pages/_index.scss */
   .index-main-container .tools-open-source .wordpress, .index-main-container .tools-open-source .symfony, .index-main-container .tools-open-source .git {
     width: 95%;
-    margin: auto;
-    margin-bottom: 20px;
   }
 }
-/* line 325, ../scss/pages/_index.scss */
+/* line 323, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .wordpress {
   background-color: #0073aa;
 }
-/* line 329, ../scss/pages/_index.scss */
+/* line 327, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .symfony {
   background-color: black;
 }
-/* line 333, ../scss/pages/_index.scss */
+/* line 331, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .git {
   background-color: #f44d27;
 }

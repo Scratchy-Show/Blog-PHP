@@ -4,6 +4,7 @@ require_once __DIR__ . '/autoload.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use \Controllers\PageController;
+use \Controllers\AdminController;
 
 // Analyse l'URL récupèré par la superglobale $_SERVER et renvoie le chemin de l'URL analysée
 $path_only = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -16,7 +17,7 @@ try {
     }
     elseif ($path_only == '/login')
     {
-        $login = new PageController();
+        $login = new AdminController();
         $login->login();
     }
     else {

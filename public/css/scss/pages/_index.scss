@@ -163,7 +163,7 @@
                         .description {
                             width: 80%;
                             margin: auto;
-                            margin-top: 25%;
+                            padding-top: 25%;
                         }
                     }
 
@@ -317,8 +317,6 @@
         .wordpress, .symfony, .git {
             @include tablets {
                 width: 95%;
-                margin: auto;
-                margin-bottom: 20px;
             }
         }
 
