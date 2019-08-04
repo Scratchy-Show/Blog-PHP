@@ -3,20 +3,58 @@
 
 namespace Models;
 
-
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\Table;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Column;
 use PDO;
 use PDOException;
 
+/**
+ * @Entity
+ * @Table(name="User")
+ */
 class User
 {
-    // Seule la class parent et les class filles accéde à ces varaibles
+    /**
+     * @Id
+     * @GeneratedValue
+     * @Column(type="integer")
+     */
     protected $id;
+
+    /**
+     * @Column(type="string", name="last_name")
+     */
     protected $lastName;
+
+    /**
+     * @Column(type="string", name="first_name")
+     */
     protected $firstName;
+
+    /**
+     * @Column(type="string")
+     */
     protected $email;
-    protected $status;
+
+    /**
+     * @Column(type="boolean")
+     */
+    protected $role;
+
+    /**
+     * @Column(type="string")
+     */
     protected $login;
+
+    /**
+     * @Column(type="string")
+     */
     protected $password;
+
+
 
     public function __construct()
     {
@@ -65,9 +103,9 @@ class User
         return $this->email;
     }
 
-    public function getStatus()
+    public function getRole()
     {
-        return $this->status;
+        return $this->role;
     }
 
     public function getLogin()
@@ -82,11 +120,6 @@ class User
 
 
     ////// Setter //////
-
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     public function setLastName($lastName)
     {
@@ -103,9 +136,9 @@ class User
         $this->email = $email;
     }
 
-    public function setStatus($status)
+    public function setStatus($role)
     {
-        $this->status = $status;
+        $this->role = $role;
     }
 
     public function setLogin($login)

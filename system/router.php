@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/autoload.php';
+// Charge composer
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use \Controllers\PageController;
