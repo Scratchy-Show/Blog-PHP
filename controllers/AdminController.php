@@ -24,58 +24,16 @@ class AdminController extends Controller // Hérite de la class Controller
 
             // Si l'utilisateur est identifié il est redirigé sur la page d'administration
             if ($checkUser !== false ) {
-                try {
-                    echo $this->twig->render('admin.html.twig');
-                }
-                catch (Twig_Error_Loader $e)
-                {
-                    echo 'Erreur : ' . $e->getMessage();
-                }
-                catch (Twig_Error_Runtime $e)
-                {
-                    echo 'Erreur : ' . $e->getMessage();
-                }
-                catch (Twig_Error_Syntax $e)
-                {
-                    echo 'Erreur : ' . $e->getMessage();
-                }
+                echo $this->twig->render('admin.html.twig');
             }
             // Si l'utilisateur n'est pas identifié il est redirigé sur la page d'identification
             else {
-                try {
-                    echo $this->twig->render('login.html.twig');
-                }
-                catch (Twig_Error_Loader $e)
-                {
-                    echo 'Erreur : ' . $e->getMessage();
-                }
-                catch (Twig_Error_Runtime $e)
-                {
-                    echo 'Erreur : ' . $e->getMessage();
-                }
-                catch (Twig_Error_Syntax $e)
-                {
-                    echo 'Erreur : ' . $e->getMessage();
-                }
+                echo $this->twig->render('login.html.twig');
             }
         }
         else {
             // Affiche le page d'identification
-            try {
-                echo $this->twig->render('login.html.twig');
-            }
-            catch (Twig_Error_Loader $e)
-            {
-                echo 'Erreur : ' . $e->getMessage();
-            }
-            catch (Twig_Error_Runtime $e)
-            {
-                echo 'Erreur : ' . $e->getMessage();
-            }
-            catch (Twig_Error_Syntax $e)
-            {
-                echo 'Erreur : ' . $e->getMessage();
-            }
+            echo $this->twig->render('login.html.twig');
         }
     }
 }

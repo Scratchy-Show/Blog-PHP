@@ -18,8 +18,7 @@ class Database
         if (self::$entityManager === null) {
             // Chemin vers les fichiers d'entité
             $paths = array(__DIR__ . "/../models");
-
-            $isDevMode = true;
+            $isDevMode = false;
 
             // Méthode Setup pour le mappage par annotation
             $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
@@ -31,7 +30,7 @@ class Database
             $config->setQueryCacheImpl($cache);
 
             // Génération automatique de classes proxy
-            $config->setAutoGenerateProxyClasses(true); // Modifier la valeur à false en production
+            $config->setAutoGenerateProxyClasses(false);
 
             // Paramètres de configuration de la base de données
             $dbParams = array(
