@@ -3,7 +3,6 @@
 
 namespace Controllers;
 
-
 use Twig_Environment;
 use Twig_Loader_Filesystem;
 
@@ -21,5 +20,10 @@ class Controller
 
         // Instancie Twig
         $this->twig = new Twig_Environment($this->loader);
+    }
+
+    // Affiche la page donnée en paramètre
+    public function render($page) {
+        echo $this->twig->render($page);
     }
 }

@@ -8,8 +8,8 @@ use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Column;
-use PDO;
 use PDOException;
+use System\Database;
 
 /**
  * @Entity
@@ -45,6 +45,11 @@ class User
     protected $role;
 
     /**
+     * @Column(type="datetime")
+     */
+    protected $date;
+
+    /**
      * @Column(type="string")
      */
     protected $login;
@@ -55,25 +60,14 @@ class User
     protected $password;
 
 
-
-    public function __construct()
-    {
-        // Connection à la bdd avec gestion des erreurs
-        $this->dbb = new PDO('mysql:host=localhost;dbname=my_website;charset=utf8', 'root', '',
-            array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    }
-
     // Vérifie la correspondance des identifiants
-    public function checkLogin($login, $password) {
+    public function getUserByLogin($login, $password) {
        // Gestion des erreurs
        try {
-           // Requête préparée (plus sûr et plus rapide) qui recherche l'utilisateur possédant le login et le password donnés en paramètres.
-           $query = $this->dbb->prepare('SELECT id FROM user WHERE login = :login AND password = :password');
-           // Exécute la requête avec les paramètres indiqués dans l'array
-           $query->execute(array('login' => $login, 'password' => $password));
-           // Récupère le résultat sous forme de ligne
-           $user = $query->fetch();
-           // Retourne l'id de l'utilisateur
+           // Repository dédié à l'entité User
+           $userRepository = Database::getEntityManager()->getRepository(User::class);
+           // Récupère l'utilisateur correspondant aux paramètres
+           $user = $userRepository->findOneBy(["login" => "$login", "password" => "$password"]);
            return $user;
        }
        catch (PDOException $e) {
@@ -108,6 +102,11 @@ class User
         return $this->role;
     }
 
+    public function getDate()
+    {
+        return $this->date;
+    }
+
     public function getLogin()
     {
         return $this->login;
@@ -139,6 +138,11 @@ class User
     public function setStatus($role)
     {
         $this->role = $role;
+    }
+
+    public function setDate($date)
+    {
+        $this->date = $date;
     }
 
     public function setLogin($login)
