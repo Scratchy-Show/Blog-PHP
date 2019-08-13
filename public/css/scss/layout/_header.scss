@@ -5,6 +5,10 @@
          padding: 35px 0;
          text-align: center;
 
+         @include tablets {
+             padding: 0;
+         }
+
          #logo {
 
              img {

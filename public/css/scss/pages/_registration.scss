@@ -1,0 +1,27 @@
+.registration-main-container {
+    @include main-container;
+
+    h2 {
+        @include h2;
+    }
+
+    .post-comment {
+        margin-bottom: 40px;
+        text-align: center;
+
+        p:last-child {
+            margin-top: 10px;
+        }
+    }
+
+    .form-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 250px;
+
+        form {
+            @include form;
+            height: 800px;
+        }
+    }
+}

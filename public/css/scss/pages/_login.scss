@@ -1,13 +1,16 @@
 .login-main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    margin: auto;
+    @include main-container;
 
     h2 {
-        padding: 40px 0 10px 0;
-        color: $blue;
+        @include h2;
+    }
+
+    .error {
+        padding: 10px;
+        font-weight: bold;
+        border: 2px solid $red;
+        border-radius: 5px;
+        color: $red;
     }
 
     .form-container {
@@ -16,89 +19,8 @@
         min-height: 45vh; // Centre le formulaire
 
         form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 700px;
+            @include form;
             height: 350px;
-            border: 2px solid $blue;
-            border-radius: 5px;
-
-            @include tablets {
-                width: 600px;
-            }
-
-            .login-input {
-                position: relative;
-                margin: 45px 0;
-
-                input {
-                    width: 320px;
-                    padding: 10px 10px 10px 5px;
-                    font-size: 18px;
-                    border: none;
-                    border-bottom: 1px solid mix($white, $grey, 70%);
-
-                    &:focus {
-                        outline: none;
-                    }
-
-                    &:focus ~ label,
-                    &:valid ~ label {
-                        top: -14px;
-                        font-size: 12px;
-                        color: $blue;
-                    }
-
-                    &:focus ~ .border:before {
-                        width: 320px;
-                    }
-                }
-
-                input[type="password"] {
-                    letter-spacing: 0.3em;
-                }
-
-                .border {
-
-                    &:before {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        width: 0;
-                        height: 2px;
-                        background: $blue;
-                        transition: 300ms ease all;
-                    }
-                }
-
-                label {
-                    position: absolute;
-                    top: 10px;
-                    left: 5px;
-                    font-size: 16px;
-                    color: mix($white, $grey, 70%);
-                    transition: 300ms ease all;
-                }
-            }
-
-            .submit {
-                padding: 15px;
-                border: 2px solid $blue;
-                border-radius: 5px;
-                text-transform: uppercase;
-                cursor: pointer;
-                color: $blue;
-                background: none;
-                transition: 0.25s;
-
-                &:hover, &:focus {
-                    color: $white;
-                    box-shadow: inset 135px 0 0 0 $blue;
-                }
-            }
         }
     }
 }

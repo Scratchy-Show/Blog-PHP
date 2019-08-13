@@ -1,10 +1,6 @@
 .nav-container {
-    height: 150px;
+    height: 130px;
     background: $blue;
-
-    @include laptops {
-        height: 100px;
-    }
 
     @include tablets {
         background: none;
@@ -13,12 +9,11 @@
     nav {
         float: left;
         width: 100%;
-        margin-bottom: 25px;
 
         @include tablets {
             display: flex;
             justify-content: center;
-            padding: 70px 0 15px;
+            padding: 65px 0 15px;
         }
 
         .nav-mobile {
@@ -27,7 +22,7 @@
             @include tablets {
                 display: block;
                 position: absolute;
-                top: 162px;
+                top: 120px;
                 height: 70px;
                 width: 70px;
                 background: $blue;
@@ -84,13 +79,12 @@
         ul {
             display: flex;
             justify-content: space-around;
-            height: 150px;
-            width: 50%;
+            height: 130px;
+            width: 80%;
             margin: auto;
 
             @include laptops {
                 width: 100%;
-                height: 100px;
             }
 
             @include tablets {

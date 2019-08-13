@@ -21,6 +21,10 @@ try {
         $login = new AdminController();
         $login->login();
     }
+    elseif ($path_only == '/registration') {
+        $registration = new AdminController();
+        $registration->registration();
+    }
     else {
         // Erreur gérée, elle sera remontée jusqu'au bloc try
         throw new Exception('Page non trouvée.');

@@ -6,14 +6,18 @@
     <div class="login-main-container">
         <h2>Identification</h2>
 
+        {% if message != null %}
+            <p class="error">{{ message }}</p>
+        {% endif %}
+
         <div class="form-container">
             <form method="post" action="/login">
-                <div class="login-input">
+                <div class="input">
                     <input id="login" type="text" name="login" required="required" />
                     <span class="border"></span>
                     <label for="login">Login</label>
                 </div>
-                <div class="login-input">
+                <div class="input">
                     <input id="password" type="password" name="password" required="required" />
                     <span class="border"></span>
                     <label for="password">Mot de passe</label>

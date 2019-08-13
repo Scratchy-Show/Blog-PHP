@@ -25,17 +25,17 @@ class User
     protected $id;
 
     /**
-     * @Column(type="string", name="last_name")
+     * @Column(type="string", name="last_name", length=25)
      */
     protected $lastName;
 
     /**
-     * @Column(type="string", name="first_name")
+     * @Column(type="string", name="first_name", length=25)
      */
     protected $firstName;
 
     /**
-     * @Column(type="string")
+     * @Column(type="string", length=50)
      */
     protected $email;
 
@@ -50,15 +50,24 @@ class User
     protected $date;
 
     /**
-     * @Column(type="string")
+     * @Column(type="string", length=25)
      */
     protected $login;
 
     /**
-     * @Column(type="string")
+     * @Column(type="string", length=50)
      */
     protected $password;
 
+    public function __construct()
+    {
+        // Définit le fuseau horaire
+        date_default_timezone_set('Europe/Paris');
+        // Par défaut, la date est la date d'aujourd'hui
+        $this->date = new \DateTime();
+        // Par défaut, le role est à 0 (false)
+        $this->role =0;
+    }
 
     // Vérifie la correspondance des identifiants
     public function getUserByLogin($login, $password) {
@@ -73,6 +82,23 @@ class User
        catch (PDOException $e) {
            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
        }
+    }
+
+    // Enregistre un nouveau utilisateur
+    public function registerUserByForm($lastName, $firstName, $email, $login, $password) {
+        // Définit les valeurs des variables
+        $this->setLastName($lastName);
+        $this->setFirstName($firstName);
+        $this->setEmail($email);
+        $this->setLogin($login);
+        $this->setPassword($password);
+
+        // Récupère EntityManager dans l'application
+        $entityManager = Database::getEntityManager();
+        // Planifie la sauvegarde de l'entité
+        $entityManager->persist($this);
+        // Effectue la sauvegarde de l'entité en bdd
+        $entityManager->flush();
     }
 
     ////// Getter //////
@@ -100,11 +126,6 @@ class User
     public function getRole()
     {
         return $this->role;
-    }
-
-    public function getDate()
-    {
-        return $this->date;
     }
 
     public function getLogin()
@@ -135,14 +156,9 @@ class User
         $this->email = $email;
     }
 
-    public function setStatus($role)
+    public function setRole($role)
     {
         $this->role = $role;
-    }
-
-    public function setDate($date)
-    {
-        $this->date = $date;
     }
 
     public function setLogin($login)

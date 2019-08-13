@@ -23,7 +23,7 @@ class Controller
     }
 
     // Affiche la page donnée en paramètre
-    public function render($page) {
-        echo $this->twig->render($page);
+    public function render($page, $arguments) {
+        echo $this->twig->render($page, $arguments);
     }
 }

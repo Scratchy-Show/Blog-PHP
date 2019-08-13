@@ -1,5 +1,14 @@
 #title {
+    margin-top: 150px;
     text-align: center;
+
+    @include laptops {
+        margin-top: 100px;
+    }
+
+    @include tablets {
+        margin: 0;
+    }
 
     h1 {
         color: $blue;
