@@ -1,0 +1,26 @@
+.login-main-container {
+    @include main-container;
+
+    h2 {
+        @include h2;
+    }
+
+    .error {
+        padding: 10px;
+        font-weight: bold;
+        border: 2px solid $red;
+        border-radius: 5px;
+        color: $red;
+    }
+
+    .form-container {
+        display: flex;
+        align-items: center;
+        min-height: 45vh; // Centre le formulaire
+
+        form {
+            @include form;
+            height: 350px;
+        }
+    }
+}

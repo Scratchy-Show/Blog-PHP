@@ -9,8 +9,10 @@
             <img src="../public/img/icons/copyright.png" alt="Copyright" />
             <p>Copyright 2019. Tous droits réservés</p>
         </div>
-        <div class="admin-footer">
-            <a href="#"><img src="../public/img/icons/login.png" alt="Identification" /></a>
-        </div>
+        {% if user == null %}
+            <div class="admin-footer">
+                <a href="/login"><img src="../public/img/icons/login.png" alt="Identification" /></a>
+            </div>
+        {% endif %}
     </div>
 </footer>

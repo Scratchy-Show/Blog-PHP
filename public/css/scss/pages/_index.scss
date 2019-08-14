@@ -1,4 +1,61 @@
-.main-container {
+#title {
+    margin-top: 150px;
+    text-align: center;
+
+    @include laptops {
+        margin-top: 100px;
+    }
+
+    @include tablets {
+        margin: 0;
+    }
+
+    h1 {
+        color: $blue;
+
+        @include laptops {
+            font-size: 55px;
+        }
+
+        @include tablets {
+            font-size: 45px;
+        }
+    }
+
+    .separation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .line {
+            width: 25%;
+            height: 2px;
+            margin: 0;
+            background-color: $blue;
+            border: none;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            padding: 0 15px 0 15px;
+        }
+    }
+
+    h2 {
+        color: $black;
+
+        @include laptops {
+            font-size: 45px;
+        }
+
+        @include tablets {
+            font-size: 35px;
+        }
+    }
+}
+
+.index-main-container {
 
     h2 {
         color: $blue;
@@ -25,16 +82,20 @@
         }
     }
 
-    .last-posts, .about, .tools-dev, .tools-open-source {
+    .container-last-posts, .about, .container-tools-dev, .container-tools-open-source {
        margin: 25px 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
-    .container-posts, .about, .container-tools-dev, .container-tools-open-source {
+    .last-posts, .about, .tools-dev, .tools-open-source {
         width: 80%;
         margin: auto;
     }
 
-    .container-posts {
+    .last-posts {
         display: flex;
         justify-content: space-around;
         margin-top: 20px;
@@ -111,7 +172,7 @@
                         .description {
                             width: 80%;
                             margin: auto;
-                            margin-top: 25%;
+                            padding-top: 25%;
                         }
                     }
 
@@ -197,7 +258,7 @@
         }
     }
 
-    .container-tools-dev {
+    .tools-dev {
         display: flex;
         justify-content: center;
         padding: 25px 0;
@@ -231,10 +292,11 @@
         }
     }
 
-    .container-tools-open-source {
+    .tools-open-source {
         display: flex;
         justify-content: space-around;
         margin-top: 15px;
+        padding-bottom: 250px;
 
         @include tablets {
             flex-direction: column;
@@ -264,8 +326,6 @@
         .wordpress, .symfony, .git {
             @include tablets {
                 width: 95%;
-                margin: auto;
-                margin-bottom: 20px;
             }
         }
 

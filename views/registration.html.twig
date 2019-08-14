@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Inscription{% endblock %}
+
+
+{% block body %}
+    <div class="registration-main-container">
+        <h2>Inscription</h2>
+
+        <div class="post-comment">
+            <p>Vous souhaitez me laisser votre avis sur l'un de mes projets réalisés ?</p>
+            <p>N'hésitez pas à créer votre profil afin de pouvoir poster votre commentaire.</p>
+        </div>
+
+        <div class="form-container">
+            <form method="post" action="/registration">
+                <div class="input">
+                    <input id="lastName" type="text" name="lastName" required="required" />
+                    <span class="border"></span>
+                    <label for="lastName">Nom</label>
+                </div>
+                <div class="input">
+                    <input id="firstName" type="text" name="firstName" required="required" />
+                    <span class="border"></span>
+                    <label for="firstName">Prénom</label>
+                </div>
+                <div class="input">
+                    <input id="email" type="text" name="email" required="required" />
+                    <span class="border"></span>
+                    <label for="email">Mail</label>
+                </div>
+                <div class="input">
+                    <input id="login" type="text" name="login" required="required" />
+                    <span class="border"></span>
+                    <label for="login">Login</label>
+                </div>
+                <div class="input">
+                    <input id="password" type="password" name="password" required="required" />
+                    <span class="border"></span>
+                    <label for="password">Mot de passe</label>
+                </div>
+                <input class="submit" type="submit" value="S'inscrire" />
+            </form>
+        </div>
+    </div>
+{% endblock %}

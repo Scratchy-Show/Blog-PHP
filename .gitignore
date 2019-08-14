@@ -1,7 +1,9 @@
+/.idea/
+
 /vendor/
 
 /.editorconfig
 
-/.idea/
-
 /browserconfig.xml
+
+/composer.lock
