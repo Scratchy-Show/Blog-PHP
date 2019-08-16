@@ -4,7 +4,6 @@
 namespace Controllers;
 
 use Models\User;
-use System\Database;
 
 class AdminController extends Controller // Hérite de la class Controller
 {
@@ -12,8 +11,8 @@ class AdminController extends Controller // Hérite de la class Controller
     {
         // Si présence des variables 'login' et 'password'
         if (isset($_POST['login']) && isset($_POST['password'])) {
-            $login = htmlentities($_POST['login']);
-            $password = htmlentities($_POST['password']);
+            $login = $_POST['login'];
+            $password = $_POST['password'];
 
             // Crée une instance de User
             $user = new User;
@@ -21,7 +20,7 @@ class AdminController extends Controller // Hérite de la class Controller
             $checkUser = $user->getUserByLogin($login, $password);
 
             // Si l'utilisateur est identifié
-            if ($checkUser !== null ) {
+            if ($checkUser == true ) {
                 //  Redirection vers la page d'administration
                 $this->render('admin.html.twig', array("user" => $checkUser));
             }
@@ -44,11 +43,11 @@ class AdminController extends Controller // Hérite de la class Controller
         // Si présence des variables
         if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email'])
             && isset($_POST['login']) && isset($_POST['password'])) {
-            $lastName = htmlentities($_POST['lastName']);
-            $firstName = htmlentities($_POST['firstName']);
-            $email = htmlentities($_POST['email']);
-            $login = htmlentities($_POST['login']);
-            $password = htmlentities($_POST['password']);
+            $lastName = $_POST['lastName'];
+            $firstName = $_POST['firstName'];
+            $email = $_POST['email'];
+            $login = $_POST['login'];
+            $password = $_POST['password'];
 
             // Crée une instance de User
             $user = new User;

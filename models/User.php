@@ -55,9 +55,9 @@ class User
     protected $login;
 
     /**
-     * @Column(type="string", length=50)
+     * @Column(type="string", name="password", length=255)
      */
-    protected $password;
+    protected $hashedPassword;
 
     public function __construct()
     {
@@ -75,8 +75,17 @@ class User
        try {
            // Repository dédié à l'entité User
            $userRepository = Database::getEntityManager()->getRepository(User::class);
-           // Récupère l'utilisateur correspondant aux paramètres
-           $user = $userRepository->findOneBy(["login" => "$login", "password" => "$password"]);
+           // Récupère l'utilisateur correspondant au login
+           $user = $userRepository->findOneBy(["login" => "$login"]);
+
+           // Si le login éxiste
+           if ($user !== null ) {
+               // Vérifie la correspondance de $password avec le mot de passe haché en BDD
+               $checkPassword = password_verify($password, $user->getHashedPassword());
+               // Retourne True ou False
+               return $checkPassword;
+           }
+           // Si le login n'éxiste pas
            return $user;
        }
        catch (PDOException $e) {
@@ -86,12 +95,15 @@ class User
 
     // Enregistre un nouveau utilisateur
     public function registerUserByForm($lastName, $firstName, $email, $login, $password) {
+        // Hachage du mot de passe
+        $hashedPassword = password_hash($password, PASSWORD_ARGON2ID);
+
         // Définit les valeurs des variables
         $this->setLastName($lastName);
         $this->setFirstName($firstName);
         $this->setEmail($email);
         $this->setLogin($login);
-        $this->setPassword($password);
+        $this->setHashedPassword($hashedPassword);
 
         // Récupère EntityManager dans l'application
         $entityManager = Database::getEntityManager();
@@ -133,9 +145,9 @@ class User
         return $this->login;
     }
 
-    public function getPassword()
+    public function getHashedPassword()
     {
-        return $this->password;
+        return $this->hashedPassword;
     }
 
 
@@ -166,8 +178,8 @@ class User
         $this->login = $login;
     }
 
-    public function setPassword($password)
+    public function setHashedPassword($hashedPassword)
     {
-        $this->password = $password;
+        $this->hashedPassword = $hashedPassword;
     }
 }
