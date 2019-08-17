@@ -132,19 +132,34 @@
     color: $blue;
 }
 
+@mixin error {
+    display: flex;
+    padding: 10px;
+
+    img {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .message {
+        align-self: center;
+        padding-left: 5px;
+        font-size: 20px;
+        color: $red;
+    }
+}
+
 @mixin form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 700px;
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
     border: 2px solid $blue;
     border-radius: 5px;
-
-    @include tablets {
-        width: 600px;
-        margin: 0 15px;
-    }
 
     .input {
         position: relative;
@@ -209,7 +224,7 @@
         cursor: pointer;
         color: $blue;
         background: none;
-        transition: 0.25s;
+        transition: 0.65s;
 
         &:hover, &:focus {
             color: $white;

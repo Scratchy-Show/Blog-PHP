@@ -7,7 +7,10 @@
         <h2>Identification</h2>
 
         {% if message != null %}
-            <p class="error">{{ message }}</p>
+            <div class="error">
+                <img src="../public/img/icons/prohibited.png" alt="" />
+                <p class="message">{{ message }}</p>
+            </div>
         {% endif %}
 
         <div class="form-container">

@@ -14,9 +14,20 @@
         }
     }
 
+    .error-container {
+
+        .error {
+            @include error;
+        }
+
+        div:nth-last-of-type(1) { // Cible la première div en partant de la fin
+            margin-bottom: 40px;
+        }
+    }
+
     .form-container {
         display: flex;
-        align-items: center;
+        width: 100%;
         margin-bottom: 250px;
 
         form {

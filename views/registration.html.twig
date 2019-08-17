@@ -12,6 +12,29 @@
             <p>N'hésitez pas à créer votre profil afin de pouvoir poster votre commentaire.</p>
         </div>
 
+        <div class="error-container">
+            {% if messageLastName starts with 'L' %}
+                <div class="error">
+                    <img src="../public/img/icons/prohibited.png" alt="" />
+                    <p class="message">{{ messageLastName }}</p>
+                </div>
+            {% endif %}
+
+            {% if messageFirstName starts with 'L' %}
+                <div class="error">
+                    <img src="../public/img/icons/prohibited.png" alt="" />
+                    <p class="message">{{ messageFirstName }}</p>
+                </div>
+            {% endif %}
+
+            {% if messageEmail starts with 'L' %}
+                <div class="error">
+                    <img src="../public/img/icons/prohibited.png" alt="" />
+                    <p class="message">{{ messageEmail }}</p>
+                </div>
+            {% endif %}
+        </div>
+
         <div class="form-container">
             <form method="post" action="/registration">
                 <div class="input">
