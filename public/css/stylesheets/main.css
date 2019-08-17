@@ -1096,7 +1096,7 @@ footer .copyright-footer .admin-footer {
   margin: auto;
   border: 2px solid #00afef;
   border-radius: 5px;
-  height: 800px;
+  height: 900px;
 }
 /* line 164, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .input {
@@ -1164,4 +1164,8 @@ footer .copyright-footer .admin-footer {
 .registration-main-container .form-container form .submit:hover, .registration-main-container .form-container form .submit:focus {
   color: white;
   box-shadow: inset 135px 0 0 0 #00afef;
+}
+/* line 39, ../scss/pages/_registration.scss */
+.registration-main-container .form-container form .checkPassword input {
+  border-radius: 5px;
 }

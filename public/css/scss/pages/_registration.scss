@@ -32,7 +32,14 @@
 
         form {
             @include form;
-            height: 800px;
+            height: 900px;
+
+            .checkPassword {
+
+                input {
+                    border-radius: 5px;
+                }
+            }
         }
     }
 }

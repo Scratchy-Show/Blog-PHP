@@ -33,6 +33,13 @@
                     <p class="message">{{ messageEmail }}</p>
                 </div>
             {% endif %}
+
+            {% if messagePassword starts with 'L' %}
+                <div class="error">
+                    <img src="../public/img/icons/prohibited.png" alt="" />
+                    <p class="message">{{ messagePassword }}</p>
+                </div>
+            {% endif %}
         </div>
 
         <div class="form-container">
@@ -57,10 +64,15 @@
                     <span class="border"></span>
                     <label for="login">Login</label>
                 </div>
-                <div class="input">
+                <div class="input checkPassword">
                     <input id="password" type="password" name="password" required="required" />
                     <span class="border"></span>
                     <label for="password">Mot de passe</label>
+                </div>
+                <div class="input checkPassword">
+                    <input id="confirm" type="password" name="confirm" required="required" />
+                    <span class="border"></span>
+                    <label for="confirm">Confirmer mot de passe</label>
                 </div>
                 <input class="submit" type="submit" value="S'inscrire" />
             </form>
