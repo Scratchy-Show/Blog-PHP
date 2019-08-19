@@ -134,7 +134,7 @@
 
 @mixin error {
     display: flex;
-    padding: 10px;
+    padding: 15px 10px 10px 10px;
 
     img {
         width: 30px;
@@ -159,9 +159,8 @@
     max-width: 750px;
     margin: auto;
     border: 2px solid $blue;
-    border-radius: 5px;
 
-    .input {
+    .input-container {
         position: relative;
         margin: 45px 0;
 
@@ -216,19 +215,23 @@
         }
     }
 
-    .submit {
-        padding: 15px;
-        border: 2px solid $blue;
-        border-radius: 5px;
-        text-transform: uppercase;
-        cursor: pointer;
-        color: $blue;
-        background: none;
-        transition: 0.65s;
+    .submit-container {
+        margin-bottom: 40px;
 
-        &:hover, &:focus {
-            color: $white;
-            box-shadow: inset 135px 0 0 0 $blue;
+        .submit {
+            padding: 15px;
+            border: 2px solid $blue;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: $blue;
+            background: none;
+            transition: 0.65s;
+
+            &:hover, &:focus {
+                color: $white;
+                box-shadow: inset 135px 0 0 0 $blue;
+            }
         }
     }
 }

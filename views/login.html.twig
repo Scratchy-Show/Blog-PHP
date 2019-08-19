@@ -15,17 +15,19 @@
 
         <div class="form-container">
             <form method="post" action="/login">
-                <div class="input">
-                    <input id="login" type="text" name="login" required="required" />
+                <div class="input-container">
+                    <input id="username" type="text" name="username" required="required" />
                     <span class="border"></span>
-                    <label for="login">Login</label>
+                    <label for="username">Pseudo</label>
                 </div>
-                <div class="input">
+                <div class="input-container">
                     <input id="password" type="password" name="password" required="required" />
                     <span class="border"></span>
                     <label for="password">Mot de passe</label>
                 </div>
-                <input class="submit" type="submit" value="Se connecter" />
+                <div class="submit-container">
+                    <input class="submit" type="submit" value="Se connecter" />
+                </div>
             </form>
         </div>
     </div>

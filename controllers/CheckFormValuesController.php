@@ -4,8 +4,38 @@
 namespace Controllers;
 
 
+use Models\User;
+
 class CheckFormValuesController
 {
+    // Vérifie si l'adresse mail est unique
+    public function checkSingleEmail($email) {
+        $checkSingleEmail = new User();
+        $resultSingleEmail = $checkSingleEmail->getUserByEmail($email);
+
+        if ($resultSingleEmail != null) {
+            $messageSingleEmail = "Cette adresse mail existe déjà";
+
+            return $messageSingleEmail;
+        }
+
+        return $resultSingleEmail;
+    }
+
+    // Vérifie si le pseudo est unique
+    public function checkSingleUsername($username) {
+        $checkSingleUsername = new User();
+        $resultSingleUsername = $checkSingleUsername->getUserByUsername($username);
+
+        if ($resultSingleUsername != null) {
+            $messageSingleUsername = "Ce pseudo est déjà utilisé";
+
+            return $messageSingleUsername;
+        }
+
+        return $resultSingleUsername;
+    }
+
     // Vérifie la valeur du nom transmis par l'utilisateur
     public function checkLastName($lastName)
     {
@@ -45,8 +75,9 @@ class CheckFormValuesController
     // Vérifie que le mail correspond à l'expression régulières
     public function checkEmail($email)
     {
-        // Vérifie le format de l'adresse mail
+        // Valide l'adresse selon la syntaxe défini par la RFC 822
         $filterEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
+        // Vérifie le format de l'adresse mail
         $checkEmail = preg_match("#^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})$#", $filterEmail);
 
         if ($checkEmail == 0) {

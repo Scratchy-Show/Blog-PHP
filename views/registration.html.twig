@@ -12,69 +12,93 @@
             <p>N'hésitez pas à créer votre profil afin de pouvoir poster votre commentaire.</p>
         </div>
 
-        <div class="error-container">
-            {% if messageLastName starts with 'L' %}
-                <div class="error">
-                    <img src="../public/img/icons/prohibited.png" alt="" />
-                    <p class="message">{{ messageLastName }}</p>
-                </div>
-            {% endif %}
-
-            {% if messageFirstName starts with 'L' %}
-                <div class="error">
-                    <img src="../public/img/icons/prohibited.png" alt="" />
-                    <p class="message">{{ messageFirstName }}</p>
-                </div>
-            {% endif %}
-
-            {% if messageEmail starts with 'L' %}
-                <div class="error">
-                    <img src="../public/img/icons/prohibited.png" alt="" />
-                    <p class="message">{{ messageEmail }}</p>
-                </div>
-            {% endif %}
-
-            {% if messagePassword starts with 'L' %}
-                <div class="error">
-                    <img src="../public/img/icons/prohibited.png" alt="" />
-                    <p class="message">{{ messagePassword }}</p>
-                </div>
-            {% endif %}
-        </div>
-
         <div class="form-container">
             <form method="post" action="/registration">
-                <div class="input">
+
+                <div class="error-container">
+                    {% if messageLastName starts with 'L' %}
+                        <div class="error">
+                            <img src="../public/img/icons/prohibited.png" alt="" />
+                            <p class="message">{{ messageLastName }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="input-container">
                     <input id="lastName" type="text" name="lastName" required="required" />
                     <span class="border"></span>
                     <label for="lastName">Nom</label>
                 </div>
-                <div class="input">
+
+                <div class="error-container">
+                    {% if messageFirstName starts with 'L' %}
+                        <div class="error">
+                            <img src="../public/img/icons/prohibited.png" alt="" />
+                            <p class="message">{{ messageFirstName }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="input-container">
                     <input id="firstName" type="text" name="firstName" required="required" />
                     <span class="border"></span>
                     <label for="firstName">Prénom</label>
                 </div>
-                <div class="input">
+
+                <div class="error-container">
+                    {% if messageEmail starts with 'L' %}
+                        <div class="error">
+                            <img src="../public/img/icons/prohibited.png" alt="" />
+                            <p class="message">{{ messageEmail }}</p>
+                        </div>
+                    {% endif %}
+                    {% if messageSingleEmail starts with 'C' %}
+                        <div class="error">
+                            <img src="../public/img/icons/prohibited.png" alt="" />
+                            <p class="message">{{ messageSingleEmail }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="input-container">
                     <input id="email" type="text" name="email" required="required" />
                     <span class="border"></span>
                     <label for="email">Mail</label>
                 </div>
-                <div class="input">
-                    <input id="login" type="text" name="login" required="required" />
-                    <span class="border"></span>
-                    <label for="login">Login</label>
+
+                <div class="error-container">
+                    {% if messageSingleUsername starts with 'C' %}
+                        <div class="error">
+                            <img src="../public/img/icons/prohibited.png" alt="" />
+                            <p class="message">{{ messageSingleUsername }}</p>
+                        </div>
+                    {% endif %}
                 </div>
-                <div class="input checkPassword">
+                <div class="input-container">
+                    <input id="username" type="text" name="username" required="required" />
+                    <span class="border"></span>
+                    <label for="username">Pseudo</label>
+                </div>
+
+                <div class="error-container">
+                    {% if messagePassword starts with 'L' %}
+                        <div class="error">
+                            <img src="../public/img/icons/prohibited.png" alt="" />
+                            <p class="message">{{ messagePassword }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="input-container checkPassword">
                     <input id="password" type="password" name="password" required="required" />
                     <span class="border"></span>
                     <label for="password">Mot de passe</label>
                 </div>
-                <div class="input checkPassword">
+                <div class="input-container checkPassword">
                     <input id="confirm" type="password" name="confirm" required="required" />
                     <span class="border"></span>
                     <label for="confirm">Confirmer mot de passe</label>
                 </div>
-                <input class="submit" type="submit" value="S'inscrire" />
+
+                <div class="submit-container">
+                    <input class="submit" type="submit" value="S'inscrire" />
+                </div>
             </form>
         </div>
     </div>
