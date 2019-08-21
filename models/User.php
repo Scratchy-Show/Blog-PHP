@@ -128,14 +128,19 @@ class User
            // Récupère l'utilisateur correspondant au pseudo
            $user = $userRepository->findOneBy(["username" => "$username"]);
 
-           // Si le login éxiste
+           // Si le pseudo éxiste
            if ($user !== null ) {
                // Vérifie la correspondance de $password avec le mot de passe haché en BDD
                $checkPassword = password_verify($password, $user->getHashedPassword());
-               // Retourne True ou False
+
+               // Si c'est le bon mot de passe
+               if ($checkPassword == true) {
+                   return $user;
+               }
+               // Si c'est le mauvais mot de passe retourne False
                return $checkPassword;
            }
-           // Si le login n'éxiste pas
+           // Si le pseudo n'éxiste pas retourne null
            return $user;
        }
        catch (PDOException $e) {

@@ -42,7 +42,7 @@ class AdminController extends Controller // Hérite de la class Controller
                 $user->registerUserByForm($lastName, $firstName, $email, $username, $password);
 
                 //  Redirection vers la page d'administration
-                $this->render('admin.html.twig', array());
+                $this->render('homeAdmin.html.twig', array());
             } else {
                 // Affiche le page d'inscription avec le message d'erreur
                 $this->render('registration.html.twig', array(
@@ -72,13 +72,31 @@ class AdminController extends Controller // Hérite de la class Controller
 
             // Crée une instance de User
             $user = new User;
-            // Appelle la fonction checkLogin() avec les paramètres du formulaire
+            // Appelle la fonction getUserByLogin() avec les paramètres du formulaire
             $checkUser = $user->getUserByLogin($username, $password);
 
             // Si l'utilisateur est identifié
-            if ($checkUser == true ) {
-                //  Redirection vers la page d'administration
-                $this->render('admin.html.twig', array("user" => $checkUser));
+            if ($checkUser !== null) {
+                // Si l'utilisateur a le bon mot de passe
+                if ($checkUser !== false) {
+                    // Si l'utilisateur est un administrateur
+                    if ($checkUser->getRole() == 1) {
+                        // Appelle la fonction isAdmin()
+                        $this->isAdmin($checkUser);
+                    }
+                    // Si l'utilisateur n'est pas un administrateur
+                    else {
+                        // Redirige sur la page précédente
+                        header('Location: ' . $_SESSION['previousUrl']);
+                    }
+                }
+                // Si l'utilisateur n'a pas le bon mot de passe
+                else {
+                    // Message d'erreur
+                    $message = "Logins incorrect, veuillez réessayer";
+                    // Redirection vers la page d'identification
+                    $this->render('login.html.twig', array("message" => $message));
+                }
             }
             // Si l'utilisateur n'est pas identifié
             else {
