@@ -86,7 +86,7 @@ class User
                return $checkPassword;
            }
            // Si le login n'éxiste pas
-           return $user;
+           return false;
        }
        catch (PDOException $e) {
            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
@@ -95,8 +95,8 @@ class User
 
     // Enregistre un nouveau utilisateur
     public function registerUserByForm($lastName, $firstName, $email, $login, $password) {
-        // Hachage du mot de passe
-        $hashedPassword = password_hash($password, PASSWORD_ARGON2ID);
+        // Appelle hashPassword
+        $hashedPassword = $this->hashPassword($password);
 
         // Définit les valeurs des variables
         $this->setLastName($lastName);
@@ -111,6 +111,12 @@ class User
         $entityManager->persist($this);
         // Effectue la sauvegarde de l'entité en bdd
         $entityManager->flush();
+    }
+
+    // Hachage du mot de passe
+    public function hashPassword($password) {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        return $hashedPassword;
     }
 
     ////// Getter //////
@@ -181,5 +187,10 @@ class User
     public function setHashedPassword($hashedPassword)
     {
         $this->hashedPassword = $hashedPassword;
+    }
+
+    public function setPassword($password)
+    {
+        $this->hashPassword($password);
     }
 }
