@@ -66,20 +66,17 @@ class User
         // Par défaut, la date est la date d'aujourd'hui
         $this->date = new \DateTime();
         // Par défaut, le role est à 0 (false)
-        $this->role =0;
+        $this->role = 0;
     }
 
     // Enregistre un nouveau utilisateur
     public function registerUserByForm($lastName, $firstName, $email, $username, $password) {
-        // Hachage du mot de passe
-        $hashedPassword = password_hash($password, PASSWORD_ARGON2ID);
-
         // Définit les valeurs des variables
         $this->setLastName($lastName);
         $this->setFirstName($firstName);
         $this->setEmail($email);
         $this->setUsername($username);
-        $this->setHashedPassword($hashedPassword);
+        $this->setPassword($password);
 
         // Récupère EntityManager dans l'application
         $entityManager = Database::getEntityManager();
@@ -90,13 +87,14 @@ class User
     }
 
     // Récupère un utilisateur avec son mail
-    public function getUserByEmail($email) {
+    public static function getUserByEmail($email) {
         // Gestion des erreurs
         try {
             // Repository dédié à l'entité User
             $userRepository = Database::getEntityManager()->getRepository(User::class);
             // Recherche un email correspondant
             $user = $userRepository->findBy(array('email' => $email));
+            // Retourne un utilisateur ou un tableau vide
             return $user;
         }
         catch (PDOException $e) {
@@ -105,13 +103,14 @@ class User
     }
 
     // Récupère un utilisateur avec son pseudo
-    public function getUserByUsername($username) {
+    public static function getUserByUsername($username) {
         // Gestion des erreurs
         try {
             // Repository dédié à l'entité User
             $userRepository = Database::getEntityManager()->getRepository(User::class);
             // Recherche un pseudo correspondant
             $user = $userRepository->findBy(array('username' => $username));
+            // Retourne un utilisateur ou un tableau vide
             return $user;
         }
         catch (PDOException $e) {
@@ -120,7 +119,7 @@ class User
     }
 
     // Récupère un utilisateur avec ses identifiants
-    public function getUserByLogin($username, $password) {
+    public static function getUserByLogin($username, $password) {
        // Gestion des erreurs
        try {
            // Repository dédié à l'entité User
@@ -128,24 +127,26 @@ class User
            // Récupère l'utilisateur correspondant au pseudo
            $user = $userRepository->findOneBy(["username" => "$username"]);
 
-           // Si le pseudo éxiste
-           if ($user !== null ) {
+           // Si le login éxiste
+           if ($user != null ) {
                // Vérifie la correspondance de $password avec le mot de passe haché en BDD
                $checkPassword = password_verify($password, $user->getHashedPassword());
-
-               // Si c'est le bon mot de passe
-               if ($checkPassword == true) {
-                   return $user;
-               }
-               // Si c'est le mauvais mot de passe retourne False
-               return $checkPassword;
+               // Retourne True ou False et l'utilisateur
+               return array($checkPassword, $user);
            }
-           // Si le pseudo n'éxiste pas retourne null
-           return $user;
+           // Si le login n'éxiste pas
+           return array(false, $user);
        }
        catch (PDOException $e) {
            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
        }
+    }
+
+    // Hachage du mot de passe
+    public function hashPassword($password) {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        // Retourne le mot de passe haché
+        return $hashedPassword;
     }
 
     ////// Getter //////
@@ -216,5 +217,10 @@ class User
     public function setHashedPassword($hashedPassword)
     {
         $this->hashedPassword = $hashedPassword;
+    }
+
+    public function setPassword($password)
+    {
+        $this->hashedPassword = $this->hashPassword($password);
     }
 }

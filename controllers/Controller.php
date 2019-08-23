@@ -6,7 +6,7 @@ namespace Controllers;
 use Twig_Environment;
 use Twig_Loader_Filesystem;
 
-class Controller
+class Controller extends CheckFormValuesController // Hérite de la class CheckFormValuesController
 {
     // Seule la class parent et les class filles accéde à ces varaibles
     protected $loader;
@@ -21,11 +21,18 @@ class Controller
         $this->twig = new Twig_Environment($this->loader);
     }
 
+    // Récupère HTTP_REFERER
+    public function httpReferer() {
+        // Si HTTP_REFERER est déclaré renvoie sur l'URL précédente
+        if (isset($_SERVER['HTTP_REFERER'])) {
+            $_SESSION['previousUrl'] = $_SERVER['HTTP_REFERER'];
+        }
+    }
+
     // Affiche la page donnée en paramètre
     public function render($page, $arguments) {
-        // Récupère l'url de la page précédente
-        $_SESSION['previousUrl'] = $_SERVER['HTTP_REFERER'];
-
+        // Appelle httpReferer()
+        $this->httpReferer();
         echo $this->twig->render($page, $arguments);
     }
 
@@ -33,13 +40,9 @@ class Controller
     public function isAdmin($user) {
         // Si l'utilisateur est administrateur
         if ($user->getRole() == 1 ) {
-            //  Redirige vers la page d'administration
-            $this->render('homeAdmin.html.twig', array());
+            return true;
         }
-        // Si l'utilisateur n'est pas un administrateur
-        else {
-            $this->redirectIfNotAdmin();
-        }
+        return false;
     }
 
     // Renvoie un utilisateur non administrateur
