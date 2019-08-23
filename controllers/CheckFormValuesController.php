@@ -8,68 +8,59 @@ use Models\User;
 
 class CheckFormValuesController
 {
-    // Vérifie si l'adresse mail est unique
-    public function checkSingleEmail($email) {
-        $checkSingleEmail = new User();
-        $resultSingleEmail = $checkSingleEmail->getUserByEmail($email);
+    // Vérifie si l'adresse mail et le pseudo sont unique
+    public function checkSingleUsernameEmail($email, $username) {
+        $resultSingleEmail = User::getUserByEmail($email);
+        $resultSingleUsername = User::getUserByUsername($username);
 
-        if ($resultSingleEmail != null) {
-            $messageSingleEmail = "Cette adresse mail existe déjà";
+        if (($resultSingleEmail != null) || ($resultSingleUsername != null)) {
 
-            return $messageSingleEmail;
+            if (($resultSingleEmail != null) && ($resultSingleUsername != null)) {
+                $messageSingleEmail = "Cette adresse mail existe déjà";
+                $messageSingleUsername = "Ce pseudo est déjà utilisé";
+                return array($messageSingleEmail, $messageSingleUsername);
+
+            } elseif ($resultSingleEmail != null) {
+                $messageSingleEmail = "Cette adresse mail existe déjà";
+                return array($messageSingleEmail, null);
+
+            } else {
+                $messageSingleUsername = "Ce pseudo est déjà utilisé";
+                return array(null, $messageSingleUsername);
+            }
         }
-
-        return $resultSingleEmail;
+        return null;
     }
 
-    // Vérifie si le pseudo est unique
-    public function checkSingleUsername($username) {
-        $checkSingleUsername = new User();
-        $resultSingleUsername = $checkSingleUsername->getUserByUsername($username);
-
-        if ($resultSingleUsername != null) {
-            $messageSingleUsername = "Ce pseudo est déjà utilisé";
-
-            return $messageSingleUsername;
-        }
-
-        return $resultSingleUsername;
-    }
-
-    // Vérifie la valeur du nom transmis par l'utilisateur
-    public function checkLastName($lastName)
+    // Vérifie la valeur du nom et du prénom transmis par l'utilisateur
+    public function checkName($lastName, $firstName)
     {
-        // Vérifie que le nom correspond à l'expression régulières
+        // Vérifie que le nom et le prénom correspondent à l'expression régulières
         // Minimum 2 charactères - Maximum 25
         // Commence par une lettre (minuscule, majuscule, accentué)
         // Aucun chiffre
         // Accepte: minuscule, majuscule, lettre accentuée, tiret et apostrophe
-        $checkLastName = preg_match("#^[a-zA-ZÀ-ÿ][a-zA-ZÀ-ÿ \-\']{1,25}$#", $lastName);
+        $regex = "#^[a-zA-ZÀ-ÿ][a-zA-ZÀ-ÿ \-']{1,25}$#";
+        $checkLastName = preg_match($regex, $lastName);
+        $checkFirstName = preg_match($regex, $firstName);
 
-        if ($checkLastName == 0) {
-            $messageLastName = "Le nom ne doit comporter que des lettres et contenir entre 2 et 25 caractères";
+        if (($checkLastName == 0) || ($checkFirstName == 0)) {
 
-            return $messageLastName;
+            if (($checkLastName == 0) && ($checkFirstName == 0)) {
+                $messageLastName = "Le nom ne doit comporter que des lettres et contenir entre 2 et 25 caractères";
+                $messageFirstName = "Le prénom ne doit comporter que des lettres et contenir entre 2 et 25 caractères";
+                return array($messageLastName, $messageFirstName);
+
+            } elseif ($checkLastName == 0) {
+                $messageLastName = "Le nom ne doit comporter que des lettres et contenir entre 2 et 25 caractères";
+                return array($messageLastName, null);
+
+            } else {
+                $messageFirstName = "Le prénom ne doit comporter que des lettres et contenir entre 2 et 25 caractères";
+                return array(null, $messageFirstName);
+            }
         }
-        return $checkLastName;
-    }
-
-    // Vérifie la valeur du prénom transmis par l'utilisateur
-    public function checkFirstName($firstName)
-    {
-        // Vérifie que le nom correspond à l'expression régulières
-        // Minimum 2 charactères - Maximum 25
-        // Commence par une lettre (minuscule, majuscule, accentué)
-        // Aucun chiffre
-        // Accepte: minuscule, majuscule, lettre accentuée, tiret et apostrophe
-        $checkFirstName = preg_match("#^[a-zA-ZÀ-ÿ][a-zA-ZÀ-ÿ\-\']{1,25}$#", $firstName);
-
-        if ($checkFirstName == 0) {
-            $messageFirstName = "Le prénom ne doit comporter que des lettres et contenir entre 2 et 25 caractères";
-
-            return $messageFirstName;
-        }
-        return $checkFirstName;
+        return 1;
     }
 
     // Vérifie que le mail correspond à l'expression régulières
@@ -82,25 +73,23 @@ class CheckFormValuesController
 
         if ($checkEmail == 0) {
             $messageEmail = "Le format du mail attendue est nom@exemple.fr";
-
             return $messageEmail;
+
         }
         return $checkEmail;
     }
 
-    // Vérifie que le mail correspond à l'expression régulières
+    // Vérifie la correspondance des deux mot de passe
     public function checkPassword($password, $confirmPassword)
     {
-        // Vérifie la correspondance des mots de passe
+        // Vérifie que $password est identique à $confirmPassword
         $checkPassword = $password == $confirmPassword;
-
         if ($checkPassword == false) {
             $messagePassword = "Les deux mots de passe ne correspondent pas";
-
             return $messagePassword;
+
         }
         $checkPassword = 1;
-
         return $checkPassword;
     }
 }

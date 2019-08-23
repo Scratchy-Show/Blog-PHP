@@ -5,7 +5,7 @@ namespace Controllers;
 
 use Models\User;
 
-class AdminController extends Controller // Hérite de la class Controller
+class AdminController extends Controller // Hérite de la class Controller et CheckFormValuesController
 {
     public function registration()
     {
@@ -19,22 +19,17 @@ class AdminController extends Controller // Hérite de la class Controller
             $password = $_POST['password'];
             $confirmPassword = $_POST['confirm'];
 
-            // Crée une instance du controller
-            $checkFormValues = new CheckFormValuesController;
-
             // Vérifie la valeur des variables
-            $verifiedLastName = $checkFormValues->checkLastName($lastName);
-            $verifiedFirstName = $checkFormValues->checkFirstName($firstName);
-            $verifiedEmail = $checkFormValues->checkEmail($email);
-            $verifiedPassword = $checkFormValues->checkPassword($password, $confirmPassword);
-            // Vérifie si $email est unique
-            $verifiedSingleEmail = $checkFormValues->checkSingleEmail($email);
-            // Vérifie si le pseudo est unique
-            $verifiedSingleUsername = $checkFormValues->checkSingleUsername($username);
+            $verifiedName = $this->checkName($lastName, $firstName);
+            $verifiedEmail = $this->checkEmail($email);
+            $verifiedPassword = $this->checkPassword($password, $confirmPassword);
+            // Vérifie si $email et $username sont unique
+            $verifiedSingleUsernameEmail = $this->checkSingleUsernameEmail($email, $username);
 
-            if (($verifiedLastName == 1) && ($verifiedFirstName == 1) &&
-                ($verifiedEmail == 1) && ($verifiedPassword == 1) &&
-                ($verifiedSingleEmail == null) && ($verifiedSingleUsername == null)) {
+            if (($verifiedName == 1) &&
+                ($verifiedEmail == 1) &&
+                ($verifiedPassword == 1) &&
+                ($verifiedSingleUsernameEmail == null)) {
 
                 // Crée une instance de User
                 $user = new User;
@@ -46,12 +41,12 @@ class AdminController extends Controller // Hérite de la class Controller
             } else {
                 // Affiche le page d'inscription avec le message d'erreur
                 $this->render('registration.html.twig', array(
-                    "messageLastName" => $verifiedLastName,
-                    "messageFirstName" => $verifiedFirstName,
+                    "messageLastName" => $verifiedName[0],
+                    "messageFirstName" => $verifiedName[1],
                     "messageEmail" => $verifiedEmail,
                     "messagePassword" => $verifiedPassword,
-                    "messageSingleEmail" => $verifiedSingleEmail,
-                    "messageSingleUsername"  => $verifiedSingleUsername
+                    "messageSingleEmail" => $verifiedSingleUsernameEmail[0],
+                    "messageSingleUsername"  => $verifiedSingleUsernameEmail[1]
                 ));
             }
         }
@@ -70,10 +65,8 @@ class AdminController extends Controller // Hérite de la class Controller
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            // Crée une instance de User
-            $user = new User;
-            // Appelle la fonction checkLogin() avec les paramètres du formulaire
-            $checkUser = $user->getUserByLogin($username, $password);
+            // Appelle la fonction static getUserByLogin() avec les paramètres du formulaire
+            $checkUser = User::getUserByLogin($username, $password);
 
             // Si l'utilisateur est identifié
             if ($checkUser == true ) {

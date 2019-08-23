@@ -6,7 +6,7 @@ namespace Controllers;
 use Twig_Environment;
 use Twig_Loader_Filesystem;
 
-class Controller
+class Controller extends CheckFormValuesController // Hérite de la class CheckFormValuesController
 {
     // Seule la class parent et les class filles accéde à ces varaibles
     protected $loader;
