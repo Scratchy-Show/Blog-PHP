@@ -14,14 +14,22 @@
         }
     }
 
+    .error-container {
+        width: 90%;
+        margin: auto;
+
+        .error {
+            @include error;
+        }
+    }
+
     .form-container {
         display: flex;
-        align-items: center;
+        width: 100%;
         margin-bottom: 250px;
 
         form {
             @include form;
-            height: 800px;
         }
     }
 }

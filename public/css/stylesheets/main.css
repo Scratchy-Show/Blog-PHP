@@ -932,69 +932,73 @@ footer .copyright-footer .admin-footer {
 }
 /* line 8, ../scss/pages/_login.scss */
 .login-main-container .error {
-  padding: 10px;
-  font-weight: bold;
-  border: 2px solid #d80e0e;
-  border-radius: 5px;
+  display: flex;
+  padding: 15px 10px 10px 10px;
+}
+/* line 139, ../scss/utilities/_mixins.scss */
+.login-main-container .error img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+/* line 145, ../scss/utilities/_mixins.scss */
+.login-main-container .error .message {
+  align-self: center;
+  padding-left: 5px;
+  font-size: 20px;
   color: #d80e0e;
 }
-/* line 16, ../scss/pages/_login.scss */
+/* line 12, ../scss/pages/_login.scss */
 .login-main-container .form-container {
   display: flex;
-  align-items: center;
-  min-height: 45vh;
+  width: 95%;
+  min-height: 30vh;
 }
-/* line 21, ../scss/pages/_login.scss */
+/* line 17, ../scss/pages/_login.scss */
 .login-main-container .form-container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
   border: 2px solid #00afef;
-  border-radius: 5px;
   height: 350px;
 }
-@media (max-width: 740px) {
-  /* line 21, ../scss/pages/_login.scss */
-  .login-main-container .form-container form {
-    width: 600px;
-    margin: 0 15px;
-  }
-}
-/* line 149, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input {
+/* line 163, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container {
   position: relative;
   margin: 45px 0;
 }
-/* line 153, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input input {
+/* line 167, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container input {
   width: 310px;
   padding: 10px 5px;
   font-size: 18px;
   border: none;
   border-bottom: 1px solid #c6c6c6;
 }
-/* line 160, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input input:focus {
+/* line 174, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container input:focus {
   outline: none;
 }
-/* line 164, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input input:focus ~ label, .login-main-container .form-container form .input input:valid ~ label {
+/* line 178, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container input:focus ~ label, .login-main-container .form-container form .input-container input:valid ~ label {
   top: -14px;
   font-size: 14px;
   color: #00afef;
 }
-/* line 171, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input input:focus ~ .border:before {
+/* line 185, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container input:focus ~ .border:before {
   width: 320px;
 }
-/* line 176, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input input[type="password"] {
+/* line 190, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container input[type="password"] {
   letter-spacing: 0.3em;
 }
-/* line 182, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input .border:before {
+/* line 196, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container .border:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1004,8 +1008,8 @@ footer .copyright-footer .admin-footer {
   background: #00afef;
   transition: 300ms ease all;
 }
-/* line 194, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input label {
+/* line 208, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container label {
   position: absolute;
   top: 10px;
   left: 5px;
@@ -1013,8 +1017,12 @@ footer .copyright-footer .admin-footer {
   color: #c6c6c6;
   transition: 300ms ease all;
 }
-/* line 204, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .submit {
+/* line 218, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .submit-container {
+  margin-bottom: 40px;
+}
+/* line 221, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .submit-container .submit {
   padding: 15px;
   border: 2px solid #00afef;
   border-radius: 5px;
@@ -1022,10 +1030,10 @@ footer .copyright-footer .admin-footer {
   cursor: pointer;
   color: #00afef;
   background: none;
-  transition: 0.25s;
+  transition: 0.65s;
 }
-/* line 214, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .submit:hover, .login-main-container .form-container form .submit:focus {
+/* line 231, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .submit-container .submit:hover, .login-main-container .form-container form .submit-container .submit:focus {
   color: white;
   box-shadow: inset 135px 0 0 0 #00afef;
 }
@@ -1053,62 +1061,78 @@ footer .copyright-footer .admin-footer {
   margin-top: 10px;
 }
 /* line 17, ../scss/pages/_registration.scss */
+.registration-main-container .error-container {
+  width: 90%;
+  margin: auto;
+}
+/* line 21, ../scss/pages/_registration.scss */
+.registration-main-container .error-container .error {
+  display: flex;
+  padding: 15px 10px 10px 10px;
+}
+/* line 139, ../scss/utilities/_mixins.scss */
+.registration-main-container .error-container .error img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+/* line 145, ../scss/utilities/_mixins.scss */
+.registration-main-container .error-container .error .message {
+  align-self: center;
+  padding-left: 5px;
+  font-size: 20px;
+  color: #d80e0e;
+}
+/* line 26, ../scss/pages/_registration.scss */
 .registration-main-container .form-container {
   display: flex;
-  align-items: center;
+  width: 100%;
   margin-bottom: 250px;
 }
-/* line 22, ../scss/pages/_registration.scss */
+/* line 31, ../scss/pages/_registration.scss */
 .registration-main-container .form-container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
   border: 2px solid #00afef;
-  border-radius: 5px;
-  height: 800px;
 }
-@media (max-width: 740px) {
-  /* line 22, ../scss/pages/_registration.scss */
-  .registration-main-container .form-container form {
-    width: 600px;
-    margin: 0 15px;
-  }
-}
-/* line 149, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input {
+/* line 163, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container {
   position: relative;
   margin: 45px 0;
 }
-/* line 153, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input input {
+/* line 167, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container input {
   width: 310px;
   padding: 10px 5px;
   font-size: 18px;
   border: none;
   border-bottom: 1px solid #c6c6c6;
 }
-/* line 160, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input input:focus {
+/* line 174, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container input:focus {
   outline: none;
 }
-/* line 164, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input input:focus ~ label, .registration-main-container .form-container form .input input:valid ~ label {
+/* line 178, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container input:focus ~ label, .registration-main-container .form-container form .input-container input:valid ~ label {
   top: -14px;
   font-size: 14px;
   color: #00afef;
 }
-/* line 171, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input input:focus ~ .border:before {
+/* line 185, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container input:focus ~ .border:before {
   width: 320px;
 }
-/* line 176, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input input[type="password"] {
+/* line 190, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container input[type="password"] {
   letter-spacing: 0.3em;
 }
-/* line 182, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input .border:before {
+/* line 196, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container .border:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1118,8 +1142,8 @@ footer .copyright-footer .admin-footer {
   background: #00afef;
   transition: 300ms ease all;
 }
-/* line 194, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input label {
+/* line 208, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container label {
   position: absolute;
   top: 10px;
   left: 5px;
@@ -1127,8 +1151,12 @@ footer .copyright-footer .admin-footer {
   color: #c6c6c6;
   transition: 300ms ease all;
 }
-/* line 204, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .submit {
+/* line 218, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .submit-container {
+  margin-bottom: 40px;
+}
+/* line 221, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .submit-container .submit {
   padding: 15px;
   border: 2px solid #00afef;
   border-radius: 5px;
@@ -1136,10 +1164,10 @@ footer .copyright-footer .admin-footer {
   cursor: pointer;
   color: #00afef;
   background: none;
-  transition: 0.25s;
+  transition: 0.65s;
 }
-/* line 214, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .submit:hover, .registration-main-container .form-container form .submit:focus {
+/* line 231, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .submit-container .submit:hover, .registration-main-container .form-container form .submit-container .submit:focus {
   color: white;
   box-shadow: inset 135px 0 0 0 #00afef;
 }

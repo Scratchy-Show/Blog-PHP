@@ -6,17 +6,13 @@
     }
 
     .error {
-        padding: 10px;
-        font-weight: bold;
-        border: 2px solid $red;
-        border-radius: 5px;
-        color: $red;
+        @include error;
     }
 
     .form-container {
         display: flex;
-        align-items: center;
-        min-height: 45vh; // Centre le formulaire
+        width: 95%;
+        min-height: 30vh; // Centre le formulaire
 
         form {
             @include form;
