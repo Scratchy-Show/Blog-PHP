@@ -52,7 +52,7 @@ class User
     /**
      * @Column(type="string", length=25)
      */
-    protected $login;
+    protected $username;
 
     /**
      * @Column(type="string", name="password", length=255)
@@ -66,20 +66,69 @@ class User
         // Par défaut, la date est la date d'aujourd'hui
         $this->date = new \DateTime();
         // Par défaut, le role est à 0 (false)
-        $this->role =0;
+        $this->role = 0;
     }
 
-    // Vérifie la correspondance des identifiants
-    public function getUserByLogin($login, $password) {
+    // Enregistre un nouveau utilisateur
+    public function registerUserByForm($lastName, $firstName, $email, $username, $password) {
+        // Définit les valeurs des variables
+        $this->setLastName($lastName);
+        $this->setFirstName($firstName);
+        $this->setEmail($email);
+        $this->setUsername($username);
+        $this->setPassword($password);
+
+        // Récupère EntityManager dans l'application
+        $entityManager = Database::getEntityManager();
+        // Planifie la sauvegarde de l'entité
+        $entityManager->persist($this);
+        // Effectue la sauvegarde de l'entité en bdd
+        $entityManager->flush();
+    }
+
+    // Récupère un utilisateur avec son mail
+    public static function getUserByEmail($email) {
+        // Gestion des erreurs
+        try {
+            // Repository dédié à l'entité User
+            $userRepository = Database::getEntityManager()->getRepository(User::class);
+            // Recherche un email correspondant
+            $user = $userRepository->findBy(array('email' => $email));
+            // Retourne un utilisateur ou un tableau vide
+            return $user;
+        }
+        catch (PDOException $e) {
+            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
+        }
+    }
+
+    // Récupère un utilisateur avec son pseudo
+    public static function getUserByUsername($username) {
+        // Gestion des erreurs
+        try {
+            // Repository dédié à l'entité User
+            $userRepository = Database::getEntityManager()->getRepository(User::class);
+            // Recherche un pseudo correspondant
+            $user = $userRepository->findBy(array('username' => $username));
+            // Retourne un utilisateur ou un tableau vide
+            return $user;
+        }
+        catch (PDOException $e) {
+            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
+        }
+    }
+
+    // Récupère un utilisateur avec ses identifiants
+    public static function getUserByLogin($username, $password) {
        // Gestion des erreurs
        try {
            // Repository dédié à l'entité User
            $userRepository = Database::getEntityManager()->getRepository(User::class);
-           // Récupère l'utilisateur correspondant au login
-           $user = $userRepository->findOneBy(["login" => "$login"]);
+           // Récupère l'utilisateur correspondant au pseudo
+           $user = $userRepository->findOneBy(["username" => "$username"]);
 
            // Si le login éxiste
-           if ($user !== null ) {
+           if ($user != null ) {
                // Vérifie la correspondance de $password avec le mot de passe haché en BDD
                $checkPassword = password_verify($password, $user->getHashedPassword());
                // Retourne True ou False
@@ -112,10 +161,11 @@ class User
         // Effectue la sauvegarde de l'entité en bdd
         $entityManager->flush();
     }
-
+  
     // Hachage du mot de passe
     public function hashPassword($password) {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        // Retourne le mot de passe haché
         return $hashedPassword;
     }
 
@@ -146,9 +196,9 @@ class User
         return $this->role;
     }
 
-    public function getLogin()
+    public function getUsername()
     {
-        return $this->login;
+        return $this->username;
     }
 
     public function getHashedPassword()
@@ -179,9 +229,9 @@ class User
         $this->role = $role;
     }
 
-    public function setLogin($login)
+    public function setUsername($username)
     {
-        $this->login = $login;
+        $this->username = $username;
     }
 
     public function setHashedPassword($hashedPassword)
@@ -191,6 +241,6 @@ class User
 
     public function setPassword($password)
     {
-        $this->hashPassword($password);
+        $this->hashedPassword = $this->hashPassword($password);
     }
 }
