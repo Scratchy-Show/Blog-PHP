@@ -19,6 +19,8 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
         $this->loader = new Twig_Loader_Filesystem(__DIR__.'/../views');
         // Instancie Twig
         $this->twig = new Twig_Environment($this->loader);
+        // Permet d'accéder à la superglobale $_SESSION dans toutes les vues
+        $this->twig->addGlobal('session', $_SESSION);
     }
 
     // Récupère HTTP_REFERER
@@ -29,10 +31,17 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
         }
     }
 
+    // Définie les variables de session
+    public function setSessionVariables($user) {
+        // Définie les variables de session
+        $_SESSION['username'] = $user->getUsername();
+    }
+
     // Affiche la page donnée en paramètre
     public function render($page, $arguments) {
         // Appelle httpReferer()
         $this->httpReferer();
+
         echo $this->twig->render($page, $arguments);
     }
 
@@ -45,7 +54,7 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
         return false;
     }
 
-    // Renvoie un utilisateur non administrateur
+    // Redirige un utilisateur non administrateur
     public function redirectIfNotAdmin() {
         //  Redirige vers la page d'erreur 404
         $this->render('error404.html.twig', array());

@@ -28,6 +28,10 @@ try {
         $registration = new AdminController();
         $registration->registration();
     }
+    elseif ($path_only == '/logout') {
+        $logout = new AdminController();
+        $logout->logout();
+    }
     else {
         // Erreur gérée, elle sera remontée jusqu'au bloc try
         throw new Exception('Page non trouvée.');

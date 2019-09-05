@@ -70,6 +70,9 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
 
             // Si l'utilisateur est identifié
             if ($checkUser[0] == true) {
+                // Appel la methode setSessionVariables
+                $this->setSessionVariables($checkUser[1]);
+
                 // Si l'utilisateur est un administrateur
                 if (Controller::isAdmin($checkUser[1]) == true) {
                     //  Redirige vers la page d'administration
@@ -99,5 +102,16 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
             // Affiche le page d'identification par défaut
             $this->render('login.html.twig', array());
         }
+    }
+
+    // Déconnecte l'utilisateur
+    public function logout()
+    {
+        // Détruit les variables de la session
+        session_unset();
+        // Détruit la session
+        session_destroy();
+        // Redirige vers l'URL précédente
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

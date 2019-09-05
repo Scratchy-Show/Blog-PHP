@@ -12,8 +12,12 @@
                 <ul>
                     <li><a href="/">Accueil</a></li>
                     <li><a href="#">Portfolio</a></li>
-                    <li><a href="/registration">Inscription</a></li>
                     <li><a href="#">Contact</a></li>
+                    {% if session.username is defined %}
+                        <li><a href="/logout">Déconnexion</a></li>
+                    {% else %}
+                        <li><a href="/registration">Inscription</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
