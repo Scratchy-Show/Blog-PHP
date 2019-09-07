@@ -15,22 +15,32 @@ $path_only = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Gestion des erreurs
 try {
+    // Page d'accueil
     if ($path_only == '/') {
         $home = new PageController();
         $home->index();
     }
+    // Page d'inscription
+    elseif ($path_only == '/registration') {
+        $registration = new AdminController();
+        $registration->registration();
+    }
+    // Page d'identification
     elseif ($path_only == '/login')
     {
         $login = new AdminController();
         $login->login();
     }
-    elseif ($path_only == '/registration') {
-        $registration = new AdminController();
-        $registration->registration();
-    }
+    // Déconnexion
     elseif ($path_only == '/logout') {
         $logout = new AdminController();
         $logout->logout();
+    }
+    // Page d'administration
+    elseif ($path_only == '/admin')
+    {
+        $login = new AdminController();
+        $login->admin();
     }
     else {
         // Erreur gérée, elle sera remontée jusqu'au bloc try

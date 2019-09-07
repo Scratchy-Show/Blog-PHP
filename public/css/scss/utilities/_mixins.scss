@@ -117,7 +117,7 @@
 
 
 
-/* Page Identification / Inscription */
+/* Page Identification / Inscription / Erreur 404 */
 
 @mixin main-container {
     display: flex;
@@ -131,6 +131,8 @@
     padding: 40px 0;
     color: $blue;
 }
+
+/* Page Identification / Inscription */
 
 @mixin error {
     display: flex;

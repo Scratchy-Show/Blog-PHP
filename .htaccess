@@ -22,3 +22,6 @@ ServerSignature Off
 
 # Encodage par défaut des fichiers textes et HTML
 AddDefaultCharset UTF-8
+
+# Affiche ma page 404 personalisée
+ErrorDocument 404 /views/error404.html.twig

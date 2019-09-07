@@ -75,23 +75,39 @@ class CheckFormValuesController
         if ($checkEmail == 0) {
             $messageEmail = "Le format du mail attendue est nom@exemple.fr";
             return $messageEmail;
-
         }
         return $checkEmail;
     }
 
-    // Vérifie la correspondance des deux mot de passe
+    // Vérifie que le pseudo ne soit pas vide
+    public function checkUsername($username)
+    {
+        if (empty($username)) {
+            $messageUsername = "Le pseudo n'a pas été renseigné";
+            return $messageUsername;
+        }
+        $username = 1;
+        return $username;
+    }
+
+    // Vérifie les deux mot de passe
     public function checkPassword($password, $confirmPassword)
     {
-        // Vérifie que $password est identique à $confirmPassword
-        $checkPassword = $password == $confirmPassword;
+        // Si les deux mot de passe ne sont pas vident
+        if ((!empty($password)) && (!empty($confirmPassword))) {
+            // Vérifie que $password est identique à $confirmPassword
+            $checkPassword = $password == $confirmPassword;
 
-        if ($checkPassword == false) {
-            $messagePassword = "Les deux mots de passe ne correspondent pas";
-            return $messagePassword;
-
+            if ($checkPassword == false) {
+                $messagePassword = "Les deux mots de passe ne correspondent pas";
+                return $messagePassword;
+            }
+            $checkPassword = 1;
+            return $checkPassword;
         }
-        $checkPassword = 1;
-        return $checkPassword;
+        else {
+            $messagePassword = "Le mot de passe n'a pas été renseigné";
+            return $messagePassword;
+        }
     }
 }

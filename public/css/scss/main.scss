@@ -1,9 +1,10 @@
 @import "base/reset.scss";
 @import "base/fonts.scss";
 
-@import "utilities/variables.scss";
-@import "utilities/mixins.scss";
+@import "utilities/animations.scss";
 @import "utilities/functions.scss";
+@import "utilities/mixins.scss";
+@import "utilities/variables.scss";
 
 @import "layout/base.scss";
 @import "layout/header.scss";
@@ -13,3 +14,4 @@
 @import "pages/index.scss";
 @import "pages/login.scss";
 @import "pages/registration.scss";
+@import "pages/error404";

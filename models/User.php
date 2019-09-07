@@ -70,7 +70,8 @@ class User
     }
 
     // Enregistre un nouveau utilisateur
-    public function registerUserByForm($lastName, $firstName, $email, $username, $password) {
+    public function registerUserByForm($lastName, $firstName, $email, $username, $password)
+    {
         // Définit les valeurs des variables
         $this->setLastName($lastName);
         $this->setFirstName($firstName);
@@ -87,7 +88,8 @@ class User
     }
 
     // Récupère un utilisateur avec son mail
-    public static function getUserByEmail($email) {
+    public static function getUserByEmail($email)
+    {
         // Gestion des erreurs
         try {
             // Repository dédié à l'entité User
@@ -103,7 +105,8 @@ class User
     }
 
     // Récupère un utilisateur avec son pseudo
-    public static function getUserByUsername($username) {
+    public static function getUserByUsername($username)
+    {
         // Gestion des erreurs
         try {
             // Repository dédié à l'entité User
@@ -119,7 +122,8 @@ class User
     }
 
     // Récupère un utilisateur avec ses identifiants
-    public static function getUserByLogin($username, $password) {
+    public static function getUserByLogin($username, $password)
+    {
        // Gestion des erreurs
        try {
            // Repository dédié à l'entité User
@@ -143,7 +147,8 @@ class User
     }
 
     // Hachage du mot de passe
-    public function hashPassword($password) {
+    public function hashPassword($password)
+    {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         // Retourne le mot de passe haché
         return $hashedPassword;

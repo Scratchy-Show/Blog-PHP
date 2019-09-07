@@ -64,6 +64,12 @@
                 </div>
 
                 <div class="error-container">
+                    {% if messageUsername starts with 'L' %}
+                        <div class="error">
+                            <img src="../public/img/icons/prohibited.png" alt="" />
+                            <p class="message">{{ messageUsername }}</p>
+                        </div>
+                    {% endif %}
                     {% if messageSingleUsername starts with 'C' %}
                         <div class="error">
                             <img src="../public/img/icons/prohibited.png" alt="" />

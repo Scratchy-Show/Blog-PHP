@@ -24,7 +24,8 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
     }
 
     // Récupère HTTP_REFERER
-    public function httpReferer() {
+    public function httpReferer()
+    {
         // Si HTTP_REFERER est déclaré renvoie sur l'URL précédente
         if (isset($_SERVER['HTTP_REFERER'])) {
             $_SESSION['previousUrl'] = $_SERVER['HTTP_REFERER'];
@@ -32,13 +33,17 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
     }
 
     // Définie les variables de session
-    public function setSessionVariables($user) {
-        // Définie les variables de session
+    public function setSessionVariables($user)
+    {
+        // Définie le pseudo
         $_SESSION['username'] = $user->getUsername();
+        // Définie le role
+        $_SESSION['role'] = $user->getRole();
     }
 
     // Affiche la page donnée en paramètre
-    public function render($page, $arguments) {
+    public function render($page, $arguments)
+    {
         // Appelle httpReferer()
         $this->httpReferer();
 
@@ -46,7 +51,8 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
     }
 
     // Vérifie le role de l'utilisateur
-    public function isAdmin($user) {
+    public function isAdmin($user)
+    {
         // Si l'utilisateur est administrateur
         if ($user->getRole() == 1 ) {
             return true;
@@ -55,7 +61,8 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
     }
 
     // Redirige un utilisateur non administrateur
-    public function redirectIfNotAdmin() {
+    public function redirectIfNotAdmin()
+    {
         //  Redirige vers la page d'erreur 404
         $this->render('error404.html.twig', array());
     }
