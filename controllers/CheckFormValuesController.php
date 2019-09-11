@@ -75,6 +75,7 @@ class CheckFormValuesController
         if ($checkEmail == 0) {
             $messageEmail = "Le format du mail attendue est nom@exemple.fr";
             return $messageEmail;
+
         }
         return $checkEmail;
     }
@@ -108,6 +109,7 @@ class CheckFormValuesController
         else {
             $messagePassword = "Le mot de passe n'a pas été renseigné";
             return $messagePassword;
+
         }
     }
 }
