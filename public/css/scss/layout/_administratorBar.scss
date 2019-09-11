@@ -1,0 +1,27 @@
+.administrator-bar {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    z-index: 10;
+    color: $blue;
+    background-color: $dashboard;
+
+    .admin {
+        display: flex;
+        align-items: center;
+    }
+
+    .add-post {
+        display: flex;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,346 @@
+.error-404-main-container {
+
+    *,
+    *:after,
+    *:before {
+        box-sizing: border-box;
+    }
+
+    .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    // Les étoiles
+    .container-star {
+        background-image: linear-gradient(
+                        to bottom,
+                        $purple1 0%,
+                        $purple2 70%,
+                        $purple3 100%
+        );
+
+        &:after {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            background: radial-gradient(
+                            ellipse at center,
+                            rgba(255, 255, 255, 0) 0%,
+                            rgba(255, 255, 255, 0) 40%,
+                            rgba(15, 10, 38, 0.2) 100%
+            );
+        }
+
+        .star-1 {
+            position: absolute;
+            border-radius: 50%;
+            background-color: $white;
+            animation: twinkle 5s infinite ease-in-out;
+
+            &:after {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                content: "";
+                border-radius: 50%;
+                background-color: $white;
+                transform: rotate(90deg);
+            }
+
+            &:before {
+                position: absolute;
+                top: -20%;
+                left: -50%;
+                content: "";
+                border-radius: 50%;
+                background: radial-gradient(
+                                ellipse at center,
+                                rgba(255, 255, 255, 0.5) 0%,
+                                rgba(255, 255, 255, 0) 60%,
+                                rgba(255, 255, 255, 0) 100%
+                );
+            }
+        }
+
+        @for $i from 1 through (30) {
+            $top: random(100)+vh;
+            $left: random(100)+vw;
+            $size: random(6) + 3px;
+
+            .star-1:nth-of-type(#{$i}) {
+                top: $top;
+                left: $left;
+                width: $size;
+                height: $size/3;
+                animation-delay: random(5) + s;
+
+                &:before {
+                    width: $size *2;
+                    height: $size *2;
+                    top: -250%;
+                }
+            }
+        }
+
+        .star-2 {
+            position: absolute;
+            border-radius: 50%;
+            background-color: $white;
+            animation: twinkle 5s infinite ease-in-out;
+        }
+
+        @for $i from 31 through (60) {
+            $top: random(100)+vh;
+            $left: random(100)+vw;
+            $size: random(3) + 1px;
+
+            .star-2:nth-of-type(#{$i}) {
+                top: $top;
+                left: $left;
+                width: $size;
+                height: $size;
+                animation-delay: random(5) + s;
+
+                &:before {
+                    width: $size *2;
+                    height: $size *2;
+                    top: -250%;
+                }
+            }
+        }
+    }
+
+    // Les oiseaux
+    .container-bird {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        perspective: 2000px;
+
+        .bird {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 40px;
+            width: 50px;
+            z-index: 1000;
+            transform: translate3d(-100vw, 0, 0) rotateY(90deg);
+            transform-style: preserve-3d;
+
+            .bird-container {
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                transform: translate3d(50px, 30px, -300px);
+
+                .wing {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 3px;
+                    z-index: 300;
+                    transform-style: preserve-3d;
+                    transform-origin: center bottom;
+
+                    .wing-right-top,
+                    .wing-left-top {
+                        position: absolute;
+                        top: -20px;
+                        width: 100%;
+                        border-right: 25px solid transparent;
+                        border-left: 25px solid transparent;
+                        transform-origin: 100% 100%;
+                    }
+                }
+
+                .wing-left {
+                    background: linear-gradient(to bottom, $wing-left1 0%, $wing-left2 100%);
+                    transform: translate3d(0, 0, 0) rotateX(-30deg);
+                    animation: wingLeft 1.3s cubic-bezier(0.45, 0, 0.50, 0.95) infinite;
+
+                    .wing-left-top {
+                        border-bottom: 20px solid $wing-left2;
+                        transform: translate3d(0, 0, 0) rotateX(-60deg);
+                        animation: wingLeftTop 1.3s cubic-bezier(0.45, 0, 0.50, 0.95) infinite;
+                    }
+                }
+
+                .wing-right {
+                    background: linear-gradient(to bottom, $wing-right1 0%, $wing-right2 100%);
+                    transform: translate3d(0, 0, 0) rotateX(-30deg);
+                    animation: wingRight 1.3s cubic-bezier(0.45, 0, 0.50, 0.95) infinite;
+
+                    .wing-right-top {
+                        border-bottom: 20px solid $wing-right2;
+                        transform: translate3d(0, 0, 0) rotateX(60deg);
+                        animation: wingRightTop 1.3s cubic-bezier(0.45, 0, 0.50, 0.95) infinite;
+                    }
+                }
+            }
+        }
+
+        .bird-anim:nth-child(1) {
+            animation: bird1 30s linear infinite forwards;
+        }
+
+        .bird-anim:nth-child(2) {
+            animation: bird2 30s linear infinite forwards;
+            animation-delay: 3s;
+            z-index: -1;
+        }
+
+        .bird-anim:nth-child(3) {
+            animation: bird3 30s linear infinite forwards;
+            animation-delay: 5s;
+        }
+
+        .bird-anim:nth-child(4) {
+            animation: bird4 30s linear infinite forwards;
+            animation-delay: 7s;
+        }
+
+        .bird-anim:nth-child(5) {
+            animation: bird5 30s linear infinite forwards;
+            animation-delay: 14s;
+        }
+
+        .bird-anim:nth-child(6) {
+            animation: bird6 30s linear infinite forwards;
+            animation-delay: 10s;
+            z-index: -10;
+        }
+    }
+
+    // text et lune
+    .container-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        min-width: 100%;
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        color: $blue;
+        transform: translate(-50%, -50%);
+
+        .title > * {
+            display: inline-block;
+            font-size: 200px;
+        }
+
+        .title {
+
+            .number {
+                text-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+                padding: 0 0.2em;
+            }
+
+            .moon {
+                position: relative;
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                background-color: $blue;
+                box-shadow: 0 0 10px $white, 0 0 20px $white, 0 0 30px $white, 0 0 40px $white,
+                0 0 70px $white, 0 0 80px $white, 0 0 100px $pink-sun;
+                animation: rotate 5s ease-in-out infinite;
+
+                .face {
+                    position: absolute;
+                    top: 60%;
+                    left: 47%;
+
+                    .mouth {
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        border-top-left-radius: 50%;
+                        border-top-right-radius: 50%;
+                        border-bottom-right-radius: 50%;
+                        background-color: $black;
+                        box-shadow: inset -4px -4px 4px rgba(0, 0, 0, 0.3);
+                        animation: snore 5s ease-in-out infinite;
+                        transform: rotate(45deg);
+                    }
+
+                    .eyes {
+                        position: absolute;
+                        top: -30px;
+                        left: -30px;
+
+                        .eye-left,
+                        .eye-right {
+                            position: absolute;
+                            width: 30px;
+                            height: 15px;
+                            border: 4px solid $black;
+                            border-top: 0;
+                            border-bottom-right-radius: 100px;
+                            border-bottom-left-radius: 100px;
+
+                            &:before,
+                            &:after {
+                                position: absolute;
+                                top: -2px;
+                                left: -4px;
+                                width: 4px;
+                                height: 4px;
+                                content: "";
+                                border-radius: 50%;
+                                background-color: $black;
+                            }
+
+                            &:after {
+                                left: auto;
+                                right: -4px;
+                            }
+                        }
+
+                        .eye-right {
+                            left: 50px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .text {
+            width: 80%;
+            margin: 1.5em 0;
+
+            p {
+                text-align: center;
+                font-size: 25px;
+                color: $blue;
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .home-link {
+            display: flex;
+            justify-content: center;
+
+            a {
+                @include slide-link;
+            }
+        }
+    }
+}

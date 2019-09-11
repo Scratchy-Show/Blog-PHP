@@ -1,4 +1,6 @@
  #header {
+     position: relative;
+     z-index: 10;
 
      .header-container {
          height: 200px;
@@ -16,16 +18,7 @@
                  padding-bottom: 20px;
 
                  @include laptops {
-                     max-width: 730px;
-                 }
-
-                 @include tablets {
-                     max-width: 480px;
-                     padding-bottom: 10px;
-                 }
-
-                 @include mobile {
-                     max-width: 230px;
+                     max-width: 85%;
                  }
              }
          }

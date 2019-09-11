@@ -9,7 +9,9 @@
             <img src="../public/img/icons/copyright.png" alt="Copyright" />
             <p>Copyright 2019. Tous droits réservés</p>
         </div>
-        {% if user == null %}
+        {% if session.username is defined %}
+
+        {% else %}
             <div class="admin-footer">
                 <a href="/login"><img src="../public/img/icons/login.png" alt="Identification" /></a>
             </div>
