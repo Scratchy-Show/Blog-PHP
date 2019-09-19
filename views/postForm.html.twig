@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Formulaire des articles{% endblock %}
+
+
+{% block body %}
+    <section class="postForm-main-container">
+        <h2>Formulaire des articles</h2>
+
+        <div class="form-container">
+            <form method="post" action="/addPost">
+
+                <div class="input-container">
+                    <input id="title" type="text" name="title" required="required" />
+                    <span class="border"></span>
+                    <label for="title">Titre</label>
+                </div>
+
+                <div class="input-container">
+                    <input id="summary" type="text" name="summary" required="required" />
+                    <span class="border"></span>
+                    <label for="summary">Résumé</label>
+                </div>
+
+                <div>
+                    <textarea id="content" name="content" required="required"></textarea>
+                    <span class="border"></span>
+                    <label for="content">Contenu</label>
+                </div>
+
+                <div class="submit-container">
+                    <input class="submit" type="submit" value="Ajouter" />
+                </div>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

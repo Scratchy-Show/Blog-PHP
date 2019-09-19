@@ -1,0 +1,7 @@
+.postForm-main-container {
+    @include main-container;
+
+    h2 {
+        @include h2;
+    }
+}

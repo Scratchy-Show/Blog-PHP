@@ -827,7 +827,7 @@ footer .copyright-footer .admin-footer {
   color: #00afef;
   transition: color 0.5s  ease-in-out;
 }
-/* line 83, ../scss/utilities/_mixins.scss */
+/* line 84, ../scss/utilities/_mixins.scss */
 .index-main-container .portfolio-link a:after {
   top: 0;
   right: 0;
@@ -837,24 +837,24 @@ footer .copyright-footer .admin-footer {
   background: #00afef;
   transition: width 0.5s ease-in-out;
 }
-/* line 93, ../scss/utilities/_mixins.scss */
+/* line 94, ../scss/utilities/_mixins.scss */
 .index-main-container .portfolio-link a:hover {
   color: white;
   transition: color 0.5s  ease-in-out;
 }
-/* line 97, ../scss/utilities/_mixins.scss */
+/* line 98, ../scss/utilities/_mixins.scss */
 .index-main-container .portfolio-link a:hover:after {
   width: 100%;
   transition: width 0.5s ease-in-out;
 }
-/* line 103, ../scss/utilities/_mixins.scss */
+/* line 104, ../scss/utilities/_mixins.scss */
 .index-main-container .portfolio-link a:not(.ctrl) {
   position: relative;
   z-index: 10;
   transition-delay: 0.2s;
   overflow: hidden;
 }
-/* line 109, ../scss/utilities/_mixins.scss */
+/* line 110, ../scss/utilities/_mixins.scss */
 .index-main-container .portfolio-link a:not(.ctrl):after, .index-main-container .portfolio-link a:not(.ctrl):before {
   position: absolute;
   display: block;
@@ -928,7 +928,7 @@ footer .copyright-footer .admin-footer {
   color: #00afef;
   transition: color 0.5s  ease-in-out;
 }
-/* line 83, ../scss/utilities/_mixins.scss */
+/* line 84, ../scss/utilities/_mixins.scss */
 .index-main-container .about .download:after {
   top: 0;
   right: 0;
@@ -938,24 +938,24 @@ footer .copyright-footer .admin-footer {
   background: #00afef;
   transition: width 0.5s ease-in-out;
 }
-/* line 93, ../scss/utilities/_mixins.scss */
+/* line 94, ../scss/utilities/_mixins.scss */
 .index-main-container .about .download:hover {
   color: white;
   transition: color 0.5s  ease-in-out;
 }
-/* line 97, ../scss/utilities/_mixins.scss */
+/* line 98, ../scss/utilities/_mixins.scss */
 .index-main-container .about .download:hover:after {
   width: 100%;
   transition: width 0.5s ease-in-out;
 }
-/* line 103, ../scss/utilities/_mixins.scss */
+/* line 104, ../scss/utilities/_mixins.scss */
 .index-main-container .about .download:not(.ctrl) {
   position: relative;
   z-index: 10;
   transition-delay: 0.2s;
   overflow: hidden;
 }
-/* line 109, ../scss/utilities/_mixins.scss */
+/* line 110, ../scss/utilities/_mixins.scss */
 .index-main-container .about .download:not(.ctrl):after, .index-main-container .about .download:not(.ctrl):before {
   position: absolute;
   display: block;
@@ -1069,13 +1069,13 @@ footer .copyright-footer .admin-footer {
   display: flex;
   padding: 15px 10px 10px 10px;
 }
-/* line 141, ../scss/utilities/_mixins.scss */
+/* line 142, ../scss/utilities/_mixins.scss */
 .login-main-container .error img {
   width: 30px;
   height: 30px;
   padding: 5px;
 }
-/* line 147, ../scss/utilities/_mixins.scss */
+/* line 148, ../scss/utilities/_mixins.scss */
 .login-main-container .error .message {
   align-self: center;
   padding-left: 5px;
@@ -1100,12 +1100,12 @@ footer .copyright-footer .admin-footer {
   border: 2px solid #00afef;
   height: 350px;
 }
-/* line 165, ../scss/utilities/_mixins.scss */
+/* line 166, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .input-container {
   position: relative;
   margin: 45px 0;
 }
-/* line 169, ../scss/utilities/_mixins.scss */
+/* line 170, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .input-container input {
   width: 310px;
   padding: 10px 5px;
@@ -1113,25 +1113,25 @@ footer .copyright-footer .admin-footer {
   border: none;
   border-bottom: 1px solid #c6c6c6;
 }
-/* line 176, ../scss/utilities/_mixins.scss */
+/* line 177, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .input-container input:focus {
   outline: none;
 }
-/* line 180, ../scss/utilities/_mixins.scss */
+/* line 181, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .input-container input:focus ~ label, .login-main-container .form-container form .input-container input:valid ~ label {
   top: -14px;
   font-size: 14px;
   color: #00afef;
 }
-/* line 187, ../scss/utilities/_mixins.scss */
+/* line 188, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .input-container input:focus ~ .border:before {
   width: 320px;
 }
-/* line 192, ../scss/utilities/_mixins.scss */
+/* line 193, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .input-container input[type="password"] {
   letter-spacing: 0.3em;
 }
-/* line 198, ../scss/utilities/_mixins.scss */
+/* line 199, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .input-container .border:before {
   content: '';
   position: absolute;
@@ -1142,7 +1142,7 @@ footer .copyright-footer .admin-footer {
   background: #00afef;
   transition: 300ms ease all;
 }
-/* line 210, ../scss/utilities/_mixins.scss */
+/* line 211, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .input-container label {
   position: absolute;
   top: 10px;
@@ -1151,11 +1151,11 @@ footer .copyright-footer .admin-footer {
   color: #c6c6c6;
   transition: 300ms ease all;
 }
-/* line 220, ../scss/utilities/_mixins.scss */
+/* line 221, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .submit-container {
   margin-bottom: 40px;
 }
-/* line 223, ../scss/utilities/_mixins.scss */
+/* line 224, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .submit-container .submit {
   padding: 15px;
   border: 2px solid #00afef;
@@ -1166,7 +1166,7 @@ footer .copyright-footer .admin-footer {
   background: none;
   transition: 0.65s;
 }
-/* line 233, ../scss/utilities/_mixins.scss */
+/* line 234, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .submit-container .submit:hover, .login-main-container .form-container form .submit-container .submit:focus {
   color: white;
   box-shadow: inset 135px 0 0 0 #00afef;
@@ -1204,13 +1204,13 @@ footer .copyright-footer .admin-footer {
   display: flex;
   padding: 15px 10px 10px 10px;
 }
-/* line 141, ../scss/utilities/_mixins.scss */
+/* line 142, ../scss/utilities/_mixins.scss */
 .registration-main-container .error-container .error img {
   width: 30px;
   height: 30px;
   padding: 5px;
 }
-/* line 147, ../scss/utilities/_mixins.scss */
+/* line 148, ../scss/utilities/_mixins.scss */
 .registration-main-container .error-container .error .message {
   align-self: center;
   padding-left: 5px;
@@ -1234,12 +1234,12 @@ footer .copyright-footer .admin-footer {
   margin: auto;
   border: 2px solid #00afef;
 }
-/* line 165, ../scss/utilities/_mixins.scss */
+/* line 166, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .input-container {
   position: relative;
   margin: 45px 0;
 }
-/* line 169, ../scss/utilities/_mixins.scss */
+/* line 170, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .input-container input {
   width: 310px;
   padding: 10px 5px;
@@ -1247,25 +1247,25 @@ footer .copyright-footer .admin-footer {
   border: none;
   border-bottom: 1px solid #c6c6c6;
 }
-/* line 176, ../scss/utilities/_mixins.scss */
+/* line 177, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .input-container input:focus {
   outline: none;
 }
-/* line 180, ../scss/utilities/_mixins.scss */
+/* line 181, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .input-container input:focus ~ label, .registration-main-container .form-container form .input-container input:valid ~ label {
   top: -14px;
   font-size: 14px;
   color: #00afef;
 }
-/* line 187, ../scss/utilities/_mixins.scss */
+/* line 188, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .input-container input:focus ~ .border:before {
   width: 320px;
 }
-/* line 192, ../scss/utilities/_mixins.scss */
+/* line 193, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .input-container input[type="password"] {
   letter-spacing: 0.3em;
 }
-/* line 198, ../scss/utilities/_mixins.scss */
+/* line 199, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .input-container .border:before {
   content: '';
   position: absolute;
@@ -1276,7 +1276,7 @@ footer .copyright-footer .admin-footer {
   background: #00afef;
   transition: 300ms ease all;
 }
-/* line 210, ../scss/utilities/_mixins.scss */
+/* line 211, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .input-container label {
   position: absolute;
   top: 10px;
@@ -1285,11 +1285,11 @@ footer .copyright-footer .admin-footer {
   color: #c6c6c6;
   transition: 300ms ease all;
 }
-/* line 220, ../scss/utilities/_mixins.scss */
+/* line 221, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .submit-container {
   margin-bottom: 40px;
 }
-/* line 223, ../scss/utilities/_mixins.scss */
+/* line 224, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .submit-container .submit {
   padding: 15px;
   border: 2px solid #00afef;
@@ -1300,10 +1300,110 @@ footer .copyright-footer .admin-footer {
   background: none;
   transition: 0.65s;
 }
-/* line 233, ../scss/utilities/_mixins.scss */
+/* line 234, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .submit-container .submit:hover, .registration-main-container .form-container form .submit-container .submit:focus {
   color: white;
   box-shadow: inset 135px 0 0 0 #00afef;
+}
+
+/* line 1, ../scss/pages/_homeAdmin.scss */
+.homeAdmin-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+/* line 4, ../scss/pages/_homeAdmin.scss */
+.homeAdmin-main-container h2 {
+  padding: 40px 0;
+  color: #00afef;
+}
+/* line 8, ../scss/pages/_homeAdmin.scss */
+.homeAdmin-main-container .error {
+  display: flex;
+  padding: 15px 10px 10px 10px;
+}
+/* line 142, ../scss/utilities/_mixins.scss */
+.homeAdmin-main-container .error img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+/* line 148, ../scss/utilities/_mixins.scss */
+.homeAdmin-main-container .error .message {
+  align-self: center;
+  padding-left: 5px;
+  font-size: 20px;
+  color: #d80e0e;
+}
+/* line 12, ../scss/pages/_homeAdmin.scss */
+.homeAdmin-main-container .add-post-link {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+/* line 17, ../scss/pages/_homeAdmin.scss */
+.homeAdmin-main-container .add-post-link a {
+  padding: 20px;
+  border: 1px solid #00afef;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #00afef;
+  transition: color 0.5s  ease-in-out;
+  border-color: green;
+}
+/* line 84, ../scss/utilities/_mixins.scss */
+.homeAdmin-main-container .add-post-link a:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background: #00afef;
+  transition: width 0.5s ease-in-out;
+}
+/* line 94, ../scss/utilities/_mixins.scss */
+.homeAdmin-main-container .add-post-link a:hover {
+  color: white;
+  transition: color 0.5s  ease-in-out;
+}
+/* line 98, ../scss/utilities/_mixins.scss */
+.homeAdmin-main-container .add-post-link a:hover:after {
+  width: 100%;
+  transition: width 0.5s ease-in-out;
+}
+/* line 104, ../scss/utilities/_mixins.scss */
+.homeAdmin-main-container .add-post-link a:not(.ctrl) {
+  position: relative;
+  z-index: 10;
+  transition-delay: 0.2s;
+  overflow: hidden;
+}
+/* line 110, ../scss/utilities/_mixins.scss */
+.homeAdmin-main-container .add-post-link a:not(.ctrl):after, .homeAdmin-main-container .add-post-link a:not(.ctrl):before {
+  position: absolute;
+  display: block;
+  content: "";
+  z-index: -10;
+}
+/* line 21, ../scss/pages/_homeAdmin.scss */
+.homeAdmin-main-container .add-post-link a:after {
+  background: green;
+}
+
+/* line 1, ../scss/pages/_postForm.scss */
+.postForm-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+/* line 4, ../scss/pages/_postForm.scss */
+.postForm-main-container h2 {
+  padding: 40px 0;
+  color: #00afef;
 }
 
 /* line 3, ../scss/pages/_error404.scss */
@@ -1362,81 +1462,81 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(1) {
-  top: 26vh;
-  left: 46vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 2s;
+  top: 43vh;
+  left: 15vw;
+  width: 7px;
+  height: 2.33333px;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(1):before {
-  width: 10px;
-  height: 10px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(2) {
-  top: 44vh;
-  left: 82vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 2s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(2):before {
   width: 14px;
   height: 14px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(3) {
-  top: 50vh;
-  left: 97vw;
+.error-404-main-container .container-star .star-1:nth-of-type(2) {
+  top: 10vh;
+  left: 17vw;
   width: 9px;
   height: 3px;
-  animation-delay: 3s;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(3):before {
+.error-404-main-container .container-star .star-1:nth-of-type(2):before {
   width: 18px;
   height: 18px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(3) {
+  top: 67vh;
+  left: 79vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(3):before {
+  width: 8px;
+  height: 8px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(4) {
-  top: 45vh;
-  left: 1vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 1s;
+  top: 89vh;
+  left: 18vw;
+  width: 9px;
+  height: 3px;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(4):before {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(5) {
-  top: 43vh;
-  left: 69vw;
-  width: 6px;
-  height: 2px;
+  top: 24vh;
+  left: 71vw;
+  width: 5px;
+  height: 1.66667px;
   animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(5):before {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(6) {
-  top: 75vh;
-  left: 20vw;
+  top: 79vh;
+  left: 70vw;
   width: 7px;
   height: 2.33333px;
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(6):before {
@@ -1446,109 +1546,109 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(7) {
-  top: 23vh;
-  left: 44vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 4s;
+  top: 19vh;
+  left: 37vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(7):before {
-  width: 14px;
-  height: 14px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(8) {
-  top: 87vh;
-  left: 73vw;
-  width: 6px;
-  height: 2px;
-  animation-delay: 5s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(8):before {
-  width: 12px;
-  height: 12px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(9) {
-  top: 94vh;
-  left: 61vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 5s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(9):before {
-  width: 10px;
-  height: 10px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(10) {
-  top: 23vh;
-  left: 22vw;
-  width: 6px;
-  height: 2px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(10):before {
-  width: 12px;
-  height: 12px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(11) {
-  top: 72vh;
-  left: 95vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 5s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(11):before {
-  width: 10px;
-  height: 10px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(12) {
-  top: 88vh;
-  left: 43vw;
-  width: 8px;
-  height: 2.66667px;
-  animation-delay: 4s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(12):before {
   width: 16px;
   height: 16px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(13) {
-  top: 19vh;
-  left: 48vw;
+.error-404-main-container .container-star .star-1:nth-of-type(8) {
+  top: 44vh;
+  left: 15vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 3s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(8):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(9) {
+  top: 99vh;
+  left: 90vw;
   width: 7px;
   height: 2.33333px;
   animation-delay: 1s;
 }
 /* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(13):before {
+.error-404-main-container .container-star .star-1:nth-of-type(9):before {
   width: 14px;
   height: 14px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(10) {
+  top: 10vh;
+  left: 4vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 1s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(10):before {
+  width: 8px;
+  height: 8px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(11) {
+  top: 66vh;
+  left: 14vw;
+  width: 7px;
+  height: 2.33333px;
+  animation-delay: 2s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(11):before {
+  width: 14px;
+  height: 14px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(12) {
+  top: 1vh;
+  left: 69vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 1s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(12):before {
+  width: 8px;
+  height: 8px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(13) {
+  top: 83vh;
+  left: 55vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 3s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(13):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(14) {
   top: 24vh;
-  left: 90vw;
+  left: 22vw;
   width: 6px;
   height: 2px;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(14):before {
@@ -1558,53 +1658,53 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(15) {
-  top: 25vh;
-  left: 51vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 3s;
+  top: 31vh;
+  left: 100vw;
+  width: 9px;
+  height: 3px;
+  animation-delay: 2s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(15):before {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(16) {
-  top: 59vh;
-  left: 98vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 5s;
+  top: 47vh;
+  left: 46vw;
+  width: 9px;
+  height: 3px;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(16):before {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(17) {
-  top: 31vh;
-  left: 3vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 5s;
+  top: 68vh;
+  left: 29vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(17):before {
-  width: 14px;
-  height: 14px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(18) {
-  top: 95vh;
-  left: 1vw;
+  top: 3vh;
+  left: 33vw;
   width: 5px;
   height: 1.66667px;
-  animation-delay: 3s;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(18):before {
@@ -1614,39 +1714,39 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(19) {
-  top: 28vh;
-  left: 2vw;
-  width: 4px;
-  height: 1.33333px;
+  top: 43vh;
+  left: 17vw;
+  width: 5px;
+  height: 1.66667px;
   animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(19):before {
-  width: 8px;
-  height: 8px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(20) {
-  top: 74vh;
-  left: 61vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(20):before {
   width: 10px;
   height: 10px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(20) {
+  top: 64vh;
+  left: 9vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 1s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(20):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(21) {
-  top: 13vh;
-  left: 77vw;
+  top: 31vh;
+  left: 36vw;
   width: 4px;
   height: 1.33333px;
-  animation-delay: 1s;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(21):before {
@@ -1656,128 +1756,128 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(22) {
-  top: 91vh;
-  left: 38vw;
-  width: 8px;
-  height: 2.66667px;
-  animation-delay: 2s;
+  top: 27vh;
+  left: 8vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(22):before {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(23) {
-  top: 39vh;
-  left: 12vw;
-  width: 4px;
-  height: 1.33333px;
-  animation-delay: 2s;
+  top: 19vh;
+  left: 59vw;
+  width: 7px;
+  height: 2.33333px;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(23):before {
-  width: 8px;
-  height: 8px;
+  width: 14px;
+  height: 14px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(24) {
-  top: 58vh;
-  left: 62vw;
-  width: 6px;
-  height: 2px;
+  top: 40vh;
+  left: 78vw;
+  width: 7px;
+  height: 2.33333px;
   animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(24):before {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(25) {
-  top: 82vh;
-  left: 71vw;
-  width: 6px;
-  height: 2px;
-  animation-delay: 4s;
+  top: 32vh;
+  left: 10vw;
+  width: 7px;
+  height: 2.33333px;
+  animation-delay: 1s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(25):before {
+  width: 14px;
+  height: 14px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(26) {
+  top: 61vh;
+  left: 92vw;
+  width: 7px;
+  height: 2.33333px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(26):before {
+  width: 14px;
+  height: 14px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(27) {
+  top: 40vh;
+  left: 3vw;
+  width: 5px;
+  height: 1.66667px;
+  animation-delay: 3s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(27):before {
+  width: 10px;
+  height: 10px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(28) {
+  top: 82vh;
+  left: 15vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 5s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(28):before {
   width: 12px;
   height: 12px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(26) {
-  top: 49vh;
-  left: 11vw;
+.error-404-main-container .container-star .star-1:nth-of-type(29) {
+  top: 79vh;
+  left: 61vw;
   width: 8px;
   height: 2.66667px;
-  animation-delay: 2s;
+  animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(26):before {
+.error-404-main-container .container-star .star-1:nth-of-type(29):before {
   width: 16px;
   height: 16px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(27) {
-  top: 75vh;
-  left: 39vw;
-  width: 4px;
-  height: 1.33333px;
-  animation-delay: 2s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(27):before {
-  width: 8px;
-  height: 8px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(28) {
-  top: 17vh;
-  left: 53vw;
-  width: 9px;
-  height: 3px;
-  animation-delay: 5s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(28):before {
-  width: 18px;
-  height: 18px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(29) {
-  top: 87vh;
-  left: 39vw;
-  width: 6px;
-  height: 2px;
-  animation-delay: 5s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(29):before {
-  width: 12px;
-  height: 12px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(30) {
-  top: 28vh;
+  top: 64vh;
   left: 62vw;
-  width: 9px;
-  height: 3px;
-  animation-delay: 5s;
+  width: 7px;
+  height: 2.33333px;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(30):before {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   top: -250%;
 }
 /* line 92, ../scss/pages/_error404.scss */
@@ -1789,11 +1889,11 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(31) {
-  top: 65vh;
-  left: 9vw;
+  top: 84vh;
+  left: 97vw;
   width: 3px;
   height: 3px;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(31):before {
@@ -1803,123 +1903,123 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(32) {
-  top: 26vh;
-  left: 5vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 2s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(32):before {
-  width: 4px;
-  height: 4px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(33) {
-  top: 53vh;
-  left: 46vw;
-  width: 3px;
-  height: 3px;
-  animation-delay: 5s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(33):before {
-  width: 6px;
-  height: 6px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(34) {
-  top: 92vh;
-  left: 81vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 3s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(34):before {
-  width: 8px;
-  height: 8px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(35) {
-  top: 81vh;
-  left: 87vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 4s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(35):before {
-  width: 8px;
-  height: 8px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(36) {
-  top: 91vh;
-  left: 53vw;
+  top: 18vh;
+  left: 38vw;
   width: 4px;
   height: 4px;
   animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(36):before {
+.error-404-main-container .container-star .star-2:nth-of-type(32):before {
   width: 8px;
   height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(37) {
-  top: 58vh;
-  left: 22vw;
+.error-404-main-container .container-star .star-2:nth-of-type(33) {
+  top: 50vh;
+  left: 75vw;
+  width: 4px;
+  height: 4px;
+  animation-delay: 3s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(33):before {
+  width: 8px;
+  height: 8px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(34) {
+  top: 99vh;
+  left: 18vw;
   width: 3px;
   height: 3px;
   animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(37):before {
+.error-404-main-container .container-star .star-2:nth-of-type(34):before {
   width: 6px;
   height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(38) {
-  top: 12vh;
-  left: 33vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 3s;
+.error-404-main-container .container-star .star-2:nth-of-type(35) {
+  top: 58vh;
+  left: 41vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(38):before {
+.error-404-main-container .container-star .star-2:nth-of-type(35):before {
+  width: 4px;
+  height: 4px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(36) {
+  top: 31vh;
+  left: 51vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 5s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(36):before {
+  width: 4px;
+  height: 4px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(37) {
+  top: 93vh;
+  left: 21vw;
+  width: 4px;
+  height: 4px;
+  animation-delay: 1s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(37):before {
   width: 8px;
   height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(38) {
+  top: 61vh;
+  left: 97vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 1s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(38):before {
+  width: 6px;
+  height: 6px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(39) {
-  top: 57vh;
-  left: 15vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 3s;
+  top: 88vh;
+  left: 14vw;
+  width: 4px;
+  height: 4px;
+  animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(39):before {
-  width: 4px;
-  height: 4px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(40) {
-  top: 37vh;
-  left: 10vw;
+  top: 97vh;
+  left: 7vw;
   width: 4px;
   height: 4px;
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(40):before {
@@ -1929,109 +2029,109 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(41) {
-  top: 19vh;
-  left: 14vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 4s;
+  top: 89vh;
+  left: 34vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(41):before {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(42) {
-  top: 91vh;
-  left: 39vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 1s;
+  top: 84vh;
+  left: 34vw;
+  width: 4px;
+  height: 4px;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(42):before {
-  width: 4px;
-  height: 4px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(43) {
-  top: 55vh;
+  top: 30vh;
   left: 14vw;
-  width: 3px;
-  height: 3px;
-  animation-delay: 5s;
+  width: 4px;
+  height: 4px;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(43):before {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(44) {
-  top: 53vh;
-  left: 30vw;
-  width: 3px;
-  height: 3px;
+  top: 17vh;
+  left: 61vw;
+  width: 2px;
+  height: 2px;
   animation-delay: 2s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(44):before {
+  width: 4px;
+  height: 4px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(45) {
+  top: 11vh;
+  left: 96vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 3s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(45):before {
+  width: 4px;
+  height: 4px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(46) {
+  top: 61vh;
+  left: 79vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 2s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(46):before {
+  width: 4px;
+  height: 4px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(47) {
+  top: 11vh;
+  left: 4vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 3s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(47):before {
   width: 6px;
   height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(45) {
-  top: 65vh;
-  left: 55vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 4s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(45):before {
-  width: 8px;
-  height: 8px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(46) {
-  top: 66vh;
-  left: 15vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 1s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(46):before {
-  width: 8px;
-  height: 8px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(47) {
-  top: 27vh;
-  left: 81vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 1s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(47):before {
-  width: 8px;
-  height: 8px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(48) {
-  top: 81vh;
-  left: 67vw;
+  top: 73vh;
+  left: 100vw;
   width: 4px;
   height: 4px;
-  animation-delay: 4s;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(48):before {
@@ -2041,22 +2141,22 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(49) {
-  top: 99vh;
-  left: 31vw;
-  width: 4px;
-  height: 4px;
+  top: 31vh;
+  left: 29vw;
+  width: 2px;
+  height: 2px;
   animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(49):before {
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(50) {
-  top: 22vh;
-  left: 14vw;
+  top: 7vh;
+  left: 28vw;
   width: 3px;
   height: 3px;
   animation-delay: 1s;
@@ -2069,95 +2169,95 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(51) {
-  top: 81vh;
-  left: 76vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 3s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(51):before {
+  top: 76vh;
+  left: 84vw;
   width: 4px;
   height: 4px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(52) {
-  top: 57vh;
-  left: 23vw;
-  width: 2px;
-  height: 2px;
   animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(52):before {
-  width: 4px;
-  height: 4px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(53) {
-  top: 27vh;
-  left: 34vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 4s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(53):before {
+.error-404-main-container .container-star .star-2:nth-of-type(51):before {
   width: 8px;
   height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(54) {
-  top: 55vh;
-  left: 73vw;
+.error-404-main-container .container-star .star-2:nth-of-type(52) {
+  top: 81vh;
+  left: 66vw;
   width: 3px;
   height: 3px;
-  animation-delay: 1s;
+  animation-delay: 2s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(54):before {
+.error-404-main-container .container-star .star-2:nth-of-type(52):before {
   width: 6px;
   height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(55) {
-  top: 48vh;
-  left: 48vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 4s;
+.error-404-main-container .container-star .star-2:nth-of-type(53) {
+  top: 49vh;
+  left: 58vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(55):before {
+.error-404-main-container .container-star .star-2:nth-of-type(53):before {
+  width: 6px;
+  height: 6px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(54) {
+  top: 73vh;
+  left: 63vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 5s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(54):before {
   width: 4px;
   height: 4px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(56) {
-  top: 24vh;
-  left: 6vw;
+.error-404-main-container .container-star .star-2:nth-of-type(55) {
+  top: 17vh;
+  left: 21vw;
   width: 4px;
   height: 4px;
   animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(56):before {
+.error-404-main-container .container-star .star-2:nth-of-type(55):before {
   width: 8px;
   height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(57) {
-  top: 52vh;
-  left: 23vw;
+.error-404-main-container .container-star .star-2:nth-of-type(56) {
+  top: 51vh;
+  left: 45vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 1s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(56):before {
   width: 4px;
   height: 4px;
-  animation-delay: 3s;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(57) {
+  top: 71vh;
+  left: 2vw;
+  width: 4px;
+  height: 4px;
+  animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(57):before {
@@ -2167,11 +2267,11 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(58) {
-  top: 61vh;
-  left: 60vw;
+  top: 29vh;
+  left: 64vw;
   width: 2px;
   height: 2px;
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(58):before {
@@ -2181,30 +2281,30 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(59) {
-  top: 76vh;
-  left: 42vw;
-  width: 2px;
-  height: 2px;
+  top: 62vh;
+  left: 63vw;
+  width: 3px;
+  height: 3px;
   animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(59):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(60) {
-  top: 3vh;
-  left: 57vw;
-  width: 3px;
-  height: 3px;
-  animation-delay: 2s;
+  top: 76vh;
+  left: 73vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(60):before {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   top: -250%;
 }
 /* line 121, ../scss/pages/_error404.scss */
@@ -2435,7 +2535,7 @@ footer .copyright-footer .admin-footer {
   color: #00afef;
   transition: color 0.5s  ease-in-out;
 }
-/* line 83, ../scss/utilities/_mixins.scss */
+/* line 84, ../scss/utilities/_mixins.scss */
 .error-404-main-container .container-title .home-link a:after {
   top: 0;
   right: 0;
@@ -2445,24 +2545,24 @@ footer .copyright-footer .admin-footer {
   background: #00afef;
   transition: width 0.5s ease-in-out;
 }
-/* line 93, ../scss/utilities/_mixins.scss */
+/* line 94, ../scss/utilities/_mixins.scss */
 .error-404-main-container .container-title .home-link a:hover {
   color: white;
   transition: color 0.5s  ease-in-out;
 }
-/* line 97, ../scss/utilities/_mixins.scss */
+/* line 98, ../scss/utilities/_mixins.scss */
 .error-404-main-container .container-title .home-link a:hover:after {
   width: 100%;
   transition: width 0.5s ease-in-out;
 }
-/* line 103, ../scss/utilities/_mixins.scss */
+/* line 104, ../scss/utilities/_mixins.scss */
 .error-404-main-container .container-title .home-link a:not(.ctrl) {
   position: relative;
   z-index: 10;
   transition-delay: 0.2s;
   overflow: hidden;
 }
-/* line 109, ../scss/utilities/_mixins.scss */
+/* line 110, ../scss/utilities/_mixins.scss */
 .error-404-main-container .container-title .home-link a:not(.ctrl):after, .error-404-main-container .container-title .home-link a:not(.ctrl):before {
   position: absolute;
   display: block;

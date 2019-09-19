@@ -10,7 +10,7 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
     public function registration()
     {
         // Si l'utilisateur n'est pas connecté, il accède à la page
-        if (empty($_SESSION['username'])) {
+        if (empty($_SESSION['user'])) {
             // Si présence des variables
             if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email'])
                 && isset($_POST['username']) && isset($_POST['password'])) {
@@ -49,7 +49,7 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                     }
                     // Si HTTP_REFERER n'est pas déclaré renvoie sur la page d'accueil
                     else  {
-                        header('Location: ' . 'http://my-blog');
+                        header('Location: ' . '/');
                     }
                 } else {
                     // Affiche le page d'inscription avec le message d'erreur
@@ -72,14 +72,14 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         // Si l'utilisateur est connecté
         else {
             // Redirection vers la page d'accueil
-            $this->render('index.html.twig', array());
+            header('Location: ' . '/');
         }
     }
 
     public function login()
     {
         // Si l'utilisateur n'est pas connecté, il accède à la page d'identification
-        if (empty($_SESSION['username'])) {
+        if (empty($_SESSION['user'])) {
             // Si présence des variables 'username' et 'password'
             if (isset($_POST['username']) && isset($_POST['password'])) {
                 $username = $_POST['username'];
@@ -94,9 +94,9 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                     $this->setSessionVariables($checkUser[1]);
 
                     // Si l'utilisateur est un administrateur
-                    if (Controller::isAdmin($checkUser[1]) == true) {
+                    if ($checkUser[1]->getRole() == 1) {
                         //  Redirige vers la page d'administration
-                        header('Location: ' . 'http://my-blog/admin');
+                        header('Location: ' . '/admin');
                     }
                     // Si l'utilisateur n'est pas un administrateur
                     else {
@@ -106,11 +106,11 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                         }
                         // Si HTTP_REFERER n'est pas déclaré renvoie sur la page d'accueil
                         else  {
-                            header('Location: ' . 'http://my-blog');
+                            header('Location: ' . '/');
                         }
                     }
                 }
-                // Si l'utilisateur n'est pas identifié
+                // Si l'utilisateur ne c'est pas identifié correctement
                 else {
                     // Message d'erreur
                     $message = "Logins incorrect, veuillez réessayer";
@@ -126,7 +126,7 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         // Si l'utilisateur est connecté
         else {
             // Redirection vers la page d'accueil
-            $this->render('index.html.twig', array());
+            header('Location: ' . '/');
         }
     }
 
@@ -134,21 +134,18 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
     public function admin()
     {
         // Si l'utilisateur est connecté
-        if (!empty($_SESSION['username'])) {
+        if (!empty($_SESSION['user'])) {
 
             // Si l'utilisateur est un administrateur
-            if ($_SESSION['role'] == 1) {
-                // Affiche la page d'administration
-                $this->render('homeAdmin.html.twig', array());
-            } // Si l'utilisateur n'est pas un administrateur
-            else {
-                $this->redirectIfNotAdmin();
-            }
+            $this->isAdmin($_SESSION['user']);
+
+            // Affiche la page d'administration
+            $this->render('homeAdmin.html.twig', array());
         }
         // Si l'utilisateur n'est pas connecté
         else {
-            // Redirection vers la page d'accueil
-            $this->render('index.html.twig', array());
+            // Redirection vers la page 404
+            $this->redirectIfNotAdmin();
         }
     }
 
@@ -159,7 +156,7 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         session_unset();
         // Détruit la session
         session_destroy();
-        // Redirige vers l'URL précédente
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        // Redirection vers la page d'identification
+        header('Location: ' . '/login');
     }
 }

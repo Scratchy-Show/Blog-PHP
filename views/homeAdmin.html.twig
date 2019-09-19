@@ -4,6 +4,26 @@
 
 
 {% block body %}
-    <h2>Administration</h2>
+    <section class="homeAdmin-main-container">
+        <h2>Administration</h2>
+
+        {% if message != null %}
+            <div class="error">
+                <p class="message">{{ message }}</p>
+            </div>
+        {% endif %}
+
+        <div class="add-post-link">
+            <a href="/admin/addPost">Ajouter article</a>
+        </div>
+
+        <div class="add-post-link">
+            <a href="/admin/addPost">Ajouter article</a>
+        </div>
+
+    </section>
+
+
+
 
 {% endblock %}

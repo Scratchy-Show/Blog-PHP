@@ -2,7 +2,7 @@
     <div class="header-container">
         <div id="logo">
             <a href="/">
-                <img src="../public/img/logo/logo.png" alt="Couret Alexandre" />
+                <img src="../public/img/logo/logo_black.png" alt="Couret Alexandre" />
             </a>
         </div>
 
@@ -13,7 +13,7 @@
                     <li><a href="/">Accueil</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Contact</a></li>
-                    {% if session.username is defined %}
+                    {% if session.user is defined %}
                         <li><a href="/logout">Déconnexion</a></li>
                     {% else %}
                         <li><a href="/registration">Inscription</a></li>

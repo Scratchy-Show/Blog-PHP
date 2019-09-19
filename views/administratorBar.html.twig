@@ -1,11 +1,11 @@
-{% if session.role == 1 %}
+{% if session.user.role == 1 %}
     <div class="administrator-bar">
             <div class="admin">
                 <a href="/admin"><img src="../public/img/icons/profil.png" alt="Profil" title="Profil" /></a>
-                <p>{{ session.username }}</p>
+                <p>{{ session.user.username }}</p>
             </div>
             <div class="add-post">
-                <a href="#"><img src="../public/img/icons/add.png" alt="Ajouter un article" title="Ajouter un article" /></a>
+                <a href="/admin/addPost"><img src="../public/img/icons/add.png" alt="Ajouter un article" title="Ajouter un article" /></a>
             </div>
         </div>
 {% endif %}

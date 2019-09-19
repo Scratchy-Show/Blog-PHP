@@ -1,0 +1,26 @@
+.homeAdmin-main-container {
+    @include main-container;
+
+    h2 {
+        @include h2;
+    }
+
+    .error {
+        @include error;
+    }
+
+    .add-post-link {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+
+        a {
+            @include slide-link;
+            border-color: green;
+
+            &:after {
+                background: green;
+            }
+        }
+    }
+}

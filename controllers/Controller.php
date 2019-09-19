@@ -35,10 +35,7 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
     // Définie les variables de session
     public function setSessionVariables($user)
     {
-        // Définie le pseudo
-        $_SESSION['username'] = $user->getUsername();
-        // Définie le role
-        $_SESSION['role'] = $user->getRole();
+        $_SESSION['user'] = $user;
     }
 
     // Affiche la page donnée en paramètre
@@ -53,11 +50,10 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
     // Vérifie le role de l'utilisateur
     public function isAdmin($user)
     {
-        // Si l'utilisateur est administrateur
-        if ($user->getRole() == 1 ) {
-            return true;
+        // Si l'utilisateur n'est pas administrateur
+        if ($user->getRole() != 1 ) {
+            $this->redirectIfNotAdmin();
         }
-        return false;
     }
 
     // Redirige un utilisateur non administrateur
@@ -65,5 +61,7 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
     {
         //  Redirige vers la page d'erreur 404
         $this->render('error404.html.twig', array());
+        // Empêche l'exécution du reste du script
+       die();
     }
 }

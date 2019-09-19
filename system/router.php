@@ -4,8 +4,10 @@ require_once __DIR__ . '/autoload.php';
 // Charge composer
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use Controllers\Controller;
 use Controllers\PageController;
 use Controllers\AdminController;
+use Controllers\PostController;
 
 // Initialise une session
 session_start();
@@ -42,9 +44,15 @@ try {
         $login = new AdminController();
         $login->admin();
     }
+    // Page ajouter un article
+    elseif ($path_only == '/admin/addPost')
+    {
+        $addPost = new PostController();
+        $addPost->post();
+    }
     else {
-        // Erreur gérée, elle sera remontée jusqu'au bloc try
-        throw new Exception('Page non trouvée.');
+        $error404 = new Controller();
+        $error404->redirectIfNotAdmin();
     }
 }
 catch (Exception $e) {
