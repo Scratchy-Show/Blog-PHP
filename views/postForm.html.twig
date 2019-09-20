@@ -5,26 +5,41 @@
 
 {% block body %}
     <section class="postForm-main-container">
-        <h2>Formulaire des articles</h2>
+        {% if message == null %}
+            <h2>Ajouter un article</h2>
+        {% endif %}
+
+        <div class="error-container">
+            {% if messageIfEmpty %}
+                <div class="error">
+                    <p class="message">{{ messageIfEmpty }}</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="confirm-container">
+            {% if messagePostAddConfirmed %}
+                <div class="confirm">
+                    <p class="message">{{ messagePostAddConfirmed }}</p>
+                </div>
+            {% endif %}
+        </div>
 
         <div class="form-container">
-            <form method="post" action="/addPost">
+            <form method="post" action="/admin/addPost">
 
                 <div class="input-container">
-                    <input id="title" type="text" name="title" required="required" />
-                    <span class="border"></span>
-                    <label for="title">Titre</label>
+                    <input id="title-post" type="text" name="title-post" required="required" />
+                    <label for="title-post">Titre</label>
                 </div>
 
-                <div class="input-container">
-                    <input id="summary" type="text" name="summary" required="required" />
-                    <span class="border"></span>
+                <div class="textarea-container">
+                    <textarea id="summary" name="summary" required="required"></textarea>
                     <label for="summary">Résumé</label>
                 </div>
 
-                <div>
+                <div class="textarea-container">
                     <textarea id="content" name="content" required="required"></textarea>
-                    <span class="border"></span>
                     <label for="content">Contenu</label>
                 </div>
 

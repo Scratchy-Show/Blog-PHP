@@ -44,12 +44,19 @@ try {
         $login = new AdminController();
         $login->admin();
     }
-    // Page ajouter un article
-    elseif ($path_only == '/admin/addPost')
+    // Page du formulaire - Ajout d'un article
+    elseif ($path_only == '/admin/formAddPost')
     {
         $addPost = new PostController();
         $addPost->post();
     }
+    // Ajouter un article
+    elseif ($path_only == '/admin/addPost')
+    {
+        $addPost = new PostController();
+        $addPost->addPost();
+    }
+    // Erreur 404
     else {
         $error404 = new Controller();
         $error404->redirectIfNotAdmin();

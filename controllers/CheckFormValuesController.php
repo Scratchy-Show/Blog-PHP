@@ -8,7 +8,7 @@ use Models\User;
 
 class CheckFormValuesController
 {
-    // Vérifie si l'adresse mail et le pseudo sont unique
+    // Formualire d'inscription - Vérifie si l'adresse mail et le pseudo sont unique
     public function checkSingleUsernameEmail($email, $username)
     {
         $resultSingleEmail = User::getUserByEmail($email);
@@ -33,7 +33,7 @@ class CheckFormValuesController
         return null;
     }
 
-    // Vérifie la valeur du nom et du prénom transmis par l'utilisateur
+    // Formualire d'inscription - Vérifie la valeur du nom et du prénom transmis par l'utilisateur
     public function checkName($lastName, $firstName)
     {
         // Vérifie que le nom et le prénom correspondent à l'expression régulières
@@ -64,7 +64,7 @@ class CheckFormValuesController
         return 1;
     }
 
-    // Vérifie que le mail correspond à l'expression régulières
+    // Formualire d'inscription - Vérifie que le mail correspond à l'expression régulières
     public function checkEmail($email)
     {
         // Valide l'adresse selon la syntaxe défini par la RFC 822
@@ -79,7 +79,7 @@ class CheckFormValuesController
         return $checkEmail;
     }
 
-    // Vérifie que le pseudo ne soit pas vide
+    // Formualire d'inscription - Vérifie que le pseudo ne soit pas vide
     public function checkUsername($username)
     {
         if (empty($username)) {
@@ -90,7 +90,7 @@ class CheckFormValuesController
         return $username;
     }
 
-    // Vérifie les deux mot de passe
+    // Formualire d'inscription - Vérifie les deux mot de passe
     public function checkPassword($password, $confirmPassword)
     {
         // Si les deux mot de passe ne sont pas vident
@@ -109,5 +109,16 @@ class CheckFormValuesController
             $messagePassword = "Le mot de passe n'a pas été renseigné";
             return $messagePassword;
         }
+    }
+
+    // Formualire d'ajout d'article - Vérifie que les variables ne soient pas vide
+    public function checkIfEmpty($title, $summary, $content)
+    {
+        if (empty($title) || empty($summary) || empty($content)) {
+            $messageIsEmpty = "Tous les champs n'ont pas été renseigné";
+            return $messageIsEmpty;
+        }
+        $isNotEmpty = 1;
+        return $isNotEmpty;
     }
 }

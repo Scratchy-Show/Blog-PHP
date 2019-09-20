@@ -21,13 +21,13 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                 $password = $_POST['password'];
                 $confirmPassword = $_POST['confirm'];
 
+                // Vérifie si $email et $username sont unique
+                $verifiedSingleUsernameEmail = $this->checkSingleUsernameEmail($email, $username);
                 // Vérifie la valeur des variables
                 $verifiedName = $this->checkName($lastName, $firstName);
                 $verifiedEmail = $this->checkEmail($email);
                 $verifiedUsername = $this->checkUsername($username);
                 $verifiedPassword = $this->checkPassword($password, $confirmPassword);
-                // Vérifie si $email et $username sont unique
-                $verifiedSingleUsernameEmail = $this->checkSingleUsernameEmail($email, $username);
 
                 if (($verifiedName == 1) &&
                     ($verifiedEmail == 1) &&
@@ -46,10 +46,14 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                     // Si HTTP_REFERER est déclaré renvoie sur l'URL précédente
                     if (isset($_SESSION['previousUrl'])) {
                         header('Location: ' . $_SESSION['previousUrl']);
+                        // Empêche l'exécution du reste du script
+                        die();
                     }
                     // Si HTTP_REFERER n'est pas déclaré renvoie sur la page d'accueil
                     else  {
                         header('Location: ' . '/');
+                        // Empêche l'exécution du reste du script
+                        die();
                     }
                 } else {
                     // Affiche le page d'inscription avec le message d'erreur
@@ -73,6 +77,8 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         else {
             // Redirection vers la page d'accueil
             header('Location: ' . '/');
+            // Empêche l'exécution du reste du script
+            die();
         }
     }
 
@@ -97,16 +103,22 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                     if ($checkUser[1]->getRole() == 1) {
                         //  Redirige vers la page d'administration
                         header('Location: ' . '/admin');
+                        // Empêche l'exécution du reste du script
+                        die();
                     }
                     // Si l'utilisateur n'est pas un administrateur
                     else {
                         // Si HTTP_REFERER est déclaré renvoie sur l'URL précédente
                         if (isset($_SESSION['previousUrl'])) {
                             header('Location: ' . $_SESSION['previousUrl']);
+                            // Empêche l'exécution du reste du script
+                            die();
                         }
                         // Si HTTP_REFERER n'est pas déclaré renvoie sur la page d'accueil
                         else  {
                             header('Location: ' . '/');
+                            // Empêche l'exécution du reste du script
+                            die();
                         }
                     }
                 }
@@ -127,6 +139,8 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         else {
             // Redirection vers la page d'accueil
             header('Location: ' . '/');
+            // Empêche l'exécution du reste du script
+            die();
         }
     }
 
@@ -136,7 +150,7 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         // Si l'utilisateur est connecté
         if (!empty($_SESSION['user'])) {
 
-            // Si l'utilisateur est un administrateur
+            // Vérifie que l'utilisateur est un administrateur
             $this->isAdmin($_SESSION['user']);
 
             // Affiche la page d'administration
@@ -158,5 +172,7 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         session_destroy();
         // Redirection vers la page d'identification
         header('Location: ' . '/login');
+        // Empêche l'exécution du reste du script
+        die();
     }
 }

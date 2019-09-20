@@ -133,7 +133,21 @@
     color: $blue;
 }
 
-/* Page Identification / Inscription */
+/* Ajout d'article */
+
+@mixin confirm {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+
+    .message {
+        font-size: 28px;
+        color: $green;
+    }
+}
+
+
+/* Page Identification / Inscription / Ajout d'article */
 
 @mixin error {
     display: flex;

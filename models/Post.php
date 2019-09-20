@@ -31,7 +31,7 @@ class Post
     protected $title;
 
     /**
-     * @Column(type="string", length=255)
+     * @Column(type="text", length=65535)
      */
     protected $summary;
 
@@ -58,10 +58,29 @@ class Post
         date_default_timezone_set('Europe/Paris');
         // Par défaut, la date est la date d'aujourd'hui
         $this->date = new \DateTime();
+        // Par défaut, l'auteur est l'utilisateur connecté
+        $this->author = $_SESSION['user']->getUsername();
     }
 
+    // Ajoute un nouvel article
+    public function addPostByForm($title, $summary, $content)
+    {
+        // Définit les valeurs des variables
+        $this->setTitle($title);
+        $this->setSummary($summary);
+        $this->setContent($content);
 
+        // Récupère EntityManager dans l'application
+        $entityManager = Database::getEntityManager();
+        // Planifie la sauvegarde de l'entité
+        $entityManager->persist($this);
+        // Effectue la sauvegarde de l'entité en bdd
+        $entityManager->flush();
 
+        // Message de confirmation
+        $messagePostAddConfirmed = "L'article à été ajouté";
+        return $messagePostAddConfirmed;
+    }
 
 
     ////// Getter //////

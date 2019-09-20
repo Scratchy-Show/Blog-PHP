@@ -61,7 +61,5 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
     {
         //  Redirige vers la page d'erreur 404
         $this->render('error404.html.twig', array());
-        // Empêche l'exécution du reste du script
-       die();
     }
 }
