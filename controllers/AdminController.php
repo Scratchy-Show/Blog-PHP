@@ -3,6 +3,7 @@
 
 namespace Controllers;
 
+use Models\Post;
 use Models\User;
 
 class AdminController extends Controller // Hérite de la class Controller et CheckFormValuesController
@@ -147,19 +148,24 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
     // Affiche la page d'administration
     public function admin()
     {
-        // Si l'utilisateur est connecté
-        if (!empty($_SESSION['user'])) {
+        // Vérifie que l'utilisateur est connecté et que c'est un administrateur
+        $this->redirectIfNotLoggedOrNotAdmin();
 
-            // Vérifie que l'utilisateur est un administrateur
-            $this->isAdmin($_SESSION['user']);
+        // Récupère tous les posts de la bdd
+        $listsPosts = Post::getAllPosts();
 
-            // Affiche la page d'administration
-            $this->render('homeAdmin.html.twig', array());
+        // Redirection par défaut
+        if ($_GET == null ) {
+            // Affiche la page d'administration avec les posts
+            $this->render('homeAdmin.html.twig', array("listPosts" => $listsPosts));
         }
-        // Si l'utilisateur n'est pas connecté
+        // Redirection après ajout, modification ou suppression d'un article
         else {
-            // Redirection vers la page 404
-            $this->redirectIfNotAdmin();
+            // Affiche la page d'administration avec les posts et le message
+            $this->render('homeAdmin.html.twig', array(
+                "message" => $_GET['message'],
+                "listPosts" => $listsPosts
+            ));
         }
     }
 

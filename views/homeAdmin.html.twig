@@ -7,18 +7,54 @@
     <section class="homeAdmin-main-container">
         <h2>Administration</h2>
 
-        {% if message != null %}
-            <div class="error">
-                <p class="message">{{ message }}</p>
+        {% if message %}
+            <div class="message-container">
+                {% if message starts with 'Erreur:' %}
+                    <div class="error">
+                        <p class="message">{{ message }}</p>
+                    </div>
+                {% else %}
+                    <div class="confirm">
+                        <p class="message">{{ message }}</p>
+                    </div>
+                {% endif %}
             </div>
         {% endif %}
 
         <div class="add-post-link">
-            <a href="/admin/formAddPost">Ajouter article</a>
+            <a href="/admin/postForm">Ajouter article</a>
         </div>
 
+        <table class="post-table">
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Date de publication</th>
+                    <th>Auteur</th>
+                    <th>Editer</th>
+                    <th>Supprimer</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for post in listPosts %}
+                    <tr>
+                        <td>{{ post.title }}</td>
+                        <td>{{ post.date|date('d-m-Y') }}</td>
+                        <td>{{ post.author }}</td>
+                        <td>
+                            <a href="/admin/postForm?id={{ post.id }}"><img src="../public/img/icons/edit_post.png" alt="Editer"/></a>
+                        </td>
+                        <td>
+                            <a href="/admin/deletePost?id={{ post.id }}"><img src="../public/img/icons/delete_post.png" alt="Supprimer" /></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
         <div class="add-post-link">
-            <a href="/admin/formAddPost">Ajouter article</a>
+            <a href="/admin/postForm">Ajouter article</a>
         </div>
 
     </section>

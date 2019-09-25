@@ -8,14 +8,11 @@
     .error-container, .confirm-container {
         width: 90%;
         margin: auto;
+        margin-bottom: 15px;
 
         .error {
-            @include error;
+            @include error-form;
             justify-content: center;
-        }
-
-        .confirm {
-            @include confirm;
         }
     }
 
@@ -46,6 +43,7 @@
                     font-size: 18px;
                     border: none;
                     border-radius: 5px;
+                    font-family: "Nunito", sans-serif;
 
                     &:focus {
                         outline: none;

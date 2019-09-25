@@ -5,8 +5,29 @@
         @include h2;
     }
 
-    .error {
-        @include error;
+    .message-container {
+
+        .error, .confirm {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+
+            .message {
+                font-size: 28px;
+            }
+        }
+
+        .error {
+            .message {
+                color: $red;
+            }
+        }
+
+        .confirm {
+            .message {
+                color: $green;
+            }
+        }
     }
 
     .add-post-link {
@@ -20,6 +41,17 @@
 
             &:after {
                 background: green;
+            }
+        }
+    }
+
+    .post-table {
+
+        tbody {
+
+            img {
+                height: 35px;
+                width: 35px;
             }
         }
     }

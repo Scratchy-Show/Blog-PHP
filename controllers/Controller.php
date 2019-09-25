@@ -47,11 +47,11 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
         echo $this->twig->render($page, $arguments);
     }
 
-    // Vérifie le role de l'utilisateur
-    public function isAdmin($user)
+    // Redirige un utilisateur non identifié et non administrateur
+    public function redirectIfNotLoggedOrNotAdmin()
     {
-        // Si l'utilisateur n'est pas administrateur
-        if ($user->getRole() != 1 ) {
+        // Si l'utilisateur n'est pas connecté ou n'est pas un administrateur
+        if (empty($_SESSION['user']) || ($_SESSION['user']->getRole() != 1 )) {
             $this->redirectIfNotAdmin();
         }
     }
@@ -61,5 +61,7 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
     {
         //  Redirige vers la page d'erreur 404
         $this->render('error404.html.twig', array());
+        // Empêche l'exécution du reste du script
+        die();
     }
 }

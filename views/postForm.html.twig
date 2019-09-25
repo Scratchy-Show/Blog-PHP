@@ -5,46 +5,40 @@
 
 {% block body %}
     <section class="postForm-main-container">
-        {% if message == null %}
+        {% if id is not null %}
+            <h2>Modifier un article</h2>
+        {% else %}
             <h2>Ajouter un article</h2>
         {% endif %}
 
-        <div class="error-container">
-            {% if messageIfEmpty %}
+        {% if message %}
+            <div class="error-container">
                 <div class="error">
-                    <p class="message">{{ messageIfEmpty }}</p>
+                    <p class="message">{{ message }}</p>
                 </div>
-            {% endif %}
-        </div>
-
-        <div class="confirm-container">
-            {% if messagePostAddConfirmed %}
-                <div class="confirm">
-                    <p class="message">{{ messagePostAddConfirmed }}</p>
-                </div>
-            {% endif %}
-        </div>
+            </div>
+        {% endif %}
 
         <div class="form-container">
-            <form method="post" action="/admin/addPost">
+            <form method="post" {% if id is defined %} action="/admin/editPost?id={{ id }}" {% else %} action="/admin/addPost" {% endif %}>
 
                 <div class="input-container">
-                    <input id="title-post" type="text" name="title-post" required="required" />
+                    <input id="title-post" type="text" name="title-post" {% if title is defined %} value="{{ title }}" {% endif %} required="required" />
                     <label for="title-post">Titre</label>
                 </div>
 
                 <div class="textarea-container">
-                    <textarea id="summary" name="summary" required="required"></textarea>
+                    <textarea id="summary" name="summary" required="required">{% if summary is defined %} {{ summary }} {% endif %}</textarea>
                     <label for="summary">Résumé</label>
                 </div>
 
                 <div class="textarea-container">
-                    <textarea id="content" name="content" required="required"></textarea>
+                    <textarea id="content" name="content" required="required">{% if content is defined %} {{ content }} {% endif %}</textarea>
                     <label for="content">Contenu</label>
                 </div>
 
                 <div class="submit-container">
-                    <input class="submit" type="submit" value="Ajouter" />
+                    <input class="submit" type="submit" {% if id is defined %} value="Modifier" {% else %} value="Ajouter" {% endif %} />
                 </div>
             </form>
         </div>

@@ -133,23 +133,9 @@
     color: $blue;
 }
 
-/* Ajout d'article */
+/* Formulaire Identification / Inscription / Articles */
 
-@mixin confirm {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 15px;
-
-    .message {
-        font-size: 28px;
-        color: $green;
-    }
-}
-
-
-/* Page Identification / Inscription / Ajout d'article */
-
-@mixin error {
+@mixin error-form {
     display: flex;
     padding: 15px 10px 10px 10px;
 

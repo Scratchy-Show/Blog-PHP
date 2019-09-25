@@ -114,8 +114,9 @@ class CheckFormValuesController
     // Formualire d'ajout d'article - Vérifie que les variables ne soient pas vide
     public function checkIfEmpty($title, $summary, $content)
     {
+        // Si l'une des variable est vide
         if (empty($title) || empty($summary) || empty($content)) {
-            $messageIsEmpty = "Tous les champs n'ont pas été renseigné";
+            $messageIsEmpty = "Erreur: Tous les champs n'ont pas été renseigné";
             return $messageIsEmpty;
         }
         $isNotEmpty = 1;
