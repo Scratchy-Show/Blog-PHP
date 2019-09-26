@@ -3,6 +3,7 @@
 
 namespace Controllers;
 
+use Models\Post;
 use Models\User;
 
 class AdminController extends Controller // Hérite de la class Controller et CheckFormValuesController
@@ -10,7 +11,7 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
     public function registration()
     {
         // Si l'utilisateur n'est pas connecté, il accède à la page
-        if (empty($_SESSION['username'])) {
+        if (empty($_SESSION['user'])) {
             // Si présence des variables
             if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email'])
                 && isset($_POST['username']) && isset($_POST['password'])) {
@@ -21,13 +22,13 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                 $password = $_POST['password'];
                 $confirmPassword = $_POST['confirm'];
 
+                // Vérifie si $email et $username sont unique
+                $verifiedSingleUsernameEmail = $this->checkSingleUsernameEmail($email, $username);
                 // Vérifie la valeur des variables
                 $verifiedName = $this->checkName($lastName, $firstName);
                 $verifiedEmail = $this->checkEmail($email);
                 $verifiedUsername = $this->checkUsername($username);
                 $verifiedPassword = $this->checkPassword($password, $confirmPassword);
-                // Vérifie si $email et $username sont unique
-                $verifiedSingleUsernameEmail = $this->checkSingleUsernameEmail($email, $username);
 
                 if (($verifiedName == 1) &&
                     ($verifiedEmail == 1) &&
@@ -46,10 +47,14 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                     // Si HTTP_REFERER est déclaré renvoie sur l'URL précédente
                     if (isset($_SESSION['previousUrl'])) {
                         header('Location: ' . $_SESSION['previousUrl']);
+                        // Empêche l'exécution du reste du script
+                        die();
                     }
                     // Si HTTP_REFERER n'est pas déclaré renvoie sur la page d'accueil
                     else  {
-                        header('Location: ' . 'http://my-blog');
+                        header('Location: ' . '/');
+                        // Empêche l'exécution du reste du script
+                        die();
                     }
                 } else {
                     // Affiche le page d'inscription avec le message d'erreur
@@ -72,14 +77,16 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         // Si l'utilisateur est connecté
         else {
             // Redirection vers la page d'accueil
-            $this->render('index.html.twig', array());
+            header('Location: ' . '/');
+            // Empêche l'exécution du reste du script
+            die();
         }
     }
 
     public function login()
     {
         // Si l'utilisateur n'est pas connecté, il accède à la page d'identification
-        if (empty($_SESSION['username'])) {
+        if (empty($_SESSION['user'])) {
             // Si présence des variables 'username' et 'password'
             if (isset($_POST['username']) && isset($_POST['password'])) {
                 $username = $_POST['username'];
@@ -94,23 +101,29 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                     $this->setSessionVariables($checkUser[1]);
 
                     // Si l'utilisateur est un administrateur
-                    if (Controller::isAdmin($checkUser[1]) == true) {
+                    if ($checkUser[1]->getRole() == 1) {
                         //  Redirige vers la page d'administration
-                        header('Location: ' . 'http://my-blog/admin');
+                        header('Location: ' . '/admin');
+                        // Empêche l'exécution du reste du script
+                        die();
                     }
                     // Si l'utilisateur n'est pas un administrateur
                     else {
                         // Si HTTP_REFERER est déclaré renvoie sur l'URL précédente
                         if (isset($_SESSION['previousUrl'])) {
                             header('Location: ' . $_SESSION['previousUrl']);
+                            // Empêche l'exécution du reste du script
+                            die();
                         }
                         // Si HTTP_REFERER n'est pas déclaré renvoie sur la page d'accueil
                         else  {
-                            header('Location: ' . 'http://my-blog');
+                            header('Location: ' . '/');
+                            // Empêche l'exécution du reste du script
+                            die();
                         }
                     }
                 }
-                // Si l'utilisateur n'est pas identifié
+                // Si l'utilisateur ne c'est pas identifié correctement
                 else {
                     // Message d'erreur
                     $message = "Logins incorrect, veuillez réessayer";
@@ -126,29 +139,33 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         // Si l'utilisateur est connecté
         else {
             // Redirection vers la page d'accueil
-            $this->render('index.html.twig', array());
+            header('Location: ' . '/');
+            // Empêche l'exécution du reste du script
+            die();
         }
     }
 
     // Affiche la page d'administration
     public function admin()
     {
-        // Si l'utilisateur est connecté
-        if (!empty($_SESSION['username'])) {
+        // Vérifie que l'utilisateur est connecté et que c'est un administrateur
+        $this->redirectIfNotLoggedOrNotAdmin();
 
-            // Si l'utilisateur est un administrateur
-            if ($_SESSION['role'] == 1) {
-                // Affiche la page d'administration
-                $this->render('homeAdmin.html.twig', array());
-            } // Si l'utilisateur n'est pas un administrateur
-            else {
-                $this->redirectIfNotAdmin();
-            }
+        // Récupère tous les posts de la bdd
+        $listsPosts = Post::getAllPosts();
+
+        // Redirection par défaut
+        if ($_GET == null ) {
+            // Affiche la page d'administration avec les posts
+            $this->render('homeAdmin.html.twig', array("listPosts" => $listsPosts));
         }
-        // Si l'utilisateur n'est pas connecté
+        // Redirection après ajout, modification ou suppression d'un article
         else {
-            // Redirection vers la page d'accueil
-            $this->render('index.html.twig', array());
+            // Affiche la page d'administration avec les posts et le message
+            $this->render('homeAdmin.html.twig', array(
+                "message" => $_GET['message'],
+                "listPosts" => $listsPosts
+            ));
         }
     }
 
@@ -159,7 +176,9 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         session_unset();
         // Détruit la session
         session_destroy();
-        // Redirige vers l'URL précédente
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        // Redirection vers la page d'identification
+        header('Location: ' . '/login');
+        // Empêche l'exécution du reste du script
+        die();
     }
 }

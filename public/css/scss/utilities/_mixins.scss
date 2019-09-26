@@ -71,6 +71,7 @@
 /* Page d'Accueil */
 
 // Lien du Portfolio et lien pour télécharger le CV
+// Lien pour ajouter article
 
 @mixin slide-link {
     padding: 20px;
@@ -132,9 +133,9 @@
     color: $blue;
 }
 
-/* Page Identification / Inscription */
+/* Formulaire Identification / Inscription / Articles */
 
-@mixin error {
+@mixin error-form {
     display: flex;
     padding: 15px 10px 10px 10px;
 

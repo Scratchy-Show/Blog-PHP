@@ -19,7 +19,7 @@
         margin: auto;
 
         .error {
-            @include error;
+            @include error-form;
         }
     }
 

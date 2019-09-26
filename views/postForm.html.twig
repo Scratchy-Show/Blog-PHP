@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Formulaire des articles{% endblock %}
+
+
+{% block body %}
+    <section class="postForm-main-container">
+        {% if id is not null %}
+            <h2>Modifier un article</h2>
+        {% else %}
+            <h2>Ajouter un article</h2>
+        {% endif %}
+
+        {% if message %}
+            <div class="error-container">
+                <div class="error">
+                    <p class="message">{{ message }}</p>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="form-container">
+            <form method="post" {% if id is defined %} action="/admin/editPost?id={{ id }}" {% else %} action="/admin/addPost" {% endif %}>
+
+                <div class="input-container">
+                    <input id="title-post" type="text" name="title-post" {% if title is defined %} value="{{ title }}" {% endif %} required="required" />
+                    <label for="title-post">Titre</label>
+                </div>
+
+                <div class="textarea-container">
+                    <textarea id="summary" name="summary" required="required">{% if summary is defined %} {{ summary }} {% endif %}</textarea>
+                    <label for="summary">Résumé</label>
+                </div>
+
+                <div class="textarea-container">
+                    <textarea id="content" name="content" required="required">{% if content is defined %} {{ content }} {% endif %}</textarea>
+                    <label for="content">Contenu</label>
+                </div>
+
+                <div class="submit-container">
+                    <input class="submit" type="submit" {% if id is defined %} value="Modifier" {% else %} value="Ajouter" {% endif %} />
+                </div>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

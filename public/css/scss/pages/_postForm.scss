@@ -1,0 +1,104 @@
+.postForm-main-container {
+    @include main-container;
+
+    h2 {
+        @include h2;
+    }
+
+    .error-container, .confirm-container {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 15px;
+
+        .error {
+            @include error-form;
+            justify-content: center;
+        }
+    }
+
+    .form-container {
+        display: flex;
+        width: 95%;
+        max-width: 1200px;
+        margin: 0 25px 25px 25px;
+        padding-top: 40px;
+        background-color: $blue;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 750px;
+            margin: auto;
+
+            .input-container, .textarea-container {
+                position: relative;
+                width: 95%;
+                margin: 25px 0;
+
+                input, textarea {
+                    width: 100%;
+                    padding: 10px 5px;
+                    font-size: 18px;
+                    border: none;
+                    border-radius: 5px;
+                    font-family: "Nunito", sans-serif;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &:focus ~ label,
+                    &:valid ~ label {
+                        top: -20px;
+                        font-size: 18px;
+                        color: $white;
+                    }
+                }
+
+                input {
+                    height: 30px;
+                }
+
+                #summary {
+                    height: 100px;
+                }
+
+                #content {
+                    height: 350px;
+                }
+
+                label {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    font-size: 22px;
+                    color: mix($white, $grey, 70%);
+                    transition: 300ms ease all;
+                }
+            }
+
+            .submit-container {
+                margin-bottom: 40px;
+
+                .submit {
+                    padding: 15px;
+                    border: 1px solid $white;
+                    border-radius: 5px;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    color: $white;
+                    background: none;
+                    transition: 0.65s;
+
+                    &:hover, &:focus {
+                        color: $blue;
+                        box-shadow: inset 135px 0 0 0 $white;
+                    }
+                }
+            }
+        }
+    }
+}

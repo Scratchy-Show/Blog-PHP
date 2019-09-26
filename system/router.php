@@ -4,8 +4,10 @@ require_once __DIR__ . '/autoload.php';
 // Charge composer
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use Controllers\Controller;
 use Controllers\PageController;
 use Controllers\AdminController;
+use Controllers\PostController;
 
 // Initialise une session
 session_start();
@@ -42,9 +44,43 @@ try {
         $login = new AdminController();
         $login->admin();
     }
+    // Formulaire des articles
+    elseif ($path_only == '/admin/postForm')
+    {
+        // Récupère l'id de l'URL
+        $idPost = $_GET;
+
+        $addPost = new PostController();
+        $addPost->post($idPost);
+    }
+    // Ajouter un article
+    elseif ($path_only == '/admin/addPost')
+    {
+        $addPost = new PostController();
+        $addPost->addPost();
+    }
+    // Modifier un article
+    elseif ($path_only == '/admin/editPost')
+    {
+        // Récupère l'id de l'URL
+        $idPost = $_GET;
+
+        $editPost = new PostController();
+        $editPost->editPost($idPost);
+    }
+    // Supprimer un article
+    elseif ($path_only == '/admin/deletePost')
+    {
+        // Récupère l'id de l'URL
+        $idPost = $_GET;
+
+        $deletePost = new PostController();
+        $deletePost->deletePost($idPost);
+    }
+    // Erreur 404
     else {
-        // Erreur gérée, elle sera remontée jusqu'au bloc try
-        throw new Exception('Page non trouvée.');
+        $error404 = new Controller();
+        $error404->redirectIfNotAdmin();
     }
 }
 catch (Exception $e) {
