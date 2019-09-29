@@ -30,6 +30,7 @@
                 <tr>
                     <th>Titre</th>
                     <th>Date de publication</th>
+                    <th>Date des dernières modifications</th>
                     <th>Auteur</th>
                     <th>Editer</th>
                     <th>Supprimer</th>
@@ -40,7 +41,8 @@
                 {% for post in listPosts %}
                     <tr>
                         <td>{{ post.title }}</td>
-                        <td>{{ post.date|date('d-m-Y') }}</td>
+                        <td>{{ post.createDate|date('d m Y') }}</td>
+                        <td>{{ post.updateDate|date('d m Y') }}</td>
                         <td>{{ post.author }}</td>
                         <td>
                             <a href="/admin/postForm?id={{ post.id }}"><img src="../public/img/icons/edit_post.png" alt="Editer"/></a>

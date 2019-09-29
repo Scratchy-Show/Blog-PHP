@@ -27,6 +27,13 @@
                     <label for="title-post">Titre</label>
                 </div>
 
+                {% if title is defined %}
+                    <div class="input-container">
+                        <input id="author" type="text" name="author" value="{{ author }}" required="required" />
+                        <label for="author">Auteur</label>
+                    </div>
+                {% endif %}
+
                 <div class="textarea-container">
                     <textarea id="summary" name="summary" required="required">{% if summary is defined %} {{ summary }} {% endif %}</textarea>
                     <label for="summary">Résumé</label>
