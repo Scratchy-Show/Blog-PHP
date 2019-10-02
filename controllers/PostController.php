@@ -27,6 +27,7 @@ class PostController extends Controller
                 // Récupère les données a afficher
                 $id = $post->getId();
                 $title = $post->getTitle();
+                $author = $post->getAuthor();
                 $summary = $post->getSummary();
                 $content = $post->getContent();
 
@@ -34,6 +35,7 @@ class PostController extends Controller
                 $this->render('postForm.html.twig', array(
                     "id" => $id,
                     "title" => $title,
+                    "author" => $author,
                     "summary" => $summary,
                     "content" => $content
                 ));
@@ -69,9 +71,11 @@ class PostController extends Controller
             $title = $_POST['title-post'];
             $summary = $_POST['summary'];
             $content = $_POST['content'];
+            // Par défaut, l'auteur est l'utilisateur connecté
+            $author = $_SESSION['user']->getUsername();
 
             // Vérifie que les valeurs des variables ne soient pas vide
-            $verifiedIfEmpty = $this->checkIfEmpty($title, $summary, $content);
+            $verifiedIfEmpty = $this->checkIfEmpty($title, $author, $summary, $content);
 
             // Si toutes les variables sont renseignées
             if ($verifiedIfEmpty == 1) {
@@ -79,7 +83,7 @@ class PostController extends Controller
                 // Crée une instance de Post
                 $post = new Post;
                 // Appelle la méthode qui enregistre un post avec les paramètres du formulaire
-                $post->addPostByForm($title, $summary, $content);
+                $post->addPostByForm($title, $author, $summary, $content);
 
                 // Message de confirmation
                 $messagePostAddConfirmed = "Article ajouté";
@@ -112,15 +116,21 @@ class PostController extends Controller
         $this->redirectIfNotLoggedOrNotAdmin();
 
         // Si présence des variables
-        if (isset($_POST['title-post']) && isset($_POST['summary']) && isset($_POST['content'])) {
+        if (isset($_POST['title-post']) &&
+            isset($_POST['author'])  &&
+            isset($_POST['summary']) &&
+            isset($_POST['content']))
+        {
 
             // Récupère les variables
             $title = $_POST['title-post'];
+            $author = $_POST['author'];
             $summary = $_POST['summary'];
             $content = $_POST['content'];
+            $updateDate = new \DateTime();
 
             // Vérifie que les valeurs des variables ne soient pas vide
-            $verifiedIfEmpty = $this->checkIfEmpty($title, $summary, $content);
+            $verifiedIfEmpty = $this->checkIfEmpty($title, $author, $summary, $content);
 
             // Si toutes les variables sont renseignées
             if ($verifiedIfEmpty == 1) {
@@ -128,7 +138,7 @@ class PostController extends Controller
                 // Récupère le post
                 $post = Post::getPost($idPost);
                 // Appelle la méthode qui enregistre un post avec les paramètres du formulaire
-                $post->editPostByForm($title, $summary, $content);
+                $post->editPostByForm($title, $author, $summary, $content, $updateDate);
 
                 // Message de confirmation
                 $messagePostEditConfirmed = "Article modifié";

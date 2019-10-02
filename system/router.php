@@ -18,12 +18,32 @@ $path_only = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 // Gestion des erreurs
 try {
     // Page d'accueil
-    if ($path_only == '/') {
+    if ($path_only == '/')
+    {
         $home = new PageController();
         $home->index();
     }
+    // Page listant les articles
+    elseif ($path_only == '/posts')
+    {
+        // Récupère le numéro de la page de l'URL
+        $page = $_GET['page'];
+
+        $posts = new PageController();
+        $posts->posts($page);
+    }
+    // Page d'un article
+    elseif ($path_only == '/post')
+    {
+        // Récupère l'id de l'URL
+        $idPost = $_GET;
+
+        $post = new PageController();
+        $post->post($idPost);
+    }
     // Page d'inscription
-    elseif ($path_only == '/registration') {
+    elseif ($path_only == '/registration')
+    {
         $registration = new AdminController();
         $registration->registration();
     }
@@ -34,7 +54,8 @@ try {
         $login->login();
     }
     // Déconnexion
-    elseif ($path_only == '/logout') {
+    elseif ($path_only == '/logout')
+    {
         $logout = new AdminController();
         $logout->logout();
     }

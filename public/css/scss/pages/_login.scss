@@ -1,5 +1,6 @@
 .login-main-container {
     @include main-container;
+    max-height: 50vh;
 
     h2 {
         @include h2;

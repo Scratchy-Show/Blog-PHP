@@ -1,11 +1,15 @@
 .registration-main-container {
     @include main-container;
+    height: auto;
 
     h2 {
         @include h2;
     }
 
     .post-comment {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         margin-bottom: 40px;
         text-align: center;
 
@@ -26,7 +30,7 @@
     .form-container {
         display: flex;
         width: 100%;
-        margin-bottom: 250px;
+        margin-bottom: 260px;
 
         form {
             @include form;

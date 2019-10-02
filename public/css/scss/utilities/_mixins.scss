@@ -70,7 +70,7 @@
 
 /* Page d'Accueil */
 
-// Lien du Portfolio et lien pour télécharger le CV
+// Lien Articles et lien pour télécharger le CV
 // Lien pour ajouter article
 
 @mixin slide-link {
@@ -125,6 +125,7 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
+    height: 100vh;
     margin: auto;
 }
 
