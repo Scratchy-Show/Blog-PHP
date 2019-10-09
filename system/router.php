@@ -32,14 +32,17 @@ try {
         $posts = new PageController();
         $posts->posts($page);
     }
-    // Page d'un article
-    elseif ($path_only == '/post')
+    // Page affichant un article
+    // preg_match() recherche une correspondance dans $path_only avec la regex et renvoie le résultat dans $matches
+    // \w = [a-zA-Z0-9_]
+    // Le + permet de transmettre l'integralité du $path de l'article
+    // Le .* permet d'accepter que le path de l'article dans l'URL et rien d'autre après
+    // $matches est un tableau qui contient toute l'url de l'article => ($matches[0]) ou
+    // simplement la route de l'article => ($matches[1])
+    elseif (preg_match('/\/post\/(\w+.*)/', $path_only, $matches))
     {
-        // Récupère l'id de l'URL
-        $idPost = $_GET;
-
         $post = new PageController();
-        $post->post($idPost);
+        $post->post($matches[1]);
     }
     // Page d'inscription
     elseif ($path_only == '/registration')

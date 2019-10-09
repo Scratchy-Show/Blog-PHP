@@ -13,7 +13,7 @@
                 <p class="date">Mis à jour le {{ post.updateDate|date('d m Y') }}</p>
                 <text class="summary">{{ post.summary }}</text>
                 <div class="post-link">
-                    <a href="/post?id={{ post.id }}">Lire l'article</a>
+                    <a href="/post/{{ post.path }}">Lire l'article</a>
                 </div>
             </div>
         {% endfor %}

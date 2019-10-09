@@ -55,12 +55,22 @@ class PageController extends Controller // Hérite de la class Controller et Che
     }
 
     // Affiche un post
-    public function post($idPost)
+    public function post($path)
     {
-        // Récupère le post
-        $post = Post::getPost($idPost);
+        // Récupère l'article
+        $post = Post::getPostByPath($path);
 
-        // Affiche la page de l'article
-        $this->render('post.html.twig', array("post" => $post));
+        // Si la route correspond à un article
+        if ($post != null) {
+            // Affiche la page de l'article
+            $this->render('post.html.twig', array("post" => $post));
+        }
+        // Si la route ne correspond à aucun article
+        else {
+            // Redirection vers la 404
+            header("Location: /error404");
+            // Empêche l'exécution du reste du script
+            die();
+        }
     }
 }

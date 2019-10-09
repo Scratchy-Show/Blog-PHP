@@ -27,7 +27,7 @@ class Post
     protected $id;
 
     /**
-     * @Column(type="string", length=25)
+     * @Column(type="string", length=255)
      */
     protected $title;
 
@@ -57,7 +57,7 @@ class Post
     protected $author;
 
     /**
-     * @Column(type="string", length=25)
+     * @Column(type="string", length=255)
      */
     protected $path;
 
@@ -122,7 +122,7 @@ class Post
         }
     }
 
-    // Récupère un post
+    // Récupère un post par son id
     public static function getPost($idPost)
     {
         // Gestion des erreurs
@@ -139,14 +139,32 @@ class Post
         }
     }
 
+    // Récupère un post par sa route
+    public static function getPostByPath($path)
+    {
+        // Gestion des erreurs
+        try {
+            // Repository dédié à l'entité Post
+            $postRepository = Database::getEntityManager()->getRepository(Post::class);
+            // Récupère un post
+            $post = $postRepository->findOneBy(array('path' => $path));
+            // Retourne le post
+            return $post;
+        }
+        catch (PDOException $e) {
+            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
+        }
+    }
+
     // Ajoute un nouvel article
-    public function addPostByForm($title, $author, $summary, $content)
+    public function addPostByForm($title, $author, $summary, $content, $path)
     {
         // Définit les valeurs des variables
         $this->setTitle($title);
         $this->setAuthor($author);
         $this->setSummary($summary);
         $this->setContent($content);
+        $this->setPath($path);
 
 
         // Récupère EntityManager dans l'application
