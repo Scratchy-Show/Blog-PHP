@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Liste de commentaires{% endblock %}
+
+
+{% block body %}
+
+    {% for comment in comments %}
+        <div class="comment-container">
+            <p>{{ comment.author.username }}</p>
+            <p>Mis à jour le {{ comment.date|date('d m Y') }}</p>
+            <p>{{ comment.post.title }}</p>
+            <p>{{ comment.validate }}</p>
+            <p>{{ comment.content }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}

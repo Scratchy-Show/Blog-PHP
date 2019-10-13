@@ -6,7 +6,7 @@ namespace Controllers;
 
 use Models\Post;
 
-class PostController extends Controller
+class PostController extends Controller // Hérite de la class Controller et CheckFormValuesController
 {
     // Affiche le formulaire d'ajout OU le formulaire de modification d'un article
     public function post($idPost)
@@ -75,10 +75,17 @@ class PostController extends Controller
             $author = $_SESSION['user']->getUsername();
 
             // Vérifie que les valeurs des variables ne soient pas vide
-            $verifiedIfEmpty = $this->checkIfEmpty($title, $author, $summary, $content);
+            $verifiedIfEmptyTitle = $this->checkIfEmpty($title);
+            $verifiedIfEmptyAuthor = $this->checkIfEmpty($author);
+            $verifiedIfEmptySummary = $this->checkIfEmpty($summary);
+            $verifiedIfEmptyContent = $this->checkIfEmpty($content);
 
             // Si toutes les variables sont renseignées
-            if ($verifiedIfEmpty == 1) {
+            if (($verifiedIfEmptyTitle == 1) &&
+                ($verifiedIfEmptyAuthor == 1) &&
+                ($verifiedIfEmptySummary == 1) &&
+                ($verifiedIfEmptyContent == 1)
+            ) {
 
                 // Nettoie le titre pour en faire une route
                 $path = $this->cleanTitle($title);
@@ -96,8 +103,11 @@ class PostController extends Controller
                 // Empêche l'exécution du reste du script
                 die();
             }
-            // Si une des variables n'est pas renseignées
+            // Si une variable est vide
             else {
+                // Message d'erreur
+                $verifiedIfEmpty = "Erreur: Un champ n'a pas été renseigné";
+
                 // Affiche le formulaire d'ajout d'article avec le message d'erreur
                 $this->render('postForm.html.twig', array("message" => $verifiedIfEmpty));
             }
@@ -133,11 +143,17 @@ class PostController extends Controller
             $updateDate = new \DateTime();
 
             // Vérifie que les valeurs des variables ne soient pas vide
-            $verifiedIfEmpty = $this->checkIfEmpty($title, $author, $summary, $content);
+            $verifiedIfEmptyTitle = $this->checkIfEmpty($title);
+            $verifiedIfEmptyAuthor = $this->checkIfEmpty($author);
+            $verifiedIfEmptySummary = $this->checkIfEmpty($summary);
+            $verifiedIfEmptyContent = $this->checkIfEmpty($content);
 
             // Si toutes les variables sont renseignées
-            if ($verifiedIfEmpty == 1) {
-
+            if (($verifiedIfEmptyTitle == 1) &&
+                ($verifiedIfEmptyAuthor == 1) &&
+                ($verifiedIfEmptySummary == 1) &&
+                ($verifiedIfEmptyContent == 1)
+            ) {
                 // Récupère le post
                 $post = Post::getPost($idPost);
                 // Appelle la méthode qui enregistre un post avec les paramètres du formulaire
@@ -151,8 +167,11 @@ class PostController extends Controller
                 // Empêche l'exécution du reste du script
                 die();
             }
-            // Si il manque une variable
+            // Si une variable est vide
             else {
+                // Message d'erreur
+                $verifiedIfEmpty = "Erreur: Un champ n'a pas été renseigné";
+
                 // Redirection vers la page d'administration
                 header("Location: /admin?message=".$verifiedIfEmpty);
                 // Empêche l'exécution du reste du script
@@ -162,10 +181,12 @@ class PostController extends Controller
         // Si il manque une variable
         else {
             // Message d'erreur
-            $messageIssetVariable = "Erreur: Manque une variable pour pouvoir ajouter l'article";
+            $messageIssetVariable = "Erreur: Manque une variable pour pouvoir modifier l'article";
 
-            // Affiche le formulaire d'ajout d'article avec le message d'erreur
-            $this->render('postForm.html.twig', array("message" => $messageIssetVariable));
+            // Redirection vers la page d'administration
+            header("Location: /admin?message=".$messageIssetVariable);
+            // Empêche l'exécution du reste du script
+            die();
         }
     }
 

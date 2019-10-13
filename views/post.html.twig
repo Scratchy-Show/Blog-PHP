@@ -14,6 +14,20 @@
             <text class="content">{{ post.content }}</text>
         </div>
 
+        {% if message %}
+            <div class="message-container">
+                {% if message starts with 'Erreur:' %}
+                    <div class="error">
+                        <p class="message">{{ message }}</p>
+                    </div>
+                {% else %}
+                    <div class="confirm">
+                        <p class="message">{{ message }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+
         <div class="comment-container">
             <h3>Laisser un commentaire</h3>
             {% if session.user is not defined %}
@@ -23,7 +37,9 @@
                     <form method="post" action="/comment">
                         <div class="textarea-container">
                             <textarea id="content" name="content" placeholder="Commentaire" required="required"></textarea>
+                            <label for="content"></label>
                         </div>
+                        <input type="hidden" id="postId" name="postId" value="{{ post.id }}">
 
                         <div class="submit-container">
                             <input class="submit" type="submit" value="Commenter" />
@@ -31,6 +47,14 @@
                     </form>
                 </div>
             {% endif %}
+
+            {% for comment in comments %}
+                <div class="comment">
+                    <p>{{ comment.author.username }}</p>
+                    <p>{{ comment.date|date('d m Y') }}</p>
+                    <textarea>{{ comment.content }}</textarea>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

@@ -34,6 +34,7 @@
                     <th>Auteur</th>
                     <th>Editer</th>
                     <th>Supprimer</th>
+                    <th>Liste des commentaires</th>
                 </tr>
             </thead>
 
@@ -49,6 +50,9 @@
                         </td>
                         <td>
                             <a href="/admin/deletePost?id={{ post.id }}"><img src="../public/img/icons/delete_post.png" alt="Supprimer" /></a>
+                        </td>
+                        <td>
+                            <a href="/admin/commentsList?id={{ post.id }}">Voir</a>
                         </td>
                     </tr>
                 {% endfor %}
