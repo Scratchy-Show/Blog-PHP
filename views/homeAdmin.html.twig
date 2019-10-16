@@ -32,6 +32,7 @@
                     <th>Date de publication</th>
                     <th>Date des dernières modifications</th>
                     <th>Auteur</th>
+                    <th>Voir</th>
                     <th>Editer</th>
                     <th>Supprimer</th>
                     <th>Liste des commentaires</th>
@@ -46,13 +47,16 @@
                         <td>{{ post.updateDate|date('d m Y') }}</td>
                         <td>{{ post.author }}</td>
                         <td>
+                            <a href="/post/{{ post.path }}"><img src="../public/img/icons/view.png" alt="Voir"/></a>
+                        </td>
+                        <td>
                             <a href="/admin/postForm?id={{ post.id }}"><img src="../public/img/icons/edit_post.png" alt="Editer"/></a>
                         </td>
                         <td>
-                            <a href="/admin/deletePost?id={{ post.id }}"><img src="../public/img/icons/delete_post.png" alt="Supprimer" /></a>
+                            <a href="/admin/deletePost?id={{ post.id }}"><img src="../public/img/icons/delete.png" alt="Supprimer" /></a>
                         </td>
                         <td>
-                            <a href="/admin/commentsList?id={{ post.id }}">Voir</a>
+                            <a href="/admin/commentsList?id={{ post.id }}"><img src="../public/img/icons/comments.png" alt="Liste des commentaires"/></a>
                         </td>
                     </tr>
                 {% endfor %}

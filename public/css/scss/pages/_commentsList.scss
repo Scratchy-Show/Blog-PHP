@@ -1,0 +1,43 @@
+.commentsList-main-container {
+    @include main-container;
+
+    h2 {
+        @include h2;
+    }
+
+    .message-container {
+
+        .error, .confirm {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+
+            .message {
+                font-size: 28px;
+            }
+        }
+
+        .error {
+            .message {
+                color: $red;
+            }
+        }
+
+        .confirm {
+            .message {
+                color: $green;
+            }
+        }
+    }
+
+    .comment-table {
+
+        tbody {
+
+            img {
+                height: 35px;
+                width: 35px;
+            }
+        }
+    }
+}

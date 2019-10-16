@@ -109,12 +109,44 @@ class Comment
             // Repository dédié à l'entité Comment
             $postRepository = Database::getEntityManager()->getRepository(Comment::class);
             // Récupère tous les commentaires par ordre décroissant
-            $listComments = $postRepository->findBy(
+            $commentsList = $postRepository->findBy(
                 array('post' => $postId),
-                array('date' => 'DESC')
+                array('date' => 'ASC')
             );
             // Retourne un tableau contenant tous les posts
-            return $listComments;
+            return $commentsList;
+        }
+        catch (PDOException $e) {
+            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
+        }
+    }
+
+    // Récupère un commentaire par son id
+    public static function getComment($idComment)
+    {
+        // Gestion des erreurs
+        try {
+            // Repository dédié à l'entité Comment
+            $postRepository = Database::getEntityManager()->getRepository(Comment::class);
+            // Récupère un post
+            $comment = $postRepository->find($idComment);
+            // Retourne le post
+            return $comment;
+        }
+        catch (PDOException $e) {
+            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
+        }
+    }
+
+    // Supprime un commentaire
+    public function deleteCommentByHomeAdmin($idComment)
+    {
+        // Gestion des erreurs
+        try {
+            // Supprime le commentaire
+            Database::getEntityManager()->remove($idComment);
+            // Met à jour la bdd
+            Database::getEntityManager()->flush($idComment);
         }
         catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();

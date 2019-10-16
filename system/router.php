@@ -105,6 +105,14 @@ if (isset($_SERVER['REQUEST_URI'])) {
             $commentsList = new CommentController();
             $commentsList->commentsList($idPost);
         }
+        // Supprimer un commentaire
+        elseif ($path_only == '/admin/deleteComment') {
+            // Récupère l'id de l'URL
+            $idComment = $_GET;
+
+            $deleteComment = new CommentController();
+            $deleteComment->deleteComment($idComment);
+        }
         // Erreur 404
         else {
             $error404 = new Controller();

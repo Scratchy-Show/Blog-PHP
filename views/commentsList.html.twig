@@ -4,15 +4,51 @@
 
 
 {% block body %}
+    <section class="commentsList-main-container">
+        <h2>Liste des commentaires de {{ comment.post.title }}</h2>
 
-    {% for comment in comments %}
-        <div class="comment-container">
-            <p>{{ comment.author.username }}</p>
-            <p>Mis à jour le {{ comment.date|date('d m Y') }}</p>
-            <p>{{ comment.post.title }}</p>
-            <p>{{ comment.validate }}</p>
-            <p>{{ comment.content }}</p>
-        </div>
-    {% endfor %}
+        {% if message %}
+            <div class="message-container">
+                {% if message starts with 'Erreur:' %}
+                    <div class="error">
+                        <p class="message">{{ message }}</p>
+                    </div>
+                {% else %}
+                    <div class="confirm">
+                        <p class="message">{{ message }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
 
+        <table class="comment-table">
+            <thead>
+            <tr>
+                <th>Auteur</th>
+                <th>Date</th>
+                <th>Validation</th>
+                <th>Content</th>
+                <th>Voir</th>
+                <th>Supprimer</th>
+            </tr>
+            </thead>
+
+            <tbody>
+                {% for comment in comments %}
+                    <tr>
+                        <td>{{ comment.author.username }}</td>
+                        <td>{{ comment.date|date('d m Y') }}</td>
+                        <td>{{ comment.validate }}</td>
+                        <td>{{ comment.content }}</td>
+                        <td>
+                            <a href="/post/{{ comment.post.path }}"><img src="../public/img/icons/view.png" alt="Voir"/></a>
+                        </td>
+                        <td>
+                            <a href="/admin/deleteComment?id={{ comment.id }}"><img src="../public/img/icons/delete_post.png" alt="Supprimer" /></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
 {% endblock %}
