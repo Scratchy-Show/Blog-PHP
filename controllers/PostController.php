@@ -80,10 +80,13 @@ class PostController extends Controller
             // Si toutes les variables sont renseignées
             if ($verifiedIfEmpty == 1) {
 
+                // Nettoie le titre pour en faire une route
+                $path = $this->cleanTitle($title);
+
                 // Crée une instance de Post
                 $post = new Post;
                 // Appelle la méthode qui enregistre un post avec les paramètres du formulaire
-                $post->addPostByForm($title, $author, $summary, $content);
+                $post->addPostByForm($title, $author, $summary, $content, $path);
 
                 // Message de confirmation
                 $messagePostAddConfirmed = "Article ajouté";

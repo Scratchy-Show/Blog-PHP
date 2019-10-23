@@ -8,7 +8,7 @@ use Models\User;
 
 class CheckFormValuesController
 {
-    // Formualire d'inscription - Vérifie si l'adresse mail et le pseudo sont unique
+    // Formulaire d'inscription - Vérifie si l'adresse mail et le pseudo sont unique
     public function checkSingleUsernameEmail($email, $username)
     {
         $resultSingleEmail = User::getUserByEmail($email);
@@ -33,7 +33,7 @@ class CheckFormValuesController
         return null;
     }
 
-    // Formualire d'inscription - Vérifie la valeur du nom et du prénom transmis par l'utilisateur
+    // Formulaire d'inscription - Vérifie le nom et prénom correspondent à l'expression régulières
     public function checkName($lastName, $firstName)
     {
         // Vérifie que le nom et le prénom correspondent à l'expression régulières
@@ -64,7 +64,7 @@ class CheckFormValuesController
         return 1;
     }
 
-    // Formualire d'inscription - Vérifie que le mail correspond à l'expression régulières
+    // Formulaire d'inscription - Vérifie que le mail correspond à l'expression régulières
     public function checkEmail($email)
     {
         // Valide l'adresse selon la syntaxe défini par la RFC 822
@@ -80,7 +80,7 @@ class CheckFormValuesController
         return $checkEmail;
     }
 
-    // Formualire d'inscription - Vérifie que le pseudo ne soit pas vide
+    // Formulaire d'inscription - Vérifie que le pseudo ne soit pas vide
     public function checkUsername($username)
     {
         if (empty($username)) {
@@ -91,7 +91,7 @@ class CheckFormValuesController
         return $username;
     }
 
-    // Formualire d'inscription - Vérifie les deux mot de passe
+    // Formulaire d'inscription - Vérifie les deux mot de passe
     public function checkPassword($password, $confirmPassword)
     {
         // Si les deux mot de passe ne sont pas vident
@@ -113,7 +113,23 @@ class CheckFormValuesController
         }
     }
 
-    // Formualire d'ajout d'article - Vérifie que les variables ne soient pas vide
+    // Formulaire d'ajout d'article - Nettoie le titre d'un article pour en faire sa route
+    public function cleanTitle($title) {
+        // Remplace les lettres accentuées
+        $search = explode(",", "ç,æ,œ,á,é,í,ó,ú,à,è,ì,ò,ù,ä,ë,ï,ö,ü,ÿ,â,ê,î,ô,û,å,ø,Ø,Å,Á,À,Â,Ä,È,É,Ê,Ë,Í,Î,Ï,Ì,Ò,Ó,Ô,Ö,Ú,Ù,Û,Ü,Ÿ,Ç,Æ,Œ");
+        $replace = explode(",","c,ae,oe,a,e,i,o,u,a,e,i,o,u,a,e,i,o,u,y,a,e,i,o,u,a,o,O,A,A,A,A,A,E,E,E,E,I,I,I,I,O,O,O,O,U,U,U,U,Y,C,AE,OE");
+        $cleanTitle = str_replace($search, $replace, $title);
+
+        // Convertie toutes les majuscules en minuscules
+        $lowercaseTitle = strtolower($cleanTitle);
+
+        // Remplace les espaces par des underscores
+        $withoutSpaces = str_replace(' ', '_', $lowercaseTitle);
+
+        return $withoutSpaces;
+    }
+
+    // Formulaire d'ajout d'article et de modification d'article - Vérifie que les variables ne soient pas vide
     public function checkIfEmpty($title, $author, $summary, $content)
     {
         // Si l'une des variable est vide
