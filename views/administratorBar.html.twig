@@ -1,8 +1,9 @@
 {% if session.user.role == 1 %}
     <div class="administrator-bar">
             <div class="admin">
-                <a href="/admin"><img src="../public/img/icons/profil.png" alt="Profil" title="Profil" /></a>
-                <p>{{ session.user.username }}</p>
+                <a href="/admin?page=1"><img src="../public/img/icons/profil.png" alt="Profil" title="Profil" />
+                    <p>{{ session.user.username }}</p>
+                </a>
             </div>
             <div class="add-post">
                 <a href="/admin/postForm"><img src="../public/img/icons/add.png" alt="Ajouter un article" title="Ajouter un article" /></a>

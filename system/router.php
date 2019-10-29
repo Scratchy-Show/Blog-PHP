@@ -65,16 +65,19 @@ if (isset($_SERVER['REQUEST_URI'])) {
         }
         // Page d'administration
         elseif ($path_only == '/admin') {
+            // Récupère le numéro de la page de l'URL
+            $page = $_GET['page'];
+
             $login = new AdminController();
-            $login->admin();
+            $login->admin($page);
         }
         // Formulaire des articles
         elseif ($path_only == '/admin/postForm') {
-            // Récupère l'id de l'URL
-            $idPost = $_GET;
+            // Récupère $Id et $page de l'URL
+            $args = $_GET;
 
             $addPost = new PostController();
-            $addPost->post($idPost);
+            $addPost->post($args);
         }
         // Ajouter un article
         elseif ($path_only == '/admin/addPost') {
@@ -84,10 +87,12 @@ if (isset($_SERVER['REQUEST_URI'])) {
         // Modifier un article
         elseif ($path_only == '/admin/editPost') {
             // Récupère l'id de l'URL
-            $idPost = $_GET;
+            $idPost = $_GET['id'];
+            // Récupère le numéro de la page de l'URL
+            $page = $_GET['page'];
 
             $editPost = new PostController();
-            $editPost->editPost($idPost);
+            $editPost->editPost($idPost, $page);
         }
         // Supprimer un article
         elseif ($path_only == '/admin/deletePost') {
@@ -100,10 +105,20 @@ if (isset($_SERVER['REQUEST_URI'])) {
         // Affiche la liste des commentaires d'un post
         elseif ($path_only == '/admin/commentsList') {
             // Récupère l'id de l'URL
-            $idPost = $_GET;
+            $idPost = $_GET['id'];
+            // Récupère le numéro de la page de l'URL
+            $page = $_GET['page'];
 
             $commentsList = new CommentController();
-            $commentsList->commentsList($idPost);
+            $commentsList->commentsList($idPost, $page);
+        }
+        // Valider un commentaire
+        elseif ($path_only == '/admin/validateComment') {
+            // Récupère l'id de l'URL
+            $idComment = $_GET;
+
+            $validateComment = new CommentController();
+            $validateComment->validateComment($idComment);
         }
         // Supprimer un commentaire
         elseif ($path_only == '/admin/deleteComment') {

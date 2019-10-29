@@ -103,7 +103,7 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                     // Si l'utilisateur est un administrateur
                     if ($checkUser[1]->getRole() == 1) {
                         //  Redirige vers la page d'administration
-                        header('Location: ' . '/admin');
+                        header('Location: ' . '/admin?page=1');
                         // Empêche l'exécution du reste du script
                         die();
                     }
@@ -145,27 +145,61 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
         }
     }
 
-    // Affiche la page d'administration
-    public function admin()
+    // Affiche la page d'administration avec une pagination
+    public function admin($page)
     {
         // Vérifie que l'utilisateur est connecté et que c'est un administrateur
         $this->redirectIfNotLoggedOrNotAdmin();
 
-        // Récupère tous les posts de la bdd
-        $listsPosts = Post::getAllPosts();
+        // Si la page éxiste
+        if ($page >= 1) {
 
-        // Redirection par défaut
-        if ($_GET == null ) {
-            // Affiche la page d'administration avec les posts
-            $this->render('homeAdmin.html.twig', array("listPosts" => $listsPosts));
+            // Définit le nombres d'articles par page
+            $nbPerPage = 5;
+
+            // Récupère tous les posts de la bdd
+            $listsPosts = Post::getAllPostsWithPaging($page, $nbPerPage);
+
+            // Calcule le nombre total de pages
+            $nbPages = ceil(count($listsPosts)/$nbPerPage);
+
+            // Si la page éxiste
+            if ($page <= $nbPages) {
+
+                // Redirection par défaut
+                if (empty($_GET['message'])) {
+                    // Affiche la page d'administration avec les posts
+                    $this->render('homeAdmin.html.twig', array(
+                        "listPosts" => $listsPosts,
+                        "nbPages" => $nbPages,
+                        "page" => $page
+                    ));
+                }
+                // Redirection après ajout, modification ou suppression d'un article
+                else {
+                    // Affiche la page d'administration avec les posts et le message
+                    $this->render('homeAdmin.html.twig', array(
+                        "listPosts" => $listsPosts,
+                        "nbPages" => $nbPages,
+                        "page" => $page,
+                        'message' => $_GET['message']
+                    ));
+                }
+            }
+            // Si la page n'éxiste pas
+            else {
+                // Redirection vers la 404
+                header("Location: /error404");
+                // Empêche l'exécution du reste du script
+                die();
+            }
         }
-        // Redirection après ajout, modification ou suppression d'un article
+        // Si la page n'éxiste pas
         else {
-            // Affiche la page d'administration avec les posts et le message
-            $this->render('homeAdmin.html.twig', array(
-                "message" => $_GET['message'],
-                "listPosts" => $listsPosts
-            ));
+            // Redirection vers la 404
+            header("Location: /error404");
+            // Empêche l'exécution du reste du script
+            die();
         }
     }
 

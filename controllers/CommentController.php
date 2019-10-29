@@ -85,27 +85,123 @@ class CommentController extends Controller // Hérite de la class Controller et 
         }
     }
 
-    // Affiche tous les commentaires d'un article pour l'administration
-    public function commentsList($postId) {
+    // Affiche tous les commentaires d'un article avec une pagination pour l'administration
+    public function commentsList($postId, $page) {
         // Vérifie que l'utilisateur est connecté et que c'est un administrateur
         $this->redirectIfNotLoggedOrNotAdmin();
 
-        // Récupère tous les commentaires
-        $comments = Comment::getAllCommentsForPost($postId);
+        // Si la page éxiste
+        if ($page >= 1) {
 
-        // Redirection par défaut
-        if (count($_GET) == 1 ) {
-            // Affiche la listes des commentaires d'un article
-            $this->render('commentsList.html.twig', array('comments' => $comments));
+            // Définit le nombres de commentaires par page
+            $nbPerPage = 10;
+
+            // Récupère tous les commentaires du post
+            $comments = Comment::getAllCommentsForPostWithPaging($postId, $page, $nbPerPage);
+
+            // Récupère le post
+            $post = Post::getPost($postId);
+
+            // Calcule le nombre total de pages
+            $nbPages = ceil(count($comments)/$nbPerPage);
+
+            // Si la page éxiste
+            if ($page <= $nbPages) {
+
+                // Redirection par défaut
+                if (empty($_GET['message'])) {
+                    // Affiche la listes des commentaires d'un article
+                    $this->render('commentsList.html.twig', array(
+                        'comments' => $comments,
+                        'post' => $post,
+                        "nbPages" => $nbPages,
+                        "page" => $page
+                    ));
+                }
+                // Redirection après suppression d'un commentaire
+                else {
+                    // Affiche la listes des commentaires d'un article et le message de confirmation
+                    $this->render('commentsList.html.twig', array(
+                        'comments' => $comments,
+                        'post' => $post,
+                        "nbPages" => $nbPages,
+                        "page" => $page,
+                        'message' => $_GET['message']
+                    ));
+                }
+            }
+            // Si la page n'éxiste pas
+            else {
+                // Affiche un message d'information
+                $this->render('commentsList.html.twig', array(
+                    'comments' => $comments
+                ));
+            }
         }
-        // Redirection après suppression d'un commentaire
+        // Si la page n'éxiste pas
         else {
-            // Affiche la listes des commentaires d'un article et le message de confirmation
-            $this->render('commentsList.html.twig', array(
-                "comments" => $comments,
-                "message" => $_GET['message']
-            ));
+            // Redirection vers la 404
+            header("Location: /error404");
+            // Empêche l'exécution du reste du script
+            die();
         }
+    }
+
+    // Valider un commentaire
+    public function validateComment($idComment)
+    {
+        // Vérifie que l'utilisateur est connecté et que c'est un administrateur
+        $this->redirectIfNotLoggedOrNotAdmin();
+
+        // Vérifie la présence de l'id
+        if ($idComment != null) {
+
+            // Récupère le commentaire
+            $comment = Comment::getComment($idComment);
+
+            // Si l'id correspond à un commentaire
+            if ($comment != null) {
+                // Appelle la méthode qui valide un commentaire
+                $comment->validateCommentByHomeAdmin($comment);
+
+                // Message de confirmation
+                $messageCommentDeleteConfirmed = "Commentaire validé";
+
+                // Récupère l'url précédente afin de revenir à la liste des commentaires
+                $url = $_SERVER['HTTP_REFERER'];
+
+                // Redirection vers la page de la liste des articles du post avec le message
+                header("Location: ".$url."&message=".$messageCommentDeleteConfirmed);
+
+                // Empêche l'exécution du reste du script
+                die();
+            }
+            // Si l'id n'a aucune correspondance
+            else {
+                // Message d'erreur
+                $messageCommentDeleteFailed = "Erreur: Aucun commentaire correspond à cet id";
+
+                // Récupère l'url précédente afin de revenir à la liste des commentaires
+                $url = $_SERVER['HTTP_REFERER'];
+
+                // Redirection vers la page de la liste des commentaires du post avec le message
+                header("Location: ".$url."&message=".$messageCommentDeleteFailed);
+
+                // Empêche l'exécution du reste du script
+                die();
+            }
+        }
+        // Si l'id est vide
+        $messageIdWithoutPost = "Erreur: Aucun id n'est renseigné";
+
+        // Récupère l'url précédente afin de revenir à la liste des commentaires
+        $url = $_SERVER['HTTP_REFERER'];
+
+        // Redirection vers la page de la liste des articles du post avec le message
+        header("Location: ".$url."&message=".$messageIdWithoutPost);
+
+        // Empêche l'exécution du reste du script
+        die();
     }
 
     // Supprimer un commentaire

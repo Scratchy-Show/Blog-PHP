@@ -20,7 +20,7 @@
         {% endif %}
 
         <div class="form-container">
-            <form method="post" {% if id is defined %} action="/admin/editPost?id={{ id }}" {% else %} action="/admin/addPost" {% endif %}>
+            <form method="post" {% if id is defined %} action="/admin/editPost?id={{ id }}&page={{ page }}" {% else %} action="/admin/addPost" {% endif %}>
 
                 <div class="input-container">
                     <input id="title-post" type="text" name="title-post" {% if title is defined %} value="{{ title }}" {% endif %} required="required" />

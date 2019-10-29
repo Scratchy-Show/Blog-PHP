@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\Table;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use PDOException;
 use System\Database;
 
@@ -101,20 +102,53 @@ class Comment
         }
     }
 
-    // Récupère tous les commentaires d'un article de la bdd
+    // Récupère tous les commentaires d'un article
     public static function getAllCommentsForPost($postId)
     {
         // Gestion des erreurs
         try {
             // Repository dédié à l'entité Comment
             $postRepository = Database::getEntityManager()->getRepository(Comment::class);
-            // Récupère tous les commentaires par ordre décroissant
-            $commentsList = $postRepository->findBy(
+            // Récupère tous les commentaires
+            $allComments = $postRepository->findBy(
                 array('post' => $postId),
-                array('date' => 'ASC')
+                array()
             );
-            // Retourne un tableau contenant tous les posts
-            return $commentsList;
+            // Retourne un tableau contenant les commentaires
+            return $allComments;
+        }
+        catch (PDOException $e) {
+            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
+        }
+    }
+
+    // Récupère tous les commentaires d'un article de la bdd avec pagination
+    public static function getAllCommentsForPostWithPaging($postId, $page, $nbPerPage)
+    {
+        // Gestion des erreurs
+        try {
+            // Crée un requête
+            $queryBuilder = Database::getEntityManager()->createQueryBuilder();
+
+            // Requête
+            $queryBuilder
+                // Sélection la table
+                ->select('comment')
+                // Définit la table
+                ->from(Comment::class, 'comment')
+                // Correspondance du post
+                ->where('comment.post = ?1')
+                // Paramètres de correspondance
+                ->setParameter(1, $postId)
+                // Définit l'ordre d'affichage du plus récent ou plus ancien
+                ->orderBy('comment.date', 'desc')
+                // Définit l'annonce à partir de laquelle commencer la liste
+                ->setFirstResult(($page - 1) * $nbPerPage)
+                // Définit le nombre d'annonce à afficher sur une page
+                ->setMaxResults($nbPerPage);
+
+            // Retourne l'objet Paginator correspondant à la requête
+            return new Paginator($queryBuilder, true);
         }
         catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
@@ -138,8 +172,27 @@ class Comment
         }
     }
 
+    // Valide un commentaire
+    public function validateCommentByHomeAdmin($idComment)
+    {
+        // Gestion des erreurs
+        try {
+            // Appelle la méthode qui récupère le commentaire
+            $comment = $this->getComment($idComment);
+
+            // Valide le commentaire
+            $comment->setValidate(true);
+
+            // Met à jour la bdd
+            Database::getEntityManager()->flush($idComment);
+        }
+        catch (PDOException $e) {
+            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
+        }
+    }
+
     // Supprime un commentaire
-    public function deleteCommentByHomeAdmin($idComment)
+    public static function deleteCommentByHomeAdmin($idComment)
     {
         // Gestion des erreurs
         try {
@@ -170,6 +223,11 @@ class Comment
         return $this->post;
     }
 
+    public function getValidate()
+    {
+        return $this->validate;
+    }
+
     public function getContent()
     {
         return $this->content;
@@ -185,6 +243,11 @@ class Comment
     public function setPost($post)
     {
         $this->post = $post;
+    }
+
+    public function setValidate($validate)
+    {
+        $this->validate = $validate;
     }
 
     public function setContent($content)

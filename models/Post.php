@@ -205,7 +205,7 @@ class Post
         $entityManager->flush();
     }
 
-    // Modifie un nouvel article
+    // Modifie un article
     public function editPostByForm($title, $author, $summary, $content, $updateDate)
     {
         // Définit les valeurs des variables

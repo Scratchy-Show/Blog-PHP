@@ -7,6 +7,27 @@
     <section class="homeAdmin-main-container">
         <h2>Administration</h2>
 
+        <div class="add-post-link">
+            <a href="/admin/postForm">Ajouter article</a>
+        </div>
+
+        {% for post in listPosts %}
+            <div class="modal" id="modal-{{ post.id }}">
+                <div class="modal-content">
+                    <p>Confirmer la suppression de</p>
+                    <p class="post-title">{{ post.title }}</p>
+                    <div class="modal-link">
+                        <div class="cancel">
+                            <a href="#close">Annuler</a>
+                        </div>
+                        <div class="remove">
+                            <a href="/admin/deletePost?id={{ post.id }}">Supprimer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
         {% if message %}
             <div class="message-container">
                 {% if message starts with 'Erreur:' %}
@@ -21,42 +42,33 @@
             </div>
         {% endif %}
 
-        <div class="add-post-link">
-            <a href="/admin/postForm">Ajouter article</a>
-        </div>
-
         <table class="post-table">
             <thead>
                 <tr>
-                    <th>Titre</th>
-                    <th>Date de publication</th>
-                    <th>Date des dernières modifications</th>
-                    <th>Auteur</th>
-                    <th>Voir</th>
-                    <th>Editer</th>
-                    <th>Supprimer</th>
-                    <th>Liste des commentaires</th>
+                    <th id="th-title">Titre</th>
+                    <th id="th-publication">Publication</th>
+                    <th id="th-update">Mise à jour</th>
+                    <th id="th-author">Auteur</th>
+                    <th id="th-action">Actions</th>
+                    <th id="th-comments">Commentaire</th>
                 </tr>
             </thead>
 
             <tbody>
                 {% for post in listPosts %}
                     <tr>
-                        <td>{{ post.title }}</td>
-                        <td>{{ post.createDate|date('d m Y') }}</td>
-                        <td>{{ post.updateDate|date('d m Y') }}</td>
-                        <td>{{ post.author }}</td>
-                        <td>
-                            <a href="/post/{{ post.path }}"><img src="../public/img/icons/view.png" alt="Voir"/></a>
-                        </td>
-                        <td>
-                            <a href="/admin/postForm?id={{ post.id }}"><img src="../public/img/icons/edit_post.png" alt="Editer"/></a>
-                        </td>
-                        <td>
-                            <a href="/admin/deletePost?id={{ post.id }}"><img src="../public/img/icons/delete.png" alt="Supprimer" /></a>
-                        </td>
-                        <td>
-                            <a href="/admin/commentsList?id={{ post.id }}"><img src="../public/img/icons/comments.png" alt="Liste des commentaires"/></a>
+                        <td headers="th-title">{{ post.title }}</td>
+                        <td headers="th-publication">{{ post.createDate|date('d m Y') }}</td>
+                        <td headers="th-update">{{ post.updateDate|date('d m Y') }}</td>
+                        <td headers="th-author">{{ post.author }}</td>
+                        <td headers="th-action">
+                            <div class="action-link">
+                                <a href="/post/{{ post.path }}"><img src="../public/img/icons/view.png" alt="Voir" title="Voir" /></a>
+                                <a href="/admin/postForm?id={{ post.id }}&page={{ page }}"><img src="../public/img/icons/edit_post.png" alt="Editer" title="Modifier" /></a>
+                                <a href="#modal-{{ post.id }}"><img src="../public/img/icons/delete.png" alt="Supprimer" title="Supprimer" /></a>
+                            </div>
+                        <td headers="th-comments">
+                            <a href="/admin/commentsList?id={{ post.id }}&page=1"><img src="../public/img/icons/comments.png" alt="Liste des commentaires"/></a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -67,9 +79,47 @@
             <a href="/admin/postForm">Ajouter article</a>
         </div>
 
+        <div class="paging-container">
+            <ul class="paging">
+                {% if page > 1 %}
+                    <div class="prev">
+                        <li>
+                            <a href="/admin?page=1">
+                                <<
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin?page={{ page-1 }}">
+                                <
+                            </a>
+                        </li>
+                    </div>
+                {% endif %}
+
+                <div class="numbers">
+                    {# Affichage de toutes les pages entre p-2 et p+2 sauf si < 1 ou > nbPages #}
+                    {% for p in range(max(page-2, 1), min(page+2, nbPages)) %}
+                        <li{% if p == page %} class="active"{% endif %}>
+                            <a href="/admin?page={{ p }}">{{ p }}</a>
+                        </li>
+                    {% endfor %}
+                </div>
+
+                {% if page < nbPages %}
+                    <div class="next">
+                        <li>
+                            <a href="/admin?page={{ page+1 }}">
+                                >
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin?page={{ nbPages }}">
+                                >>
+                            </a>
+                        </li>
+                    </div>
+                {% endif %}
+            </ul>
+        </div>
     </section>
-
-
-
-
 {% endblock %}

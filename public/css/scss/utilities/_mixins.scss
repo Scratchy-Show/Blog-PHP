@@ -134,6 +134,248 @@
     color: $blue;
 }
 
+
+
+/* Page des articles, Liste des posts et des commentaires */
+
+@mixin paging {
+    display: flex;
+
+    li {
+        margin: 0 8px;
+        padding: 10px 0;
+        border: 1px solid $blue;
+        border-radius: 5px;
+        background-color: $blue;
+
+        &:hover:not(.active) {
+            background-color: $white;
+            transition: background-color .5s;
+        }
+
+        a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: $white;
+
+            &:hover:not(.active) {
+                color: $blue;
+                transition: color .5s;
+            }
+        }
+    }
+
+    .active {
+        background-color: $white;
+
+        a {
+            color: $blue;
+        }
+    }
+
+    .prev, .next {
+        display: flex;
+    }
+
+    .numbers {
+        display: flex;
+    }
+}
+
+
+
+@mixin modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+
+    &:target {
+        opacity:1;
+        pointer-events: auto;
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        top: 25%;
+        width: 350px;
+        height: 350px;
+        margin: auto;
+        padding: 40px;
+        border-radius: 5px;
+        background: $white;
+
+        p {
+            padding: 15px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .modal-link {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+
+            .cancel, .remove {
+                display: flex;
+
+                a {
+                    @include slide-link;
+                }
+            }
+
+            .cancel {
+
+                #close {
+                    display: none;
+                }
+            }
+
+            .remove a {
+                color: $red;
+                border-color: $red;
+
+                &:after {
+                    background: $red;
+                }
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+
+
+@mixin message {
+
+    .error, .confirm {
+        text-align: center;
+
+        .message {
+            font-size: 28px;
+        }
+    }
+
+    .error {
+        .message {
+            color: $red;
+        }
+    }
+
+    .confirm {
+        .message {
+            color: $green;
+        }
+    }
+}
+
+
+
+@mixin table {
+    width: 100%;
+    margin-top: 40px;
+    border-collapse: collapse;
+    font-size: 20px;
+
+    td, th {
+        max-width: 180px;
+        padding: 10px;
+        word-break: break-all;
+
+        @include laptops {
+            max-width: 100%;
+        }
+    }
+
+    td {
+        border: 1px solid black
+    }
+
+    tbody {
+
+        /* Sélectionne un enfant sur deux - odd = impair */
+        tr:nth-child(odd) {
+            background: $blue-light;
+        }
+
+        td {
+            text-align: center;
+            vertical-align: middle;
+
+            img {
+                height: 35px;
+                width: 35px;
+                padding: 15px;
+            }
+        }
+    }
+}
+
+
+@mixin table-responsive {
+    /* Force la table à ne plus ressembler à une table */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Masquer les en-têtes du tableau (mais pas "display: none;" pour l'accessibilité) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    th {
+        font-size: 0;
+        border: none;
+        visibility: hidden;
+    }
+
+    td, th {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .comment-content {
+        align-items: center;
+
+        &:before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+        }
+    }
+
+    td:before {
+        content: attr(data-headers);
+        min-width: 40%;
+        padding: 10px 0;
+        font-weight: bold;
+    }
+}
+
+
+
 /* Formulaire Identification / Inscription / Articles */
 
 @mixin error-form {
@@ -153,6 +395,8 @@
         color: $red;
     }
 }
+
+
 
 @mixin form {
     display: flex;

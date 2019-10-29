@@ -58,7 +58,7 @@ class PageController extends Controller // Hérite de la class Controller et Che
         }
     }
 
-    // Affiche un post
+    // Affiche un post avec ses commentaires
     public function post($path)
     {
         // Récupère l'article
@@ -69,7 +69,7 @@ class PageController extends Controller // Hérite de la class Controller et Che
         // Si la route correspond à un article
         if ($post != null) {
             // Redirection par défaut
-            if ($_GET == null ) {
+            if (empty($_GET['message'])) {
                 // Affiche la page de l'article
                 $this->render('post.html.twig', array(
                     "post" => $post,

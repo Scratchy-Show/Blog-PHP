@@ -53,47 +53,7 @@
     .paging-container {
 
         .paging {
-            display: flex;
-
-            li {
-                margin: 0 8px;
-                padding: 10px 0;
-                border: 1px solid $blue;
-                border-radius: 5px;
-                background-color: $blue;
-
-                &:hover:not(.active) {
-                    background-color: $white;
-                    transition: background-color .5s;
-                }
-
-                a {
-                    padding: 10px 15px;
-                    text-decoration: none;
-                    color: $white;
-
-                    &:hover:not(.active) {
-                        color: $blue;
-                        transition: color .5s;
-                    }
-                }
-            }
-
-            .active {
-                background-color: $white;
-
-                a {
-                    color: $blue;
-                }
-            }
-
-            .prev, .next {
-                display: flex;
-            }
-
-            .numbers {
-                display: flex;
-            }
+            @include paging;
         }
     }
 }
