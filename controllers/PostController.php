@@ -257,7 +257,7 @@ class PostController extends Controller // Hérite de la class Controller et Che
                 }
 
                 // Message de confirmation
-                $messagePostDeleteConfirmed = "Article et ses commentaires supprimés";
+                $messagePostDeleteConfirmed = "Suppression de l'article et de ses commentaires";
 
                 // Redirection vers la page d'administration
                 header("Location: /admin?page=1&message=".$messagePostDeleteConfirmed);

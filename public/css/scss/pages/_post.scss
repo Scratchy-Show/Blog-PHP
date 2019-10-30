@@ -1,94 +1,176 @@
 .post-main-container {
     @include main-container;
+    height: 100%;
+    padding-bottom: 400px;
 
     h2 {
         @include h2;
     }
 
-    .message-container {
+    .post-container {
+        width: 95%;
+        padding: 20px;
+        color: $white;
+        background-color: $blue;
+        border-radius: 10px;
 
-        .error, .confirm {
+        .author-date-post-container {
             display: flex;
-            justify-content: center;
-            padding: 15px;
+            justify-content: space-between;
 
-            .message {
-                font-size: 28px;
+            p {
+                padding: 10px;
+                text-align: center;
+                color: $black;
+                font-variant: all-small-caps;
+                font-weight: bold;
+
+                .author {
+                    color: $white;
+                }
             }
         }
 
-        .error {
-            .message {
-                color: $red;
-            }
+        .summary, .content {
+            margin: 20px 10px;
+            text-align: justify;
+            line-height: 1.2;
         }
 
-        .confirm {
-            .message {
-                color: $green;
-            }
+        .content {
+            margin-top: 35px;
         }
     }
 
-    .form-container {
+    .message-container {
+        @include message;
+        margin-top: 20px;
+    }
+
+    .comment-container {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 95%;
-        max-width: 1200px;
-        margin: 0 25px 25px 25px;
-        padding-top: 40px;
-        background-color: $blue;
 
-        form {
+        h3 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .wish-comment {
+            margin: 20px 0;
+            text-align: center;
+
+            a {
+                color: $blue;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline solid $blue;
+                }
+            }
+        }
+
+        .form-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 80%;
-            max-width: 750px;
-            margin: auto;
+            width: 95%;
+            max-width: 1100px;
+            margin: 0 25px 25px 25px;
+            padding-top: 40px;
+            background-color: $blue;
 
-            .textarea-container {
-                position: relative;
-                width: 95%;
-                margin: 25px 0;
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 80%;
+                max-width: 750px;
+                margin: auto;
 
-                textarea {
-                    width: 100%;
-                    padding: 10px 5px;
-                    font-size: 18px;
-                    border: none;
-                    border-radius: 5px;
-                    font-family: "Nunito", sans-serif;
+                .textarea-container {
+                    position: relative;
+                    width: 95%;
+                    margin: 25px 0;
+
+                    textarea {
+                        width: 100%;
+                        padding: 10px 5px;
+                        font-size: 18px;
+                        border: none;
+                        border-radius: 5px;
+                        font-family: "Nunito", sans-serif;
+                    }
+
+                    label {
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        font-size: 22px;
+                        color: mix($white, $grey, 70%);
+                        transition: 300ms ease all;
+                    }
                 }
 
-                label {
-                    position: absolute;
-                    top: 10px;
-                    left: 10px;
-                    font-size: 22px;
-                    color: mix($white, $grey, 70%);
-                    transition: 300ms ease all;
+                .submit-container {
+                    margin-bottom: 40px;
+
+                    .submit {
+                        padding: 15px;
+                        border: 1px solid $white;
+                        border-radius: 5px;
+                        font-size: 18px;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        color: $white;
+                        background: none;
+                        transition: 0.65s;
+
+                        &:hover, &:focus {
+                            color: $blue;
+                            box-shadow: inset 150px 0 0 0 $white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .comments {
+            width: 90%;
+            max-width: 1200px;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 15px;
+            background-color: $blue;
+
+            .author-date-comments-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-variant: all-small-caps;
+                font-weight: bold;
+
+                .author {
+                    padding: 5px;
+                    border-radius: 5px;
+                    color: $blue;
+                    background-color: $white;
+                }
+
+                .date {
+                    padding: 5px;
+                    font-style: italic;
                 }
             }
 
-            .submit-container {
-                margin-bottom: 40px;
+            .content {
+                padding: 10px 5px;
+                margin-top: 15px;
+                word-break: break-all;
+            }
 
-                .submit {
-                    padding: 15px;
-                    border: 1px solid $white;
-                    border-radius: 5px;
-                    font-size: 18px;
-                    text-transform: uppercase;
-                    cursor: pointer;
-                    color: $white;
-                    background: none;
-                    transition: 0.65s;
-
-                    &:hover, &:focus {
-                        color: $blue;
-                        box-shadow: inset 150px 0 0 0 $white;
-                    }
-                }
+            &:last-child {
+                margin-bottom: 250px;
             }
         }
     }

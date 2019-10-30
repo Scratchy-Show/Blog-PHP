@@ -1,8 +1,11 @@
 .postForm-main-container {
     @include main-container;
+    height: 100%;
+
 
     h2 {
         @include h2;
+        text-align: center;
     }
 
     .error-container {
@@ -19,9 +22,13 @@
         display: flex;
         width: 95%;
         max-width: 1200px;
-        margin: 0 25px 25px 25px;
+        margin: 0 25px 250px 25px;
         padding-top: 40px;
         background-color: $blue;
+
+        @include laptops {
+            margin-bottom: 400px;
+        }
 
         form {
             display: flex;

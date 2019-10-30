@@ -1,6 +1,6 @@
 .login-main-container {
     @include main-container;
-    max-height: 50vh;
+    height: 100%;
 
     h2 {
         @include h2;
@@ -13,7 +13,7 @@
     .form-container {
         display: flex;
         width: 95%;
-        min-height: 50vh; // Centre le formulaire
+        margin-top: 100px;
 
         form {
             @include form;

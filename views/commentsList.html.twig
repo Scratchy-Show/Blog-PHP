@@ -64,8 +64,8 @@
                 <tbody>
                     {% for comment in comments %}
                         <tr>
-                            <td headers="th-author">{{ comment.author }}</td>
-                            <td headers="th-date">{{ comment.date|date('d m Y') }}</td>
+                            <td headers="th-author">{{ comment.author.getUsername() }}</td>
+                            <td headers="th-date">{{ comment.date|date('d m Y H i s') }}</td>
                             {% if comment.validate|default(false) is same as(false) %}
                                 <td headers="th-validate" class="waiting">En attente</td>
                             {% else %}
@@ -76,7 +76,7 @@
                                 {% if comment.validate == false %}
                                     <a href="/admin/validateComment?id={{ comment.id }}"><img src="../public/img/icons/validate.png" alt="Valider" title="Valider" /></a>
                                 {% else %}
-                                    <a href="/post/{{ post.path }}"><img src="../public/img/icons/view.png" alt="Voir" title="Voir" /></a>
+                                    <a href="/post/{{ post.path }}#{{ comment.id }}"><img src="../public/img/icons/view.png" alt="Voir" title="Voir" /></a>
                                 {% endif %}
                                 <a href="#modal-{{ comment.id }}"><img src="../public/img/icons/delete.png" alt="Supprimer" title="Supprimer" /></a>
                             </td>

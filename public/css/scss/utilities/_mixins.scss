@@ -139,46 +139,50 @@
 /* Page des articles, Liste des posts et des commentaires */
 
 @mixin paging {
-    display: flex;
+    margin: 25px 0 250px 0;
 
-    li {
-        margin: 0 8px;
-        padding: 10px 0;
-        border: 1px solid $blue;
-        border-radius: 5px;
-        background-color: $blue;
+    .paging {
+        display: flex;
 
-        &:hover:not(.active) {
-            background-color: $white;
-            transition: background-color .5s;
-        }
-
-        a {
-            padding: 10px 15px;
-            text-decoration: none;
-            color: $white;
+        li {
+            margin: 0 8px;
+            padding: 10px 0;
+            border: 1px solid $blue;
+            border-radius: 5px;
+            background-color: $blue;
 
             &:hover:not(.active) {
-                color: $blue;
-                transition: color .5s;
+                background-color: $white;
+                transition: background-color .5s;
+            }
+
+            a {
+                padding: 10px 15px;
+                text-decoration: none;
+                color: $white;
+
+                &:hover:not(.active) {
+                    color: $blue;
+                    transition: color .5s;
+                }
             }
         }
-    }
 
-    .active {
-        background-color: $white;
+        .active {
+            background-color: $white;
 
-        a {
-            color: $blue;
+            a {
+                color: $blue;
+            }
         }
-    }
 
-    .prev, .next {
-        display: flex;
-    }
+        .prev, .next {
+            display: flex;
+        }
 
-    .numbers {
-        display: flex;
+        .numbers {
+            display: flex;
+        }
     }
 }
 

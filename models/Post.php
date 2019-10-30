@@ -64,7 +64,7 @@ class Post
     protected $path;
 
     /**
-     * @OneToMany(targetEntity="Comment", mappedBy="post")
+     * @OneToMany(targetEntity="Models\Comment", mappedBy="post", cascade={"persist", "remove"})
      */
     protected $comments;
 

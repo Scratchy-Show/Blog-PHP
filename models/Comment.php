@@ -28,16 +28,14 @@ class Comment
     protected $id;
 
     /**
-     * @ManyToOne(targetEntity="User", inversedBy="comments")
-     * @JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
-     * @Column(type="integer")
+     * @ManyToOne(targetEntity="Models\User", inversedBy="comments", cascade={"persist", "remove"})
+     * @JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $author;
 
     /**
-     * @ManyToOne(targetEntity="Post", inversedBy="comments")
+     * @ManyToOne(targetEntity="Models\Post", inversedBy="comments", cascade={"persist", "remove"})
      * @JoinColumn(name="post_id", referencedColumnName="id")
-     * @Column(type="integer")
      */
     protected $post;
 
@@ -67,12 +65,12 @@ class Comment
     }
 
     // Ajoute un nouveau commentaire
-    public function addComment($content, $author, $postId)
+    public function addComment($content, $author, $post)
     {
         // Définit les valeurs des variables
         $this->setContent($content);
         $this->setAuthor($author);
-        $this->setPost($postId);
+        $this->setPost($post);
 
         // Récupère EntityManager dans l'application
         $entityManager = Database::getEntityManager();
@@ -221,6 +219,11 @@ class Comment
     public function getPost()
     {
         return $this->post;
+    }
+
+    public function getDate()
+    {
+        return $this->date;
     }
 
     public function getValidate()

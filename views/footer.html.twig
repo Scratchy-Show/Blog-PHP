@@ -1,23 +1,39 @@
 <footer>
-    <h2>Contactez-moi</h2>
-    <div class="contact-footer">
-    <p><img src="../public/img/icons/mail.png" alt="Formulaire de contact" />Email:<a href="#">Formulaire de contact</a></p>
-    <p><img src="../public/img/icons/linkedin.png" alt="Réseau social" />Réseau social:
-        <a href="https://www.linkedin.com/in/alexandre-couret/">Linkedin</a>
-        <a href="https://github.com/Scratchy-Show">Github</a>
-    </p>
+
+    <div class="sitemap-contact-container">
+        <div class="sitemap">
+            <h3>Plan du site</h3>
+            <nav>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/posts?page=1">Articles</a></li>
+                    {% if session.user is defined %}
+                        <li><a href="/logout">Déconnexion</a></li>
+                    {% else %}
+                        <li><a href="/registration">Inscription</a></li>
+                    {% endif %}
+                    {% if session.user.role == true %}
+                        <li><a href="/admin?page=1">Administration</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+
+        <div class="contact">
+            <h3>Contactez-moi</h3>
+            <div class="contact-footer">
+                <p><img src="../public/img/icons/linkedin.png" alt="Réseau social" />Réseau social:
+                    <a href="https://www.linkedin.com/in/alexandre-couret/">Linkedin</a>
+                    <a href="https://github.com/Scratchy-Show">Github</a>
+                </p>
+            </div>
+        </div>
     </div>
+
     <div class="copyright-footer">
         <div class="copyright">
             <img src="../public/img/icons/copyright.png" alt="Copyright" />
             <p>Copyright 2019. Tous droits réservés</p>
         </div>
-        {% if session.user is defined %}
-
-        {% else %}
-            <div class="admin-footer">
-                <a href="/login"><img src="../public/img/icons/login.png" alt="Identification" /></a>
-            </div>
-        {% endif %}
     </div>
 </footer>

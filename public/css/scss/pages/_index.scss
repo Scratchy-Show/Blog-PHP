@@ -259,6 +259,10 @@
             flex-direction: column;
         }
 
+        @include laptops {
+            padding-bottom: 400px;
+        }
+
         .tools {
             width: 33%;
             margin: 10px;

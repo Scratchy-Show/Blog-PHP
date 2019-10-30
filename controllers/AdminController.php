@@ -186,12 +186,12 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                     ));
                 }
             }
-            // Si la page n'éxiste pas
+            // Si il y a aucun article
             else {
-                // Redirection vers la 404
-                header("Location: /error404");
-                // Empêche l'exécution du reste du script
-                die();
+                // Affiche un message d'information
+                $this->render('homeAdmin.html.twig', array(
+                    'listPosts' => $listsPosts
+                ));
             }
         }
         // Si la page n'éxiste pas
