@@ -1,0 +1,82 @@
+.commentsList-main-container {
+    @include main-container;
+    width: 95%;
+    height: 100%;
+
+    h2 {
+        @include h2;
+        text-align: center;
+    }
+
+    .return-link {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+
+        a {
+            @include slide-link;
+        }
+    }
+
+    .comments-empty {
+        height: 70vh;
+    }
+
+    .modal {
+        @include modal;
+
+        .modal-content {
+
+            .comment-content {
+                word-break: break-all;
+                color: $blue;
+            }
+        }
+    }
+
+    .message-container {
+        @include message;
+    }
+
+    .comment-table {
+        @include table;
+
+        tbody {
+
+            .waiting {
+                font-weight: bold;
+                color: $red;
+            }
+
+            .comment-content {
+                text-align: justify;
+            }
+        }
+    }
+
+    /* Rend le tableau responsive */
+    @include laptops {
+
+        @include table-responsive;
+
+        .comment-content {
+            padding-right: 10px;
+            align-items: center;
+
+            &:before {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40%;
+            }
+        }
+    }
+
+    .paging-container {
+       margin: 25px 0 250px 0;
+
+       .paging {
+           @include paging;
+       }
+    }
+}

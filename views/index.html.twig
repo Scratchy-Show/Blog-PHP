@@ -22,53 +22,19 @@
         <div class="container-last-posts">
             <h2>Derniers articles</h2>
             <div class="last-posts">
-                <div class="grid">
-                    <figure>
-                        <img class="img-figure" src="../public/img/placeholder.jpg" alt="#" />
-                        <figcaption>
-                            <div class="blur"></div>
-                            <div class="text">
-                                <h3>Titre</h3>
-                                <p class="date">23 Mars 2019</p>
-                                <p class="description">Texte court qui résume le blog qui va être développé.</p>
-                            </div>
-                            <a href="#"><img class="icon-view" src="../public/img/icons/view.png" alt="" /></a>
-                        </figcaption>
-                    </figure>
-                </div>
-
-                <div class="grid">
-                    <figure>
-                        <img class="img-figure" src="../public/img/placeholder.jpg" alt="#" />
-                        <figcaption>
-                            <div class="blur"></div>
-                            <div class="text">
-                                <h3>Titre</h3>
-                                <p class="date">5 Mars 2019</p>
-                                <p class="description">Texte court qui résume le blog qui va être développé.</p>
-                            </div>
-                            <a href="#"><img class="icon-view" src="../public/img/icons/view.png" alt="" /></a>
-                        </figcaption>
-                    </figure>
-                </div>
-
-                <div class="grid">
-                    <figure>
-                        <img class="img-figure" src="../public/img/placeholder.jpg" alt="#" />
-                        <figcaption>
-                            <div class="blur"></div>
-                            <div class="text">
-                                <h3>Titre</h3>
-                                <p class="date">18 Février 2019</p>
-                                <p class="description">Texte court qui résume le blog qui va être développé.</p>
-                            </div>
-                            <a href="#"><img class="icon-view" src="../public/img/icons/view.png" alt="" /></a>
-                        </figcaption>
-                    </figure>
-                </div>
+                {% for post in threeLastPosts %}
+                    <div class="post">
+                        <h3 class="title">{{ post.title }}</h3>
+                        <p class="date">Publié le {{ post.updateDate|date('d m Y') }}</p>
+                        <p class="description">{{ post.summary }}</p>
+                        <div class="link">
+                            <a href="/post/{{ post.path }}"><img class="icon-view" src="../public/img/icons/view.png" alt="" /></a>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
             <div class="posts-link">
-                <a href="/posts">Articles</a>
+                <a href="/posts?page=1">Articles</a>
             </div>
         </div>
 
@@ -81,8 +47,8 @@
             </div>
             <p>Diplomé en tant que Développeur Web Junior, je poursuis ma formation au près de l'école en ligne <a class="openclassrooms" href="https://openclassrooms.com/fr/paths/59-developpeur-dapplication-php-symfony">OpenClassrooms</a> avec le parcours Développeur d'Application PHP.</p>
             <p>J'ai pu acquérir, par la réalisation de projets web, une expérience solide sur différents langages et technologies utilisées dans le milieu du développement. </p>
-            <p>J'applique une grande attention particulière sur le Responsive Design, l'accessibilité et le référencement naturel (SEO).</p>
-            <p>Par une veille technologique quotidienne, je me tiens informé des nouveaux outils, des bonnes pratiques du web, afin d'étoffé mes connaissances et ainsi rester dans les tendances du moment. Dans ce monde qui est en perpétuel évolution.</p>
+            <p>J'applique une grande attention sur le Responsive Design, l'accessibilité et le référencement naturel (SEO).</p>
+            <p>Par une veille technologique quotidienne, je me tiens informé des nouveaux outils, des bonnes pratiques du web, afin d'étoffer mes connaissances et ainsi rester dans les tendances du moment. Dans ce monde qui est en perpétuel évolution.</p>
             <div class="right-quote">
                 <img src="../public/img/icons/right_quote.png" alt="" />
             </div>
@@ -112,24 +78,31 @@
         <div class="container-tools-open-source">
             <h2>Mes outils open source</h2>
             <div class="tools-open-source">
+
                 <div class="tools wordpress">
                     <img src="../public/img/icons/wordpress.png" alt="WordPress" />
-                    <p>Wordpress est un CMS, c'est à dire un gestionnaire de contenu.</p>
-                    <p>Il facilite la création et l'administration de site web, en permettant à l'utilisateur d'être autonome sur la gestion de son contenu, via son interface, très simple d'utilisation.</p>
+                    <div class="tools-container-content">
+                        <p>Wordpress est un CMS, c'est à dire un gestionnaire de contenu.</p>
+                        <p>Il facilite la création et l'administration de site web, en permettant à l'utilisateur d'être autonome sur la gestion de son contenu, via son interface, très simple d'utilisation.</p>
+                    </div>
                 </div>
 
                 <div class="tools symfony">
                     <img src="../public/img/icons/symfony.png" alt="Symfony" />
-                    <p>Symfony est un framework PHP.</p>
-                    <p>C'est une sorte de boîte à outils, qui propose des fonctionnalités pour faciliter, accélérer et même automatiser certaines partie du travail. Cela évite de réinventer la roue à chaque projet.</p>
-                    <p>Ce type de solution est particulièrement adaptée pour les applications nécessitant d'importants développements.</p>
+                    <div class="tools-container-content">
+                        <p>Symfony est un framework PHP.</p>
+                        <p>C'est une sorte de boîte à outils, qui propose des fonctionnalités pour faciliter, accélérer et même automatiser certaines partie du travail. Cela évite de réinventer la roue à chaque projet.</p>
+                        <p>Ce type de solution est particulièrement adaptée pour les applications nécessitant d'importants développements.</p>
+                    </div>
                 </div>
 
                 <div class="tools git">
                     <img src="../public/img/icons/git.png" alt="Git" />
-                    <p>Git est un système de contrôle de version décentralisé. </p>
-                    <p>Il permet de hierarchisé le développement d'une application et rend possible la vérification du code au fur et à mesure de sa conception.</p>
-                    <p>Il permet également de travailler à plusieurs sur un même projet.</p>
+                    <div class="tools-container-content">
+                        <p>Git est un système de contrôle de version décentralisé. </p>
+                        <p>Il permet de hierarchisé le développement d'une application et rend possible la vérification du code au fur et à mesure de sa conception.</p>
+                        <p>Il permet également de travailler à plusieurs sur un même projet.</p>
+                    </div>
                 </div>
             </div>
 

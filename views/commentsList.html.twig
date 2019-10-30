@@ -1,0 +1,132 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Liste de commentaires{% endblock %}
+
+
+{% block body %}
+    <section class="commentsList-main-container">
+        <h2>Liste des commentaires de "{{ post.title }}"</h2>
+
+        <div class="return-link">
+            <a href="/admin?page=1">Retour à l'administration</a>
+        </div>
+
+        {% if comments is empty %}
+
+            <div class="comments-empty">
+                <p>Aucun commentaires pour l'instant.</p>
+            </div>
+
+        {% else %}
+
+            {% for comment in comments %}
+                <div class="modal" id="modal-{{ comment.id }}">
+                    <div class="modal-content">
+                        <p>Confirmer la suppression du commentaire</p>
+                        <p class="comment-content">{{ comment.content }}</p>
+                        <div class="modal-link">
+                            <div class="cancel">
+                                <a href="#close">Annuler</a>
+                            </div>
+                            <div class="remove">
+                                <a href="/admin/deleteComment?id={{ comment.id }}">Supprimer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if message %}
+                <div class="message-container">
+                    {% if message starts with 'Erreur:' %}
+                        <div class="error">
+                            <p class="message">{{ message }}</p>
+                        </div>
+                    {% else %}
+                        <div class="confirm">
+                            <p class="message">{{ message }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <table class="comment-table">
+                <thead>
+                <tr>
+                    <th id="th-author">Auteur</th>
+                    <th id="th-date">Date</th>
+                    <th id="th-validate">Validation</th>
+                    <th id="th-content">Contenu</th>
+                    <th id="th-action">Actions</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    {% for comment in comments %}
+                        <tr>
+                            <td headers="th-author">{{ comment.author }}</td>
+                            <td headers="th-date">{{ comment.date|date('d m Y') }}</td>
+                            {% if comment.validate|default(false) is same as(false) %}
+                                <td headers="th-validate" class="waiting">En attente</td>
+                            {% else %}
+                                <td headers="th-validate">Validé</td>
+                            {% endif %}
+                            <td headers="th-content" class="comment-content">{{ comment.content }}</td>
+                            <td headers="th-action">
+                                {% if comment.validate == false %}
+                                    <a href="/admin/validateComment?id={{ comment.id }}"><img src="../public/img/icons/validate.png" alt="Valider" title="Valider" /></a>
+                                {% else %}
+                                    <a href="/post/{{ post.path }}"><img src="../public/img/icons/view.png" alt="Voir" title="Voir" /></a>
+                                {% endif %}
+                                <a href="#modal-{{ comment.id }}"><img src="../public/img/icons/delete.png" alt="Supprimer" title="Supprimer" /></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="paging-container">
+                <ul class="paging">
+                    {% if page > 1 %}
+                        <div class="prev">
+                            <li>
+                                <a href="/admin/commentsList?id={{ post.id }}&page=1">
+                                    <<
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/commentsList?id={{ post.id }}&page={{ page-1 }}">
+                                    <
+                                </a>
+                            </li>
+                        </div>
+                    {% endif %}
+
+                    <div class="numbers">
+                        {# Affichage de toutes les pages entre p-2 et p+2 sauf si < 1 ou > nbPages #}
+                        {% for p in range(max(page-2, 1), min(page+2, nbPages)) %}
+                            <li{% if p == page %} class="active"{% endif %}>
+                                <a href="/admin/commentsList?id={{ post.id }}&page={{ p }}">{{ p }}</a>
+                            </li>
+                        {% endfor %}
+                    </div>
+
+                    {% if page < nbPages %}
+                        <div class="next">
+                            <li>
+                                <a href="/admin/commentsList?id={{ post.id }}&page={{ page+1 }}">
+                                    >
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/commentsList?id={{ post.id }}&page={{ nbPages }}">
+                                    >>
+                                </a>
+                            </li>
+                        </div>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}

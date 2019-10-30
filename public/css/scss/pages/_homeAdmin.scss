@@ -1,33 +1,10 @@
 .homeAdmin-main-container {
     @include main-container;
+    width: 95%;
+    height: 100%;
 
     h2 {
         @include h2;
-    }
-
-    .message-container {
-
-        .error, .confirm {
-            display: flex;
-            justify-content: center;
-            padding: 15px;
-
-            .message {
-                font-size: 28px;
-            }
-        }
-
-        .error {
-            .message {
-                color: $red;
-            }
-        }
-
-        .confirm {
-            .message {
-                color: $green;
-            }
-        }
     }
 
     .add-post-link {
@@ -37,22 +14,54 @@
 
         a {
             @include slide-link;
-            border-color: green;
+            border-color: $green;
 
             &:after {
-                background: green;
+                background: $green;
             }
         }
     }
 
-    .post-table {
+    .modal {
+        @include modal;
 
-        tbody {
+        .modal-content {
 
-            img {
-                height: 35px;
-                width: 35px;
+            .post-title {
+                text-transform: uppercase;
+                color: $blue;
             }
+        }
+    }
+
+    .message-container {
+        @include message;
+
+        .error, .confirm {
+            padding: 15px;
+        }
+    }
+
+    .post-table {
+        @include table;
+        margin-bottom: 40px;
+
+        td, th {
+            min-width: 130px;
+        }
+    }
+
+    /* Rend le tableau responsive */
+    @include laptops {
+
+        @include table-responsive;
+    }
+
+    .paging-container {
+        margin: 25px 0 250px 0;
+
+        .paging {
+            @include paging;
         }
     }
 }

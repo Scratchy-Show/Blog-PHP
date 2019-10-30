@@ -3,7 +3,9 @@
 
 namespace Models;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\GeneratedValue;
@@ -59,6 +61,11 @@ class User
      */
     protected $hashedPassword;
 
+    /**
+     * @OneToMany(targetEntity="Comment", mappedBy="author")
+     */
+    protected $comments;
+
     public function __construct()
     {
         // Définit le fuseau horaire
@@ -67,6 +74,8 @@ class User
         $this->date = new \DateTime();
         // Par défaut, le role est à 0 (false)
         $this->role = 0;
+        // Liste des commentaires
+        $this->comments = new ArrayCollection();
     }
 
     // Enregistre un nouveau utilisateur
@@ -191,6 +200,11 @@ class User
         return $this->hashedPassword;
     }
 
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
 
     ////// Setter //////
 
@@ -227,5 +241,10 @@ class User
     public function setPassword($password)
     {
         $this->hashedPassword = $this->hashPassword($password);
+    }
+
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
     }
 }

@@ -129,11 +129,12 @@ class CheckFormValuesController
         return $withoutSpaces;
     }
 
-    // Formulaire d'ajout d'article et de modification d'article - Vérifie que les variables ne soient pas vide
-    public function checkIfEmpty($title, $author, $summary, $content)
+    // Formulaire d'ajout d'article, d'ajout de commentaire et de modification d'article
+    // Vérifie que les variables ne soient pas vide
+    public function checkIfEmpty($argument)
     {
         // Si l'une des variable est vide
-        if (empty($title) || empty($author) || empty($summary) || empty($content)) {
+        if (empty($argument)) {
             $messageIsEmpty = "Erreur: Tous les champs n'ont pas été renseigné";
             return $messageIsEmpty;
         }

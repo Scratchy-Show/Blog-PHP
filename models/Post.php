@@ -4,7 +4,9 @@
 namespace Models;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\GeneratedValue;
@@ -61,6 +63,11 @@ class Post
      */
     protected $path;
 
+    /**
+     * @OneToMany(targetEntity="Comment", mappedBy="post")
+     */
+    protected $comments;
+
 
 
     public function __construct()
@@ -71,6 +78,8 @@ class Post
         $this->createDate = new \DateTime();
         // Par défaut, la date de mise à jour est la date d'aujourd'hui
         $this->updateDate = new \DateTime();
+        // Liste des commentaires
+        $this->comments = new ArrayCollection();
     }
 
     // Récupère tous les postes de la bdd avec une pagination
@@ -122,6 +131,28 @@ class Post
         }
     }
 
+    // Récupère les 3 derniers postes
+    public static function getThreeLastPosts()
+    {
+        // Gestion des erreurs
+        try {
+            // Repository dédié à l'entité Post
+            $postRepository = Database::getEntityManager()->getRepository(Post::class);
+            // Récupère les 3 derniers postes par ordre décroissant
+            $threeLastPosts = $postRepository->findBy(
+                array(),
+                array('createDate' => 'desc'),
+                3,
+                0
+            );
+            // Retourne un tableau contenant les 3 posts
+            return $threeLastPosts;
+        }
+        catch (PDOException $e) {
+            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
+        }
+    }
+
     // Récupère un post par son id
     public static function getPost($idPost)
     {
@@ -166,7 +197,6 @@ class Post
         $this->setContent($content);
         $this->setPath($path);
 
-
         // Récupère EntityManager dans l'application
         $entityManager = Database::getEntityManager();
         // Planifie la sauvegarde de l'entité
@@ -175,7 +205,7 @@ class Post
         $entityManager->flush();
     }
 
-    // Modifie un nouvel article
+    // Modifie un article
     public function editPostByForm($title, $author, $summary, $content, $updateDate)
     {
         // Définit les valeurs des variables
@@ -250,6 +280,11 @@ class Post
         return $this->path;
     }
 
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
     ////// Setter //////
 
     public function setTitle($title)
@@ -285,5 +320,10 @@ class Post
     public function setPath($path)
     {
         $this->path = $path;
+    }
+
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
     }
 }

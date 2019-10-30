@@ -4,6 +4,7 @@
 namespace Controllers;
 
 
+use Models\Comment;
 use Models\Post;
 
 class PageController extends Controller // Hérite de la class Controller et CheckFormValuesController
@@ -11,7 +12,10 @@ class PageController extends Controller // Hérite de la class Controller et Che
     // Affiche la page d'Accueil
     public function index()
     {
-        $this->render('index.html.twig', array());
+        // Récupère les 3 derniers postes
+        $threeLastPosts = Post::getThreeLastPosts();
+
+        $this->render('index.html.twig', array('threeLastPosts' => $threeLastPosts));
     }
 
     // Affiche la page des articles avec une pagination
@@ -54,16 +58,33 @@ class PageController extends Controller // Hérite de la class Controller et Che
         }
     }
 
-    // Affiche un post
+    // Affiche un post avec ses commentaires
     public function post($path)
     {
         // Récupère l'article
         $post = Post::getPostByPath($path);
+        // Récupère les commentaires associés
+        $comments = Comment::getValidateComment($post->getId());
 
         // Si la route correspond à un article
         if ($post != null) {
-            // Affiche la page de l'article
-            $this->render('post.html.twig', array("post" => $post));
+            // Redirection par défaut
+            if (empty($_GET['message'])) {
+                // Affiche la page de l'article
+                $this->render('post.html.twig', array(
+                    "post" => $post,
+                    "comments" => $comments
+                ));
+            }
+            // Redirection après ajout d'un commentaire
+            else {
+                // Affiche la page d'administration avec les posts et le message
+                $this->render('post.html.twig', array(
+                    "post" => $post,
+                    "comments" => $comments,
+                    "message" => $_GET['message']
+                ));
+            }
         }
         // Si la route ne correspond à aucun article
         else {

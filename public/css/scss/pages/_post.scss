@@ -1,17 +1,32 @@
-.postForm-main-container {
+.post-main-container {
     @include main-container;
 
     h2 {
         @include h2;
     }
 
-    .error-container {
-        width: 90%;
-        margin-bottom: 15px;
+    .message-container {
+
+        .error, .confirm {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+
+            .message {
+                font-size: 28px;
+            }
+        }
 
         .error {
-            @include error-form;
-            justify-content: center;
+            .message {
+                color: $red;
+            }
+        }
+
+        .confirm {
+            .message {
+                color: $green;
+            }
         }
     }
 
@@ -31,41 +46,18 @@
             max-width: 750px;
             margin: auto;
 
-            .input-container, .textarea-container {
+            .textarea-container {
                 position: relative;
                 width: 95%;
                 margin: 25px 0;
 
-                input, textarea {
+                textarea {
                     width: 100%;
                     padding: 10px 5px;
                     font-size: 18px;
                     border: none;
                     border-radius: 5px;
                     font-family: "Nunito", sans-serif;
-
-                    &:focus {
-                        outline: none;
-                    }
-
-                    &:focus ~ label,
-                    &:valid ~ label {
-                        top: -20px;
-                        font-size: 18px;
-                        color: $white;
-                    }
-                }
-
-                input {
-                    height: 30px;
-                }
-
-                #summary {
-                    height: 100px;
-                }
-
-                #content {
-                    height: 350px;
                 }
 
                 label {
@@ -94,7 +86,7 @@
 
                     &:hover, &:focus {
                         color: $blue;
-                        box-shadow: inset 135px 0 0 0 $white;
+                        box-shadow: inset 150px 0 0 0 $white;
                     }
                 }
             }
