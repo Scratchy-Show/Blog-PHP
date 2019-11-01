@@ -58,7 +58,7 @@
             {% for comment in comments %}
                 <div class="comments" id="{{ comment.id }}">
                     <div class="author-date-comments-container">
-                        <p class="author">{{ comment.author }}</p>
+                        <p class="author">{{ comment.author.getUsername() }}</p>
                         <p class="date">Le {{ comment.date|date('d/m/Y à H:i') }}</p>
                     </div>
                     <p class="content">{{ comment.content }}</p>

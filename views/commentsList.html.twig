@@ -65,7 +65,7 @@
                     {% for comment in comments %}
                         <tr>
                             <td headers="th-author">{{ comment.author.getUsername() }}</td>
-                            <td headers="th-date">{{ comment.date|date('d m Y H i s') }}</td>
+                            <td headers="th-date">{{ comment.date|date('d/m/Y/ à H:i:s') }}</td>
                             {% if comment.validate|default(false) is same as(false) %}
                                 <td headers="th-validate" class="waiting">En attente</td>
                             {% else %}

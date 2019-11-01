@@ -28,13 +28,13 @@ class Comment
     protected $id;
 
     /**
-     * @ManyToOne(targetEntity="Models\User", inversedBy="comments", cascade={"persist", "remove"})
+     * @ManyToOne(targetEntity="Models\User", inversedBy="comments", cascade={"persist"})
      * @JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $author;
 
     /**
-     * @ManyToOne(targetEntity="Models\Post", inversedBy="comments", cascade={"persist", "remove"})
+     * @ManyToOne(targetEntity="Models\Post", inversedBy="comments", cascade={"persist"})
      * @JoinColumn(name="post_id", referencedColumnName="id")
      */
     protected $post;

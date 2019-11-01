@@ -998,7 +998,6 @@ footer .copyright-footer .copyright p {
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
-  padding-bottom: 250px;
 }
 @media (max-width: 1220px) {
   /* line 252, ../scss/pages/_index.scss */
@@ -1006,26 +1005,20 @@ footer .copyright-footer .copyright p {
     flex-direction: column;
   }
 }
-@media (max-width: 980px) {
-  /* line 252, ../scss/pages/_index.scss */
-  .index-main-container .tools-open-source {
-    padding-bottom: 400px;
-  }
-}
-/* line 266, ../scss/pages/_index.scss */
+/* line 261, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .tools {
   width: 33%;
   margin: 10px;
   padding: 10px;
   text-align: center;
 }
-/* line 272, ../scss/pages/_index.scss */
+/* line 267, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .tools img {
   width: 50px;
   height: 50px;
   padding: 10px 0;
 }
-/* line 278, ../scss/pages/_index.scss */
+/* line 273, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .tools .tools-container-content {
   display: flex;
   flex-direction: column;
@@ -1033,7 +1026,7 @@ footer .copyright-footer .copyright p {
   align-items: center;
   min-height: 250px;
 }
-/* line 285, ../scss/pages/_index.scss */
+/* line 280, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .tools .tools-container-content p {
   width: 90%;
   padding-bottom: 20px;
@@ -1041,23 +1034,145 @@ footer .copyright-footer .copyright p {
   color: white;
 }
 @media (max-width: 1220px) {
-  /* line 295, ../scss/pages/_index.scss */
+  /* line 289, ../scss/pages/_index.scss */
   .index-main-container .tools-open-source .wordpress, .index-main-container .tools-open-source .symfony, .index-main-container .tools-open-source .git {
     width: 95%;
     min-height: 350px;
   }
 }
-/* line 302, ../scss/pages/_index.scss */
+/* line 296, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .wordpress {
   background-color: #0073aa;
 }
-/* line 306, ../scss/pages/_index.scss */
+/* line 300, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .symfony {
   background-color: black;
 }
-/* line 310, ../scss/pages/_index.scss */
+/* line 304, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .git {
   background-color: #f44d27;
+}
+/* line 309, ../scss/pages/_index.scss */
+.index-main-container .contact-container {
+  margin-top: 25px;
+  padding-bottom: 250px;
+}
+/* line 313, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 50px;
+}
+@media (max-width: 980px) {
+  /* line 313, ../scss/pages/_index.scss */
+  .index-main-container .contact-container .form-container {
+    margin-bottom: 150px;
+  }
+}
+/* line 322, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
+  border: 2px solid #00afef;
+  align-items: initial;
+  width: 80%;
+}
+/* line 415, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container, .index-main-container .contact-container .form-container form .textarea-container {
+  position: relative;
+  margin: 45px 0;
+}
+/* line 419, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container input, .index-main-container .contact-container .form-container form .input-container textarea, .index-main-container .contact-container .form-container form .textarea-container input, .index-main-container .contact-container .form-container form .textarea-container textarea {
+  width: 310px;
+  padding: 10px 5px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid #c6c6c6;
+}
+/* line 426, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container input:focus, .index-main-container .contact-container .form-container form .input-container textarea:focus, .index-main-container .contact-container .form-container form .textarea-container input:focus, .index-main-container .contact-container .form-container form .textarea-container textarea:focus {
+  outline: none;
+}
+/* line 430, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container input:focus ~ label, .index-main-container .contact-container .form-container form .input-container input:valid ~ label, .index-main-container .contact-container .form-container form .input-container textarea:focus ~ label, .index-main-container .contact-container .form-container form .input-container textarea:valid ~ label, .index-main-container .contact-container .form-container form .textarea-container input:focus ~ label, .index-main-container .contact-container .form-container form .textarea-container input:valid ~ label, .index-main-container .contact-container .form-container form .textarea-container textarea:focus ~ label, .index-main-container .contact-container .form-container form .textarea-container textarea:valid ~ label {
+  top: -14px;
+  font-size: 14px;
+  color: #00afef;
+}
+/* line 437, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container input:focus ~ .border:before, .index-main-container .contact-container .form-container form .input-container textarea:focus ~ .border:before, .index-main-container .contact-container .form-container form .textarea-container input:focus ~ .border:before, .index-main-container .contact-container .form-container form .textarea-container textarea:focus ~ .border:before {
+  width: 320px;
+}
+/* line 442, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container input[type="password"], .index-main-container .contact-container .form-container form .textarea-container input[type="password"] {
+  letter-spacing: 0.3em;
+}
+/* line 448, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container .border:before, .index-main-container .contact-container .form-container form .textarea-container .border:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00afef;
+  transition: 300ms ease all;
+}
+/* line 460, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container label, .index-main-container .contact-container .form-container form .textarea-container label {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 18px;
+  color: #c6c6c6;
+  transition: 300ms ease all;
+}
+/* line 470, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .submit-container {
+  margin-bottom: 40px;
+}
+/* line 473, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .submit-container .submit {
+  padding: 15px;
+  border: 2px solid #00afef;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #00afef;
+  background: none;
+  transition: 0.65s;
+}
+/* line 483, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .submit-container .submit:hover, .index-main-container .contact-container .form-container form .submit-container .submit:focus {
+  color: white;
+  box-shadow: inset 135px 0 0 0 #00afef;
+}
+/* line 327, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form .input-container, .index-main-container .contact-container .form-container form .textarea-container {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+/* line 331, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form .input-container input, .index-main-container .contact-container .form-container form .input-container textarea, .index-main-container .contact-container .form-container form .textarea-container input, .index-main-container .contact-container .form-container form .textarea-container textarea {
+  width: 98%;
+}
+/* line 334, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form .input-container input:focus ~ .border:before, .index-main-container .contact-container .form-container form .input-container textarea:focus ~ .border:before, .index-main-container .contact-container .form-container form .textarea-container input:focus ~ .border:before, .index-main-container .contact-container .form-container form .textarea-container textarea:focus ~ .border:before {
+  width: 100%;
+}
+/* line 339, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form .input-container textarea, .index-main-container .contact-container .form-container form .textarea-container textarea {
+  height: 150px;
+}
+/* line 344, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form .submit-container {
+  align-self: center;
 }
 
 /* line 1, ../scss/pages/_posts.scss */
@@ -1414,10 +1529,6 @@ footer .copyright-footer .copyright p {
   margin-top: 15px;
   word-break: break-all;
 }
-/* line 172, ../scss/pages/_post.scss */
-.post-main-container .comment-container .comments:last-child {
-  margin-bottom: 250px;
-}
 
 /* line 1, ../scss/pages/_login.scss */
 .login-main-container {
@@ -1471,12 +1582,12 @@ footer .copyright-footer .copyright p {
   height: 350px;
 }
 /* line 415, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container {
+.login-main-container .form-container form .input-container, .login-main-container .form-container form .textarea-container {
   position: relative;
   margin: 45px 0;
 }
 /* line 419, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container input {
+.login-main-container .form-container form .input-container input, .login-main-container .form-container form .input-container textarea, .login-main-container .form-container form .textarea-container input, .login-main-container .form-container form .textarea-container textarea {
   width: 310px;
   padding: 10px 5px;
   font-size: 18px;
@@ -1484,25 +1595,25 @@ footer .copyright-footer .copyright p {
   border-bottom: 1px solid #c6c6c6;
 }
 /* line 426, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container input:focus {
+.login-main-container .form-container form .input-container input:focus, .login-main-container .form-container form .input-container textarea:focus, .login-main-container .form-container form .textarea-container input:focus, .login-main-container .form-container form .textarea-container textarea:focus {
   outline: none;
 }
 /* line 430, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container input:focus ~ label, .login-main-container .form-container form .input-container input:valid ~ label {
+.login-main-container .form-container form .input-container input:focus ~ label, .login-main-container .form-container form .input-container input:valid ~ label, .login-main-container .form-container form .input-container textarea:focus ~ label, .login-main-container .form-container form .input-container textarea:valid ~ label, .login-main-container .form-container form .textarea-container input:focus ~ label, .login-main-container .form-container form .textarea-container input:valid ~ label, .login-main-container .form-container form .textarea-container textarea:focus ~ label, .login-main-container .form-container form .textarea-container textarea:valid ~ label {
   top: -14px;
   font-size: 14px;
   color: #00afef;
 }
 /* line 437, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container input:focus ~ .border:before {
+.login-main-container .form-container form .input-container input:focus ~ .border:before, .login-main-container .form-container form .input-container textarea:focus ~ .border:before, .login-main-container .form-container form .textarea-container input:focus ~ .border:before, .login-main-container .form-container form .textarea-container textarea:focus ~ .border:before {
   width: 320px;
 }
 /* line 442, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container input[type="password"] {
+.login-main-container .form-container form .input-container input[type="password"], .login-main-container .form-container form .textarea-container input[type="password"] {
   letter-spacing: 0.3em;
 }
 /* line 448, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container .border:before {
+.login-main-container .form-container form .input-container .border:before, .login-main-container .form-container form .textarea-container .border:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1513,7 +1624,7 @@ footer .copyright-footer .copyright p {
   transition: 300ms ease all;
 }
 /* line 460, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container label {
+.login-main-container .form-container form .input-container label, .login-main-container .form-container form .textarea-container label {
   position: absolute;
   top: 10px;
   left: 5px;
@@ -1620,12 +1731,12 @@ footer .copyright-footer .copyright p {
   margin-bottom: 20px;
 }
 /* line 415, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container {
+.registration-main-container .form-container form .input-container, .registration-main-container .form-container form .textarea-container {
   position: relative;
   margin: 45px 0;
 }
 /* line 419, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container input {
+.registration-main-container .form-container form .input-container input, .registration-main-container .form-container form .input-container textarea, .registration-main-container .form-container form .textarea-container input, .registration-main-container .form-container form .textarea-container textarea {
   width: 310px;
   padding: 10px 5px;
   font-size: 18px;
@@ -1633,25 +1744,25 @@ footer .copyright-footer .copyright p {
   border-bottom: 1px solid #c6c6c6;
 }
 /* line 426, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container input:focus {
+.registration-main-container .form-container form .input-container input:focus, .registration-main-container .form-container form .input-container textarea:focus, .registration-main-container .form-container form .textarea-container input:focus, .registration-main-container .form-container form .textarea-container textarea:focus {
   outline: none;
 }
 /* line 430, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container input:focus ~ label, .registration-main-container .form-container form .input-container input:valid ~ label {
+.registration-main-container .form-container form .input-container input:focus ~ label, .registration-main-container .form-container form .input-container input:valid ~ label, .registration-main-container .form-container form .input-container textarea:focus ~ label, .registration-main-container .form-container form .input-container textarea:valid ~ label, .registration-main-container .form-container form .textarea-container input:focus ~ label, .registration-main-container .form-container form .textarea-container input:valid ~ label, .registration-main-container .form-container form .textarea-container textarea:focus ~ label, .registration-main-container .form-container form .textarea-container textarea:valid ~ label {
   top: -14px;
   font-size: 14px;
   color: #00afef;
 }
 /* line 437, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container input:focus ~ .border:before {
+.registration-main-container .form-container form .input-container input:focus ~ .border:before, .registration-main-container .form-container form .input-container textarea:focus ~ .border:before, .registration-main-container .form-container form .textarea-container input:focus ~ .border:before, .registration-main-container .form-container form .textarea-container textarea:focus ~ .border:before {
   width: 320px;
 }
 /* line 442, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container input[type="password"] {
+.registration-main-container .form-container form .input-container input[type="password"], .registration-main-container .form-container form .textarea-container input[type="password"] {
   letter-spacing: 0.3em;
 }
 /* line 448, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container .border:before {
+.registration-main-container .form-container form .input-container .border:before, .registration-main-container .form-container form .textarea-container .border:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1662,7 +1773,7 @@ footer .copyright-footer .copyright p {
   transition: 300ms ease all;
 }
 /* line 460, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container label {
+.registration-main-container .form-container form .input-container label, .registration-main-container .form-container form .textarea-container label {
   position: absolute;
   top: 10px;
   left: 5px;
@@ -2057,6 +2168,12 @@ footer .copyright-footer .copyright p {
 @media (max-width: 980px) {
   /* line 65, ../scss/pages/_homeAdmin.scss */
   .homeAdmin-main-container .paging-container {
+    padding-bottom: 150px;
+  }
+}
+@media (max-width: 740px) {
+  /* line 65, ../scss/pages/_homeAdmin.scss */
+  .homeAdmin-main-container .paging-container {
     padding-bottom: 90px;
   }
 }
@@ -2425,6 +2542,18 @@ footer .copyright-footer .copyright p {
 .commentsList-main-container .paging-container .paging .numbers {
   display: flex;
 }
+@media (max-width: 980px) {
+  /* line 75, ../scss/pages/_commentsList.scss */
+  .commentsList-main-container .paging-container {
+    padding-bottom: 150px;
+  }
+}
+@media (max-width: 740px) {
+  /* line 75, ../scss/pages/_commentsList.scss */
+  .commentsList-main-container .paging-container {
+    padding-bottom: 90px;
+  }
+}
 
 /* line 1, ../scss/pages/_postForm.scss */
 .postForm-main-container {
@@ -2614,193 +2743,193 @@ footer .copyright-footer .copyright p {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(1) {
-  top: 5vh;
-  left: 16vw;
-  width: 4px;
-  height: 1.33333px;
-  animation-delay: 2s;
+  top: 94vh;
+  left: 36vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(1):before {
-  width: 8px;
-  height: 8px;
+  width: 16px;
+  height: 16px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(2) {
-  top: 39vh;
-  left: 54vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 1s;
+  top: 54vh;
+  left: 64vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(2):before {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(3) {
-  top: 3vh;
-  left: 3vw;
-  width: 9px;
-  height: 3px;
-  animation-delay: 3s;
+  top: 53vh;
+  left: 46vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 1s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(3):before {
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(4) {
-  top: 25vh;
-  left: 99vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 3s;
+  top: 98vh;
+  left: 14vw;
+  width: 5px;
+  height: 1.66667px;
+  animation-delay: 1s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(4):before {
-  width: 14px;
-  height: 14px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(5) {
-  top: 46vh;
-  left: 99vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 3s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(5):before {
   width: 10px;
   height: 10px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(6) {
-  top: 31vh;
-  left: 100vw;
-  width: 9px;
-  height: 3px;
-  animation-delay: 2s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(6):before {
-  width: 18px;
-  height: 18px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(7) {
-  top: 72vh;
-  left: 86vw;
-  width: 9px;
-  height: 3px;
-  animation-delay: 5s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(7):before {
-  width: 18px;
-  height: 18px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(8) {
-  top: 91vh;
-  left: 57vw;
+.error-404-main-container .container-star .star-1:nth-of-type(5) {
+  top: 100vh;
+  left: 97vw;
   width: 4px;
   height: 1.33333px;
-  animation-delay: 5s;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(8):before {
+.error-404-main-container .container-star .star-1:nth-of-type(5):before {
   width: 8px;
   height: 8px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(9) {
-  top: 36vh;
-  left: 43vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 5s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(9):before {
-  width: 10px;
-  height: 10px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(10) {
-  top: 13vh;
-  left: 91vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 5s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(10):before {
-  width: 10px;
-  height: 10px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(11) {
-  top: 50vh;
+.error-404-main-container .container-star .star-1:nth-of-type(6) {
+  top: 22vh;
   left: 18vw;
   width: 7px;
   height: 2.33333px;
   animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(11):before {
+.error-404-main-container .container-star .star-1:nth-of-type(6):before {
   width: 14px;
   height: 14px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(12) {
-  top: 58vh;
-  left: 27vw;
-  width: 5px;
-  height: 1.66667px;
+.error-404-main-container .container-star .star-1:nth-of-type(7) {
+  top: 28vh;
+  left: 74vw;
+  width: 7px;
+  height: 2.33333px;
+  animation-delay: 2s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(7):before {
+  width: 14px;
+  height: 14px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(8) {
+  top: 61vh;
+  left: 4vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 2s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(8):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(9) {
+  top: 80vh;
+  left: 30vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 2s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(9):before {
+  width: 12px;
+  height: 12px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(10) {
+  top: 9vh;
+  left: 34vw;
+  width: 8px;
+  height: 2.66667px;
   animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(10):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(11) {
+  top: 26vh;
+  left: 57vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(11):before {
+  width: 8px;
+  height: 8px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(12) {
+  top: 26vh;
+  left: 1vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(12):before {
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(13) {
-  top: 83vh;
-  left: 80vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 4s;
+  top: 20vh;
+  left: 37vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(13):before {
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(14) {
-  top: 24vh;
-  left: 37vw;
+  top: 8vh;
+  left: 14vw;
   width: 8px;
   height: 2.66667px;
-  animation-delay: 2s;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(14):before {
@@ -2810,25 +2939,25 @@ footer .copyright-footer .copyright p {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(15) {
-  top: 68vh;
-  left: 97vw;
-  width: 6px;
-  height: 2px;
-  animation-delay: 1s;
+  top: 53vh;
+  left: 86vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(15):before {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(16) {
-  top: 10vh;
-  left: 97vw;
+  top: 63vh;
+  left: 79vw;
   width: 8px;
   height: 2.66667px;
-  animation-delay: 5s;
+  animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(16):before {
@@ -2838,25 +2967,25 @@ footer .copyright-footer .copyright p {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(17) {
-  top: 55vh;
-  left: 32vw;
-  width: 4px;
-  height: 1.33333px;
-  animation-delay: 2s;
+  top: 18vh;
+  left: 87vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(17):before {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(18) {
-  top: 77vh;
-  left: 5vw;
+  top: 91vh;
+  left: 97vw;
   width: 7px;
   height: 2.33333px;
-  animation-delay: 4s;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(18):before {
@@ -2866,50 +2995,50 @@ footer .copyright-footer .copyright p {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(19) {
-  top: 17vh;
-  left: 3vw;
-  width: 7px;
-  height: 2.33333px;
+  top: 15vh;
+  left: 68vw;
+  width: 9px;
+  height: 3px;
   animation-delay: 2s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(19):before {
-  width: 14px;
-  height: 14px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(20) {
-  top: 16vh;
-  left: 37vw;
-  width: 6px;
-  height: 2px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(20):before {
-  width: 12px;
-  height: 12px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(21) {
-  top: 2vh;
-  left: 57vw;
-  width: 9px;
-  height: 3px;
-  animation-delay: 4s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(21):before {
   width: 18px;
   height: 18px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(20) {
+  top: 2vh;
+  left: 79vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(20):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(21) {
+  top: 37vh;
+  left: 48vw;
+  width: 5px;
+  height: 1.66667px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(21):before {
+  width: 10px;
+  height: 10px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(22) {
-  top: 24vh;
-  left: 37vw;
+  top: 54vh;
+  left: 49vw;
   width: 5px;
   height: 1.66667px;
   animation-delay: 4s;
@@ -2922,8 +3051,8 @@ footer .copyright-footer .copyright p {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(23) {
-  top: 48vh;
-  left: 27vw;
+  top: 68vh;
+  left: 38vw;
   width: 4px;
   height: 1.33333px;
   animation-delay: 4s;
@@ -2936,100 +3065,100 @@ footer .copyright-footer .copyright p {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(24) {
-  top: 84vh;
-  left: 9vw;
-  width: 4px;
-  height: 1.33333px;
-  animation-delay: 5s;
+  top: 95vh;
+  left: 97vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 2s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(24):before {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(25) {
-  top: 1vh;
-  left: 49vw;
-  width: 9px;
-  height: 3px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(25):before {
-  width: 18px;
-  height: 18px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(26) {
-  top: 14vh;
-  left: 97vw;
-  width: 4px;
-  height: 1.33333px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(26):before {
-  width: 8px;
-  height: 8px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(27) {
   top: 18vh;
-  left: 94vw;
+  left: 5vw;
   width: 8px;
   height: 2.66667px;
   animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(27):before {
+.error-404-main-container .container-star .star-1:nth-of-type(25):before {
   width: 16px;
   height: 16px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(28) {
-  top: 31vh;
-  left: 10vw;
+.error-404-main-container .container-star .star-1:nth-of-type(26) {
+  top: 74vh;
+  left: 43vw;
   width: 5px;
   height: 1.66667px;
-  animation-delay: 4s;
+  animation-delay: 1s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(26):before {
+  width: 10px;
+  height: 10px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(27) {
+  top: 71vh;
+  left: 26vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 5s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(27):before {
+  width: 8px;
+  height: 8px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(28) {
+  top: 88vh;
+  left: 77vw;
+  width: 9px;
+  height: 3px;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(28):before {
-  width: 10px;
-  height: 10px;
+  width: 18px;
+  height: 18px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(29) {
-  top: 75vh;
-  left: 58vw;
-  width: 5px;
-  height: 1.66667px;
+  top: 69vh;
+  left: 42vw;
+  width: 9px;
+  height: 3px;
   animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(29):before {
-  width: 10px;
-  height: 10px;
+  width: 18px;
+  height: 18px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(30) {
-  top: 55vh;
-  left: 72vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 2s;
+  top: 33vh;
+  left: 96vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(30):before {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   top: -250%;
 }
 /* line 92, ../scss/pages/_error404.scss */
@@ -3041,11 +3170,11 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(31) {
-  top: 50vh;
-  left: 50vw;
+  top: 56vh;
+  left: 80vw;
   width: 2px;
   height: 2px;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(31):before {
@@ -3055,25 +3184,25 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(32) {
-  top: 41vh;
-  left: 51vw;
-  width: 2px;
-  height: 2px;
+  top: 35vh;
+  left: 41vw;
+  width: 3px;
+  height: 3px;
   animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(32):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(33) {
-  top: 30vh;
-  left: 88vw;
+  top: 2vh;
+  left: 22vw;
   width: 2px;
   height: 2px;
-  animation-delay: 2s;
+  animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(33):before {
@@ -3083,22 +3212,22 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(34) {
-  top: 49vh;
-  left: 21vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 2s;
+  top: 70vh;
+  left: 51vw;
+  width: 4px;
+  height: 4px;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(34):before {
-  width: 4px;
-  height: 4px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(35) {
-  top: 79vh;
-  left: 15vw;
+  top: 53vh;
+  left: 80vw;
   width: 4px;
   height: 4px;
   animation-delay: 3s;
@@ -3111,95 +3240,95 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(36) {
-  top: 19vh;
-  left: 39vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 2s;
+  top: 99vh;
+  left: 57vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(36):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(37) {
-  top: 100vh;
-  left: 70vw;
-  width: 2px;
-  height: 2px;
+  top: 36vh;
+  left: 78vw;
+  width: 3px;
+  height: 3px;
   animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(37):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(38) {
-  top: 39vh;
-  left: 24vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 3s;
+  top: 69vh;
+  left: 91vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 2s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(38):before {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(39) {
-  top: 47vh;
-  left: 92vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 2s;
+  top: 37vh;
+  left: 58vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(39):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(40) {
-  top: 39vh;
-  left: 93vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 3s;
+  top: 72vh;
+  left: 74vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(40):before {
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(41) {
-  top: 74vh;
-  left: 33vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 1s;
+  top: 4vh;
+  left: 78vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(41):before {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(42) {
-  top: 64vh;
-  left: 34vw;
+  top: 21vh;
+  left: 98vw;
   width: 4px;
   height: 4px;
-  animation-delay: 5s;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(42):before {
@@ -3209,11 +3338,11 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(43) {
-  top: 25vh;
-  left: 25vw;
+  top: 8vh;
+  left: 77vw;
   width: 3px;
   height: 3px;
-  animation-delay: 1s;
+  animation-delay: 2s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(43):before {
@@ -3223,39 +3352,39 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(44) {
-  top: 49vh;
-  left: 98vw;
-  width: 3px;
-  height: 3px;
-  animation-delay: 1s;
+  top: 4vh;
+  left: 59vw;
+  width: 4px;
+  height: 4px;
+  animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(44):before {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(45) {
-  top: 20vh;
-  left: 54vw;
-  width: 3px;
-  height: 3px;
-  animation-delay: 5s;
+  top: 21vh;
+  left: 73vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(45):before {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(46) {
-  top: 79vh;
-  left: 63vw;
+  top: 43vh;
+  left: 89vw;
   width: 3px;
   height: 3px;
-  animation-delay: 4s;
+  animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(46):before {
@@ -3265,22 +3394,22 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(47) {
-  top: 31vh;
-  left: 8vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 2s;
+  top: 40vh;
+  left: 76vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(47):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(48) {
-  top: 35vh;
-  left: 39vw;
+  top: 96vh;
+  left: 67vw;
   width: 4px;
   height: 4px;
   animation-delay: 1s;
@@ -3293,25 +3422,25 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(49) {
-  top: 26vh;
-  left: 35vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 4s;
+  top: 99vh;
+  left: 11vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(49):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(50) {
-  top: 19vh;
-  left: 46vw;
+  top: 68vh;
+  left: 38vw;
   width: 4px;
   height: 4px;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(50):before {
@@ -3321,11 +3450,11 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(51) {
-  top: 56vh;
-  left: 8vw;
+  top: 67vh;
+  left: 15vw;
   width: 3px;
   height: 3px;
-  animation-delay: 4s;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(51):before {
@@ -3335,64 +3464,64 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(52) {
-  top: 9vh;
-  left: 70vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 3s;
+  top: 38vh;
+  left: 57vw;
+  width: 4px;
+  height: 4px;
+  animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(52):before {
+  width: 8px;
+  height: 8px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(53) {
+  top: 23vh;
+  left: 43vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 4s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(53):before {
   width: 4px;
   height: 4px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(53) {
-  top: 18vh;
-  left: 47vw;
-  width: 3px;
-  height: 3px;
-  animation-delay: 1s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(53):before {
-  width: 6px;
-  height: 6px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(54) {
-  top: 18vh;
-  left: 97vw;
-  width: 3px;
-  height: 3px;
+  top: 60vh;
+  left: 66vw;
+  width: 4px;
+  height: 4px;
   animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(54):before {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(55) {
-  top: 81vh;
-  left: 14vw;
-  width: 3px;
-  height: 3px;
+  top: 13vh;
+  left: 59vw;
+  width: 2px;
+  height: 2px;
   animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(55):before {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(56) {
-  top: 48vh;
-  left: 37vw;
+  top: 96vh;
+  left: 69vw;
   width: 2px;
   height: 2px;
   animation-delay: 3s;
@@ -3405,53 +3534,53 @@ footer .copyright-footer .copyright p {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(57) {
-  top: 34vh;
-  left: 7vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 3s;
+  top: 57vh;
+  left: 34vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(57):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(58) {
-  top: 35vh;
-  left: 91vw;
-  width: 4px;
-  height: 4px;
+  top: 39vh;
+  left: 64vw;
+  width: 3px;
+  height: 3px;
   animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(58):before {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(59) {
-  top: 24vh;
-  left: 55vw;
-  width: 2px;
-  height: 2px;
+  top: 76vh;
+  left: 74vw;
+  width: 3px;
+  height: 3px;
   animation-delay: 2s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(59):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(60) {
-  top: 55vh;
-  left: 17vw;
+  top: 49vh;
+  left: 22vw;
   width: 4px;
   height: 4px;
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(60):before {

@@ -66,6 +66,10 @@
         @include paging;
 
         @include laptops {
+            padding-bottom: 150px;
+        }
+
+        @include tablets {
             padding-bottom: 90px;
         }
     }

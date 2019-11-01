@@ -412,11 +412,11 @@
     margin: auto;
     border: 2px solid $blue;
 
-    .input-container {
+    .input-container, .textarea-container {
         position: relative;
         margin: 45px 0;
 
-        input {
+        input, textarea {
             width: 310px;
             padding: 10px 5px;
             font-size: 18px;
