@@ -3,6 +3,7 @@
 
 namespace System;
 
+use Doctrine\Common\Cache\ApcuCache;
 use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\Tools\Setup;

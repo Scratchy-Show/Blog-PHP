@@ -41,12 +41,11 @@ class PageController extends Controller // Hérite de la class Controller et Che
                     "page" => $page
                 ));
             }
-            // Si la page n'éxiste pas
+            // Si il y a aucun article
             else {
-                // Redirection vers la 404
-                header("Location: /error404");
-                // Empêche l'exécution du reste du script
-                die();
+                $this->render('posts.html.twig', array(
+                    "posts" => $posts,
+                ));
             }
         }
         // Si la page n'éxiste pas

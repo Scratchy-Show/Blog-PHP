@@ -7,12 +7,18 @@
     <div class="post-main-container">
         <h2>{{ post.title }}</h2>
 
-        <div class="post-container">
-            <p class="author">Publié par {{ post.author }} le {{ post.createDate|date('d m Y') }}</p>
-            <p class="date">Mis à jour le {{ post.updateDate|date('d m Y') }}</p>
-            <text class="summary">{{ post.summary }}</text>
-            <text class="content">{{ post.content }}</text>
-        </div>
+        <article class="post-container">
+            <div class="author-date-post-container">
+                <p>Publié par <span class="author">{{ post.author }}</span> le {{ post.createDate|date('d m Y') }}</p>
+                <p>Mis à jour le {{ post.updateDate|date('d m Y') }}</p>
+            </div>
+            <div class="summary">
+                <text>{{ post.summary }}</text>
+            </div>
+            <div class="content">
+                <text>{{ post.content }}</text>
+            </div>
+        </article>
 
         {% if message %}
             <div class="message-container">
@@ -31,12 +37,12 @@
         <div class="comment-container">
             <h3>Laisser un commentaire</h3>
             {% if session.user is not defined %}
-                <p>Si vous souhaitez laisser un commentaire, vous devez vous <a href="/login">connecter</a></p>
+                <p class="wish-comment">Si vous souhaitez laisser un commentaire, vous devez vous <a href="/login">connecter</a></p>
             {% else %}
                 <div class="form-container">
                     <form method="post" action="/comment">
                         <div class="textarea-container">
-                            <textarea id="content" name="content" placeholder="Commentaire" required="required"></textarea>
+                            <textarea id="content" name="content" placeholder="Votre commentaire" required="required"></textarea>
                             <label for="content"></label>
                         </div>
                         <input type="hidden" id="postId" name="postId" value="{{ post.id }}">
@@ -48,11 +54,14 @@
                 </div>
             {% endif %}
 
+            <h3>Vos commentaires</h3>
             {% for comment in comments %}
-                <div class="comment">
-                    <p>{{ comment.author.username }}</p>
-                    <p>{{ comment.date|date('d m Y') }}</p>
-                    <textarea>{{ comment.content }}</textarea>
+                <div class="comments" id="{{ comment.id }}">
+                    <div class="author-date-comments-container">
+                        <p class="author">{{ comment.author.getUsername() }}</p>
+                        <p class="date">Le {{ comment.date|date('d/m/Y à H:i') }}</p>
+                    </div>
+                    <p class="content">{{ comment.content }}</p>
                 </div>
             {% endfor %}
         </div>

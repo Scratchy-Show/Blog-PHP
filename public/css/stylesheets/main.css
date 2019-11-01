@@ -513,7 +513,7 @@ html body #body-container .show-back-to-top {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 75px;
+  height: 50px;
   z-index: 10;
   color: #00afef;
   background-color: rgba(66, 66, 66, 0.9);
@@ -536,16 +536,13 @@ html body #body-container .show-back-to-top {
 }
 /* line 29, ../scss/layout/_administratorBar.scss */
 .administrator-bar img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   padding: 10px;
 }
 
 /* line 1, ../scss/layout/_footer.scss */
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   /* Pour fixer le footer */
   position: absolute;
   right: 0;
@@ -554,62 +551,94 @@ footer {
   /* Pour fixer le footer */
   background-color: #00afef;
 }
-/* line 13, ../scss/layout/_footer.scss */
-footer h2 {
-  color: white;
+/* line 10, ../scss/layout/_footer.scss */
+footer h3 {
+  color: black;
 }
-/* line 17, ../scss/layout/_footer.scss */
+/* line 14, ../scss/layout/_footer.scss */
 footer img {
   width: 25px;
   height: 25px;
 }
-/* line 22, ../scss/layout/_footer.scss */
+/* line 19, ../scss/layout/_footer.scss */
 footer a {
   text-decoration: none;
   color: white;
 }
-/* line 27, ../scss/layout/_footer.scss */
-footer .contact-footer {
-  margin: 10px 0 20px 0;
-}
-/* line 30, ../scss/layout/_footer.scss */
-footer .contact-footer p {
+/* line 24, ../scss/layout/_footer.scss */
+footer .sitemap-contact-container {
   display: flex;
-  align-items: center;
-  padding-bottom: 5px;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
 }
-/* line 35, ../scss/layout/_footer.scss */
-footer .contact-footer p img {
-  margin-right: 5px;
+@media (max-width: 980px) {
+  /* line 24, ../scss/layout/_footer.scss */
+  footer .sitemap-contact-container {
+    flex-direction: column;
+  }
 }
-/* line 39, ../scss/layout/_footer.scss */
-footer .contact-footer p a {
-  margin-left: 5px;
+/* line 34, ../scss/layout/_footer.scss */
+footer .sitemap-contact-container .sitemap, footer .sitemap-contact-container .contact {
+  width: 45%;
+  text-align: center;
 }
-/* line 42, ../scss/layout/_footer.scss */
-footer .contact-footer p a:hover {
+@media (max-width: 980px) {
+  /* line 34, ../scss/layout/_footer.scss */
+  footer .sitemap-contact-container .sitemap, footer .sitemap-contact-container .contact {
+    width: 100%;
+  }
+}
+/* line 45, ../scss/layout/_footer.scss */
+footer .sitemap-contact-container .sitemap li {
+  margin: 5px 0;
+}
+/* line 48, ../scss/layout/_footer.scss */
+footer .sitemap-contact-container .sitemap li:hover {
   text-decoration: underline solid white;
 }
-/* line 49, ../scss/layout/_footer.scss */
+/* line 59, ../scss/layout/_footer.scss */
+footer .sitemap-contact-container .contact .contact-footer p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+/* line 65, ../scss/layout/_footer.scss */
+footer .sitemap-contact-container .contact .contact-footer p img {
+  margin-right: 5px;
+}
+/* line 69, ../scss/layout/_footer.scss */
+footer .sitemap-contact-container .contact .contact-footer p a {
+  margin-left: 5px;
+}
+/* line 72, ../scss/layout/_footer.scss */
+footer .sitemap-contact-container .contact .contact-footer p a:hover {
+  text-decoration: underline solid white;
+}
+/* line 81, ../scss/layout/_footer.scss */
 footer .copyright-footer {
   display: flex;
   width: 100%;
   padding-bottom: 10px;
+  margin-top: 10px;
 }
-/* line 54, ../scss/layout/_footer.scss */
+@media (max-width: 980px) {
+  /* line 81, ../scss/layout/_footer.scss */
+  footer .copyright-footer {
+    margin-top: 30px;
+  }
+}
+/* line 91, ../scss/layout/_footer.scss */
 footer .copyright-footer .copyright {
   display: flex;
   justify-content: center;
   width: 100%;
 }
-/* line 59, ../scss/layout/_footer.scss */
+/* line 96, ../scss/layout/_footer.scss */
 footer .copyright-footer .copyright p {
   margin-left: 5px;
   align-self: center;
-}
-/* line 65, ../scss/layout/_footer.scss */
-footer .copyright-footer .admin-footer {
-  margin-right: 15px;
 }
 
 /* line 1, ../scss/pages/_index.scss */
@@ -969,7 +998,6 @@ footer .copyright-footer .admin-footer {
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
-  padding-bottom: 250px;
 }
 @media (max-width: 1220px) {
   /* line 252, ../scss/pages/_index.scss */
@@ -977,20 +1005,20 @@ footer .copyright-footer .admin-footer {
     flex-direction: column;
   }
 }
-/* line 262, ../scss/pages/_index.scss */
+/* line 261, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .tools {
   width: 33%;
   margin: 10px;
   padding: 10px;
   text-align: center;
 }
-/* line 268, ../scss/pages/_index.scss */
+/* line 267, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .tools img {
   width: 50px;
   height: 50px;
   padding: 10px 0;
 }
-/* line 274, ../scss/pages/_index.scss */
+/* line 273, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .tools .tools-container-content {
   display: flex;
   flex-direction: column;
@@ -998,7 +1026,7 @@ footer .copyright-footer .admin-footer {
   align-items: center;
   min-height: 250px;
 }
-/* line 281, ../scss/pages/_index.scss */
+/* line 280, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .tools .tools-container-content p {
   width: 90%;
   padding-bottom: 20px;
@@ -1006,23 +1034,145 @@ footer .copyright-footer .admin-footer {
   color: white;
 }
 @media (max-width: 1220px) {
-  /* line 291, ../scss/pages/_index.scss */
+  /* line 289, ../scss/pages/_index.scss */
   .index-main-container .tools-open-source .wordpress, .index-main-container .tools-open-source .symfony, .index-main-container .tools-open-source .git {
     width: 95%;
     min-height: 350px;
   }
 }
-/* line 298, ../scss/pages/_index.scss */
+/* line 296, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .wordpress {
   background-color: #0073aa;
 }
-/* line 302, ../scss/pages/_index.scss */
+/* line 300, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .symfony {
   background-color: black;
 }
-/* line 306, ../scss/pages/_index.scss */
+/* line 304, ../scss/pages/_index.scss */
 .index-main-container .tools-open-source .git {
   background-color: #f44d27;
+}
+/* line 309, ../scss/pages/_index.scss */
+.index-main-container .contact-container {
+  margin-top: 25px;
+  padding-bottom: 250px;
+}
+/* line 313, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 50px;
+}
+@media (max-width: 980px) {
+  /* line 313, ../scss/pages/_index.scss */
+  .index-main-container .contact-container .form-container {
+    margin-bottom: 150px;
+  }
+}
+/* line 322, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
+  border: 2px solid #00afef;
+  align-items: initial;
+  width: 80%;
+}
+/* line 415, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container, .index-main-container .contact-container .form-container form .textarea-container {
+  position: relative;
+  margin: 45px 0;
+}
+/* line 419, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container input, .index-main-container .contact-container .form-container form .input-container textarea, .index-main-container .contact-container .form-container form .textarea-container input, .index-main-container .contact-container .form-container form .textarea-container textarea {
+  width: 310px;
+  padding: 10px 5px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid #c6c6c6;
+}
+/* line 426, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container input:focus, .index-main-container .contact-container .form-container form .input-container textarea:focus, .index-main-container .contact-container .form-container form .textarea-container input:focus, .index-main-container .contact-container .form-container form .textarea-container textarea:focus {
+  outline: none;
+}
+/* line 430, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container input:focus ~ label, .index-main-container .contact-container .form-container form .input-container input:valid ~ label, .index-main-container .contact-container .form-container form .input-container textarea:focus ~ label, .index-main-container .contact-container .form-container form .input-container textarea:valid ~ label, .index-main-container .contact-container .form-container form .textarea-container input:focus ~ label, .index-main-container .contact-container .form-container form .textarea-container input:valid ~ label, .index-main-container .contact-container .form-container form .textarea-container textarea:focus ~ label, .index-main-container .contact-container .form-container form .textarea-container textarea:valid ~ label {
+  top: -14px;
+  font-size: 14px;
+  color: #00afef;
+}
+/* line 437, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container input:focus ~ .border:before, .index-main-container .contact-container .form-container form .input-container textarea:focus ~ .border:before, .index-main-container .contact-container .form-container form .textarea-container input:focus ~ .border:before, .index-main-container .contact-container .form-container form .textarea-container textarea:focus ~ .border:before {
+  width: 320px;
+}
+/* line 442, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container input[type="password"], .index-main-container .contact-container .form-container form .textarea-container input[type="password"] {
+  letter-spacing: 0.3em;
+}
+/* line 448, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container .border:before, .index-main-container .contact-container .form-container form .textarea-container .border:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00afef;
+  transition: 300ms ease all;
+}
+/* line 460, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .input-container label, .index-main-container .contact-container .form-container form .textarea-container label {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 18px;
+  color: #c6c6c6;
+  transition: 300ms ease all;
+}
+/* line 470, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .submit-container {
+  margin-bottom: 40px;
+}
+/* line 473, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .submit-container .submit {
+  padding: 15px;
+  border: 2px solid #00afef;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #00afef;
+  background: none;
+  transition: 0.65s;
+}
+/* line 483, ../scss/utilities/_mixins.scss */
+.index-main-container .contact-container .form-container form .submit-container .submit:hover, .index-main-container .contact-container .form-container form .submit-container .submit:focus {
+  color: white;
+  box-shadow: inset 135px 0 0 0 #00afef;
+}
+/* line 327, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form .input-container, .index-main-container .contact-container .form-container form .textarea-container {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+/* line 331, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form .input-container input, .index-main-container .contact-container .form-container form .input-container textarea, .index-main-container .contact-container .form-container form .textarea-container input, .index-main-container .contact-container .form-container form .textarea-container textarea {
+  width: 98%;
+}
+/* line 334, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form .input-container input:focus ~ .border:before, .index-main-container .contact-container .form-container form .input-container textarea:focus ~ .border:before, .index-main-container .contact-container .form-container form .textarea-container input:focus ~ .border:before, .index-main-container .contact-container .form-container form .textarea-container textarea:focus ~ .border:before {
+  width: 100%;
+}
+/* line 339, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form .input-container textarea, .index-main-container .contact-container .form-container form .textarea-container textarea {
+  height: 150px;
+}
+/* line 344, ../scss/pages/_index.scss */
+.index-main-container .contact-container .form-container form .submit-container {
+  align-self: center;
 }
 
 /* line 1, ../scss/pages/_posts.scss */
@@ -1033,14 +1183,18 @@ footer .copyright-footer .admin-footer {
   width: 80%;
   height: 100vh;
   margin: auto;
-  height: 95vh;
+  height: 100%;
 }
-/* line 5, ../scss/pages/_posts.scss */
+/* line 6, ../scss/pages/_posts.scss */
 .posts-main-container h2 {
   padding: 40px 0;
   color: #00afef;
 }
-/* line 9, ../scss/pages/_posts.scss */
+/* line 10, ../scss/pages/_posts.scss */
+.posts-main-container .posts-empty {
+  height: 70vh;
+}
+/* line 14, ../scss/pages/_posts.scss */
 .posts-main-container .post-container {
   display: flex;
   flex-direction: column;
@@ -1051,25 +1205,27 @@ footer .copyright-footer .admin-footer {
   color: white;
   background-color: #00afef;
 }
-/* line 19, ../scss/pages/_posts.scss */
+/* line 24, ../scss/pages/_posts.scss */
 .posts-main-container .post-container h3 {
   padding: 10px 0;
+  text-align: center;
 }
-/* line 23, ../scss/pages/_posts.scss */
+/* line 29, ../scss/pages/_posts.scss */
 .posts-main-container .post-container .date {
   font-size: 15px;
 }
-/* line 27, ../scss/pages/_posts.scss */
+/* line 33, ../scss/pages/_posts.scss */
 .posts-main-container .post-container .summary {
-  width: 100%;
+  width: 80%;
+  margin: auto;
   padding: 30px 0;
 }
-/* line 32, ../scss/pages/_posts.scss */
+/* line 39, ../scss/pages/_posts.scss */
 .posts-main-container .post-container .post-link {
   display: flex;
   justify-content: center;
 }
-/* line 36, ../scss/pages/_posts.scss */
+/* line 43, ../scss/pages/_posts.scss */
 .posts-main-container .post-container .post-link a {
   padding: 20px;
   border: 1px solid #00afef;
@@ -1114,20 +1270,24 @@ footer .copyright-footer .admin-footer {
   content: "";
   z-index: -10;
 }
-/* line 41, ../scss/pages/_posts.scss */
+/* line 48, ../scss/pages/_posts.scss */
 .posts-main-container .post-container .post-link a:after {
   background-color: white;
 }
-/* line 45, ../scss/pages/_posts.scss */
+/* line 52, ../scss/pages/_posts.scss */
 .posts-main-container .post-container .post-link a:hover {
   color: #00afef;
   transition: color 0.35s  ease-in-out;
 }
-/* line 55, ../scss/pages/_posts.scss */
+/* line 60, ../scss/pages/_posts.scss */
+.posts-main-container .paging-container {
+  margin: 25px 0 250px 0;
+}
+/* line 144, ../scss/utilities/_mixins.scss */
 .posts-main-container .paging-container .paging {
   display: flex;
 }
-/* line 144, ../scss/utilities/_mixins.scss */
+/* line 147, ../scss/utilities/_mixins.scss */
 .posts-main-container .paging-container .paging li {
   margin: 0 8px;
   padding: 10px 0;
@@ -1135,37 +1295,43 @@ footer .copyright-footer .admin-footer {
   border-radius: 5px;
   background-color: #00afef;
 }
-/* line 151, ../scss/utilities/_mixins.scss */
+/* line 154, ../scss/utilities/_mixins.scss */
 .posts-main-container .paging-container .paging li:hover:not(.active) {
   background-color: white;
   transition: background-color .5s;
 }
-/* line 156, ../scss/utilities/_mixins.scss */
+/* line 159, ../scss/utilities/_mixins.scss */
 .posts-main-container .paging-container .paging li a {
   padding: 10px 15px;
   text-decoration: none;
   color: white;
 }
-/* line 161, ../scss/utilities/_mixins.scss */
+/* line 164, ../scss/utilities/_mixins.scss */
 .posts-main-container .paging-container .paging li a:hover:not(.active) {
   color: #00afef;
   transition: color .5s;
 }
-/* line 168, ../scss/utilities/_mixins.scss */
+/* line 171, ../scss/utilities/_mixins.scss */
 .posts-main-container .paging-container .paging .active {
   background-color: white;
 }
-/* line 171, ../scss/utilities/_mixins.scss */
+/* line 174, ../scss/utilities/_mixins.scss */
 .posts-main-container .paging-container .paging .active a {
   color: #00afef;
 }
-/* line 176, ../scss/utilities/_mixins.scss */
+/* line 179, ../scss/utilities/_mixins.scss */
 .posts-main-container .paging-container .paging .prev, .posts-main-container .paging-container .paging .next {
   display: flex;
 }
-/* line 180, ../scss/utilities/_mixins.scss */
+/* line 183, ../scss/utilities/_mixins.scss */
 .posts-main-container .paging-container .paging .numbers {
   display: flex;
+}
+@media (max-width: 980px) {
+  /* line 60, ../scss/pages/_posts.scss */
+  .posts-main-container .paging-container {
+    margin-bottom: 400px;
+  }
 }
 
 /* line 1, ../scss/pages/_post.scss */
@@ -1176,41 +1342,106 @@ footer .copyright-footer .admin-footer {
   width: 80%;
   height: 100vh;
   margin: auto;
+  height: 100%;
+  padding-bottom: 400px;
 }
-/* line 4, ../scss/pages/_post.scss */
+/* line 6, ../scss/pages/_post.scss */
 .post-main-container h2 {
   padding: 40px 0;
   color: #00afef;
 }
 /* line 10, ../scss/pages/_post.scss */
-.post-main-container .message-container .error, .post-main-container .message-container .confirm {
-  display: flex;
-  justify-content: center;
-  padding: 15px;
+.post-main-container .post-container {
+  width: 95%;
+  padding: 20px;
+  color: white;
+  background-color: #00afef;
+  border-radius: 10px;
 }
-/* line 15, ../scss/pages/_post.scss */
+/* line 17, ../scss/pages/_post.scss */
+.post-main-container .post-container .author-date-post-container {
+  display: flex;
+  justify-content: space-between;
+}
+/* line 21, ../scss/pages/_post.scss */
+.post-main-container .post-container .author-date-post-container p {
+  padding: 10px;
+  text-align: center;
+  color: black;
+  font-variant: all-small-caps;
+  font-weight: bold;
+}
+/* line 28, ../scss/pages/_post.scss */
+.post-main-container .post-container .author-date-post-container p .author {
+  color: white;
+}
+/* line 34, ../scss/pages/_post.scss */
+.post-main-container .post-container .summary, .post-main-container .post-container .content {
+  margin: 20px 10px;
+  text-align: justify;
+  line-height: 1.2;
+}
+/* line 40, ../scss/pages/_post.scss */
+.post-main-container .post-container .content {
+  margin-top: 35px;
+}
+/* line 45, ../scss/pages/_post.scss */
+.post-main-container .message-container {
+  margin-top: 20px;
+}
+/* line 269, ../scss/utilities/_mixins.scss */
+.post-main-container .message-container .error, .post-main-container .message-container .confirm {
+  text-align: center;
+}
+/* line 272, ../scss/utilities/_mixins.scss */
 .post-main-container .message-container .error .message, .post-main-container .message-container .confirm .message {
   font-size: 28px;
 }
-/* line 21, ../scss/pages/_post.scss */
+/* line 278, ../scss/utilities/_mixins.scss */
 .post-main-container .message-container .error .message {
   color: #d80e0e;
 }
-/* line 27, ../scss/pages/_post.scss */
+/* line 284, ../scss/utilities/_mixins.scss */
 .post-main-container .message-container .confirm .message {
   color: forestgreen;
 }
-/* line 33, ../scss/pages/_post.scss */
-.post-main-container .form-container {
+/* line 50, ../scss/pages/_post.scss */
+.post-main-container .comment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+}
+/* line 56, ../scss/pages/_post.scss */
+.post-main-container .comment-container h3 {
+  margin-top: 20px;
+  text-align: center;
+}
+/* line 61, ../scss/pages/_post.scss */
+.post-main-container .comment-container .wish-comment {
+  margin: 20px 0;
+  text-align: center;
+}
+/* line 65, ../scss/pages/_post.scss */
+.post-main-container .comment-container .wish-comment a {
+  color: #00afef;
+  text-decoration: none;
+}
+/* line 69, ../scss/pages/_post.scss */
+.post-main-container .comment-container .wish-comment a:hover {
+  text-decoration: underline solid #00afef;
+}
+/* line 75, ../scss/pages/_post.scss */
+.post-main-container .comment-container .form-container {
   display: flex;
   width: 95%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 25px 25px 25px;
   padding-top: 40px;
   background-color: #00afef;
 }
-/* line 41, ../scss/pages/_post.scss */
-.post-main-container .form-container form {
+/* line 83, ../scss/pages/_post.scss */
+.post-main-container .comment-container .form-container form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1218,14 +1449,14 @@ footer .copyright-footer .admin-footer {
   max-width: 750px;
   margin: auto;
 }
-/* line 49, ../scss/pages/_post.scss */
-.post-main-container .form-container form .textarea-container {
+/* line 91, ../scss/pages/_post.scss */
+.post-main-container .comment-container .form-container form .textarea-container {
   position: relative;
   width: 95%;
   margin: 25px 0;
 }
-/* line 54, ../scss/pages/_post.scss */
-.post-main-container .form-container form .textarea-container textarea {
+/* line 96, ../scss/pages/_post.scss */
+.post-main-container .comment-container .form-container form .textarea-container textarea {
   width: 100%;
   padding: 10px 5px;
   font-size: 18px;
@@ -1233,8 +1464,8 @@ footer .copyright-footer .admin-footer {
   border-radius: 5px;
   font-family: "Nunito", sans-serif;
 }
-/* line 63, ../scss/pages/_post.scss */
-.post-main-container .form-container form .textarea-container label {
+/* line 105, ../scss/pages/_post.scss */
+.post-main-container .comment-container .form-container form .textarea-container label {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -1242,12 +1473,12 @@ footer .copyright-footer .admin-footer {
   color: #c6c6c6;
   transition: 300ms ease all;
 }
-/* line 73, ../scss/pages/_post.scss */
-.post-main-container .form-container form .submit-container {
+/* line 115, ../scss/pages/_post.scss */
+.post-main-container .comment-container .form-container form .submit-container {
   margin-bottom: 40px;
 }
-/* line 76, ../scss/pages/_post.scss */
-.post-main-container .form-container form .submit-container .submit {
+/* line 118, ../scss/pages/_post.scss */
+.post-main-container .comment-container .form-container form .submit-container .submit {
   padding: 15px;
   border: 1px solid white;
   border-radius: 5px;
@@ -1258,10 +1489,45 @@ footer .copyright-footer .admin-footer {
   background: none;
   transition: 0.65s;
 }
-/* line 87, ../scss/pages/_post.scss */
-.post-main-container .form-container form .submit-container .submit:hover, .post-main-container .form-container form .submit-container .submit:focus {
+/* line 129, ../scss/pages/_post.scss */
+.post-main-container .comment-container .form-container form .submit-container .submit:hover, .post-main-container .comment-container .form-container form .submit-container .submit:focus {
   color: #00afef;
   box-shadow: inset 150px 0 0 0 white;
+}
+/* line 138, ../scss/pages/_post.scss */
+.post-main-container .comment-container .comments {
+  width: 90%;
+  max-width: 1200px;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 15px;
+  background-color: #00afef;
+}
+/* line 146, ../scss/pages/_post.scss */
+.post-main-container .comment-container .comments .author-date-comments-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-variant: all-small-caps;
+  font-weight: bold;
+}
+/* line 153, ../scss/pages/_post.scss */
+.post-main-container .comment-container .comments .author-date-comments-container .author {
+  padding: 5px;
+  border-radius: 5px;
+  color: #00afef;
+  background-color: white;
+}
+/* line 160, ../scss/pages/_post.scss */
+.post-main-container .comment-container .comments .author-date-comments-container .date {
+  padding: 5px;
+  font-style: italic;
+}
+/* line 166, ../scss/pages/_post.scss */
+.post-main-container .comment-container .comments .content {
+  padding: 10px 5px;
+  margin-top: 15px;
+  word-break: break-all;
 }
 
 /* line 1, ../scss/pages/_login.scss */
@@ -1272,7 +1538,7 @@ footer .copyright-footer .admin-footer {
   width: 80%;
   height: 100vh;
   margin: auto;
-  max-height: 50vh;
+  height: 100%;
 }
 /* line 5, ../scss/pages/_login.scss */
 .login-main-container h2 {
@@ -1284,13 +1550,13 @@ footer .copyright-footer .admin-footer {
   display: flex;
   padding: 15px 10px 10px 10px;
 }
-/* line 385, ../scss/utilities/_mixins.scss */
+/* line 389, ../scss/utilities/_mixins.scss */
 .login-main-container .error img {
   width: 30px;
   height: 30px;
   padding: 5px;
 }
-/* line 391, ../scss/utilities/_mixins.scss */
+/* line 395, ../scss/utilities/_mixins.scss */
 .login-main-container .error .message {
   align-self: center;
   padding-left: 5px;
@@ -1301,7 +1567,7 @@ footer .copyright-footer .admin-footer {
 .login-main-container .form-container {
   display: flex;
   width: 95%;
-  min-height: 50vh;
+  margin-top: 100px;
 }
 /* line 18, ../scss/pages/_login.scss */
 .login-main-container .form-container form {
@@ -1315,39 +1581,39 @@ footer .copyright-footer .admin-footer {
   border: 2px solid #00afef;
   height: 350px;
 }
-/* line 411, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container {
+/* line 415, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container, .login-main-container .form-container form .textarea-container {
   position: relative;
   margin: 45px 0;
 }
-/* line 415, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container input {
+/* line 419, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container input, .login-main-container .form-container form .input-container textarea, .login-main-container .form-container form .textarea-container input, .login-main-container .form-container form .textarea-container textarea {
   width: 310px;
   padding: 10px 5px;
   font-size: 18px;
   border: none;
   border-bottom: 1px solid #c6c6c6;
 }
-/* line 422, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container input:focus {
+/* line 426, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container input:focus, .login-main-container .form-container form .input-container textarea:focus, .login-main-container .form-container form .textarea-container input:focus, .login-main-container .form-container form .textarea-container textarea:focus {
   outline: none;
 }
-/* line 426, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container input:focus ~ label, .login-main-container .form-container form .input-container input:valid ~ label {
+/* line 430, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container input:focus ~ label, .login-main-container .form-container form .input-container input:valid ~ label, .login-main-container .form-container form .input-container textarea:focus ~ label, .login-main-container .form-container form .input-container textarea:valid ~ label, .login-main-container .form-container form .textarea-container input:focus ~ label, .login-main-container .form-container form .textarea-container input:valid ~ label, .login-main-container .form-container form .textarea-container textarea:focus ~ label, .login-main-container .form-container form .textarea-container textarea:valid ~ label {
   top: -14px;
   font-size: 14px;
   color: #00afef;
 }
-/* line 433, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container input:focus ~ .border:before {
+/* line 437, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container input:focus ~ .border:before, .login-main-container .form-container form .input-container textarea:focus ~ .border:before, .login-main-container .form-container form .textarea-container input:focus ~ .border:before, .login-main-container .form-container form .textarea-container textarea:focus ~ .border:before {
   width: 320px;
 }
-/* line 438, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container input[type="password"] {
+/* line 442, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container input[type="password"], .login-main-container .form-container form .textarea-container input[type="password"] {
   letter-spacing: 0.3em;
 }
-/* line 444, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container .border:before {
+/* line 448, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container .border:before, .login-main-container .form-container form .textarea-container .border:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1357,8 +1623,8 @@ footer .copyright-footer .admin-footer {
   background: #00afef;
   transition: 300ms ease all;
 }
-/* line 456, ../scss/utilities/_mixins.scss */
-.login-main-container .form-container form .input-container label {
+/* line 460, ../scss/utilities/_mixins.scss */
+.login-main-container .form-container form .input-container label, .login-main-container .form-container form .textarea-container label {
   position: absolute;
   top: 10px;
   left: 5px;
@@ -1366,11 +1632,11 @@ footer .copyright-footer .admin-footer {
   color: #c6c6c6;
   transition: 300ms ease all;
 }
-/* line 466, ../scss/utilities/_mixins.scss */
+/* line 470, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .submit-container {
   margin-bottom: 40px;
 }
-/* line 469, ../scss/utilities/_mixins.scss */
+/* line 473, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .submit-container .submit {
   padding: 15px;
   border: 2px solid #00afef;
@@ -1381,7 +1647,7 @@ footer .copyright-footer .admin-footer {
   background: none;
   transition: 0.65s;
 }
-/* line 479, ../scss/utilities/_mixins.scss */
+/* line 483, ../scss/utilities/_mixins.scss */
 .login-main-container .form-container form .submit-container .submit:hover, .login-main-container .form-container form .submit-container .submit:focus {
   color: white;
   box-shadow: inset 135px 0 0 0 #00afef;
@@ -1411,39 +1677,48 @@ footer .copyright-footer .admin-footer {
   text-align: center;
 }
 /* line 16, ../scss/pages/_registration.scss */
-.registration-main-container .post-comment p:last-child {
+.registration-main-container .post-comment p {
   margin-top: 10px;
 }
-/* line 21, ../scss/pages/_registration.scss */
+/* line 19, ../scss/pages/_registration.scss */
+.registration-main-container .post-comment p a {
+  color: #00afef;
+  text-decoration: none;
+}
+/* line 25, ../scss/pages/_registration.scss */
+.registration-main-container .post-comment p:first-child {
+  margin-top: 0;
+}
+/* line 30, ../scss/pages/_registration.scss */
 .registration-main-container .error-container {
   width: 90%;
   margin: auto;
 }
-/* line 25, ../scss/pages/_registration.scss */
+/* line 34, ../scss/pages/_registration.scss */
 .registration-main-container .error-container .error {
   display: flex;
   padding: 15px 10px 10px 10px;
 }
-/* line 385, ../scss/utilities/_mixins.scss */
+/* line 389, ../scss/utilities/_mixins.scss */
 .registration-main-container .error-container .error img {
   width: 30px;
   height: 30px;
   padding: 5px;
 }
-/* line 391, ../scss/utilities/_mixins.scss */
+/* line 395, ../scss/utilities/_mixins.scss */
 .registration-main-container .error-container .error .message {
   align-self: center;
   padding-left: 5px;
   font-size: 20px;
   color: #d80e0e;
 }
-/* line 30, ../scss/pages/_registration.scss */
+/* line 39, ../scss/pages/_registration.scss */
 .registration-main-container .form-container {
   display: flex;
   width: 100%;
   margin-bottom: 260px;
 }
-/* line 35, ../scss/pages/_registration.scss */
+/* line 44, ../scss/pages/_registration.scss */
 .registration-main-container .form-container form {
   display: flex;
   flex-direction: column;
@@ -1453,40 +1728,41 @@ footer .copyright-footer .admin-footer {
   max-width: 750px;
   margin: auto;
   border: 2px solid #00afef;
+  margin-bottom: 20px;
 }
-/* line 411, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container {
+/* line 415, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container, .registration-main-container .form-container form .textarea-container {
   position: relative;
   margin: 45px 0;
 }
-/* line 415, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container input {
+/* line 419, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container input, .registration-main-container .form-container form .input-container textarea, .registration-main-container .form-container form .textarea-container input, .registration-main-container .form-container form .textarea-container textarea {
   width: 310px;
   padding: 10px 5px;
   font-size: 18px;
   border: none;
   border-bottom: 1px solid #c6c6c6;
 }
-/* line 422, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container input:focus {
+/* line 426, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container input:focus, .registration-main-container .form-container form .input-container textarea:focus, .registration-main-container .form-container form .textarea-container input:focus, .registration-main-container .form-container form .textarea-container textarea:focus {
   outline: none;
 }
-/* line 426, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container input:focus ~ label, .registration-main-container .form-container form .input-container input:valid ~ label {
+/* line 430, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container input:focus ~ label, .registration-main-container .form-container form .input-container input:valid ~ label, .registration-main-container .form-container form .input-container textarea:focus ~ label, .registration-main-container .form-container form .input-container textarea:valid ~ label, .registration-main-container .form-container form .textarea-container input:focus ~ label, .registration-main-container .form-container form .textarea-container input:valid ~ label, .registration-main-container .form-container form .textarea-container textarea:focus ~ label, .registration-main-container .form-container form .textarea-container textarea:valid ~ label {
   top: -14px;
   font-size: 14px;
   color: #00afef;
 }
-/* line 433, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container input:focus ~ .border:before {
+/* line 437, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container input:focus ~ .border:before, .registration-main-container .form-container form .input-container textarea:focus ~ .border:before, .registration-main-container .form-container form .textarea-container input:focus ~ .border:before, .registration-main-container .form-container form .textarea-container textarea:focus ~ .border:before {
   width: 320px;
 }
-/* line 438, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container input[type="password"] {
+/* line 442, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container input[type="password"], .registration-main-container .form-container form .textarea-container input[type="password"] {
   letter-spacing: 0.3em;
 }
-/* line 444, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container .border:before {
+/* line 448, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container .border:before, .registration-main-container .form-container form .textarea-container .border:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1496,8 +1772,8 @@ footer .copyright-footer .admin-footer {
   background: #00afef;
   transition: 300ms ease all;
 }
-/* line 456, ../scss/utilities/_mixins.scss */
-.registration-main-container .form-container form .input-container label {
+/* line 460, ../scss/utilities/_mixins.scss */
+.registration-main-container .form-container form .input-container label, .registration-main-container .form-container form .textarea-container label {
   position: absolute;
   top: 10px;
   left: 5px;
@@ -1505,11 +1781,11 @@ footer .copyright-footer .admin-footer {
   color: #c6c6c6;
   transition: 300ms ease all;
 }
-/* line 466, ../scss/utilities/_mixins.scss */
+/* line 470, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .submit-container {
   margin-bottom: 40px;
 }
-/* line 469, ../scss/utilities/_mixins.scss */
+/* line 473, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .submit-container .submit {
   padding: 15px;
   border: 2px solid #00afef;
@@ -1520,10 +1796,16 @@ footer .copyright-footer .admin-footer {
   background: none;
   transition: 0.65s;
 }
-/* line 479, ../scss/utilities/_mixins.scss */
+/* line 483, ../scss/utilities/_mixins.scss */
 .registration-main-container .form-container form .submit-container .submit:hover, .registration-main-container .form-container form .submit-container .submit:focus {
   color: white;
   box-shadow: inset 135px 0 0 0 #00afef;
+}
+@media (max-width: 980px) {
+  /* line 44, ../scss/pages/_registration.scss */
+  .registration-main-container .form-container form {
+    margin-bottom: 200px;
+  }
 }
 
 /* line 1, ../scss/pages/_homeAdmin.scss */
@@ -1598,6 +1880,11 @@ footer .copyright-footer .admin-footer {
   background: forestgreen;
 }
 /* line 25, ../scss/pages/_homeAdmin.scss */
+.homeAdmin-main-container .listPosts-empty {
+  height: 70vh;
+  margin-top: 40px;
+}
+/* line 30, ../scss/pages/_homeAdmin.scss */
 .homeAdmin-main-container .modal {
   position: fixed;
   top: 0;
@@ -1612,12 +1899,12 @@ footer .copyright-footer .admin-footer {
   transition: opacity 400ms ease-in;
   pointer-events: none;
 }
-/* line 201, ../scss/utilities/_mixins.scss */
+/* line 205, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .modal:target {
   opacity: 1;
   pointer-events: auto;
 }
-/* line 206, ../scss/utilities/_mixins.scss */
+/* line 210, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .modal .modal-content {
   display: flex;
   flex-direction: column;
@@ -1631,23 +1918,23 @@ footer .copyright-footer .admin-footer {
   border-radius: 5px;
   background: white;
 }
-/* line 219, ../scss/utilities/_mixins.scss */
+/* line 223, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .modal .modal-content p {
   padding: 15px 0;
   font-weight: bold;
   text-align: center;
 }
-/* line 225, ../scss/utilities/_mixins.scss */
+/* line 229, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .modal .modal-content .modal-link {
   display: flex;
   justify-content: space-around;
   padding: 10px;
 }
-/* line 230, ../scss/utilities/_mixins.scss */
+/* line 234, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .modal .modal-content .modal-link .cancel, .homeAdmin-main-container .modal .modal-content .modal-link .remove {
   display: flex;
 }
-/* line 233, ../scss/utilities/_mixins.scss */
+/* line 237, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .modal .modal-content .modal-link .cancel a, .homeAdmin-main-container .modal .modal-content .modal-link .remove a {
   padding: 20px;
   border: 1px solid #00afef;
@@ -1690,49 +1977,49 @@ footer .copyright-footer .admin-footer {
   content: "";
   z-index: -10;
 }
-/* line 240, ../scss/utilities/_mixins.scss */
+/* line 244, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .modal .modal-content .modal-link .cancel #close {
   display: none;
 }
-/* line 245, ../scss/utilities/_mixins.scss */
+/* line 249, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .modal .modal-content .modal-link .remove a {
   color: #d80e0e;
   border-color: #d80e0e;
 }
-/* line 249, ../scss/utilities/_mixins.scss */
+/* line 253, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .modal .modal-content .modal-link .remove a:after {
   background: #d80e0e;
 }
-/* line 253, ../scss/utilities/_mixins.scss */
+/* line 257, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .modal .modal-content .modal-link .remove a:hover {
   color: white;
 }
-/* line 30, ../scss/pages/_homeAdmin.scss */
+/* line 35, ../scss/pages/_homeAdmin.scss */
 .homeAdmin-main-container .modal .modal-content .post-title {
   text-transform: uppercase;
   color: #00afef;
 }
-/* line 265, ../scss/utilities/_mixins.scss */
+/* line 269, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .message-container .error, .homeAdmin-main-container .message-container .confirm {
   text-align: center;
 }
-/* line 268, ../scss/utilities/_mixins.scss */
+/* line 272, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .message-container .error .message, .homeAdmin-main-container .message-container .confirm .message {
   font-size: 28px;
 }
-/* line 274, ../scss/utilities/_mixins.scss */
+/* line 278, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .message-container .error .message {
   color: #d80e0e;
 }
-/* line 280, ../scss/utilities/_mixins.scss */
+/* line 284, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .message-container .confirm .message {
   color: forestgreen;
 }
-/* line 40, ../scss/pages/_homeAdmin.scss */
+/* line 45, ../scss/pages/_homeAdmin.scss */
 .homeAdmin-main-container .message-container .error, .homeAdmin-main-container .message-container .confirm {
   padding: 15px;
 }
-/* line 45, ../scss/pages/_homeAdmin.scss */
+/* line 50, ../scss/pages/_homeAdmin.scss */
 .homeAdmin-main-container .post-table {
   width: 100%;
   margin-top: 40px;
@@ -1740,42 +2027,42 @@ footer .copyright-footer .admin-footer {
   font-size: 20px;
   margin-bottom: 40px;
 }
-/* line 294, ../scss/utilities/_mixins.scss */
+/* line 298, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .post-table td, .homeAdmin-main-container .post-table th {
   max-width: 180px;
   padding: 10px;
   word-break: break-all;
 }
 @media (max-width: 980px) {
-  /* line 294, ../scss/utilities/_mixins.scss */
+  /* line 298, ../scss/utilities/_mixins.scss */
   .homeAdmin-main-container .post-table td, .homeAdmin-main-container .post-table th {
     max-width: 100%;
   }
 }
-/* line 304, ../scss/utilities/_mixins.scss */
+/* line 308, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .post-table td {
   border: 1px solid black;
 }
-/* line 308, ../scss/utilities/_mixins.scss */
+/* line 312, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .post-table tbody {
   /* Sélectionne un enfant sur deux - odd = impair */
 }
-/* line 311, ../scss/utilities/_mixins.scss */
+/* line 315, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .post-table tbody tr:nth-child(odd) {
   background: #7fd7f7;
 }
-/* line 315, ../scss/utilities/_mixins.scss */
+/* line 319, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .post-table tbody td {
   text-align: center;
   vertical-align: middle;
 }
-/* line 319, ../scss/utilities/_mixins.scss */
+/* line 323, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .post-table tbody td img {
   height: 35px;
   width: 35px;
   padding: 15px;
 }
-/* line 49, ../scss/pages/_homeAdmin.scss */
+/* line 54, ../scss/pages/_homeAdmin.scss */
 .homeAdmin-main-container .post-table td, .homeAdmin-main-container .post-table th {
   min-width: 130px;
 }
@@ -1785,44 +2072,44 @@ footer .copyright-footer .admin-footer {
     /* Force la table à ne plus ressembler à une table */
     /* Masquer les en-têtes du tableau (mais pas "display: none;" pour l'accessibilité) */
   }
-  /* line 331, ../scss/utilities/_mixins.scss */
+  /* line 335, ../scss/utilities/_mixins.scss */
   .homeAdmin-main-container table, .homeAdmin-main-container thead, .homeAdmin-main-container tbody, .homeAdmin-main-container th, .homeAdmin-main-container td, .homeAdmin-main-container tr {
     display: block;
   }
-  /* line 336, ../scss/utilities/_mixins.scss */
+  /* line 340, ../scss/utilities/_mixins.scss */
   .homeAdmin-main-container thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
-  /* line 342, ../scss/utilities/_mixins.scss */
+  /* line 346, ../scss/utilities/_mixins.scss */
   .homeAdmin-main-container tr {
     margin-bottom: 15px;
   }
-  /* line 346, ../scss/utilities/_mixins.scss */
+  /* line 350, ../scss/utilities/_mixins.scss */
   .homeAdmin-main-container th {
     font-size: 0;
     border: none;
     visibility: hidden;
   }
-  /* line 352, ../scss/utilities/_mixins.scss */
+  /* line 356, ../scss/utilities/_mixins.scss */
   .homeAdmin-main-container td, .homeAdmin-main-container th {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  /* line 358, ../scss/utilities/_mixins.scss */
+  /* line 362, ../scss/utilities/_mixins.scss */
   .homeAdmin-main-container .comment-content {
     align-items: center;
   }
-  /* line 361, ../scss/utilities/_mixins.scss */
+  /* line 365, ../scss/utilities/_mixins.scss */
   .homeAdmin-main-container .comment-content:before {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 40%;
   }
-  /* line 369, ../scss/utilities/_mixins.scss */
+  /* line 373, ../scss/utilities/_mixins.scss */
   .homeAdmin-main-container td:before {
     content: attr(data-headers);
     min-width: 40%;
@@ -1830,15 +2117,15 @@ footer .copyright-footer .admin-footer {
     font-weight: bold;
   }
 }
-/* line 60, ../scss/pages/_homeAdmin.scss */
+/* line 65, ../scss/pages/_homeAdmin.scss */
 .homeAdmin-main-container .paging-container {
   margin: 25px 0 250px 0;
 }
-/* line 63, ../scss/pages/_homeAdmin.scss */
+/* line 144, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .paging-container .paging {
   display: flex;
 }
-/* line 144, ../scss/utilities/_mixins.scss */
+/* line 147, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .paging-container .paging li {
   margin: 0 8px;
   padding: 10px 0;
@@ -1846,37 +2133,49 @@ footer .copyright-footer .admin-footer {
   border-radius: 5px;
   background-color: #00afef;
 }
-/* line 151, ../scss/utilities/_mixins.scss */
+/* line 154, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .paging-container .paging li:hover:not(.active) {
   background-color: white;
   transition: background-color .5s;
 }
-/* line 156, ../scss/utilities/_mixins.scss */
+/* line 159, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .paging-container .paging li a {
   padding: 10px 15px;
   text-decoration: none;
   color: white;
 }
-/* line 161, ../scss/utilities/_mixins.scss */
+/* line 164, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .paging-container .paging li a:hover:not(.active) {
   color: #00afef;
   transition: color .5s;
 }
-/* line 168, ../scss/utilities/_mixins.scss */
+/* line 171, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .paging-container .paging .active {
   background-color: white;
 }
-/* line 171, ../scss/utilities/_mixins.scss */
+/* line 174, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .paging-container .paging .active a {
   color: #00afef;
 }
-/* line 176, ../scss/utilities/_mixins.scss */
+/* line 179, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .paging-container .paging .prev, .homeAdmin-main-container .paging-container .paging .next {
   display: flex;
 }
-/* line 180, ../scss/utilities/_mixins.scss */
+/* line 183, ../scss/utilities/_mixins.scss */
 .homeAdmin-main-container .paging-container .paging .numbers {
   display: flex;
+}
+@media (max-width: 980px) {
+  /* line 65, ../scss/pages/_homeAdmin.scss */
+  .homeAdmin-main-container .paging-container {
+    padding-bottom: 150px;
+  }
+}
+@media (max-width: 740px) {
+  /* line 65, ../scss/pages/_homeAdmin.scss */
+  .homeAdmin-main-container .paging-container {
+    padding-bottom: 90px;
+  }
 }
 
 /* line 1, ../scss/pages/_commentsList.scss */
@@ -1965,12 +2264,12 @@ footer .copyright-footer .admin-footer {
   transition: opacity 400ms ease-in;
   pointer-events: none;
 }
-/* line 201, ../scss/utilities/_mixins.scss */
+/* line 205, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .modal:target {
   opacity: 1;
   pointer-events: auto;
 }
-/* line 206, ../scss/utilities/_mixins.scss */
+/* line 210, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .modal .modal-content {
   display: flex;
   flex-direction: column;
@@ -1984,23 +2283,23 @@ footer .copyright-footer .admin-footer {
   border-radius: 5px;
   background: white;
 }
-/* line 219, ../scss/utilities/_mixins.scss */
+/* line 223, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .modal .modal-content p {
   padding: 15px 0;
   font-weight: bold;
   text-align: center;
 }
-/* line 225, ../scss/utilities/_mixins.scss */
+/* line 229, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .modal .modal-content .modal-link {
   display: flex;
   justify-content: space-around;
   padding: 10px;
 }
-/* line 230, ../scss/utilities/_mixins.scss */
+/* line 234, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .modal .modal-content .modal-link .cancel, .commentsList-main-container .modal .modal-content .modal-link .remove {
   display: flex;
 }
-/* line 233, ../scss/utilities/_mixins.scss */
+/* line 237, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .modal .modal-content .modal-link .cancel a, .commentsList-main-container .modal .modal-content .modal-link .remove a {
   padding: 20px;
   border: 1px solid #00afef;
@@ -2043,20 +2342,20 @@ footer .copyright-footer .admin-footer {
   content: "";
   z-index: -10;
 }
-/* line 240, ../scss/utilities/_mixins.scss */
+/* line 244, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .modal .modal-content .modal-link .cancel #close {
   display: none;
 }
-/* line 245, ../scss/utilities/_mixins.scss */
+/* line 249, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .modal .modal-content .modal-link .remove a {
   color: #d80e0e;
   border-color: #d80e0e;
 }
-/* line 249, ../scss/utilities/_mixins.scss */
+/* line 253, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .modal .modal-content .modal-link .remove a:after {
   background: #d80e0e;
 }
-/* line 253, ../scss/utilities/_mixins.scss */
+/* line 257, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .modal .modal-content .modal-link .remove a:hover {
   color: white;
 }
@@ -2065,19 +2364,19 @@ footer .copyright-footer .admin-footer {
   word-break: break-all;
   color: #00afef;
 }
-/* line 265, ../scss/utilities/_mixins.scss */
+/* line 269, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .message-container .error, .commentsList-main-container .message-container .confirm {
   text-align: center;
 }
-/* line 268, ../scss/utilities/_mixins.scss */
+/* line 272, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .message-container .error .message, .commentsList-main-container .message-container .confirm .message {
   font-size: 28px;
 }
-/* line 274, ../scss/utilities/_mixins.scss */
+/* line 278, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .message-container .error .message {
   color: #d80e0e;
 }
-/* line 280, ../scss/utilities/_mixins.scss */
+/* line 284, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .message-container .confirm .message {
   color: forestgreen;
 }
@@ -2088,36 +2387,36 @@ footer .copyright-footer .admin-footer {
   border-collapse: collapse;
   font-size: 20px;
 }
-/* line 294, ../scss/utilities/_mixins.scss */
+/* line 298, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .comment-table td, .commentsList-main-container .comment-table th {
   max-width: 180px;
   padding: 10px;
   word-break: break-all;
 }
 @media (max-width: 980px) {
-  /* line 294, ../scss/utilities/_mixins.scss */
+  /* line 298, ../scss/utilities/_mixins.scss */
   .commentsList-main-container .comment-table td, .commentsList-main-container .comment-table th {
     max-width: 100%;
   }
 }
-/* line 304, ../scss/utilities/_mixins.scss */
+/* line 308, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .comment-table td {
   border: 1px solid black;
 }
-/* line 308, ../scss/utilities/_mixins.scss */
+/* line 312, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .comment-table tbody {
   /* Sélectionne un enfant sur deux - odd = impair */
 }
-/* line 311, ../scss/utilities/_mixins.scss */
+/* line 315, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .comment-table tbody tr:nth-child(odd) {
   background: #7fd7f7;
 }
-/* line 315, ../scss/utilities/_mixins.scss */
+/* line 319, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .comment-table tbody td {
   text-align: center;
   vertical-align: middle;
 }
-/* line 319, ../scss/utilities/_mixins.scss */
+/* line 323, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .comment-table tbody td img {
   height: 35px;
   width: 35px;
@@ -2138,44 +2437,44 @@ footer .copyright-footer .admin-footer {
     /* Force la table à ne plus ressembler à une table */
     /* Masquer les en-têtes du tableau (mais pas "display: none;" pour l'accessibilité) */
   }
-  /* line 331, ../scss/utilities/_mixins.scss */
+  /* line 335, ../scss/utilities/_mixins.scss */
   .commentsList-main-container table, .commentsList-main-container thead, .commentsList-main-container tbody, .commentsList-main-container th, .commentsList-main-container td, .commentsList-main-container tr {
     display: block;
   }
-  /* line 336, ../scss/utilities/_mixins.scss */
+  /* line 340, ../scss/utilities/_mixins.scss */
   .commentsList-main-container thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
-  /* line 342, ../scss/utilities/_mixins.scss */
+  /* line 346, ../scss/utilities/_mixins.scss */
   .commentsList-main-container tr {
     margin-bottom: 15px;
   }
-  /* line 346, ../scss/utilities/_mixins.scss */
+  /* line 350, ../scss/utilities/_mixins.scss */
   .commentsList-main-container th {
     font-size: 0;
     border: none;
     visibility: hidden;
   }
-  /* line 352, ../scss/utilities/_mixins.scss */
+  /* line 356, ../scss/utilities/_mixins.scss */
   .commentsList-main-container td, .commentsList-main-container th {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  /* line 358, ../scss/utilities/_mixins.scss */
+  /* line 362, ../scss/utilities/_mixins.scss */
   .commentsList-main-container .comment-content {
     align-items: center;
   }
-  /* line 361, ../scss/utilities/_mixins.scss */
+  /* line 365, ../scss/utilities/_mixins.scss */
   .commentsList-main-container .comment-content:before {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 40%;
   }
-  /* line 369, ../scss/utilities/_mixins.scss */
+  /* line 373, ../scss/utilities/_mixins.scss */
   .commentsList-main-container td:before {
     content: attr(data-headers);
     min-width: 40%;
@@ -2199,11 +2498,11 @@ footer .copyright-footer .admin-footer {
 .commentsList-main-container .paging-container {
   margin: 25px 0 250px 0;
 }
-/* line 78, ../scss/pages/_commentsList.scss */
+/* line 144, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .paging-container .paging {
   display: flex;
 }
-/* line 144, ../scss/utilities/_mixins.scss */
+/* line 147, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .paging-container .paging li {
   margin: 0 8px;
   padding: 10px 0;
@@ -2211,37 +2510,49 @@ footer .copyright-footer .admin-footer {
   border-radius: 5px;
   background-color: #00afef;
 }
-/* line 151, ../scss/utilities/_mixins.scss */
+/* line 154, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .paging-container .paging li:hover:not(.active) {
   background-color: white;
   transition: background-color .5s;
 }
-/* line 156, ../scss/utilities/_mixins.scss */
+/* line 159, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .paging-container .paging li a {
   padding: 10px 15px;
   text-decoration: none;
   color: white;
 }
-/* line 161, ../scss/utilities/_mixins.scss */
+/* line 164, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .paging-container .paging li a:hover:not(.active) {
   color: #00afef;
   transition: color .5s;
 }
-/* line 168, ../scss/utilities/_mixins.scss */
+/* line 171, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .paging-container .paging .active {
   background-color: white;
 }
-/* line 171, ../scss/utilities/_mixins.scss */
+/* line 174, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .paging-container .paging .active a {
   color: #00afef;
 }
-/* line 176, ../scss/utilities/_mixins.scss */
+/* line 179, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .paging-container .paging .prev, .commentsList-main-container .paging-container .paging .next {
   display: flex;
 }
-/* line 180, ../scss/utilities/_mixins.scss */
+/* line 183, ../scss/utilities/_mixins.scss */
 .commentsList-main-container .paging-container .paging .numbers {
   display: flex;
+}
+@media (max-width: 980px) {
+  /* line 75, ../scss/pages/_commentsList.scss */
+  .commentsList-main-container .paging-container {
+    padding-bottom: 150px;
+  }
+}
+@media (max-width: 740px) {
+  /* line 75, ../scss/pages/_commentsList.scss */
+  .commentsList-main-container .paging-container {
+    padding-bottom: 90px;
+  }
 }
 
 /* line 1, ../scss/pages/_postForm.scss */
@@ -2252,46 +2563,54 @@ footer .copyright-footer .admin-footer {
   width: 80%;
   height: 100vh;
   margin: auto;
+  height: 100%;
 }
-/* line 4, ../scss/pages/_postForm.scss */
+/* line 6, ../scss/pages/_postForm.scss */
 .postForm-main-container h2 {
   padding: 40px 0;
   color: #00afef;
+  text-align: center;
 }
-/* line 8, ../scss/pages/_postForm.scss */
+/* line 11, ../scss/pages/_postForm.scss */
 .postForm-main-container .error-container {
   width: 90%;
   margin-bottom: 15px;
 }
-/* line 12, ../scss/pages/_postForm.scss */
+/* line 15, ../scss/pages/_postForm.scss */
 .postForm-main-container .error-container .error {
   display: flex;
   padding: 15px 10px 10px 10px;
   justify-content: center;
 }
-/* line 385, ../scss/utilities/_mixins.scss */
+/* line 389, ../scss/utilities/_mixins.scss */
 .postForm-main-container .error-container .error img {
   width: 30px;
   height: 30px;
   padding: 5px;
 }
-/* line 391, ../scss/utilities/_mixins.scss */
+/* line 395, ../scss/utilities/_mixins.scss */
 .postForm-main-container .error-container .error .message {
   align-self: center;
   padding-left: 5px;
   font-size: 20px;
   color: #d80e0e;
 }
-/* line 18, ../scss/pages/_postForm.scss */
+/* line 21, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container {
   display: flex;
   width: 95%;
   max-width: 1200px;
-  margin: 0 25px 25px 25px;
+  margin: 0 25px 250px 25px;
   padding-top: 40px;
   background-color: #00afef;
 }
-/* line 26, ../scss/pages/_postForm.scss */
+@media (max-width: 980px) {
+  /* line 21, ../scss/pages/_postForm.scss */
+  .postForm-main-container .form-container {
+    margin-bottom: 400px;
+  }
+}
+/* line 33, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form {
   display: flex;
   flex-direction: column;
@@ -2300,13 +2619,13 @@ footer .copyright-footer .admin-footer {
   max-width: 750px;
   margin: auto;
 }
-/* line 34, ../scss/pages/_postForm.scss */
+/* line 41, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .input-container, .postForm-main-container .form-container form .textarea-container {
   position: relative;
   width: 95%;
   margin: 25px 0;
 }
-/* line 39, ../scss/pages/_postForm.scss */
+/* line 46, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .input-container input, .postForm-main-container .form-container form .input-container textarea, .postForm-main-container .form-container form .textarea-container input, .postForm-main-container .form-container form .textarea-container textarea {
   width: 100%;
   padding: 10px 5px;
@@ -2315,29 +2634,29 @@ footer .copyright-footer .admin-footer {
   border-radius: 5px;
   font-family: "Nunito", sans-serif;
 }
-/* line 47, ../scss/pages/_postForm.scss */
+/* line 54, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .input-container input:focus, .postForm-main-container .form-container form .input-container textarea:focus, .postForm-main-container .form-container form .textarea-container input:focus, .postForm-main-container .form-container form .textarea-container textarea:focus {
   outline: none;
 }
-/* line 51, ../scss/pages/_postForm.scss */
+/* line 58, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .input-container input:focus ~ label, .postForm-main-container .form-container form .input-container input:valid ~ label, .postForm-main-container .form-container form .input-container textarea:focus ~ label, .postForm-main-container .form-container form .input-container textarea:valid ~ label, .postForm-main-container .form-container form .textarea-container input:focus ~ label, .postForm-main-container .form-container form .textarea-container input:valid ~ label, .postForm-main-container .form-container form .textarea-container textarea:focus ~ label, .postForm-main-container .form-container form .textarea-container textarea:valid ~ label {
   top: -20px;
   font-size: 18px;
   color: white;
 }
-/* line 59, ../scss/pages/_postForm.scss */
+/* line 66, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .input-container input, .postForm-main-container .form-container form .textarea-container input {
   height: 30px;
 }
-/* line 63, ../scss/pages/_postForm.scss */
+/* line 70, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .input-container #summary, .postForm-main-container .form-container form .textarea-container #summary {
   height: 100px;
 }
-/* line 67, ../scss/pages/_postForm.scss */
+/* line 74, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .input-container #content, .postForm-main-container .form-container form .textarea-container #content {
   height: 350px;
 }
-/* line 71, ../scss/pages/_postForm.scss */
+/* line 78, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .input-container label, .postForm-main-container .form-container form .textarea-container label {
   position: absolute;
   top: 10px;
@@ -2346,11 +2665,11 @@ footer .copyright-footer .admin-footer {
   color: #c6c6c6;
   transition: 300ms ease all;
 }
-/* line 81, ../scss/pages/_postForm.scss */
+/* line 88, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .submit-container {
   margin-bottom: 40px;
 }
-/* line 84, ../scss/pages/_postForm.scss */
+/* line 91, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .submit-container .submit {
   padding: 15px;
   border: 1px solid white;
@@ -2362,7 +2681,7 @@ footer .copyright-footer .admin-footer {
   background: none;
   transition: 0.65s;
 }
-/* line 95, ../scss/pages/_postForm.scss */
+/* line 102, ../scss/pages/_postForm.scss */
 .postForm-main-container .form-container form .submit-container .submit:hover, .postForm-main-container .form-container form .submit-container .submit:focus {
   color: #00afef;
   box-shadow: inset 135px 0 0 0 white;
@@ -2424,81 +2743,81 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(1) {
-  top: 20vh;
-  left: 87vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 4s;
+  top: 94vh;
+  left: 36vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(1):before {
-  width: 14px;
-  height: 14px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(2) {
-  top: 61vh;
-  left: 69vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(2):before {
-  width: 14px;
-  height: 14px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(3) {
-  top: 70vh;
-  left: 21vw;
-  width: 8px;
-  height: 2.66667px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(3):before {
   width: 16px;
   height: 16px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(4) {
-  top: 34vh;
-  left: 41vw;
+.error-404-main-container .container-star .star-1:nth-of-type(2) {
+  top: 54vh;
+  left: 64vw;
   width: 6px;
   height: 2px;
   animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(4):before {
+.error-404-main-container .container-star .star-1:nth-of-type(2):before {
   width: 12px;
   height: 12px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(3) {
+  top: 53vh;
+  left: 46vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 1s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(3):before {
+  width: 12px;
+  height: 12px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(4) {
+  top: 98vh;
+  left: 14vw;
+  width: 5px;
+  height: 1.66667px;
+  animation-delay: 1s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(4):before {
+  width: 10px;
+  height: 10px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(5) {
-  top: 35vh;
-  left: 27vw;
-  width: 9px;
-  height: 3px;
-  animation-delay: 2s;
+  top: 100vh;
+  left: 97vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(5):before {
-  width: 18px;
-  height: 18px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(6) {
-  top: 70vh;
-  left: 83vw;
+  top: 22vh;
+  left: 18vw;
   width: 7px;
   height: 2.33333px;
-  animation-delay: 1s;
+  animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(6):before {
@@ -2508,22 +2827,22 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(7) {
-  top: 81vh;
-  left: 23vw;
-  width: 8px;
-  height: 2.66667px;
+  top: 28vh;
+  left: 74vw;
+  width: 7px;
+  height: 2.33333px;
   animation-delay: 2s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(7):before {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(8) {
-  top: 14vh;
-  left: 66vw;
+  top: 61vh;
+  left: 4vw;
   width: 8px;
   height: 2.66667px;
   animation-delay: 2s;
@@ -2536,235 +2855,235 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(9) {
-  top: 83vh;
-  left: 46vw;
-  width: 4px;
-  height: 1.33333px;
-  animation-delay: 5s;
+  top: 80vh;
+  left: 30vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 2s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(9):before {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(10) {
-  top: 29vh;
-  left: 92vw;
-  width: 9px;
-  height: 3px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(10):before {
-  width: 18px;
-  height: 18px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(11) {
-  top: 51vh;
-  left: 62vw;
-  width: 6px;
-  height: 2px;
+  top: 9vh;
+  left: 34vw;
+  width: 8px;
+  height: 2.66667px;
   animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(11):before {
-  width: 12px;
-  height: 12px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(12) {
-  top: 35vh;
-  left: 64vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(12):before {
-  width: 14px;
-  height: 14px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(13) {
-  top: 77vh;
-  left: 58vw;
-  width: 6px;
-  height: 2px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(13):before {
-  width: 12px;
-  height: 12px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(14) {
-  top: 69vh;
-  left: 33vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(14):before {
-  width: 10px;
-  height: 10px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(15) {
-  top: 20vh;
-  left: 93vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 2s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(15):before {
-  width: 10px;
-  height: 10px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(16) {
-  top: 80vh;
-  left: 36vw;
-  width: 6px;
-  height: 2px;
-  animation-delay: 1s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(16):before {
-  width: 12px;
-  height: 12px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(17) {
-  top: 29vh;
-  left: 69vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 4s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(17):before {
-  width: 10px;
-  height: 10px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(18) {
-  top: 47vh;
-  left: 1vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 4s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(18):before {
-  width: 10px;
-  height: 10px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(19) {
-  top: 28vh;
-  left: 93vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 2s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(19):before {
-  width: 14px;
-  height: 14px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(20) {
-  top: 96vh;
-  left: 88vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 4s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(20):before {
-  width: 14px;
-  height: 14px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(21) {
-  top: 80vh;
-  left: 25vw;
-  width: 7px;
-  height: 2.33333px;
-  animation-delay: 4s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(21):before {
-  width: 14px;
-  height: 14px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(22) {
-  top: 84vh;
-  left: 84vw;
-  width: 4px;
-  height: 1.33333px;
-  animation-delay: 2s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(22):before {
-  width: 8px;
-  height: 8px;
-  top: -250%;
-}
-/* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(23) {
-  top: 91vh;
-  left: 62vw;
-  width: 8px;
-  height: 2.66667px;
-  animation-delay: 4s;
-}
-/* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(23):before {
+.error-404-main-container .container-star .star-1:nth-of-type(10):before {
   width: 16px;
   height: 16px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(24) {
-  top: 82vh;
-  left: 73vw;
+.error-404-main-container .container-star .star-1:nth-of-type(11) {
+  top: 26vh;
+  left: 57vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(11):before {
+  width: 8px;
+  height: 8px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(12) {
+  top: 26vh;
+  left: 1vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(12):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(13) {
+  top: 20vh;
+  left: 37vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 3s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(13):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(14) {
+  top: 8vh;
+  left: 14vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 5s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(14):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(15) {
+  top: 53vh;
+  left: 86vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 5s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(15):before {
+  width: 8px;
+  height: 8px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(16) {
+  top: 63vh;
+  left: 79vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(16):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(17) {
+  top: 18vh;
+  left: 87vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 3s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(17):before {
+  width: 12px;
+  height: 12px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(18) {
+  top: 91vh;
+  left: 97vw;
+  width: 7px;
+  height: 2.33333px;
+  animation-delay: 5s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(18):before {
+  width: 14px;
+  height: 14px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(19) {
+  top: 15vh;
+  left: 68vw;
+  width: 9px;
+  height: 3px;
+  animation-delay: 2s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(19):before {
+  width: 18px;
+  height: 18px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(20) {
+  top: 2vh;
+  left: 79vw;
+  width: 8px;
+  height: 2.66667px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(20):before {
+  width: 16px;
+  height: 16px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(21) {
+  top: 37vh;
+  left: 48vw;
   width: 5px;
   height: 1.66667px;
   animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-1:nth-of-type(24):before {
+.error-404-main-container .container-star .star-1:nth-of-type(21):before {
   width: 10px;
   height: 10px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(22) {
+  top: 54vh;
+  left: 49vw;
+  width: 5px;
+  height: 1.66667px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(22):before {
+  width: 10px;
+  height: 10px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(23) {
+  top: 68vh;
+  left: 38vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 4s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(23):before {
+  width: 8px;
+  height: 8px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(24) {
+  top: 95vh;
+  left: 97vw;
+  width: 6px;
+  height: 2px;
+  animation-delay: 2s;
+}
+/* line 84, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-1:nth-of-type(24):before {
+  width: 12px;
+  height: 12px;
+  top: -250%;
+}
+/* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(25) {
-  top: 57vh;
-  left: 40vw;
+  top: 18vh;
+  left: 5vw;
   width: 8px;
   height: 2.66667px;
-  animation-delay: 4s;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(25):before {
@@ -2774,11 +3093,11 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(26) {
-  top: 22vh;
-  left: 54vw;
+  top: 74vh;
+  left: 43vw;
   width: 5px;
   height: 1.66667px;
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(26):before {
@@ -2788,25 +3107,25 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(27) {
-  top: 31vh;
-  left: 59vw;
-  width: 8px;
-  height: 2.66667px;
-  animation-delay: 1s;
+  top: 71vh;
+  left: 26vw;
+  width: 4px;
+  height: 1.33333px;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(27):before {
-  width: 16px;
-  height: 16px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(28) {
-  top: 53vh;
-  left: 66vw;
+  top: 88vh;
+  left: 77vw;
   width: 9px;
   height: 3px;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(28):before {
@@ -2816,25 +3135,25 @@ footer .copyright-footer .admin-footer {
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(29) {
-  top: 25vh;
-  left: 45vw;
-  width: 5px;
-  height: 1.66667px;
-  animation-delay: 2s;
+  top: 69vh;
+  left: 42vw;
+  width: 9px;
+  height: 3px;
+  animation-delay: 4s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(29):before {
-  width: 10px;
-  height: 10px;
+  width: 18px;
+  height: 18px;
   top: -250%;
 }
 /* line 77, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(30) {
-  top: 89vh;
-  left: 51vw;
+  top: 33vh;
+  left: 96vw;
   width: 8px;
   height: 2.66667px;
-  animation-delay: 2s;
+  animation-delay: 5s;
 }
 /* line 84, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-1:nth-of-type(30):before {
@@ -2851,50 +3170,50 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(31) {
-  top: 1vh;
-  left: 10vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 4s;
+  top: 56vh;
+  left: 80vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(31):before {
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(32) {
-  top: 57vh;
-  left: 96vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 2s;
+  top: 35vh;
+  left: 41vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(32):before {
-  width: 4px;
-  height: 4px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(33) {
-  top: 11vh;
-  left: 47vw;
-  width: 3px;
-  height: 3px;
-  animation-delay: 3s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(33):before {
   width: 6px;
   height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(33) {
+  top: 2vh;
+  left: 22vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 5s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(33):before {
+  width: 4px;
+  height: 4px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(34) {
-  top: 53vh;
-  left: 50vw;
+  top: 70vh;
+  left: 51vw;
   width: 4px;
   height: 4px;
   animation-delay: 1s;
@@ -2907,8 +3226,8 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(35) {
-  top: 60vh;
-  left: 59vw;
+  top: 53vh;
+  left: 80vw;
   width: 4px;
   height: 4px;
   animation-delay: 3s;
@@ -2921,39 +3240,39 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(36) {
-  top: 65vh;
-  left: 61vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 3s;
+  top: 99vh;
+  left: 57vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(36):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(37) {
-  top: 67vh;
-  left: 27vw;
-  width: 4px;
-  height: 4px;
+  top: 36vh;
+  left: 78vw;
+  width: 3px;
+  height: 3px;
   animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(37):before {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(38) {
   top: 69vh;
-  left: 34vw;
+  left: 91vw;
   width: 3px;
   height: 3px;
-  animation-delay: 4s;
+  animation-delay: 2s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(38):before {
@@ -2963,11 +3282,11 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(39) {
-  top: 27vh;
-  left: 84vw;
+  top: 37vh;
+  left: 58vw;
   width: 3px;
   height: 3px;
-  animation-delay: 3s;
+  animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(39):before {
@@ -2977,8 +3296,8 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(40) {
-  top: 35vh;
-  left: 21vw;
+  top: 72vh;
+  left: 74vw;
   width: 2px;
   height: 2px;
   animation-delay: 1s;
@@ -2991,11 +3310,11 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(41) {
-  top: 13vh;
-  left: 58vw;
+  top: 4vh;
+  left: 78vw;
   width: 3px;
   height: 3px;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(41):before {
@@ -3005,11 +3324,11 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(42) {
-  top: 77vh;
-  left: 95vw;
+  top: 21vh;
+  left: 98vw;
   width: 4px;
   height: 4px;
-  animation-delay: 5s;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(42):before {
@@ -3019,67 +3338,67 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(43) {
-  top: 69vh;
-  left: 67vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 3s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(43):before {
-  width: 8px;
-  height: 8px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(44) {
-  top: 87vh;
-  left: 59vw;
+  top: 8vh;
+  left: 77vw;
   width: 3px;
   height: 3px;
   animation-delay: 2s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(44):before {
+.error-404-main-container .container-star .star-2:nth-of-type(43):before {
   width: 6px;
   height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(45) {
-  top: 95vh;
-  left: 23vw;
+.error-404-main-container .container-star .star-2:nth-of-type(44) {
+  top: 4vh;
+  left: 59vw;
   width: 4px;
   height: 4px;
-  animation-delay: 3s;
+  animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(45):before {
+.error-404-main-container .container-star .star-2:nth-of-type(44):before {
   width: 8px;
   height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(46) {
-  top: 33vh;
-  left: 49vw;
+.error-404-main-container .container-star .star-2:nth-of-type(45) {
+  top: 21vh;
+  left: 73vw;
   width: 2px;
   height: 2px;
-  animation-delay: 2s;
+  animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(46):before {
+.error-404-main-container .container-star .star-2:nth-of-type(45):before {
   width: 4px;
   height: 4px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(47) {
-  top: 27vh;
-  left: 51vw;
+.error-404-main-container .container-star .star-2:nth-of-type(46) {
+  top: 43vh;
+  left: 89vw;
   width: 3px;
   height: 3px;
   animation-delay: 5s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(46):before {
+  width: 6px;
+  height: 6px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(47) {
+  top: 40vh;
+  left: 76vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(47):before {
@@ -3089,11 +3408,11 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(48) {
-  top: 12vh;
-  left: 72vw;
+  top: 96vh;
+  left: 67vw;
   width: 4px;
   height: 4px;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(48):before {
@@ -3103,22 +3422,22 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(49) {
-  top: 4vh;
-  left: 85vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 4s;
+  top: 99vh;
+  left: 11vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(49):before {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(50) {
-  top: 37vh;
-  left: 18vw;
+  top: 68vh;
+  left: 38vw;
   width: 4px;
   height: 4px;
   animation-delay: 3s;
@@ -3131,11 +3450,11 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(51) {
-  top: 4vh;
-  left: 39vw;
+  top: 67vh;
+  left: 15vw;
   width: 3px;
   height: 3px;
-  animation-delay: 4s;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(51):before {
@@ -3145,11 +3464,11 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(52) {
-  top: 97vh;
-  left: 28vw;
+  top: 38vh;
+  left: 57vw;
   width: 4px;
   height: 4px;
-  animation-delay: 1s;
+  animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(52):before {
@@ -3159,95 +3478,95 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(53) {
-  top: 39vh;
-  left: 94vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 5s;
+  top: 23vh;
+  left: 43vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(53):before {
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(54) {
-  top: 82vh;
-  left: 49vw;
-  width: 3px;
-  height: 3px;
-  animation-delay: 2s;
+  top: 60vh;
+  left: 66vw;
+  width: 4px;
+  height: 4px;
+  animation-delay: 5s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(54):before {
-  width: 6px;
-  height: 6px;
-  top: -250%;
-}
-/* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(55) {
-  top: 98vh;
-  left: 91vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 3s;
-}
-/* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(55):before {
   width: 8px;
   height: 8px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(56) {
-  top: 7vh;
-  left: 16vw;
-  width: 3px;
-  height: 3px;
-  animation-delay: 5s;
+.error-404-main-container .container-star .star-2:nth-of-type(55) {
+  top: 13vh;
+  left: 59vw;
+  width: 2px;
+  height: 2px;
+  animation-delay: 4s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(56):before {
-  width: 6px;
-  height: 6px;
+.error-404-main-container .container-star .star-2:nth-of-type(55):before {
+  width: 4px;
+  height: 4px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(57) {
-  top: 31vh;
-  left: 2vw;
+.error-404-main-container .container-star .star-2:nth-of-type(56) {
+  top: 96vh;
+  left: 69vw;
   width: 2px;
   height: 2px;
   animation-delay: 3s;
 }
 /* line 111, ../scss/pages/_error404.scss */
-.error-404-main-container .container-star .star-2:nth-of-type(57):before {
+.error-404-main-container .container-star .star-2:nth-of-type(56):before {
   width: 4px;
   height: 4px;
+  top: -250%;
+}
+/* line 104, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(57) {
+  top: 57vh;
+  left: 34vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 5s;
+}
+/* line 111, ../scss/pages/_error404.scss */
+.error-404-main-container .container-star .star-2:nth-of-type(57):before {
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(58) {
-  top: 20vh;
-  left: 96vw;
-  width: 4px;
-  height: 4px;
-  animation-delay: 2s;
+  top: 39vh;
+  left: 64vw;
+  width: 3px;
+  height: 3px;
+  animation-delay: 1s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(58):before {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   top: -250%;
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(59) {
-  top: 77vh;
-  left: 5vw;
+  top: 76vh;
+  left: 74vw;
   width: 3px;
   height: 3px;
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(59):before {
@@ -3257,16 +3576,16 @@ footer .copyright-footer .admin-footer {
 }
 /* line 104, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(60) {
-  top: 2vh;
-  left: 31vw;
-  width: 2px;
-  height: 2px;
-  animation-delay: 1s;
+  top: 49vh;
+  left: 22vw;
+  width: 4px;
+  height: 4px;
+  animation-delay: 2s;
 }
 /* line 111, ../scss/pages/_error404.scss */
 .error-404-main-container .container-star .star-2:nth-of-type(60):before {
-  width: 4px;
-  height: 4px;
+  width: 8px;
+  height: 8px;
   top: -250%;
 }
 /* line 121, ../scss/pages/_error404.scss */

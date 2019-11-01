@@ -62,7 +62,7 @@ class User
     protected $hashedPassword;
 
     /**
-     * @OneToMany(targetEntity="Comment", mappedBy="author")
+     * @OneToMany(targetEntity="Models\Comment", mappedBy="author", cascade={"persist"})
      */
     protected $comments;
 

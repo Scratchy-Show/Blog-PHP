@@ -73,10 +73,14 @@
     }
 
     .paging-container {
-       margin: 25px 0 250px 0;
+        @include paging;
 
-       .paging {
-           @include paging;
-       }
+        @include laptops {
+            padding-bottom: 150px;
+        }
+
+        @include tablets {
+            padding-bottom: 90px;
+        }
     }
 }

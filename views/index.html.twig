@@ -105,7 +105,80 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <hr class="line">
+
+        <div class="contact-container">
+            <h2>Me contacter</h2>
+
+            <div class="form-container">
+                <form method="post" action="#">
+
+                    {% if messageLastName starts with 'L' %}
+                        <div class="error-container">
+                            <div class="error">
+                                <img src="../public/img/icons/prohibited.png" alt="" />
+                                <p class="message">{{ messageLastName }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <div class="input-container">
+                        <input id="lastName" type="text" name="lastName" required="required" />
+                        <span class="border"></span>
+                        <label for="lastName">Nom</label>
+                    </div>
+
+                    {% if messageFirstName starts with 'L' %}
+                        <div class="error-container">
+                            <div class="error">
+                                <img src="../public/img/icons/prohibited.png" alt="" />
+                                <p class="message">{{ messageFirstName }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <div class="input-container">
+                        <input id="firstName" type="text" name="firstName" required="required" />
+                        <span class="border"></span>
+                        <label for="firstName">Prénom</label>
+                    </div>
+
+                    {% if messageEmail starts with 'L' %}
+                        <div class="error-container">
+                            <div class="error">
+                                <img src="../public/img/icons/prohibited.png" alt="" />
+                                <p class="message">{{ messageEmail }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if messageSingleEmail starts with 'C' %}
+                        <div class="error-container">
+                            <div class="error">
+                                <img src="../public/img/icons/prohibited.png" alt="" />
+                                <p class="message">{{ messageSingleEmail }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <div class="input-container">
+                        <input id="email" type="text" name="email" required="required" />
+                        <span class="border"></span>
+                        <label for="email">Mail</label>
+                    </div>
+
+                    <div class="textarea-container">
+                        <textarea id="content" name="content" required="required"></textarea>
+                        <span class="border"></span>
+                        <label for="content">Contenu</label>
+                    </div>
+
+                    <div class="submit-container">
+                        <input class="submit" type="submit" value="Envoyer" />
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 

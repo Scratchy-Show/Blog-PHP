@@ -250,14 +250,8 @@ class PostController extends Controller // Hérite de la class Controller et Che
                 // Appelle la méthode qui supprime un post
                 $post->deletePostByHomeAdmin($post);
 
-                // Parcour le tableau $comments
-                foreach ($comments as $comment ) {
-                    // Supprime tous les commentaires
-                    Comment::deleteCommentByHomeAdmin($comment);
-                }
-
                 // Message de confirmation
-                $messagePostDeleteConfirmed = "Article et ses commentaires supprimés";
+                $messagePostDeleteConfirmed = "Suppression de l'article et de ses commentaires";
 
                 // Redirection vers la page d'administration
                 header("Location: /admin?page=1&message=".$messagePostDeleteConfirmed);

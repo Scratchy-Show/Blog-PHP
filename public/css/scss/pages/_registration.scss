@@ -13,8 +13,17 @@
         margin-bottom: 40px;
         text-align: center;
 
-        p:last-child {
+        p {
             margin-top: 10px;
+
+            a {
+                color: $blue;
+                text-decoration: none;
+            }
+        }
+
+        p:first-child {
+            margin-top: 0;
         }
     }
 
@@ -34,6 +43,11 @@
 
         form {
             @include form;
+            margin-bottom: 20px;
+
+            @include laptops {
+                margin-bottom: 200px;
+            }
         }
     }
 }

@@ -253,7 +253,6 @@
         display: flex;
         justify-content: space-around;
         margin-top: 15px;
-        padding-bottom: 250px;
 
         @include desktops {
             flex-direction: column;
@@ -280,7 +279,6 @@
 
                 p {
                     width: 90%;
-                    //margin: auto;
                     padding-bottom: 20px;
                     text-align: left;
                     color: $white;
@@ -305,6 +303,48 @@
 
         .git {
             background-color: $orange;
+        }
+    }
+
+    .contact-container {
+        margin-top: 25px;
+        padding-bottom: 250px;
+
+        .form-container {
+            display: flex;
+            width: 100%;
+            margin-bottom: 50px;
+
+            @include laptops {
+                margin-bottom: 150px;
+            }
+
+            form {
+                @include form;
+                align-items: initial;
+                width: 80%;
+
+                .input-container, .textarea-container {
+                    margin-right: 20px;
+                    margin-left: 20px;
+
+                    input, textarea {
+                        width: 98%;
+
+                        &:focus ~ .border:before {
+                            width: 100%;
+                        }
+                    }
+
+                    textarea {
+                        height: 150px;
+                    }
+                }
+
+                .submit-container {
+                    align-self: center;
+                }
+            }
         }
     }
 }

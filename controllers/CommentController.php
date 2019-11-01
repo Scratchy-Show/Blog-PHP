@@ -17,7 +17,7 @@ class CommentController extends Controller // Hérite de la class Controller et 
             if (isset($_POST['content']) && isset($_POST['postId'])) {
 
                 // Par défaut, l'auteur est l'utilisateur connecté
-                $author = $_SESSION['user']->getId();
+                $author = $_SESSION['user'];
                 // Récupère les variables
                 $content = $_POST['content'];
                 $postId = $_POST['postId'];
@@ -42,10 +42,10 @@ class CommentController extends Controller // Hérite de la class Controller et 
                     // Crée une instance de Comment
                     $comment = new Comment;
                     // Appelle la méthode qui enregistre un commentaire
-                    $comment->addComment($content, $author, $postId);
+                    $comment->addComment($content, $author, $post);
 
                     // Message de confirmation
-                    $messageCommentSendConfirmed = "Commentaire envoyé, en attente de modération.";
+                    $messageCommentSendConfirmed = "Commentaire envoyé, en attente de validation";
 
                     // Redirection vers la page du post - En évitant l'affichage de plusieurs "message"
                     header("Location: " . $httpOrigin . "/post/" . $path . "?message=" . $messageCommentSendConfirmed);
@@ -130,7 +130,7 @@ class CommentController extends Controller // Hérite de la class Controller et 
                     ));
                 }
             }
-            // Si la page n'éxiste pas
+            // Si il y a aucun commentaire
             else {
                 // Affiche un message d'information
                 $this->render('commentsList.html.twig', array(
