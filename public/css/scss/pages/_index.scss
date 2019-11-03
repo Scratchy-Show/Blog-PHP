@@ -310,6 +310,12 @@
         margin-top: 25px;
         padding-bottom: 250px;
 
+        .message-container {
+            @include message;
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
         .form-container {
             display: flex;
             width: 100%;
@@ -323,6 +329,15 @@
                 @include form;
                 align-items: initial;
                 width: 80%;
+
+                .error-container {
+                    width: 90%;
+                    margin: auto;
+
+                    .error {
+                        @include error-form;
+                    }
+                }
 
                 .input-container, .textarea-container {
                     margin-right: 20px;

@@ -19,7 +19,7 @@
             <img src="../public/img/banner/home.jpg" alt="" />
         </div>
 
-        <div class="container-last-posts">
+        <section class="container-last-posts">
             <h2>Derniers articles</h2>
             <div class="last-posts">
                 {% for post in threeLastPosts %}
@@ -36,11 +36,11 @@
             <div class="posts-link">
                 <a href="/posts?page=1">Articles</a>
             </div>
-        </div>
+        </section>
 
         <hr class="line">
 
-        <div class="about">
+        <section class="about">
             <h2>A propos</h2>
             <div class="left-quote">
                 <img src="../public/img/icons/left_quote.png" alt="">
@@ -53,11 +53,11 @@
                 <img src="../public/img/icons/right_quote.png" alt="" />
             </div>
             <a class="download" href="../public/download/CV.pdf">Télécharger mon CV</a>
-        </div>
+        </section>
 
         <hr class="line">
 
-        <div class="container-tools-dev">
+        <section class="container-tools-dev">
             <h2>Mes outils de développement</h2>
             <div class="tools-dev">
                 <div class="first-tools">
@@ -71,11 +71,11 @@
                     <img src="../public/img/icons/mysql.png" alt="MySQL" />
                 </div>
             </div>
-        </div>
+        </section>
 
         <hr class="line">
 
-        <div class="container-tools-open-source">
+        <section class="container-tools-open-source">
             <h2>Mes outils open source</h2>
             <div class="tools-open-source">
 
@@ -105,15 +105,29 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <hr class="line">
 
-        <div class="contact-container">
+        <section class="contact-container">
             <h2>Me contacter</h2>
 
-            <div class="form-container">
-                <form method="post" action="#">
+            {% if message %}
+                <div class="message-container" id="anchor">
+                    {% if message starts with 'Erreur:' %}
+                        <div class="error">
+                            <p class="message">{{ message }}</p>
+                        </div>
+                    {% else %}
+                        <div class="confirm">
+                            <p class="message">{{ message }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <div class="form-container" {% if anchor %} id="anchor-error-form" {% endif %}>
+                <form method="post" action="/send">
 
                     {% if messageLastName starts with 'L' %}
                         <div class="error-container">
@@ -168,10 +182,16 @@
                         <label for="email">Mail</label>
                     </div>
 
-                    <div class="textarea-container">
-                        <textarea id="content" name="content" required="required"></textarea>
+                    <div class="input-container">
+                        <input id="subject" type="text" name="subject" required="required" />
                         <span class="border"></span>
-                        <label for="content">Contenu</label>
+                        <label for="subject">Objet</label>
+                    </div>
+
+                    <div class="textarea-container">
+                        <textarea id="message" name="message" required="required"></textarea>
+                        <span class="border"></span>
+                        <label for="message">Contenu</label>
                     </div>
 
                     <div class="submit-container">
@@ -179,7 +199,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </section>
     </div>
 
 {% endblock %}
