@@ -24,6 +24,11 @@ if (isset($_SERVER['REQUEST_URI'])) {
             $home = new PageController();
             $home->index();
         }
+        // Envoie du formulaire de contact
+        elseif ($path_only == '/send') {
+            $sendMail = new PageController();
+            $sendMail->sendMail();
+        }
         // Page listant les articles
         elseif ($path_only == '/posts') {
             // Récupère le numéro de la page de l'URL

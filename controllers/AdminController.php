@@ -127,6 +127,7 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
                 else {
                     // Message d'erreur
                     $message = "Logins incorrect, veuillez réessayer";
+
                     // Redirection vers la page d'identification
                     $this->render('login.html.twig', array("message" => $message));
                 }

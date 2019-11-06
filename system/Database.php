@@ -31,7 +31,7 @@ class Database
             $config->setQueryCacheImpl($cache);
 
             // Génération automatique de classes proxy
-            $config->setAutoGenerateProxyClasses(false);
+            $config->setAutoGenerateProxyClasses(true);
 
             // Paramètres de configuration de la base de données
             $dbParams = array(
