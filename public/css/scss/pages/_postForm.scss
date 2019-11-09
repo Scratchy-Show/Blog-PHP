@@ -8,13 +8,12 @@
         text-align: center;
     }
 
-    .error-container {
-        width: 90%;
+    .message-container {
+        @include message;
         margin-bottom: 15px;
 
-        .error {
-            @include error-form;
-            justify-content: center;
+        .error, .confirm {
+            padding: 15px;
         }
     }
 
@@ -22,7 +21,7 @@
         display: flex;
         width: 95%;
         max-width: 1200px;
-        margin: 0 25px 250px 25px;
+        margin: 0 25px 300px 25px;
         padding-top: 40px;
         background-color: $blue;
 

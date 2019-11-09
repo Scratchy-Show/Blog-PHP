@@ -11,6 +11,7 @@
         "twig/twig": "2.*",
         "components/jquery": "3.*",
         "ext-pdo": "*",
-        "doctrine/orm": "2.*"
+        "doctrine/orm": "2.*",
+        "ext-ctype": "*"
     }
 }

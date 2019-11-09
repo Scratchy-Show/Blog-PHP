@@ -22,7 +22,7 @@
             @include tablets {
                 display: block;
                 position: absolute;
-                top: 120px;
+                top: 130px;
                 height: 70px;
                 width: 70px;
                 background: $blue;
@@ -91,7 +91,11 @@
                 display: none;
                 width: 100%;
                 height: auto;
-                margin-top: 5px;
+                margin-top: 20px;
+            }
+
+            @include phablets {
+                margin-top: 40px;
             }
 
             // Affiche correctement le menu

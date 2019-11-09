@@ -12,19 +12,19 @@ class PageController extends Controller // Hérite de la class Controller et Che
     // Affiche la page d'Accueil
     public function index()
     {
-        // Récupère les 3 derniers postes
-        $threeLastPosts = Post::getThreeLastPosts();
+        // Récupère les 2 derniers postes
+        $twoLastPosts = Post::getLastPosts();
 
         // Redirection par défaut
         if (empty($_GET['message'])) {
             // Affiche la page d'accueil
-            $this->render('index.html.twig', array('threeLastPosts' => $threeLastPosts));
+            $this->render('index.html.twig', array('threeLastPosts' => $twoLastPosts));
         }
         // Redirection après envoie d'un mail
         else {
             // Affiche la page d'accueil un message
             $this->render('index.html.twig', array(
-                'threeLastPosts' => $threeLastPosts,
+                'threeLastPosts' => $twoLastPosts,
                 'message' => $_GET['message']
             ));
         }
@@ -125,37 +125,66 @@ class PageController extends Controller // Hérite de la class Controller et Che
     // Affiche la page des articles avec une pagination
     public function posts($page)
     {
-        // Si la page éxiste
-        if ($page >= 1) {
-            // Définit le nombres d'articles par page
-            $nbPerPage = 3;
-
-            // Récupère tous les postes
-            $posts = Post::getAllPostsWithPaging($page, $nbPerPage);
-
-            // Calcule le nombre total de pages
-            $nbPages = ceil(count($posts)/$nbPerPage);
+        // Vérifie que tous les caractères sont des chiffres entier
+        if (ctype_digit($page)) {
 
             // Si la page éxiste
-            if ($page <= $nbPages) {
-                // Affiche la page des articles
-                $this->render('posts.html.twig', array(
-                    "posts" => $posts,
-                    "nbPages" => $nbPages,
-                    "page" => $page
-                ));
+            if ($page >= 1) {
+
+                // Définit le nombres d'articles par page
+                $nbPerPage = 3;
+
+                // Récupère tous les postes
+                $posts = Post::getAllPostsWithPaging($page, $nbPerPage);
+
+                // Calcule le nombre total de pages
+                $nbPages = ceil(count($posts)/$nbPerPage);
+
+                // Si la page éxiste
+                if ($page <= $nbPages) {
+                    // Redirection par défaut
+                    if (empty($_GET['message'])) {
+                        // Affiche la page des articles
+                        $this->render('posts.html.twig', array(
+                            "posts" => $posts,
+                            "nbPages" => $nbPages,
+                            "page" => $page
+                        ));
+                    }
+                    // Redirection après l'échec d'envoie d'un commentaire
+                    else {
+                        // Affiche la page des articles
+                        $this->render('posts.html.twig', array(
+                            "posts" => $posts,
+                            "nbPages" => $nbPages,
+                            "page" => $page,
+                            'message' => $_GET['message']
+                        ));
+                    }
+                }
+                // Si la page n'éxiste pas
+                else {
+                    // Redirection vers la 404
+                    header("Location: /error404");
+
+                    // Empêche l'exécution du reste du script
+                    die();
+                }
             }
-            // Si il y a aucun article
+            // Si la page n'éxiste pas
             else {
-                $this->render('posts.html.twig', array(
-                    "posts" => $posts,
-                ));
+                // Redirection vers la 404
+                header("Location: /error404");
+
+                // Empêche l'exécution du reste du script
+                die();
             }
         }
-        // Si la page n'éxiste pas
+        // Si ce n'est pas un chiffre entier
         else {
             // Redirection vers la 404
             header("Location: /error404");
+
             // Empêche l'exécution du reste du script
             die();
         }
@@ -166,11 +195,12 @@ class PageController extends Controller // Hérite de la class Controller et Che
     {
         // Récupère l'article
         $post = Post::getPostByPath($path);
-        // Récupère les commentaires associés
-        $comments = Comment::getValidateComment($post->getId());
 
         // Si la route correspond à un article
         if ($post != null) {
+            // Récupère les commentaires associés
+            $comments = Comment::getValidateComment($post->getId());
+
             // Redirection par défaut
             if (empty($_GET['message'])) {
                 // Affiche la page de l'article
@@ -193,6 +223,58 @@ class PageController extends Controller // Hérite de la class Controller et Che
         else {
             // Redirection vers la 404
             header("Location: /error404");
+            // Empêche l'exécution du reste du script
+            die();
+        }
+    }
+
+    // Affiche la page d'inscription
+    public function registration() {
+        // Si l'utilisateur n'est pas connecté, il accède à la page
+        if (empty($_SESSION['user'])) {
+
+            // Redirection par défaut
+            if (empty($_GET['message'])) {
+                // Affiche la page d'inscription
+                $this->render('registration.html.twig', array());
+            }
+            // Redirection si message d'erreur pour l'inscription
+            else {
+                // Affiche la page d'inscription avec le message d'erreur
+                $this->render('registration.html.twig', array("message" => $_GET['message']));
+            }
+        }
+        // Si l'utilisateur est connecté
+        else {
+            // Redirection vers la page d'accueil
+            header('Location: ' . '/');
+
+            // Empêche l'exécution du reste du script
+            die();
+        }
+    }
+
+    // Affiche la page d'identification
+    public function login() {
+        // Si l'utilisateur n'est pas connecté, il accède à la page
+        if (empty($_SESSION['user'])) {
+
+            // Redirection par défaut
+            if (empty($_GET['message'])) {
+                // Affiche la page d'identification
+                $this->render('login.html.twig', array());
+            }
+            // Redirection si message d'erreur pour l'identification
+            else {
+                // Affiche la page d'identification avec le message d'erreru
+                $this->render('login.html.twig', array("message" => $_GET['message']));
+            }
+        }
+        // Si l'utilisateur est connecté
+        else {
+            // Redirection vers la page d'accueil
+            header('Location: ' . '/');
+
             // Empêche l'exécution du reste du script
             die();
         }

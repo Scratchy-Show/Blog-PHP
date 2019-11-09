@@ -6,14 +6,18 @@
         @include h2;
     }
 
-    .error {
-        @include error-form;
+    .message-container {
+        @include message;
+        margin-bottom: 20px;
     }
 
     .form-container {
         display: flex;
         width: 95%;
-        margin-top: 100px;
+
+        @include laptops {
+            margin-bottom: 400px;
+        }
 
         form {
             @include form;

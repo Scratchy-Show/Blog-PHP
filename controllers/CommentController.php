@@ -5,6 +5,7 @@ namespace Controllers;
 
 use Models\Comment;
 use Models\Post;
+use Models\User;
 
 class CommentController extends Controller // Hérite de la class Controller et CheckFormValuesController
 {
@@ -16,49 +17,63 @@ class CommentController extends Controller // Hérite de la class Controller et 
             // Si présence des variables
             if (isset($_POST['content']) && isset($_POST['postId'])) {
 
-                // Par défaut, l'auteur est l'utilisateur connecté
-                $author = $_SESSION['user'];
                 // Récupère les variables
                 $content = $_POST['content'];
                 $postId = $_POST['postId'];
 
-                // Vérifie que les valeurs des variables ne soient pas vide
-                $verifiedIfEmptyAuthor = $this->checkIfEmpty($author);
-                $verifiedIfEmptyContent = $this->checkIfEmpty($content);
-                $verifiedIfEmptyPostId = $this->checkIfEmpty($postId);
-
-                // Récupère l'url du site
-                $httpOrigin = $_SERVER['HTTP_ORIGIN'];
                 // Récupère l'article par son id
                 $post = Post::getPost($postId);
-                // Récupère le chemin de l'article
-                $path = $post->getPath();
 
-                // Si toutes les variables sont renseignées
-                if (($verifiedIfEmptyAuthor == 1) &&
-                    ($verifiedIfEmptyContent == 1) &&
-                    ($verifiedIfEmptyPostId == 1)
-                ) {
-                    // Crée une instance de Comment
-                    $comment = new Comment;
-                    // Appelle la méthode qui enregistre un commentaire
-                    $comment->addComment($content, $author, $post);
+                // Si un post à été trouvé
+                if ($post != false) {
 
-                    // Message de confirmation
-                    $messageCommentSendConfirmed = "Commentaire envoyé, en attente de validation";
+                    // Récupère le chemin de l'article
+                    $path = $post->getPath();
 
-                    // Redirection vers la page du post - En évitant l'affichage de plusieurs "message"
-                    header("Location: " . $httpOrigin . "/post/" . $path . "?message=" . $messageCommentSendConfirmed);
-                    // Empêche l'exécution du reste du script
-                    die();
+                    // Récupère l'url du site
+                    $httpOrigin = $_SERVER['HTTP_ORIGIN'];
+
+                    // Par défaut, l'auteur est l'utilisateur connecté
+                    $authorId = $_SESSION['user']->getId();
+
+                    // Si les variables sont renseignés
+                    if (!empty($authorId) && !empty($content)) {
+                        // Crée une instance de Comment
+                        $comment = new Comment;
+
+                        // Récupère l'auteur par son id
+                        $author = User::getUserById($authorId);
+
+                        // Appelle la méthode qui enregistre un commentaire
+                        $comment->addComment($content, $author, $post);
+
+                        // Message de confirmation
+                        $messageCommentSendConfirmed = "Commentaire envoyé, en attente de validation";
+
+                        // Redirection vers la page du post - En évitant l'affichage de plusieurs "message"
+                        header("Location: " . $httpOrigin . "/post/" . $path . "?message=" . $messageCommentSendConfirmed . "#anchor-confirm");
+                        // Empêche l'exécution du reste du script
+                        die();
+                    }
+                    // Si une variable est vide
+                    else {
+                        // Message d'erreur
+                        $verifiedIfEmpty = "Erreur: Un champ n'a pas été renseigné";
+
+                        // Redirection vers la page du post - En évitant l'affichage de plusieurs "message"
+                        header("Location: " . $httpOrigin . "/post/" . $path . "?message=" . $verifiedIfEmpty . "#anchor-error");
+                        // Empêche l'exécution du reste du script
+                        die();
+                    }
                 }
-                // Si une variable est vide
+                // Si aucun post à été trouvé
                 else {
                     // Message d'erreur
-                    $verifiedIfEmpty = "Erreur: Un champ n'a pas été renseigné";
+                    $noPostFound = "Erreur: Aucun article correspond à cet id";
 
-                    // Redirection vers la page du post - En évitant l'affichage de plusieurs "message"
-                    header("Location: " . $httpOrigin . "/post/" . $path . "?message=" . $verifiedIfEmpty);
+                    // Redirection vers la page de modification d'un article
+                    header("Location: /posts?&page=1&message=".$noPostFound);
+
                     // Empêche l'exécution du reste du script
                     die();
                 }
@@ -67,11 +82,10 @@ class CommentController extends Controller // Hérite de la class Controller et 
             else {
                 // Message d'erreur
                 $messageIssetVariable = "Erreur: Manque une variable pour pouvoir ajouter le commentaire";
-                // Récupère l'url de l'article
-                $url = $_SERVER['HTTP_REFERER'];
 
-                // Redirection vers la page du post avec le message d'erreur
-                header("Location: ".$url."?message=".$messageIssetVariable);
+                // Redirection vers la page de modification d'un article
+                header("Location: /posts?&page=1&message=".$messageIssetVariable);
+
                 // Empêche l'exécution du reste du script
                 die();
             }
@@ -90,58 +104,113 @@ class CommentController extends Controller // Hérite de la class Controller et 
         // Vérifie que l'utilisateur est connecté et que c'est un administrateur
         $this->redirectIfNotLoggedOrNotAdmin();
 
-        // Si la page éxiste
-        if ($page >= 1) {
+        // Si présence des variables
+        if (isset($postId) && isset($page)) {
 
-            // Définit le nombres de commentaires par page
-            $nbPerPage = 10;
+            // Si toutes les variables sont renseignées
+            if (!empty($postId) && !empty($page)) {
 
-            // Récupère tous les commentaires du post
-            $comments = Comment::getAllCommentsForPostWithPaging($postId, $page, $nbPerPage);
+                // Récupère le post
+                $post = Post::getPost($postId);
 
-            // Récupère le post
-            $post = Post::getPost($postId);
+                // Si le post éxiste
+                if ($post != false) {
 
-            // Calcule le nombre total de pages
-            $nbPages = ceil(count($comments)/$nbPerPage);
+                    // Vérifie que le n° de page est un chiffre entier
+                    if (ctype_digit($page)) {
 
-            // Si la page éxiste
-            if ($page <= $nbPages) {
+                        // Si la page éxiste
+                        if ($page >= 1) {
 
-                // Redirection par défaut
-                if (empty($_GET['message'])) {
-                    // Affiche la listes des commentaires d'un article
-                    $this->render('commentsList.html.twig', array(
-                        'comments' => $comments,
-                        'post' => $post,
-                        "nbPages" => $nbPages,
-                        "page" => $page
-                    ));
+                            // Définit le nombres de commentaires par page
+                            $nbPerPage = 10;
+
+                            // Récupère tous les commentaires du post
+                            $comments = Comment::getAllCommentsForPostWithPaging($postId, $page, $nbPerPage);
+
+                            // Calcule le nombre total de pages
+                            $nbPages = ceil(count($comments) / $nbPerPage);
+
+                            // Si la page éxiste
+                            if ($page <= $nbPages) {
+
+                                // Redirection par défaut
+                                if (empty($_GET['message'])) {
+                                    // Affiche la listes des commentaires d'un article
+                                    $this->render('commentsList.html.twig', array(
+                                        'comments' => $comments,
+                                        'post' => $post,
+                                        "nbPages" => $nbPages,
+                                        "page" => $page
+                                    ));
+                                } // Redirection après suppression d'un commentaire
+                                else {
+                                    // Affiche la listes des commentaires d'un article et le message de confirmation
+                                    $this->render('commentsList.html.twig', array(
+                                        'comments' => $comments,
+                                        'post' => $post,
+                                        "nbPages" => $nbPages,
+                                        "page" => $page,
+                                        'message' => $_GET['message']
+                                    ));
+                                }
+                            } // Si il y a aucun commentaire
+                            else {
+                                // Affiche un message d'information
+                                $this->render('commentsList.html.twig', array(
+                                    'comments' => $comments,
+                                    'post' => $post,
+                                ));
+                            }
+                        } // Si la page n'éxiste pas
+                        else {
+                            // Redirection vers la 404
+                            header("Location: /error404");
+                            // Empêche l'exécution du reste du script
+                            die();
+                        }
+                    }
+                    // Si ce n'est pas un chiffre entier
+                    else {
+                        // Redirection vers la 404
+                        header("Location: /error404");
+
+                        // Empêche l'exécution du reste du script
+                        die();
+                    }
                 }
-                // Redirection après suppression d'un commentaire
+                // Si l'id correspond  à aucun post
                 else {
-                    // Affiche la listes des commentaires d'un article et le message de confirmation
-                    $this->render('commentsList.html.twig', array(
-                        'comments' => $comments,
-                        'post' => $post,
-                        "nbPages" => $nbPages,
-                        "page" => $page,
-                        'message' => $_GET['message']
-                    ));
+                    // Message d'erreur
+                    $messagePostEditConfirmed = "Erreur: Aucun post correspond à cet id";
+
+                    // Redirection vers la page de modification d'un article
+                    header("Location: /admin?&page=" . $page . "&message=".$messagePostEditConfirmed);
+
+                    // Empêche l'exécution du reste du script
+                    die();
                 }
             }
-            // Si il y a aucun commentaire
+            // Si une variable est vide
             else {
-                // Affiche un message d'information
-                $this->render('commentsList.html.twig', array(
-                    'comments' => $comments
-                ));
+                // Message d'erreur
+                $verifiedIfEmpty = "Erreur: Une variable n'a pas été renseigné";
+
+                // Redirection vers la page d'administration
+                header("Location: /admin?page=1&message=".$verifiedIfEmpty);
+
+                // Empêche l'exécution du reste du script
+                die();
             }
         }
-        // Si la page n'éxiste pas
+        // Si il manque une variable
         else {
-            // Redirection vers la 404
-            header("Location: /error404");
+            // Message d'erreur
+            $messageIssetVariable = "Erreur: Manque une variable pour afficher les commentaires";
+
+            // Redirection vers la page d'administration
+            header("Location: /admin?page=1&message=".$messageIssetVariable);
+
             // Empêche l'exécution du reste du script
             die();
         }
@@ -160,7 +229,7 @@ class CommentController extends Controller // Hérite de la class Controller et 
             $comment = Comment::getComment($idComment);
 
             // Si l'id correspond à un commentaire
-            if ($comment != null) {
+            if ($comment != false) {
                 // Appelle la méthode qui valide un commentaire
                 $comment->validateCommentByHomeAdmin($comment);
 

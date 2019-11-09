@@ -23,11 +23,11 @@
         {% if message %}
             <div class="message-container">
                 {% if message starts with 'Erreur:' %}
-                    <div class="error">
+                    <div class="error" id="anchor-error">
                         <p class="message">{{ message }}</p>
                     </div>
                 {% else %}
-                    <div class="confirm">
+                    <div class="confirm" id="anchor-confirm">
                         <p class="message">{{ message }}</p>
                     </div>
                 {% endif %}
@@ -55,6 +55,13 @@
             {% endif %}
 
             <h3>Vos commentaires</h3>
+
+            {% if comments is empty %}
+                <div class="comments-empty">
+                    <p>Aucun commentaire pour l'instant.</p>
+                </div>
+            {% endif %}
+
             {% for comment in comments %}
                 <div class="comments" id="{{ comment.id }}">
                     <div class="author-date-comments-container">

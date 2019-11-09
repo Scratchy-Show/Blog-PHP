@@ -7,6 +7,11 @@
         @include h2;
     }
 
+    .message-container {
+        @include message;
+        margin-bottom: 20px;
+    }
+
     .posts-empty {
         height: 70vh;
     }

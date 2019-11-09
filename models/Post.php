@@ -64,7 +64,7 @@ class Post
     protected $path;
 
     /**
-     * @OneToMany(targetEntity="Models\Comment", mappedBy="post", cascade={"persist", "remove"})
+     * @OneToMany(targetEntity="Models\Comment", mappedBy="post", cascade={"remove"})
      */
     protected $comments;
 
@@ -131,8 +131,8 @@ class Post
         }
     }
 
-    // Récupère les 3 derniers postes
-    public static function getThreeLastPosts()
+    // Récupère les 2 derniers postes
+    public static function getLastPosts()
     {
         // Gestion des erreurs
         try {
@@ -142,7 +142,7 @@ class Post
             $threeLastPosts = $postRepository->findBy(
                 array(),
                 array('createDate' => 'desc'),
-                3,
+                2,
                 0
             );
             // Retourne un tableau contenant les 3 posts
