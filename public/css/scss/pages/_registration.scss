@@ -27,13 +27,9 @@
         }
     }
 
-    .error-container {
-        width: 90%;
-        margin: auto;
-
-        .error {
-            @include error-form;
-        }
+    .message-container {
+        @include message;
+        margin-bottom: 20px;
     }
 
     .form-container {
@@ -41,12 +37,29 @@
         width: 100%;
         margin-bottom: 260px;
 
+        @include laptops {
+            margin-bottom: 220px;
+        }
+
         form {
             @include form;
             margin-bottom: 20px;
 
             @include laptops {
                 margin-bottom: 200px;
+            }
+
+            .error-container {
+                width: 90%;
+                margin: auto;
+
+                &:first-child {
+                    margin-top: 20px;
+                }
+
+                .error {
+                    @include error-form;
+                }
             }
         }
     }

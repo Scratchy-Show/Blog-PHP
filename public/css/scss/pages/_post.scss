@@ -80,6 +80,10 @@
             padding-top: 40px;
             background-color: $blue;
 
+            @include tablets {
+                width: 100%;
+            }
+
             form {
                 display: flex;
                 flex-direction: column;
@@ -87,6 +91,10 @@
                 width: 80%;
                 max-width: 750px;
                 margin: auto;
+
+                @include tablets {
+                    width: 95%;
+                }
 
                 .textarea-container {
                     position: relative;
@@ -100,6 +108,10 @@
                         border: none;
                         border-radius: 5px;
                         font-family: "Nunito", sans-serif;
+
+                        @include tablets {
+                            width: 95%;
+                        }
                     }
 
                     label {
@@ -133,6 +145,10 @@
                     }
                 }
             }
+        }
+
+        .posts-empty {
+            margin: 20px 10px;
         }
 
         .comments {

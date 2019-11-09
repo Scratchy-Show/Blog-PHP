@@ -62,7 +62,7 @@ class User
     protected $hashedPassword;
 
     /**
-     * @OneToMany(targetEntity="Models\Comment", mappedBy="author", cascade={"persist"})
+     * @OneToMany(targetEntity="Models\Comment", mappedBy="author")
      */
     protected $comments;
 
@@ -94,6 +94,23 @@ class User
         $entityManager->persist($this);
         // Effectue la sauvegarde de l'entité en bdd
         $entityManager->flush();
+    }
+
+    // Récupère un utilisateur avec son id
+    public static function getUserById($id)
+    {
+        // Gestion des erreurs
+        try {
+            // Repository dédié à l'entité User
+            $userRepository = Database::getEntityManager()->getRepository(User::class);
+            // Recherche un id correspondant
+            $user = $userRepository->find($id);
+            // Retourne un utilisateur ou un tableau vide
+            return $user;
+        }
+        catch (PDOException $e) {
+            echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
+        }
     }
 
     // Récupère un utilisateur avec son mail

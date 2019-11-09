@@ -52,7 +52,12 @@
         margin-bottom: 40px;
 
         td, th {
-            min-width: 130px;
+            min-width: 90px;
+        }
+
+        .action-link {
+            display: flex;
+            justify-content: center;
         }
     }
 

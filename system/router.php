@@ -55,13 +55,23 @@ if (isset($_SERVER['REQUEST_URI'])) {
         }
         // Page d'inscription
         elseif ($path_only == '/registration') {
-            $registration = new AdminController();
+            $registration = new PageController();
             $registration->registration();
+        }
+        // AJoute un nouvel utilisateur
+        elseif ($path_only == '/newUserRegistration') {
+            $newUserRegistration = new AdminController();
+            $newUserRegistration->newUserRegistration();
         }
         // Page d'identification
         elseif ($path_only == '/login') {
-            $login = new AdminController();
+            $login = new PageController();
             $login->login();
+        }
+        // Connexion
+        elseif ($path_only == '/connection') {
+            $connection = new AdminController();
+            $connection->connection();
         }
         // Déconnexion
         elseif ($path_only == '/logout') {

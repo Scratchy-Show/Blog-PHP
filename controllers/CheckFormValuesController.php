@@ -79,17 +79,6 @@ class CheckFormValuesController
         return $checkEmail;
     }
 
-    // Formulaire d'inscription - Vérifie que le pseudo ne soit pas vide
-    public function checkUsername($username)
-    {
-        if (empty($username)) {
-            $messageUsername = "Le pseudo n'a pas été renseigné";
-            return $messageUsername;
-        }
-        $username = 1;
-        return $username;
-    }
-
     // Formulaire d'inscription - Vérifie les deux mot de passe
     public function checkPassword($password, $confirmPassword)
     {
@@ -125,18 +114,5 @@ class CheckFormValuesController
         $withoutSpaces = str_replace(' ', '_', $lowercaseTitle);
 
         return $withoutSpaces;
-    }
-
-    // Formulaire d'ajout d'article, d'ajout de commentaire et de modification d'article
-    // Vérifie que les variables ne soient pas vide
-    public function checkIfEmpty($argument)
-    {
-        // Si l'une des variable est vide
-        if (empty($argument)) {
-            $messageIsEmpty = "Erreur: Tous les champs n'ont pas été renseigné";
-            return $messageIsEmpty;
-        }
-        $isNotEmpty = 1;
-        return $isNotEmpty;
     }
 }
