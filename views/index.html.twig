@@ -22,7 +22,7 @@
         <section class="container-last-posts">
             <h2>Derniers articles</h2>
             <div class="last-posts">
-                {% for post in threeLastPosts %}
+                {% for post in twoLastPosts %}
                     <div class="post">
                         <h3 class="title">{{ post.title }}</h3>
                         <p class="date">Publié le {{ post.updateDate|date('d/m/Y') }}</p>
