@@ -3,7 +3,6 @@
 
 namespace Controllers;
 
-
 use Models\Comment;
 use Models\Post;
 
@@ -18,13 +17,13 @@ class PageController extends Controller // Hérite de la class Controller et Che
         // Redirection par défaut
         if (empty($_GET['message'])) {
             // Affiche la page d'accueil
-            $this->render('index.html.twig', array('threeLastPosts' => $twoLastPosts));
-        }
-        // Redirection après envoie d'un mail
-        else {
-            // Affiche la page d'accueil un message
+            $this->render('index.html.twig', array('twoLastPosts' => $twoLastPosts));
+        } else {
+            // Redirection après envoie d'un mail
+
+            // Affiche la page d'accueil et le message
             $this->render('index.html.twig', array(
-                'threeLastPosts' => $twoLastPosts,
+                'twoLastPosts' => $twoLastPosts,
                 'message' => $_GET['message']
             ));
         }
@@ -36,7 +35,6 @@ class PageController extends Controller // Hérite de la class Controller et Che
         // Si présence des variables
         if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email']) &&
             isset($_POST['subject']) && isset($_POST['message'])) {
-
             $lastName = $_POST['lastName'];
             $firstName = $_POST['firstName'];
             $email = $_POST['email'];
@@ -45,13 +43,11 @@ class PageController extends Controller // Hérite de la class Controller et Che
 
             // Si aucune des variables n'est vide
             if (!empty($lastName) && !empty($firstName) && !empty($email) && !empty($subject) && !empty($message)) {
-
                 // Vérifie la valeur des variables
                 $verifiedName = $this->checkName($lastName, $firstName);
                 $verifiedEmail = $this->checkEmail($email);
                 // Si les valeurs des variables sont bonnes
                 if (($verifiedName == 1) && ($verifiedEmail == 1)) {
-
                     // Destinataire
                     $to = "";
 
@@ -90,9 +86,9 @@ class PageController extends Controller // Hérite de la class Controller et Che
                         "anchor" => "anchor" // Permet de diriger l'utilisateur directement sur le formulaire
                     ));
                 }
-            }
-            // Si une des variables est vide
-            else {
+            } else {
+                // Redirection après envoie d'un mail
+
                 // Message d'erreur
                 $messageEmptyVariable = "Erreur: Un champ n'a pas été renseigné";
 
@@ -105,9 +101,9 @@ class PageController extends Controller // Hérite de la class Controller et Che
                 // Empêche l'exécution du reste du script
                 die();
             }
-        }
-        // Si une des variables est manquante
-        else {
+        } else {
+            // Si une des variables est manquante
+
             // Message d'erreur
             $messageIssetVariable = "Erreur: Manque une variable pour pouvoir envoyer le mail";
 
@@ -127,10 +123,8 @@ class PageController extends Controller // Hérite de la class Controller et Che
     {
         // Vérifie que tous les caractères sont des chiffres entier
         if (ctype_digit($page)) {
-
             // Si la page éxiste
             if ($page >= 1) {
-
                 // Définit le nombres d'articles par page
                 $nbPerPage = 3;
 
@@ -150,10 +144,10 @@ class PageController extends Controller // Hérite de la class Controller et Che
                             "nbPages" => $nbPages,
                             "page" => $page
                         ));
-                    }
-                    // Redirection après l'échec d'envoie d'un commentaire
-                    else {
-                        // Affiche la page des articles
+                    } else {
+                        // Redirection après l'échec d'envoie d'un commentaire
+
+                        // Affiche la page des articles et le message
                         $this->render('posts.html.twig', array(
                             "posts" => $posts,
                             "nbPages" => $nbPages,
@@ -161,27 +155,27 @@ class PageController extends Controller // Hérite de la class Controller et Che
                             'message' => $_GET['message']
                         ));
                     }
-                }
-                // Si la page n'éxiste pas
-                else {
+                } else {
+                    // Si la page n'éxiste pas
+
                     // Redirection vers la 404
                     header("Location: /error404");
 
                     // Empêche l'exécution du reste du script
                     die();
                 }
-            }
-            // Si la page n'éxiste pas
-            else {
+            } else {
+                // Si la page n'éxiste pas
+
                 // Redirection vers la 404
                 header("Location: /error404");
 
                 // Empêche l'exécution du reste du script
                 die();
             }
-        }
-        // Si ce n'est pas un chiffre entier
-        else {
+        } else {
+            // Si ce n'est pas un chiffre entier
+
             // Redirection vers la 404
             header("Location: /error404");
 
@@ -203,49 +197,50 @@ class PageController extends Controller // Hérite de la class Controller et Che
 
             // Redirection par défaut
             if (empty($_GET['message'])) {
-                // Affiche la page de l'article
+                // Affiche la page de l'article et ses commentaires
                 $this->render('post.html.twig', array(
                     "post" => $post,
                     "comments" => $comments
                 ));
-            }
-            // Redirection après ajout d'un commentaire
-            else {
-                // Affiche la page d'administration avec les posts et le message
+            } else {
+                // Redirection après ajout d'un commentaire
+
+                // Affiche la page de l'article avec ses commentaires et le message
                 $this->render('post.html.twig', array(
                     "post" => $post,
                     "comments" => $comments,
                     "message" => $_GET['message']
                 ));
             }
-        }
-        // Si la route ne correspond à aucun article
-        else {
+        } else {
+            // Si la route ne correspond à aucun article
+
             // Redirection vers la 404
             header("Location: /error404");
+
             // Empêche l'exécution du reste du script
             die();
         }
     }
 
     // Affiche la page d'inscription
-    public function registration() {
+    public function registration()
+    {
         // Si l'utilisateur n'est pas connecté, il accède à la page
         if (empty($_SESSION['user'])) {
-
             // Redirection par défaut
             if (empty($_GET['message'])) {
                 // Affiche la page d'inscription
                 $this->render('registration.html.twig', array());
-            }
-            // Redirection si message d'erreur pour l'inscription
-            else {
+            } else {
+                // Redirection si message d'erreur pour l'inscription
+
                 // Affiche la page d'inscription avec le message d'erreur
                 $this->render('registration.html.twig', array("message" => $_GET['message']));
             }
-        }
-        // Si l'utilisateur est connecté
-        else {
+        } else {
+            // Si l'utilisateur est connecté
+
             // Redirection vers la page d'accueil
             header('Location: ' . '/');
 
@@ -255,23 +250,23 @@ class PageController extends Controller // Hérite de la class Controller et Che
     }
 
     // Affiche la page d'identification
-    public function login() {
+    public function login()
+    {
         // Si l'utilisateur n'est pas connecté, il accède à la page
         if (empty($_SESSION['user'])) {
-
             // Redirection par défaut
             if (empty($_GET['message'])) {
                 // Affiche la page d'identification
                 $this->render('login.html.twig', array());
-            }
-            // Redirection si message d'erreur pour l'identification
-            else {
-                // Affiche la page d'identification avec le message d'erreru
+            } else {
+                // Redirection si message d'erreur pour l'identification
+
+                // Affiche la page d'identification avec le message d'erreur
                 $this->render('login.html.twig', array("message" => $_GET['message']));
             }
-        }
-        // Si l'utilisateur est connecté
-        else {
+        } else {
+            // Si l'utilisateur est connecté
+
             // Redirection vers la page d'accueil
             header('Location: ' . '/');
 

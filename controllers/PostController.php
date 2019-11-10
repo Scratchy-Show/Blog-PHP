@@ -3,9 +3,8 @@
 
 namespace Controllers;
 
-
-use Models\Comment;
 use Models\Post;
+use \DateTime;
 
 class PostController extends Controller // Hérite de la class Controller et CheckFormValuesController
 {
@@ -17,21 +16,18 @@ class PostController extends Controller // Hérite de la class Controller et Che
 
         // // Si args n'est pas vide = Modification d'un article
         if ($args != null) {
-
             $idPost = $args['id'];
             $page = $args['page'];
 
             // Vérifie que le n° de page est un chiffre entier
             if (ctype_digit($page)) {
-
                 // Si présence des variables
                 if (isset($idPost) && isset($page)) {
-
                     // Si les variables sont renseignés
                     if (!empty($idPost) && !empty($page)) {
-
                         // Crée une instance de Post
                         $newPost = new Post;
+
                         // Récupère le post
                         $post = $newPost->getPost($idPost);
 
@@ -53,45 +49,45 @@ class PostController extends Controller // Hérite de la class Controller et Che
                                 "content" => $content,
                                 "page" => $page
                             ));
-                        }
-                        // Si l'id n'a aucune correspondance
-                        else {
+                        } else {
+                            // Si l'id n'a aucune correspondance
+
                             // Message d'erreur
                             $messageIdWithoutPost = "Erreur: Aucun article ne correspond à cet id";
 
-                            // Redirection vers la page de modification d'un article
-                            header("Location: /admin?page=" . $page . "&message=".$messageIdWithoutPost);
+                            // Redirection vers la page d'administration
+                            header("Location: /admin?page=" . $page . "&message=" . $messageIdWithoutPost);
 
                             // Empêche l'exécution du reste du script
                             die();
                         }
-                    }
-                    // Si une variable est vide
-                    else {
+                    } else {
+                        // Si une variable est vide
+
                         // Message d'erreur
                         $verifiedIfEmpty = "Erreur: Une variable n'a pas été renseignée";
 
-                        // Redirection vers la page d'identification
+                        // Redirection vers la page d'administration
                         header("Location: /admin?page=1&message=" . $verifiedIfEmpty);
 
                         // Empêche l'exécution du reste du script
                         die();
                     }
-                }
-                // Si il manque une variable
-                else {
+                } else {
+                    // Si il manque une variable
+
                     // Message d'erreur
                     $messageIssetVariable = "Erreur: Manque une variable pour pouvoir modifier l'article";
 
-                    // Redirection vers la page de modification d'un article
-                    header("Location: /admin?&page=1&message=".$messageIssetVariable);
+                    // Redirection vers la page d'administration
+                    header("Location: /admin?&page=1&message=" . $messageIssetVariable);
 
                     // Empêche l'exécution du reste du script
                     die();
                 }
-            }
-            // Si ce n'est pas un chiffre entier
-            else {
+            } else {
+                // Si ce n'est pas un chiffre entier
+
                 // Message d'erreur
                 $messageNotPageNumber = "Erreur: Ce n'est pas un numéro de page correct";
 
@@ -101,9 +97,9 @@ class PostController extends Controller // Hérite de la class Controller et Che
                 // Empêche l'exécution du reste du script
                 die();
             }
-        }
-        // Si args est vide = Ajout d'un article
-        else {
+        } else {
+            // Si args est vide = Ajout d'un article
+
             // Affiche la page d'ajout d'article
             $this->render('postForm.html.twig', array());
         }
@@ -117,17 +113,16 @@ class PostController extends Controller // Hérite de la class Controller et Che
 
         // Si présence des variables
         if (isset($_POST['title-post']) && isset($_POST['summary']) && isset($_POST['content'])) {
-
             // Récupère les variables
             $title = $_POST['title-post'];
             $summary = $_POST['summary'];
             $content = $_POST['content'];
+
             // Par défaut, l'auteur est l'utilisateur connecté
             $author = $_SESSION['user']->getUsername();
 
             // Si toutes les variables sont renseignées
             if (!empty($title) && !empty($author) && !empty($summary) && !empty($content)) {
-
                 // Nettoie le titre pour en faire une route
                 $path = $this->cleanTitle($title);
 
@@ -141,22 +136,22 @@ class PostController extends Controller // Hérite de la class Controller et Che
                 $messagePostAddConfirmed = "Article ajouté";
 
                 // Redirection vers la page d'administration
-                header("Location: /admin?page=1&message=".$messagePostAddConfirmed);
+                header("Location: /admin?page=1&message=" . $messagePostAddConfirmed);
 
                 // Empêche l'exécution du reste du script
                 die();
-            }
-            // Si une variable est vide
-            else {
+            } else {
+                // Si une variable est vide
+
                 // Message d'erreur
                 $verifiedIfEmpty = "Erreur: Un champ n'a pas été renseigné";
 
                 // Affiche le formulaire d'ajout d'article avec le message d'erreur
                 $this->render('postForm.html.twig', array("message" => $verifiedIfEmpty));
             }
-        }
-        // Si il manque une variable
-        else {
+        } else {
+            // Si il manque une variable
+
             // Message d'erreur
             $messageIssetVariable = "Erreur: Manque une variable pour pouvoir ajouter l'article";
 
@@ -173,19 +168,15 @@ class PostController extends Controller // Hérite de la class Controller et Che
 
         // Vérifie que le n° de page est un chiffre entier
         if (ctype_digit($page)) {
-
             // Si présence des variables
-            if (isset($_POST['title-post']) &&
-                isset($_POST['author']) &&
-                isset($_POST['summary']) &&
-                isset($_POST['content'])) {
-
+            if (isset($_POST['title-post']) && isset($_POST['author']) &&
+                isset($_POST['summary']) && isset($_POST['content'])) {
                 // Récupère les variables
                 $title = $_POST['title-post'];
                 $author = $_POST['author'];
                 $summary = $_POST['summary'];
                 $content = $_POST['content'];
-                $updateDate = new \DateTime();
+                $updateDate = new DateTime();
 
                 // Si toutes les variables sont renseignées
                 if (!empty($title) && !empty($author) && !empty($summary) && !empty($content)) {
@@ -204,19 +195,21 @@ class PostController extends Controller // Hérite de la class Controller et Che
                         header("Location: /admin?page=" . $page . "&message=" . $messagePostEditConfirmed);
                         // Empêche l'exécution du reste du script
                         die();
-                    } // Si l'id ne correspond pas à un post
-                    else {
+                    } else {
+                        // Si l'id ne correspond pas à un post
+
                         // Message d'erreur
                         $messagePostEditConfirmed = "Erreur: Aucun post correspond à cet id";
 
-                        // Redirection vers la page de modification d'un article
+                        // Redirection vers la page d'administration
                         header("Location: /admin?&page=" . $page . "&message=" . $messagePostEditConfirmed);
 
                         // Empêche l'exécution du reste du script
                         die();
                     }
-                } // Si une variable est vide
-                else {
+                } else {
+                    // Si une variable est vide
+
                     // Message d'erreur
                     $verifiedIfEmpty = "Erreur: Un champ n'a pas été renseigné";
 
@@ -226,8 +219,9 @@ class PostController extends Controller // Hérite de la class Controller et Che
                     // Empêche l'exécution du reste du script
                     die();
                 }
-            } // Si il manque une variable
-            else {
+            } else {
+                // Si il manque une variable
+
                 // Message d'erreur
                 $messageIssetVariable = "Erreur: Manque une variable pour pouvoir modifier l'article";
 
@@ -237,9 +231,9 @@ class PostController extends Controller // Hérite de la class Controller et Che
                 // Empêche l'exécution du reste du script
                 die();
             }
-        }
+        } else {
             // Si ce n'est pas un chiffre entier
-        else {
+
             // Message d'erreur
             $messageNotPageNumber = "Erreur: Numéro de page incorrect";
 
@@ -248,7 +242,7 @@ class PostController extends Controller // Hérite de la class Controller et Che
 
             // Empêche l'exécution du reste du script
             die();
-            }
+        }
     }
 
     // Supprimer un article
@@ -259,7 +253,6 @@ class PostController extends Controller // Hérite de la class Controller et Che
 
         // Vérifie la présence de l'id
         if ($idPost != null) {
-
             // Crée une instance de Post
             $newPost = new Post;
 
@@ -275,21 +268,21 @@ class PostController extends Controller // Hérite de la class Controller et Che
                 $messagePostDeleteConfirmed = "Suppression de l'article et de ses commentaires";
 
                 // Redirection vers la page d'administration
-                header("Location: /admin?page=1&message=".$messagePostDeleteConfirmed);
+                header("Location: /admin?page=1&message=" . $messagePostDeleteConfirmed);
 
                 // Empêche l'exécution du reste du script
                 die();
-            }
-            // Si l'id n'a aucune correspondance
-            else {
+            } else {
+                // Si l'id n'a aucune correspondance
+
                 // Message d'erreur
                 $messagePostDeleteFailed = "Erreur: Aucun article correspond à cet id";
 
                 // Récupère l'url précédente afin de revenir à la liste des articles
                 $url = $_SERVER['HTTP_REFERER'];
 
-                // Redirection vers la page de la liste des articles
-                header("Location: ".$url."&message=".$messagePostDeleteFailed);
+                // Redirection vers la page de la liste des articles avec le message d'erreur
+                header("Location: " . $url . "&message=" . $messagePostDeleteFailed);
 
                 // Empêche l'exécution du reste du script
                 die();
@@ -301,8 +294,8 @@ class PostController extends Controller // Hérite de la class Controller et Che
         // Récupère l'url précédente afin de revenir à la liste des articles
         $url = $_SERVER['HTTP_REFERER'];
 
-        // Redirection vers la page de la liste des articles
-        header("Location: ".$url."&message=".$messageIdWithoutPost);
+        // Redirection vers la page de la liste des articles avec le message d'erreur
+        header("Location: " . $url . "&message=" . $messageIdWithoutPost);
 
         // Empêche l'exécution du reste du script
         die();

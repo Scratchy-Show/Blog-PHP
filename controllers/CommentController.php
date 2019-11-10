@@ -10,13 +10,12 @@ use Models\User;
 class CommentController extends Controller // Hérite de la class Controller et CheckFormValuesController
 {
     // Soumettre un commentaire
-    public function submitComment() {
+    public function submitComment()
+    {
         // Si l'utilisateur est connecté, il peut soumettre un commentaire
         if (!empty($_SESSION['user'])) {
-
             // Si présence des variables
             if (isset($_POST['content']) && isset($_POST['postId'])) {
-
                 // Récupère les variables
                 $content = $_POST['content'];
                 $postId = $_POST['postId'];
@@ -26,7 +25,6 @@ class CommentController extends Controller // Hérite de la class Controller et 
 
                 // Si un post à été trouvé
                 if ($post != false) {
-
                     // Récupère le chemin de l'article
                     $path = $post->getPath();
 
@@ -51,77 +49,78 @@ class CommentController extends Controller // Hérite de la class Controller et 
                         $messageCommentSendConfirmed = "Commentaire envoyé, en attente de validation";
 
                         // Redirection vers la page du post - En évitant l'affichage de plusieurs "message"
-                        header("Location: " . $httpOrigin . "/post/" . $path . "?message=" . $messageCommentSendConfirmed . "#anchor-confirm");
+                        header("Location: " . $httpOrigin . "/post/" . $path . "?message="
+                            . $messageCommentSendConfirmed . "#anchor-confirm");
+
                         // Empêche l'exécution du reste du script
                         die();
-                    }
-                    // Si une variable est vide
-                    else {
+                    } else {
+                        // Si une variable est vide
+
                         // Message d'erreur
                         $verifiedIfEmpty = "Erreur: Un champ n'a pas été renseigné";
 
                         // Redirection vers la page du post - En évitant l'affichage de plusieurs "message"
-                        header("Location: " . $httpOrigin . "/post/" . $path . "?message=" . $verifiedIfEmpty . "#anchor-error");
+                        header("Location: " . $httpOrigin . "/post/" . $path . "?message="
+                            . $verifiedIfEmpty . "#anchor-error");
+
                         // Empêche l'exécution du reste du script
                         die();
                     }
-                }
-                // Si aucun post à été trouvé
-                else {
+                } else {
+                    // Si aucun post à été trouvé
+
                     // Message d'erreur
                     $noPostFound = "Erreur: Aucun article correspond à cet id";
 
-                    // Redirection vers la page de modification d'un article
-                    header("Location: /posts?&page=1&message=".$noPostFound);
+                    // Redirection vers la page des articles
+                    header("Location: /posts?&page=1&message=" . $noPostFound);
 
                     // Empêche l'exécution du reste du script
                     die();
                 }
-            }
-            // Si il manque une variable
-            else {
+            } else {
+                // Si il manque une variable
+
                 // Message d'erreur
                 $messageIssetVariable = "Erreur: Manque une variable pour pouvoir ajouter le commentaire";
 
-                // Redirection vers la page de modification d'un article
-                header("Location: /posts?&page=1&message=".$messageIssetVariable);
+                // Redirection vers la page des articles
+                header("Location: /posts?&page=1&message=" . $messageIssetVariable);
 
                 // Empêche l'exécution du reste du script
                 die();
             }
-        }
-        // Si l'utilisateur n'est pas connecté
-        else {
-            // Redirection vers la page d'identification
+        } else {
+            // Si l'utilisateur n'est pas connecté
+
+            // Redirection vers la page d'erreur 404
             header("Location: /error404");
+
             // Empêche l'exécution du reste du script
             die();
         }
     }
 
     // Affiche tous les commentaires d'un article avec une pagination pour l'administration
-    public function commentsList($postId, $page) {
+    public function commentsList($postId, $page)
+    {
         // Vérifie que l'utilisateur est connecté et que c'est un administrateur
         $this->redirectIfNotLoggedOrNotAdmin();
 
         // Si présence des variables
         if (isset($postId) && isset($page)) {
-
             // Si toutes les variables sont renseignées
             if (!empty($postId) && !empty($page)) {
-
                 // Récupère le post
                 $post = Post::getPost($postId);
 
                 // Si le post éxiste
                 if ($post != false) {
-
                     // Vérifie que le n° de page est un chiffre entier
                     if (ctype_digit($page)) {
-
                         // Si la page éxiste
                         if ($page >= 1) {
-
                             // Définit le nombres de commentaires par page
                             $nbPerPage = 10;
 
@@ -133,7 +132,6 @@ class CommentController extends Controller // Hérite de la class Controller et 
 
                             // Si la page éxiste
                             if ($page <= $nbPages) {
-
                                 // Redirection par défaut
                                 if (empty($_GET['message'])) {
                                     // Affiche la listes des commentaires d'un article
@@ -143,8 +141,9 @@ class CommentController extends Controller // Hérite de la class Controller et 
                                         "nbPages" => $nbPages,
                                         "page" => $page
                                     ));
-                                } // Redirection après suppression d'un commentaire
-                                else {
+                                } else {
+                                    // Redirection après suppression d'un commentaire
+
                                     // Affiche la listes des commentaires d'un article et le message de confirmation
                                     $this->render('commentsList.html.twig', array(
                                         'comments' => $comments,
@@ -154,62 +153,65 @@ class CommentController extends Controller // Hérite de la class Controller et 
                                         'message' => $_GET['message']
                                     ));
                                 }
-                            } // Si il y a aucun commentaire
-                            else {
+                            } else {
+                                // Si il y a aucun commentaire
+
                                 // Affiche un message d'information
                                 $this->render('commentsList.html.twig', array(
                                     'comments' => $comments,
                                     'post' => $post,
                                 ));
                             }
-                        } // Si la page n'éxiste pas
-                        else {
+                        } else {
+                            // Si la page n'éxiste pas
+
                             // Redirection vers la 404
                             header("Location: /error404");
+
                             // Empêche l'exécution du reste du script
                             die();
                         }
-                    }
-                    // Si ce n'est pas un chiffre entier
-                    else {
+                    } else {
+                        // Si ce n'est pas un chiffre entier
+
                         // Redirection vers la 404
                         header("Location: /error404");
 
                         // Empêche l'exécution du reste du script
                         die();
                     }
-                }
-                // Si l'id correspond  à aucun post
-                else {
+                } else {
+                    // Si l'id correspond à aucun post
+
                     // Message d'erreur
                     $messagePostEditConfirmed = "Erreur: Aucun post correspond à cet id";
 
-                    // Redirection vers la page de modification d'un article
+                    // Redirection vers la page d'administration
                     header("Location: /admin?&page=" . $page . "&message=".$messagePostEditConfirmed);
 
                     // Empêche l'exécution du reste du script
                     die();
                 }
-            }
-            // Si une variable est vide
-            else {
+            } else {
+                // Si une variable est vide
+
                 // Message d'erreur
                 $verifiedIfEmpty = "Erreur: Une variable n'a pas été renseigné";
 
                 // Redirection vers la page d'administration
-                header("Location: /admin?page=1&message=".$verifiedIfEmpty);
+                header("Location: /admin?page=1&message=" . $verifiedIfEmpty);
 
                 // Empêche l'exécution du reste du script
                 die();
             }
-        }
-        // Si il manque une variable
-        else {
+        } else {
+            // Si il manque une variable
+
             // Message d'erreur
             $messageIssetVariable = "Erreur: Manque une variable pour afficher les commentaires";
 
             // Redirection vers la page d'administration
-            header("Location: /admin?page=1&message=".$messageIssetVariable);
+            header("Location: /admin?page=1&message=" . $messageIssetVariable);
 
             // Empêche l'exécution du reste du script
             die();
@@ -224,7 +226,6 @@ class CommentController extends Controller // Hérite de la class Controller et 
 
         // Vérifie la présence de l'id
         if ($idComment != null) {
-
             // Récupère le commentaire
             $comment = Comment::getComment($idComment);
 
@@ -239,14 +240,14 @@ class CommentController extends Controller // Hérite de la class Controller et 
                 // Récupère l'url précédente afin de revenir à la liste des commentaires
                 $url = $_SERVER['HTTP_REFERER'];
 
-                // Redirection vers la page de la liste des articles du post avec le message
-                header("Location: ".$url."&message=".$messageCommentDeleteConfirmed);
+                // Redirection vers la page de la liste des commentaires du post avec le message
+                header("Location: ". $url . "&message=" . $messageCommentDeleteConfirmed);
 
                 // Empêche l'exécution du reste du script
                 die();
-            }
-            // Si l'id n'a aucune correspondance
-            else {
+            } else {
+                // Si l'id n'a aucune correspondance
+
                 // Message d'erreur
                 $messageCommentDeleteFailed = "Erreur: Aucun commentaire correspond à cet id";
 
@@ -254,7 +255,7 @@ class CommentController extends Controller // Hérite de la class Controller et 
                 $url = $_SERVER['HTTP_REFERER'];
 
                 // Redirection vers la page de la liste des commentaires du post avec le message
-                header("Location: ".$url."&message=".$messageCommentDeleteFailed);
+                header("Location: " . $url . "&message=" . $messageCommentDeleteFailed);
 
                 // Empêche l'exécution du reste du script
                 die();
@@ -266,8 +267,8 @@ class CommentController extends Controller // Hérite de la class Controller et 
         // Récupère l'url précédente afin de revenir à la liste des commentaires
         $url = $_SERVER['HTTP_REFERER'];
 
-        // Redirection vers la page de la liste des articles du post avec le message
-        header("Location: ".$url."&message=".$messageIdWithoutPost);
+        // Redirection vers la page de la liste des commentaires du post avec le message
+        header("Location: " . $url . "&message=" . $messageIdWithoutPost);
 
         // Empêche l'exécution du reste du script
         die();
@@ -281,7 +282,6 @@ class CommentController extends Controller // Hérite de la class Controller et 
 
         // Vérifie la présence de l'id
         if ($idComment != null) {
-
             // Récupère le commentaire
             $comment = Comment::getComment($idComment);
 
@@ -296,22 +296,22 @@ class CommentController extends Controller // Hérite de la class Controller et 
                 // Récupère l'url précédente afin de revenir à la liste des commentaires
                 $url = $_SERVER['HTTP_REFERER'];
 
-                // Redirection vers la page de la liste des articles du post avec le message
-                header("Location: ".$url."&message=".$messageCommentDeleteConfirmed);
+                // Redirection vers la page de la liste des commentaires du post avec le message
+                header("Location: " . $url . "&message=" . $messageCommentDeleteConfirmed);
 
                 // Empêche l'exécution du reste du script
                 die();
-            }
-            // Si l'id n'a aucune correspondance
-            else {
+            } else {
+                // Si l'id n'a aucune correspondance
+
                 // Message d'erreur
                 $messageCommentDeleteFailed = "Erreur: Aucun commentaire correspond à cet id";
 
                 // Récupère l'url précédente afin de revenir à la liste des commentaires
                 $url = $_SERVER['HTTP_REFERER'];
 
-                // Redirection vers la page de la liste des articles du post avec le message
-                header("Location: ".$url."&message=".$messageCommentDeleteFailed);
+                // Redirection vers la page de la liste des commentaires du post avec le message
+                header("Location: " . $url . "&message=" . $messageCommentDeleteFailed);
 
                 // Empêche l'exécution du reste du script
                 die();
@@ -323,8 +323,8 @@ class CommentController extends Controller // Hérite de la class Controller et 
         // Récupère l'url précédente afin de revenir à la liste des commentaires
         $url = $_SERVER['HTTP_REFERER'];
 
-        // Redirection vers la page de la liste des articles du post avec le message
-        header("Location: ".$url."&message=".$messageIdWithoutPost);
+        // Redirection vers la page de la liste des commentaires du post avec le message
+        header("Location: " . $url . "&message=" . $messageIdWithoutPost);
 
         // Empêche l'exécution du reste du script
         die();
