@@ -104,59 +104,74 @@ class AdminController extends Controller // Hérite de la class Controller et Ch
 
     public function connection()
     {
-        // Si présence des variables 'username' et 'password'
-        if (isset($_POST['username']) && isset($_POST['password'])) {
+        // Si présence des variables 'username', 'password' et 'token'
+        if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['token'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
+            $token = $_POST['token'];
 
             // Si toute les variables sont renseignées
-            if (!empty($username) && !empty($password)) {
-                // Récupère l'utilisateur correspondant au pseudo
-                $user = User::getUserByUsername($username);
+            if (!empty($username) && !empty($password) && !empty($token)) {
+                // Vérifie que le jeton est valide
+                if ($token == $_SESSION['token']) {
+                    // Récupère l'utilisateur correspondant au pseudo
+                    $user = User::getUserByUsername($username);
 
-                // Identifie ou non l'utilisateur
-                $checkUser = User::checkUserPassword($user, $password);
+                    // Identifie ou non l'utilisateur
+                    $checkUser = User::checkUserPassword($user, $password);
 
-                // Si l'utilisateur est identifié
-                if ($checkUser == true) {
-                    // Appel la methode qui va définir les variables de session
-                    $this->setSessionVariables($user);
+                    // Si l'utilisateur est identifié
+                    if ($checkUser == true) {
+                        // Appel la methode qui va définir les variables de session
+                        $this->setSessionVariables($user);
 
-                    // Si l'utilisateur est un administrateur
-                    if ($user->getRole() == true) {
-                        //  Redirige vers la page d'administration
-                        header('Location: ' . '/admin?page=1');
-
-                        // Empêche l'exécution du reste du script
-                        die();
-                    } else {
-                        // Si l'utilisateur n'est pas un administrateur
-
-                        // Si HTTP_REFERER est déclaré
-                        if (isset($_SESSION['previousUrl'])) {
-                            //  Redirige vers l'URL précédente
-                            header('Location: ' . $_SESSION['previousUrl']);
+                        // Si l'utilisateur est un administrateur
+                        if ($user->getRole() == true) {
+                            //  Redirige vers la page d'administration
+                            header('Location: ' . '/admin?page=1');
 
                             // Empêche l'exécution du reste du script
                             die();
                         } else {
-                            // Si HTTP_REFERER n'est pas déclaré
+                            // Si l'utilisateur n'est pas un administrateur
 
-                            // Renvoie sur la page d'accueil
-                            header('Location: ' . '/');
+                            // Si HTTP_REFERER est déclaré
+                            if (isset($_SESSION['previousUrl'])) {
+                                //  Redirige vers l'URL précédente
+                                header('Location: ' . $_SESSION['previousUrl']);
 
-                            // Empêche l'exécution du reste du script
-                            die();
+                                // Empêche l'exécution du reste du script
+                                die();
+                            } else {
+                                // Si HTTP_REFERER n'est pas déclaré
+
+                                // Renvoie sur la page d'accueil
+                                header('Location: ' . '/');
+
+                                // Empêche l'exécution du reste du script
+                                die();
+                            }
                         }
+                    } else {
+                        // Si l'utilisateur ne c'est pas identifié correctement
+
+                        // Message d'erreur
+                        $message = "Erreur: Logins incorrect, veuillez réessayer";
+
+                        // Redirection vers la page d'identification
+                        $this->render('login.html.twig', array("message" => $message));
                     }
                 } else {
-                    // Si l'utilisateur ne c'est pas identifié correctement
+                    // Si le jeton n'est pas valide
 
                     // Message d'erreur
-                    $message = "Erreur: Logins incorrect, veuillez réessayer";
+                    $tokenFailed = "Erreur: Veuillez réessayer";
 
                     // Redirection vers la page d'identification
-                    $this->render('login.html.twig', array("message" => $message));
+                    header("Location: /login?message=" . $tokenFailed);
+
+                    // Empêche l'exécution du reste du script
+                    die();
                 }
             } else {
                 // Si une variable est vide
