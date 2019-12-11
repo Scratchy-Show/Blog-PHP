@@ -246,58 +246,74 @@ class PostController extends Controller // Hérite de la class Controller et Che
     }
 
     // Supprimer un article
-    public function deletePost($idPost)
+    public function deletePost($token, $idPost)
     {
         // Vérifie que l'utilisateur est connecté et que c'est un administrateur
         $this->redirectIfNotLoggedOrNotAdmin();
 
-        // Vérifie la présence de l'id
-        if ($idPost != null) {
-            // Crée une instance de Post
-            $newPost = new Post;
+        // Vérifie le jeton de l'utilisateur
+        if ($token == $_SESSION['token']) {
+            // Vérifie la présence de l'id
+            if ($idPost != null) {
+                // Crée une instance de Post
+                $newPost = new Post;
 
-            // Récupère le post
-            $post = $newPost->getPost($idPost);
+                // Récupère le post
+                $post = $newPost->getPost($idPost);
 
-            // Si l'id correspond à un post
-            if ($post != null) {
-                // Appelle la méthode qui supprime un post
-                $post->deletePostByHomeAdmin($post);
+                // Si l'id correspond à un post
+                if ($post != null) {
+                    // Appelle la méthode qui supprime un post
+                    $post->deletePostByHomeAdmin($post);
 
-                // Message de confirmation
-                $messagePostDeleteConfirmed = "Suppression de l'article et de ses commentaires";
+                    // Message de confirmation
+                    $messagePostDeleteConfirmed = "Suppression de l'article et de ses commentaires";
 
-                // Redirection vers la page d'administration
-                header("Location: /admin?page=1&message=" . $messagePostDeleteConfirmed);
+                    // Redirection vers la page d'administration
+                    header("Location: /admin?page=1&message=" . $messagePostDeleteConfirmed);
 
-                // Empêche l'exécution du reste du script
-                die();
+                    // Empêche l'exécution du reste du script
+                    die();
+                } else {
+                    // Si l'id n'a aucune correspondance
+
+                    // Message d'erreur
+                    $messagePostDeleteFailed = "Erreur: Aucun article correspond à cet id";
+
+                    // Récupère l'url précédente afin de revenir à la liste des articles
+                    $url = $_SERVER['HTTP_REFERER'];
+
+                    // Redirection vers la page de la liste des articles avec le message d'erreur
+                    header("Location: " . $url . "&message=" . $messagePostDeleteFailed);
+
+                    // Empêche l'exécution du reste du script
+                    die();
+                }
             } else {
-                // Si l'id n'a aucune correspondance
-
-                // Message d'erreur
-                $messagePostDeleteFailed = "Erreur: Aucun article correspond à cet id";
+                // Si l'id est vide
+                $messageIdWithoutPost = "Erreur: Aucun id n'est renseigné";
 
                 // Récupère l'url précédente afin de revenir à la liste des articles
                 $url = $_SERVER['HTTP_REFERER'];
 
                 // Redirection vers la page de la liste des articles avec le message d'erreur
-                header("Location: " . $url . "&message=" . $messagePostDeleteFailed);
+                header("Location: " . $url . "&message=" . $messageIdWithoutPost);
 
                 // Empêche l'exécution du reste du script
                 die();
             }
+        } else {
+            // Si le jeton est différent
+            $tokenfailed = "Erreur: jeton invalide";
+
+            // Récupère l'url précédente afin de revenir à la liste des articles
+            $url = $_SERVER['HTTP_REFERER'];
+
+            // Redirection vers la page de la liste des articles avec le message d'erreur
+            header("Location: " . $url . "&message=" . $tokenfailed);
+
+            // Empêche l'exécution du reste du script
+            die();
         }
-        // Si l'id est vide
-        $messageIdWithoutPost = "Erreur: Aucun id n'est renseigné";
-
-        // Récupère l'url précédente afin de revenir à la liste des articles
-        $url = $_SERVER['HTTP_REFERER'];
-
-        // Redirection vers la page de la liste des articles avec le message d'erreur
-        header("Location: " . $url . "&message=" . $messageIdWithoutPost);
-
-        // Empêche l'exécution du reste du script
-        die();
     }
 }

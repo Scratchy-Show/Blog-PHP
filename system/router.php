@@ -84,11 +84,14 @@ if (isset($_SERVER['REQUEST_URI'])) {
             $editPost = new PostController();
             $editPost->editPost($idPost, $page);
         } elseif ($path_only == '/admin/deletePost') {         // Supprimer un article
+            // Récupère le jeton
+            $token = $_GET['token'];
+
             // Récupère l'id de l'URL
-            $idPost = $_GET;
+            $idPost = $_GET['id'];
 
             $deletePost = new PostController();
-            $deletePost->deletePost($idPost);
+            $deletePost->deletePost($token, $idPost);
         } elseif ($path_only == '/admin/commentsList') {      // Affiche la liste des commentaires d'un post
             // Récupère l'id de l'URL
             $idPost = $_GET['id'];

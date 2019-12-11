@@ -254,15 +254,21 @@ class PageController extends Controller // Hérite de la class Controller et Che
     {
         // Si l'utilisateur n'est pas connecté, il accède à la page
         if (empty($_SESSION['user'])) {
+            // Appelle la méthode qui crée un jeton
+            $token = $this->createToken();
+
             // Redirection par défaut
             if (empty($_GET['message'])) {
                 // Affiche la page d'identification
-                $this->render('login.html.twig', array());
+                $this->render('login.html.twig', array("token" => $token));
             } else {
                 // Redirection si message d'erreur pour l'identification
 
                 // Affiche la page d'identification avec le message d'erreur
-                $this->render('login.html.twig', array("message" => $_GET['message']));
+                $this->render('login.html.twig', array(
+                    "message" => $_GET['message'],
+                    "token" => $token
+                ));
             }
         } else {
             // Si l'utilisateur est connecté

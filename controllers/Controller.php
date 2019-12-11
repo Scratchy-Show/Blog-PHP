@@ -35,6 +35,31 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
         }
     }
 
+    // Créer un jeton
+    public function createToken()
+    {
+        // Si le jeton de session est déjà définie
+        if (isset($_SESSION['token'])) {
+            // Suppression du jeton existant
+            unset($_SESSION['token']);
+        }
+
+        // Algorithme de hachage SHA256
+        // bin2hex : Convertit des données binaires en représentation hexadécimale
+        // openssl_random_pseudo_bytes : Génère une chaine pseudo-aléatoire d'octets
+
+        // Création d'un nouveau jeton
+        $token = hash('sha256', bin2hex(openssl_random_pseudo_bytes(6)));
+
+        // Définie la variable de session
+        $_SESSION['token'] = $token;
+
+        // Récupère l'heure de la création du jeton
+        $_SESSION['token_time'] = time();
+
+        return $token;
+    }
+
     // Définie les variables de session
     public function setSessionVariables($user)
     {
