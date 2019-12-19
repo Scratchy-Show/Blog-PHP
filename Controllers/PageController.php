@@ -49,7 +49,7 @@ class PageController extends Controller // Hérite de la class Controller et Che
                 // Si les valeurs des variables sont bonnes
                 if (($verifiedName == 1) && ($verifiedEmail == 1)) {
                     // Destinataire
-                    $to = "couretalexandredev@gmail.com";
+                    $to = "";
 
                     // Spécifie la longueur des lignes avant un saut de ligne
                     $message = wordwrap($message, 70, "\r\n");
