@@ -12,7 +12,7 @@ RewriteRule  ^.*\.js$   -  [NC,L]
 RewriteRule  ^.*\.pdf$  -  [NC,L]
 
 # Redirige chaque requête vers router.php
-RewriteRule ^.*$ system/router.php
+RewriteRule ^.*$ System/router.php
 
 # Empêche le listage des répertoires
 IndexIgnore *

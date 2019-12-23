@@ -59,10 +59,9 @@ class PageController extends Controller // Hérite de la class Controller et Che
                     $headers .= "Content-Type: text/html; charset=utf-8" . "\r\n";
 
                     // En-têtes additionnels
-                    $headers .= "From: " . $lastName. " <" . $email . ">" . "\r\n";
+                    $headers .= "From: " . $firstName . " " . $lastName . " <" . $email . ">" . "\r\n";
                     $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
-                    var_dump(mail($to, $subject, $message, $headers));
                     // Envoi du mail
                     mail($to, $subject, $message, $headers);
 

@@ -18,7 +18,7 @@ class Database
         // Si $entityManager n'est pas instancié
         if (self::$entityManager === null) {
             // Chemin vers les fichiers d'entité
-            $paths = array(__DIR__ . "/../models");
+            $paths = array(__DIR__ . "/../Models");
             $isDevMode = false;
 
             // Méthode Setup pour le mappage par annotation

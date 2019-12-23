@@ -2,6 +2,10 @@
     @include main-container;
     height: auto;
 
+    @include phablets {
+        width: 95%;
+    }
+
     h2 {
         @include h2;
     }

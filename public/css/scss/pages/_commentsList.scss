@@ -20,6 +20,12 @@
 
     .comments-empty {
         height: 70vh;
+
+        @include laptops {
+            @media (orientation: landscape) {
+                margin-bottom: 130px;
+            }
+        }
     }
 
     .modal {

@@ -2,6 +2,10 @@
     @include main-container;
     height: 100%;
 
+    @include phablets {
+        width: 100%;
+    }
+
     h2 {
         @include h2;
     }
@@ -14,9 +18,10 @@
     .form-container {
         display: flex;
         width: 95%;
+        margin-bottom: 400px;
 
         @include laptops {
-            margin-bottom: 400px;
+            margin-bottom: 430px;
         }
 
         form {

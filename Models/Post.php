@@ -17,7 +17,7 @@ use \DateTime;
 
 /**
  * @Entity
- * @Table(name="Post")
+ * @Table(name="post")
  */
 class Post
 {
