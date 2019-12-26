@@ -7,18 +7,24 @@
     <div class="posts-main-container">
         <h2>Articles</h2>
 
+        {% if message %}
+            <div class="message-container">
+                <div class="error" id="anchor-error">
+                    <p class="message">{{ message }}</p>
+                </div>
+            </div>
+        {% endif %}
+
         {% if posts is empty %}
-
-        <div class="posts-empty">
-            <p>Aucun article pour l'instant.</p>
-        </div>
-
+            <div class="posts-empty">
+                <p>Aucun article pour l'instant.</p>
+            </div>
         {% else %}
 
             {% for post in posts %}
                 <div class="post-container">
                     <h3>{{ post.title }}</h3>
-                    <p class="date">Mis à jour le {{ post.updateDate|date('d m Y') }}</p>
+                    <p class="date">Mis à jour le {{ post.updateDate|date('d/m/Y') }}</p>
                     <text class="summary">{{ post.summary }}</text>
                     <div class="post-link">
                         <a href="/post/{{ post.path }}">Lire l'article</a>

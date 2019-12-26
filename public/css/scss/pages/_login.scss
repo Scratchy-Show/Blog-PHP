@@ -2,18 +2,27 @@
     @include main-container;
     height: 100%;
 
+    @include phablets {
+        width: 100%;
+    }
+
     h2 {
         @include h2;
     }
 
-    .error {
-        @include error-form;
+    .message-container {
+        @include message;
+        margin-bottom: 20px;
     }
 
     .form-container {
         display: flex;
         width: 95%;
-        margin-top: 100px;
+        margin-bottom: 400px;
+
+        @include laptops {
+            margin-bottom: 430px;
+        }
 
         form {
             @include form;

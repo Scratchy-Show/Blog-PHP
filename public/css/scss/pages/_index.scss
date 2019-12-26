@@ -18,6 +18,7 @@
         }
 
         @include tablets {
+            margin-top: 20px;
             font-size: 45px;
         }
     }
@@ -58,6 +59,7 @@
 .index-main-container {
 
     h2 {
+        margin-top: 20px;
         color: $blue;
         text-align: center;
     }
@@ -68,31 +70,42 @@
         margin: auto;
         background-color: $blue;
         border: none;
+
+        @include tablets {
+            width: 85%;
+        }
     }
 
     .banner {
         display: flex;
         justify-content: center;
-        max-height: 1500px;
+        max-height: 1000px;
         padding: 25px 0 10px 0;
 
+        @include laptops {
+            max-height: 250px;
+        }
+
+        @include phablets {
+            max-height: 200px;
+        }
+
         img {
-            max-height: 100%;
             max-width: 100%;
         }
     }
 
-    .container-last-posts, .about, .container-tools-dev, .container-tools-open-source {
-       margin: 25px 0;
+    .container-last-posts, .about, .container-tools-dev, .container-tools-open-source, .contact-container {
+        width: 70%;
+        margin: auto;
+
+        @include tablets{
+            width: 90%;
+        }
 
         &:last-child {
             margin-bottom: 0;
         }
-    }
-
-    .last-posts, .about, .tools-dev, .tools-open-source {
-        width: 80%;
-        margin: auto;
     }
 
     .last-posts {
@@ -106,7 +119,8 @@
         .post {
             display: flex;
             flex-direction: column;
-            width: 33%;
+            height: 350px;
+            width: 50%;
             margin: 15px;
             padding: 15px;
             border: 5px solid $blue;
@@ -129,6 +143,9 @@
             }
 
             .description {
+                display: flex;
+                align-items: center;
+                height: 100%;
                 margin: 15px 0;
                 text-align: justify;
             }
@@ -136,7 +153,6 @@
             .link {
                 display: flex;
                 align-self: flex-end;
-                height: 100%;
 
                 a {
                     align-self: flex-end;
@@ -156,6 +172,7 @@
 
         a {
             @include slide-link;
+            margin: 25px 0;
         }
     }
 
@@ -184,7 +201,9 @@
         p {
             width: 90%;
             margin: auto;
-            padding-bottom: 10px;
+            padding-bottom: 20px;
+            line-height: 1.2;
+            text-align: justify;
 
             @include tablets {
                 width: 80%;
@@ -217,49 +236,43 @@
 
     .tools-dev {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         padding: 25px 0;
 
-        @include desktops {
+        @media (max-width: 1365px) {
             flex-direction: column;
         }
 
-        .first-tools {
-            @include desktops {
-                display: flex;
-                justify-content: space-around;
-                width: 100%;
-            }
-        }
-
-        .second-tools {
-            @include desktops {
-                display: flex;
-                justify-content: space-around;
-                width: 100%;
-            }
+        .first-tools,  .second-tools {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
         }
 
         img {
             max-width:  135px;
             max-height: 135px;
-            min-width:  70px;
-            min-height: 70px;
+            min-width:  135px;
             padding: 10px;
+
+            @include phablets {
+                max-width:  100px;
+                max-height: 100px;
+                min-width:  100px;
+            }
         }
     }
 
     .tools-open-source {
         display: flex;
-        justify-content: space-around;
-        margin-top: 15px;
-
-        @include desktops {
-            flex-direction: column;
-        }
+        flex-direction: column;
+        align-items: center;
+        margin: 15px 0 30px 0;
 
         .tools {
-            width: 33%;
+            height: 400px;
+            width: 80%;
+            max-width: 1350px;
             margin: 10px;
             padding: 10px;
             text-align: center;
@@ -275,20 +288,21 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                height: 80%;
                 min-height: 250px;
 
                 p {
                     width: 90%;
                     padding-bottom: 20px;
-                    text-align: left;
+                    text-align: justify;
                     color: $white;
                 }
             }
         }
 
         .wordpress, .symfony, .git {
+
             @include desktops {
-                width: 95%;
                 min-height: 350px;
             }
         }
@@ -322,17 +336,21 @@
             margin-bottom: 50px;
 
             @include laptops {
-                margin-bottom: 150px;
+                margin-bottom: 180px;
             }
 
             form {
                 @include form;
                 align-items: initial;
-                width: 80%;
+                max-width: 1000px;
 
                 .error-container {
                     width: 90%;
                     margin: auto;
+
+                    &:first-child {
+                        margin-top: 20px;
+                    }
 
                     .error {
                         @include error-form;
@@ -353,6 +371,7 @@
 
                     textarea {
                         height: 150px;
+                        font-family: Arial, "Nunito", sans-serif;
                     }
                 }
 

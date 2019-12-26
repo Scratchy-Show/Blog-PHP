@@ -18,10 +18,10 @@
     // Les étoiles
     .container-star {
         background-image: linear-gradient(
-                        to bottom,
-                        $purple1 0%,
-                        $purple2 70%,
-                        $purple3 100%
+            to bottom,
+            $purple1 0%,
+            $purple2 70%,
+            $purple3 100%
         );
 
         &:after {
@@ -31,10 +31,10 @@
             height: 100%;
             content: "";
             background: radial-gradient(
-                            ellipse at center,
-                            rgba(255, 255, 255, 0) 0%,
-                            rgba(255, 255, 255, 0) 40%,
-                            rgba(15, 10, 38, 0.2) 100%
+                ellipse at center,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 40%,
+                rgba(15, 10, 38, 0.2) 100%
             );
         }
 
@@ -61,10 +61,10 @@
                 content: "";
                 border-radius: 50%;
                 background: radial-gradient(
-                                ellipse at center,
-                                rgba(255, 255, 255, 0.5) 0%,
-                                rgba(255, 255, 255, 0) 60%,
-                                rgba(255, 255, 255, 0) 100%
+                    ellipse at center,
+                    rgba(255, 255, 255, 0.5) 0%,
+                    rgba(255, 255, 255, 0) 60%,
+                    rgba(255, 255, 255, 0) 100%
                 );
             }
         }
@@ -251,6 +251,14 @@
             .number {
                 text-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
                 padding: 0 0.2em;
+
+                @include tablets {
+                    font-size: 160px;
+                }
+
+                @include phablets {
+                    font-size: 120px;
+                }
             }
 
             .moon {
@@ -262,6 +270,11 @@
                 box-shadow: 0 0 10px $white, 0 0 20px $white, 0 0 30px $white, 0 0 40px $white,
                 0 0 70px $white, 0 0 80px $white, 0 0 100px $pink-sun;
                 animation: rotate 5s ease-in-out infinite;
+
+                @include tablets {
+                    width: 140px;
+                    height: 140px;
+                }
 
                 .face {
                     position: absolute;

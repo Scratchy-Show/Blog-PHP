@@ -3,7 +3,6 @@
 
 namespace Models;
 
-
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\OneToMany;
@@ -14,10 +13,11 @@ use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use PDOException;
 use System\Database;
+use \DateTime;
 
 /**
  * @Entity
- * @Table(name="Post")
+ * @Table(name="post")
  */
 class Post
 {
@@ -64,7 +64,7 @@ class Post
     protected $path;
 
     /**
-     * @OneToMany(targetEntity="Models\Comment", mappedBy="post", cascade={"persist", "remove"})
+     * @OneToMany(targetEntity="Models\Comment", mappedBy="post", cascade={"remove"})
      */
     protected $comments;
 
@@ -75,9 +75,9 @@ class Post
         // Définit le fuseau horaire
         date_default_timezone_set('Europe/Paris');
         // Par défaut, la date de création est la date d'aujourd'hui
-        $this->createDate = new \DateTime();
+        $this->createDate = new DateTime();
         // Par défaut, la date de mise à jour est la date d'aujourd'hui
-        $this->updateDate = new \DateTime();
+        $this->updateDate = new DateTime();
         // Liste des commentaires
         $this->comments = new ArrayCollection();
     }
@@ -105,8 +105,7 @@ class Post
 
             // Retourne l'objet Paginator correspondant à la requête
             return new Paginator($queryBuilder, true);
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
@@ -125,14 +124,13 @@ class Post
             );
             // Retourne un tableau contenant tous les posts
             return $listPosts;
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
 
-    // Récupère les 3 derniers postes
-    public static function getThreeLastPosts()
+    // Récupère les 2 derniers postes
+    public static function getLastPosts()
     {
         // Gestion des erreurs
         try {
@@ -142,13 +140,12 @@ class Post
             $threeLastPosts = $postRepository->findBy(
                 array(),
                 array('createDate' => 'desc'),
-                3,
+                2,
                 0
             );
             // Retourne un tableau contenant les 3 posts
             return $threeLastPosts;
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
@@ -164,8 +161,7 @@ class Post
             $post = $postRepository->find($idPost);
             // Retourne le post
             return $post;
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
@@ -181,8 +177,7 @@ class Post
             $post = $postRepository->findOneBy(array('path' => $path));
             // Retourne le post
             return $post;
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
@@ -231,8 +226,7 @@ class Post
             Database::getEntityManager()->remove($post);
             // Met à jour la bdd
             Database::getEntityManager()->flush($post);
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }

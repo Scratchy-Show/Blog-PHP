@@ -3,7 +3,6 @@
 
 namespace System;
 
-use Doctrine\Common\Cache\ApcuCache;
 use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\Tools\Setup;
@@ -14,11 +13,12 @@ class Database
     private static $entityManager = null;
 
     // Permet l'accès à la fonctionnalité ORM de Doctrine
-    public static function getEntityManager() {
+    public static function getEntityManager()
+    {
         // Si $entityManager n'est pas instancié
         if (self::$entityManager === null) {
             // Chemin vers les fichiers d'entité
-            $paths = array(__DIR__ . "/../models");
+            $paths = array(__DIR__ . "/../Models");
             $isDevMode = false;
 
             // Méthode Setup pour le mappage par annotation
@@ -45,9 +45,7 @@ class Database
             try {
                 // Méthode EntityManager qui crée une instance d'EntityManager
                 self::$entityManager = EntityManager::create($dbParams, $config);
-            }
-            catch (ORMException $e)
-            {
+            } catch (ORMException $e) {
                 return null;
             }
         }

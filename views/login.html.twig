@@ -6,15 +6,16 @@
     <div class="login-main-container">
         <h2>Identification</h2>
 
-        {% if message != null %}
-            <div class="error">
-                <img src="../public/img/icons/prohibited.png" alt="" />
-                <p class="message">{{ message }}</p>
+        {% if message %}
+            <div class="message-container">
+                <div class="error">
+                    <p class="message">{{ message }}</p>
+                </div>
             </div>
         {% endif %}
 
         <div class="form-container">
-            <form method="post" action="/login">
+            <form method="post" action="/connection">
                 <div class="input-container">
                     <input id="username" type="text" name="username" required="required" />
                     <span class="border"></span>
@@ -25,6 +26,7 @@
                     <span class="border"></span>
                     <label for="password">Mot de passe</label>
                 </div>
+                <input type="hidden" name="token" id="token" value="{{ token }}" />
                 <div class="submit-container">
                     <input class="submit" type="submit" value="Se connecter" />
                 </div>

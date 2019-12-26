@@ -13,10 +13,11 @@ use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use PDOException;
 use System\Database;
+use \DateTime;
 
 /**
  * @Entity
- * @Table(name="Comment")
+ * @Table(name="comment")
  */
 class Comment
 {
@@ -28,13 +29,13 @@ class Comment
     protected $id;
 
     /**
-     * @ManyToOne(targetEntity="Models\User", inversedBy="comments", cascade={"persist"})
+     * @ManyToOne(targetEntity="Models\User", inversedBy="comments")
      * @JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $author;
 
     /**
-     * @ManyToOne(targetEntity="Models\Post", inversedBy="comments", cascade={"persist"})
+     * @ManyToOne(targetEntity="Models\Post", inversedBy="comments")
      * @JoinColumn(name="post_id", referencedColumnName="id")
      */
     protected $post;
@@ -59,7 +60,7 @@ class Comment
         // Définit le fuseau horaire
         date_default_timezone_set('Europe/Paris');
         // Par défaut, la date est la date d'aujourd'hui
-        $this->date = new \DateTime();
+        $this->date = new DateTime();
         // Par défaut, la validation est à 0 (false)
         $this->validate = 0;
     }
@@ -94,8 +95,7 @@ class Comment
             );
             // Retourne un tableau contenant les commentaires
             return $threeLastPosts;
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
@@ -114,8 +114,7 @@ class Comment
             );
             // Retourne un tableau contenant les commentaires
             return $allComments;
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
@@ -147,8 +146,7 @@ class Comment
 
             // Retourne l'objet Paginator correspondant à la requête
             return new Paginator($queryBuilder, true);
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
@@ -164,8 +162,7 @@ class Comment
             $comment = $postRepository->find($idComment);
             // Retourne le post
             return $comment;
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
@@ -183,8 +180,7 @@ class Comment
 
             // Met à jour la bdd
             Database::getEntityManager()->flush($idComment);
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
@@ -198,8 +194,7 @@ class Comment
             Database::getEntityManager()->remove($idComment);
             // Met à jour la bdd
             Database::getEntityManager()->flush($idComment);
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo 'Échec lors du lancement de la requête: ' . $e->getMessage();
         }
     }
@@ -258,4 +253,3 @@ class Comment
         $this->content = $content;
     }
 }
-

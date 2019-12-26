@@ -8,7 +8,7 @@ use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use System\Database;
 
 // Charge automatiquement composer grâce à router.php
-require __DIR__ . '/../system/router.php';
+require __DIR__ . '/../System/router.php';
 
 // Récupère EntityManager dans l'application
 $entityManager = Database::getEntityManager();

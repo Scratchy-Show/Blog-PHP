@@ -3,8 +3,11 @@
 
 namespace Controllers;
 
-use Twig_Environment;
-use Twig_Loader_Filesystem;
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
+use Twig\Loader\FilesystemLoader;
 
 class Controller extends CheckFormValuesController // Hérite de la class CheckFormValuesController
 {
@@ -16,9 +19,9 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
     public function __construct()
     {
         // Spécifie l'emplacement des templates Twig
-        $this->loader = new Twig_Loader_Filesystem(__DIR__.'/../views');
+        $this->loader = new FilesystemLoader(__DIR__.'/../views');
         // Instancie Twig
-        $this->twig = new Twig_Environment($this->loader);
+        $this->twig = new Environment($this->loader);
         // Permet d'accéder à la superglobale $_SESSION dans toutes les vues
         $this->twig->addGlobal('session', $_SESSION);
     }
@@ -30,6 +33,31 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
         if (isset($_SERVER['HTTP_REFERER'])) {
             $_SESSION['previousUrl'] = $_SERVER['HTTP_REFERER'];
         }
+    }
+
+    // Créer un jeton
+    public function createToken()
+    {
+        // Si le jeton de session est déjà définie
+        if (isset($_SESSION['token'])) {
+            // Suppression du jeton existant
+            unset($_SESSION['token']);
+        }
+
+        // Algorithme de hachage SHA256
+        // bin2hex : Convertit des données binaires en représentation hexadécimale
+        // openssl_random_pseudo_bytes : Génère une chaine pseudo-aléatoire d'octets
+
+        // Création d'un nouveau jeton
+        $token = hash('sha256', bin2hex(openssl_random_pseudo_bytes(6)));
+
+        // Définie la variable de session
+        $_SESSION['token'] = $token;
+
+        // Récupère l'heure de la création du jeton
+        $_SESSION['token_time'] = time();
+
+        return $token;
     }
 
     // Définie les variables de session
@@ -44,7 +72,18 @@ class Controller extends CheckFormValuesController // Hérite de la class CheckF
         // Appelle httpReferer()
         $this->httpReferer();
 
-        echo $this->twig->render($page, $arguments);
+        try {
+            echo $this->twig->render($page, $arguments);
+        } catch (LoaderError $e) {
+            // Affichage de l'erreur
+            echo 'Erreur : ' . $e->getMessage();
+        } catch (RuntimeError $e) {
+            // Affichage de l'erreur
+            echo 'Erreur : ' . $e->getMessage();
+        } catch (SyntaxError $e) {
+            // Affichage de l'erreur
+            echo 'Erreur : ' . $e->getMessage();
+        }
     }
 
     // Redirige un utilisateur non identifié et non administrateur
