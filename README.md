@@ -22,7 +22,7 @@ My first professional blog developed by me.
 ------------------------------------------------------------------------------------------------------------------------------------------
 * Create a VirtualHost on WampServer :
     * Launch WampServer
-    * Go to the address: http://localhost/add_vhost.php?Lang=french
+    * Go to the address: <http://localhost/add_vhost.php?Lang=french>
     * Indicate the name of the VirtualHost (ex: myBlog)
     * Indicate the absolute path of the VirtualHost folder (ex: C:\wamp64\www\My-first-blog-in-PHP-master)
     * Click on "Start the creation of VirtualHost"
