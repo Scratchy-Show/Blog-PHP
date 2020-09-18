@@ -1,4 +1,4 @@
-# My-first-blog-in-PHP
+# Blog PHP
 My first professional blog developed by me.
 
 ## Codacy Badge
