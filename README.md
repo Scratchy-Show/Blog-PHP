@@ -1,5 +1,5 @@
 # Blog PHP
-My first professional blog developed by me.
+My first professional blog developed by me
 
 ## Codacy Badge
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a845df5a4fd24c1e87829a0b78eaaddc)](https://www.codacy.com/manual/Scratchy-Show/My-first-blog-in-PHP?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Scratchy-Show/My-first-blog-in-PHP&amp;utm_campaign=Badge_Grade)
